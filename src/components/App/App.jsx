@@ -6,6 +6,7 @@ import ColorPicker from 'components/ColorPicker';
 import colorPickerOptions from '@/colorPickerOptions.json';
 import TodoList from 'components/TodoList';
 import initialTodos from '@/todos.json';
+import UserForm from 'components/UserForm';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -31,19 +32,22 @@ class App extends Component {
     }));
   };
 
+  formSubmitHandler = data => {
+    console.log(data);
+  };
+
   render() {
     const { todos } = this.state;
 
     return (
       <div className={style.app}>
+        <UserForm onSubmitForm={this.formSubmitHandler} />
+
         <SignupForm />
         <Counter />
         <Counter initialValue={10} />
-
         <Dropdown />
-
         <ColorPicker options={colorPickerOptions} />
-
         <TodoList todos={todos} onDeleteTodo={this.deleteTodo} />
       </div>
     );
