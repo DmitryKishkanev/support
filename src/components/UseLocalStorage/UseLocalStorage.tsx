@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import css from 'components/UseLocalStorage/UseLocalStorage.module.css';
 
 // Кастомный хук для работы с local storage
 function useLocalStorage<T>(
@@ -51,26 +52,31 @@ export default function SignupForm() {
   };
 
   return (
-    <form autoComplete="off">
-      <label>
-        <span>Почта</span>
-        <input
-          type="email"
-          name="email"
-          onChange={handleChange}
-          value={email}
-        />
-      </label>
+    <form autoComplete="off" className={css.form}>
+      <h2 className={css.form__name}>Форма регистрации</h2>
+      <div className={css.form__box}>
+        <label className={css.label}>
+          <span className={css.label__name}>Почта</span>
+          <input
+            className={css.label__field}
+            type="email"
+            name="email"
+            onChange={handleChange}
+            value={email}
+          />
+        </label>
 
-      <label>
-        <span>Пароль</span>
-        <input
-          type="password"
-          name="password"
-          onChange={handleChange}
-          value={password}
-        />
-      </label>
+        <label className={css.label}>
+          <span className={css.label__name}>Пароль</span>
+          <input
+            className={css.label__field}
+            type="password"
+            name="password"
+            onChange={handleChange}
+            value={password}
+          />
+        </label>
+      </div>
     </form>
   );
 }
