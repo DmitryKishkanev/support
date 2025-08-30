@@ -11,6 +11,7 @@ export default class UserForm extends Component {
     name: '',
     surname: '',
     experience: 'junior',
+    license: false,
   };
 
   handleChange = event => {
@@ -26,10 +27,16 @@ export default class UserForm extends Component {
     this.reset();
   };
 
+  handleLicenseChange = event => {
+    this.setState({ license: event.currentTarget.checked });
+  };
+
   reset = () => {
     this.setState({
       name: '',
       surname: '',
+      experience: 'junior',
+      license: false,
     });
   };
 
@@ -60,56 +67,62 @@ export default class UserForm extends Component {
               onChange={this.handleChange}
             />
           </label>
-
-          {/* <button type="submit">Отправить</button> */}
         </div>
 
         <p className="level">Ваш уровень:</p>
 
         <div className="form__box">
-          <label htmlFor="" className="level__field">
-            <span className="level__title">
-              <input
-                className="level__name"
-                type="radio"
-                name="experience"
-                value="junior"
-                onChange={this.handleChange}
-                checked={this.state.experience === 'junior'}
-              />
-              junior
-            </span>
+          <label className="level__field">
+            <input
+              className="level__name"
+              type="radio"
+              name="experience"
+              value="junior"
+              onChange={this.handleChange}
+              checked={this.state.experience === 'junior'}
+            />
+            <span className="level__title">junior</span>
           </label>
 
-          <label htmlFor="" className="level__field">
-            <span className="level__title">
-              <input
-                className="level__name"
-                type="radio"
-                name="experience"
-                value="middle"
-                onChange={this.handleChange}
-                checked={this.state.experience === 'middle'}
-              />
-              middle
-            </span>
+          <label className="level__field">
+            <input
+              className="level__name"
+              type="radio"
+              name="experience"
+              value="middle"
+              onChange={this.handleChange}
+              checked={this.state.experience === 'middle'}
+            />
+            <span className="level__title">middle</span>
           </label>
 
-          <label htmlFor="" className="level__field">
-            <span className="level__title">
-              <input
-                className="level__name"
-                type="radio"
-                name="experience"
-                value="senior"
-                onChange={this.handleChange}
-                checked={this.state.experience === 'senior'}
-              />
-              senior
-            </span>
+          <label className="level__field">
+            <input
+              className="level__name"
+              type="radio"
+              name="experience"
+              value="senior"
+              onChange={this.handleChange}
+              checked={this.state.experience === 'senior'}
+            />
+            <span className="level__title">senior</span>
           </label>
-          <button type="submit">Отправить</button>
         </div>
+
+        <label className="level__field">
+          <input
+            className="level__name"
+            type="checkbox"
+            name="license"
+            onChange={this.handleLicenseChange}
+            checked={this.state.license}
+          />
+          <span className="level__title">Согласен с условием</span>
+        </label>
+
+        <button type="submit" disabled={!this.state.license}>
+          Отправить
+        </button>
       </Form>
     );
   }

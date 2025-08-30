@@ -1,12 +1,14 @@
 import React from 'react';
+import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {
   Container,
   TodoListBox,
   TodoItem,
+  TodoText,
 } from 'components/TodoList/TodoList.styled';
 
-const TodoList = ({ todos, onDeleteTodo }) => {
+const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => {
   const totalTodoCount = todos.length;
   const completedTodosCount = todos.reduce(
     (acc, todo) => (todo.completed ? acc + 1 : acc),
@@ -19,9 +21,20 @@ const TodoList = ({ todos, onDeleteTodo }) => {
       <p>Общее кол-во: {totalTodoCount}</p>
       <p>Кол-во выполненных: {completedTodosCount}</p>
       <TodoListBox>
-        {todos.map(({ id, text }) => (
-          <TodoItem key={id}>
-            <p>{text}</p>
+        {todos.map(({ id, text, completed }) => (
+          <TodoItem
+            key={id}
+            className={classNames({
+              completed: completed,
+            })}
+          >
+            <input
+              type="checkbox"
+              className="TodoItem__checkbox"
+              checked={completed}
+              onChange={() => onToggleCompleted(id)}
+            />
+            <TodoText completed={completed}>{text}</TodoText>
             <button onClick={() => onDeleteTodo(id)}>Удалить</button>
           </TodoItem>
         ))}
@@ -39,6 +52,7 @@ TodoList.propTypes = {
     }),
   ),
   onDeleteTodo: PropTypes.func.isRequired,
+  onToggleCompleted: PropTypes.func.isRequired,
 };
 
 export default TodoList;

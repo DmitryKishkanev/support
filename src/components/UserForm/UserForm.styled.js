@@ -29,9 +29,10 @@ const Form = styled.form`
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 30px;
     width: 100%;
+    margin-bottom: 20px;
   }
 
   .label {
@@ -64,6 +65,7 @@ const Form = styled.form`
   }
 
   .level {
+    margin-top: 0;
     margin-bottom: 10px;
 
     font-weight: 400;
@@ -81,6 +83,12 @@ const Form = styled.form`
     align-items: center;
   }
 
+  .level__name {
+    width: 17px;
+    height: 17px;
+    margin-right: 10px;
+  }
+
   .level__title {
     font-weight: 400;
     font-size: 24px;
@@ -89,12 +97,6 @@ const Form = styled.form`
     letter-spacing: 0.03em;
 
     color: black;
-  }
-
-  .level__name {
-    width: 17px;
-    height: 17px;
-    margin-right: 5px;
   }
 `;
 

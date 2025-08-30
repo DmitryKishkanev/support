@@ -47,25 +47,27 @@ const TodoListBox = styled.ul`
 
 const TodoItem = styled.li`
   display: flex;
-
-  p {
-    padding: 8px;
-    margin: 0 15px 0 0;
-
-    background-color: #a4c3d1;
-    border-radius: 5px;
-
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-      1px 4px 6px rgba(0, 0, 0, 0.16);
-
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 1.19;
-    text-align: center;
-    letter-spacing: 0.03em;
-
-    color: black;
-  }
 `;
 
-export { Container, TodoListBox, TodoItem };
+const TodoText = styled.p`
+  padding: 8px;
+  margin: 0 15px 0 0;
+
+  background-color: #a4c3d1;
+  border-radius: 5px;
+
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: black;
+
+  text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
+`;
+
+export { Container, TodoListBox, TodoItem, TodoText };
