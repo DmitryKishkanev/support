@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import {
@@ -6,9 +6,11 @@ import {
   TodoListBox,
   TodoItem,
   TodoText,
-} from 'components/TodoList/TodoList.styled';
+} from '@/components/Todo/TodoList/TodoList.styled';
 
-const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => {
+const TodoList = ({ todos, onDeleteTodo, onToggleCompleted, children }) => {
+  // const [TodoFilter, TodoEditor] = React.Children.toArray(children);
+
   const totalTodoCount = todos.length;
   const completedTodosCount = todos.reduce(
     (acc, todo) => (todo.completed ? acc + 1 : acc),
@@ -20,6 +22,7 @@ const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => {
       <h2>Заметки</h2>
       <p>Общее кол-во: {totalTodoCount}</p>
       <p>Кол-во выполненных: {completedTodosCount}</p>
+      {children}
       <TodoListBox>
         {todos.map(({ id, text, completed }) => (
           <TodoItem
@@ -30,7 +33,7 @@ const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => {
           >
             <input
               type="checkbox"
-              className="TodoItem__checkbox"
+              className="todoItem__checkbox"
               checked={completed}
               onChange={() => onToggleCompleted(id)}
             />
@@ -53,6 +56,7 @@ TodoList.propTypes = {
   ),
   onDeleteTodo: PropTypes.func.isRequired,
   onToggleCompleted: PropTypes.func.isRequired,
+  children: PropTypes.node,
 };
 
 export default TodoList;

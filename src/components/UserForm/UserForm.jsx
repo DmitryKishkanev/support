@@ -46,7 +46,7 @@ export default class UserForm extends Component {
         <h2 className="form__name">Форма пользователя</h2>
 
         <div className="form__box">
-          <label htmlFor="" className="label">
+          <label className="label">
             <span className="label__name">Имя</span>
             <input
               className="label__field"
@@ -57,7 +57,7 @@ export default class UserForm extends Component {
             />
           </label>
 
-          <label htmlFor="" className="label">
+          <label className="label">
             <span className="label__name">Фамилия</span>
             <input
               className="label__field"

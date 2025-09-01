@@ -1,10 +1,13 @@
 import { Component } from 'react';
+import shortid from 'shortid';
 import SignupForm from 'components/UseLocalStorage/UseLocalStorage';
 import Counter from 'components/Counter';
 import Dropdown from 'components/Dropdown';
 import ColorPicker from 'components/ColorPicker';
 import colorPickerOptions from '@/colorPickerOptions.json';
-import TodoList from 'components/TodoList';
+import TodoList from 'components/Todo/TodoList';
+import TodoEditor from 'components/Todo/TodoEditor';
+import TodoFilter from 'components/Todo/TodoFilter';
 import initialTodos from '@/todos.json';
 import UserForm from 'components/UserForm';
 import style from 'components/App/App.module.css';
@@ -24,6 +27,19 @@ import style from 'components/App/App.module.css';
 class App extends Component {
   state = {
     todos: initialTodos,
+    filter: '',
+  };
+
+  addTodo = todoText => {
+    const todo = {
+      id: shortid.generate(),
+      text: todoText,
+      completed: false,
+    };
+
+    this.setState(({ todos }) => ({
+      todos: [todo, ...todos],
+    }));
   };
 
   deleteTodo = todoId => {
@@ -53,12 +69,27 @@ class App extends Component {
     }));
   };
 
+  changeFilter = e => {
+    this.setState({ filter: e.currentTarget.value });
+  };
+
+  getFilteredTodos = () => {
+    const { filter, todos } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+
+    return todos.filter(todo =>
+      todo.text.toLowerCase().includes(normalizedFilter),
+    );
+  };
+
   formSubmitHandler = data => {
     console.log(data);
   };
 
   render() {
     const { todos } = this.state;
+
+    const filteredTodos = this.getFilteredTodos();
 
     return (
       <div className={style.app}>
@@ -69,11 +100,18 @@ class App extends Component {
         <Counter initialValue={10} />
         <Dropdown />
         <ColorPicker options={colorPickerOptions} />
+
         <TodoList
-          todos={todos}
+          todos={filteredTodos}
           onDeleteTodo={this.deleteTodo}
           onToggleCompleted={this.toggleCompleted}
-        />
+        >
+          <TodoEditor onSubmit={this.addTodo} />
+          <TodoFilter
+            value={this.state.filter}
+            onChangeFilter={this.changeFilter}
+          />
+        </TodoList>
       </div>
     );
   }
