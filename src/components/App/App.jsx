@@ -10,6 +10,7 @@ import TodoEditor from 'components/Todo/TodoEditor';
 import TodoFilter from 'components/Todo/TodoFilter';
 import initialTodos from '@/todos.json';
 import UserForm from 'components/UserForm';
+import CafeFeedbackComponent from 'components/CafeFeedback/CafeFeedbackComponent';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -112,6 +113,8 @@ class App extends Component {
             onChangeFilter={this.changeFilter}
           />
         </TodoList>
+
+        <CafeFeedbackComponent />
       </div>
     );
   }
