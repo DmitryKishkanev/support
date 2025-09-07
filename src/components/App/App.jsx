@@ -11,6 +11,8 @@ import TodoFilter from 'components/Todo/TodoFilter';
 import initialTodos from '@/todos.json';
 import UserForm from 'components/UserForm';
 import CafeFeedbackComponent from 'components/CafeFeedback/CafeFeedbackComponent';
+import PhonebookEditor from 'components/Phonebook/PhonebookEditor';
+import PhonebookList from 'components/Phonebook/PhonebookList';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -29,6 +31,8 @@ class App extends Component {
   state = {
     todos: initialTodos,
     filter: '',
+
+    contacts: [],
   };
 
   addTodo = todoText => {
@@ -87,6 +91,17 @@ class App extends Component {
     console.log(data);
   };
 
+  addContact = contactText => {
+    const contact = {
+      id: shortid.generate(),
+      text: contactText,
+    };
+
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+    }));
+  };
+
   render() {
     const { todos } = this.state;
 
@@ -115,6 +130,10 @@ class App extends Component {
         </TodoList>
 
         <CafeFeedbackComponent />
+
+        <PhonebookList contacts={this.state.contacts}>
+          <PhonebookEditor onSubmit={this.addContact} />
+        </PhonebookList>
       </div>
     );
   }
