@@ -7,9 +7,11 @@ const PhonebookList = ({ contacts, children }) => {
       {children}
       <h1>Contacts</h1>
       <ul>
-        {contacts.map(({ id, text }) => (
+        {contacts.map(({ id, name, number }) => (
           <li key={id}>
-            <p>{text}</p>
+            <p>
+              {name}: {number}
+            </p>
           </li>
         ))}
       </ul>
