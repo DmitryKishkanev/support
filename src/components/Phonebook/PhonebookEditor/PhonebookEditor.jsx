@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
 import PhonebookList from 'components/Phonebook/PhonebookList';
+import initialContacts from '@/contacts.json';
 
 class PhonebookEditor extends Component {
   state = {
-    contacts: [],
+    contacts: initialContacts,
+    filter: '',
     name: '',
     number: '',
   };
@@ -51,6 +53,19 @@ class PhonebookEditor extends Component {
     }));
   };
 
+  handleChangeFilter = e => {
+    this.setState({ filter: e.currentTarget.value });
+  };
+
+  getFilteredCntacts = () => {
+    const { filter, contacts } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+
+    return contacts.filter(contact =>
+      contact.name.toLocaleLowerCase().includes(normalizedFilter),
+    );
+  };
+
   // handleSabmit = e => {
   //   e.preventDefault();
 
@@ -70,8 +85,14 @@ class PhonebookEditor extends Component {
   // };
 
   render() {
+    const filteredContacts = this.getFilteredCntacts();
+
     return (
-      <PhonebookList contacts={this.state.contacts}>
+      <PhonebookList
+        contacts={filteredContacts}
+        filter={this.state.filter}
+        changeFilter={this.handleChangeFilter}
+      >
         <form onSubmit={this.addContact}>
           <input
             value={this.state.name}
