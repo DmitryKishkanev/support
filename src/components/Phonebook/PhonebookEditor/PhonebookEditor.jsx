@@ -23,7 +23,7 @@ class PhonebookEditor extends Component {
     const nameRegex = /^[a-zA-Zа-яА-ЯёЁ]{2,}(?:[ '-][a-zA-Zа-яА-ЯёЁ]+)*$/u;
     const phoneRegex = /^\+?[0-9\s\-()]{7,}$/;
 
-    const name = this.state.name.trim();
+    const name = this.state.name.trim().toLowerCase();
     const number = this.state.number.trim();
 
     // Валидация имени
@@ -40,6 +40,19 @@ class PhonebookEditor extends Component {
       return;
     }
 
+    const isNamePresent = this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name,
+    );
+
+    if (isNamePresent) {
+      alert(`"${name}" is already in contacts `);
+      this.setState({
+        name: '',
+        number: '',
+      });
+      return;
+    }
+
     const contact = {
       id: shortid.generate(),
       name: this.state.name,
@@ -50,6 +63,12 @@ class PhonebookEditor extends Component {
       contacts: [contact, ...contacts],
       name: '',
       number: '',
+    }));
+  };
+
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
     }));
   };
 
@@ -92,6 +111,7 @@ class PhonebookEditor extends Component {
         contacts={filteredContacts}
         filter={this.state.filter}
         changeFilter={this.handleChangeFilter}
+        onDeleteContact={this.deleteContact}
       >
         <form onSubmit={this.addContact}>
           <input

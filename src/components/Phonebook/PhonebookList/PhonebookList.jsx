@@ -1,7 +1,13 @@
 import React from 'react';
 import ContactFilter from 'components/Phonebook/ContactFilter';
 
-const PhonebookList = ({ contacts, filter, changeFilter, children }) => {
+const PhonebookList = ({
+  contacts,
+  filter,
+  changeFilter,
+  onDeleteContact,
+  children,
+}) => {
   return (
     <div>
       <h1>Phonebook</h1>
@@ -14,6 +20,7 @@ const PhonebookList = ({ contacts, filter, changeFilter, children }) => {
             <p>
               {name}: {number}
             </p>
+            <button onClick={() => onDeleteContact(id)}>Delete</button>
           </li>
         ))}
       </ul>
