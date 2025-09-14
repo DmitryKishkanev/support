@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import shortid from 'shortid';
 import PhonebookList from 'components/Phonebook/PhonebookList';
 import initialContacts from '@/contacts.json';
+import { Form } from 'components/Phonebook/PhonebookEditor/PhonebookEditor.styled';
 
 class PhonebookEditor extends Component {
   state = {
@@ -85,24 +86,6 @@ class PhonebookEditor extends Component {
     );
   };
 
-  // handleSabmit = e => {
-  //   e.preventDefault();
-
-  //   this.props.onSubmit(this.state.name);
-  //   this.setState({ name: '' });
-  // };
-
-  // addContact = contactText => {
-  //   const contact = {
-  //     id: shortid.generate(),
-  //     text: contactText,
-  //   };
-
-  //   this.setState(({ contacts }) => ({
-  //     contacts: [contact, ...contacts],
-  //   }));
-  // };
-
   render() {
     const filteredContacts = this.getFilteredCntacts();
 
@@ -113,27 +96,33 @@ class PhonebookEditor extends Component {
         changeFilter={this.handleChangeFilter}
         onDeleteContact={this.deleteContact}
       >
-        <form onSubmit={this.addContact}>
-          <input
-            value={this.state.name}
-            onChange={this.handleChange}
-            type="text"
-            name="name"
-            required
-          />
+        <Form onSubmit={this.addContact}>
+          <label>
+            <span>Name</span>
+            <input
+              value={this.state.name}
+              onChange={this.handleChange}
+              type="text"
+              name="name"
+              required
+            />
+          </label>
 
-          <input
-            value={this.state.number}
-            onChange={this.handleChange}
-            type="tel"
-            name="number"
-            required
-          />
+          <label>
+            <span>Number</span>
+            <input
+              value={this.state.number}
+              onChange={this.handleChange}
+              type="tel"
+              name="number"
+              required
+            />
+          </label>
 
           <button type="submit" className="phonebook__button">
             Добавить
           </button>
-        </form>
+        </Form>
       </PhonebookList>
     );
   }

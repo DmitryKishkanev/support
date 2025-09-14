@@ -1,5 +1,10 @@
 import React from 'react';
 import ContactFilter from 'components/Phonebook/ContactFilter';
+import {
+  Container,
+  ContactBox,
+  ContactEl,
+} from 'components/Phonebook/PhonebookList/PhonebookList.styled';
 
 const PhonebookList = ({
   contacts,
@@ -9,22 +14,24 @@ const PhonebookList = ({
   children,
 }) => {
   return (
-    <div>
+    <Container>
       <h1>Phonebook</h1>
       {children}
-      <h1>Contacts</h1>
+      <h2>Contacts</h2>
       <ContactFilter value={filter} onChangeFilter={changeFilter} />
-      <ul>
+      <ContactBox>
         {contacts.map(({ id, name, number }) => (
-          <li key={id}>
-            <p>
-              {name}: {number}
-            </p>
-            <button onClick={() => onDeleteContact(id)}>Delete</button>
-          </li>
+          <ContactEl key={id}>
+            <div>
+              <p>
+                {name}: {number}
+              </p>
+              <button onClick={() => onDeleteContact(id)}>Delete</button>
+            </div>
+          </ContactEl>
         ))}
-      </ul>
-    </div>
+      </ContactBox>
+    </Container>
   );
 };
 

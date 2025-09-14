@@ -14,8 +14,6 @@ export const FilterLabel = styled.label`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-
-    color: black;
   }
 
   .label__field {

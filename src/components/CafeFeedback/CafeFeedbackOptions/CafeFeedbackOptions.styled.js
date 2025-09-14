@@ -5,7 +5,6 @@ const Container = styled.div`
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
-  /* margin-bottom: 30px; */
 `;
 
 const CafeFeedbackButton = styled.button`

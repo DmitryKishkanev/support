@@ -21,15 +21,12 @@ const Form = styled.form`
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
-
-    color: black;
   }
 
   .form__box {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-    /* justify-content: center; */
     gap: 30px;
     width: 100%;
     margin-bottom: 20px;
@@ -48,8 +45,6 @@ const Form = styled.form`
     line-height: 1.19;
 
     letter-spacing: 0.03em;
-
-    color: black;
   }
 
   .label__field {
@@ -85,8 +80,6 @@ const Form = styled.form`
     line-height: 1.19;
 
     letter-spacing: 0.03em;
-
-    color: black;
   }
 
   .level__field {
@@ -107,8 +100,6 @@ const Form = styled.form`
     line-height: 1.19;
 
     letter-spacing: 0.03em;
-
-    color: black;
   }
 `;
 

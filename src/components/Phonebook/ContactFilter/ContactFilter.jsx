@@ -1,8 +1,8 @@
-import React from 'react';
+import { FilterLabel } from 'components/Phonebook/ContactFilter/ContactFilter.styled';
 
 const ContactFilter = ({ value, onChangeFilter }) => {
   return (
-    <label>
+    <FilterLabel>
       <span>Find contacts by name </span>
       <input
         type="text"
@@ -10,7 +10,7 @@ const ContactFilter = ({ value, onChangeFilter }) => {
         value={value}
         onChange={onChangeFilter}
       />
-    </label>
+    </FilterLabel>
   );
 };
 

@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import shortid from 'shortid';
 import SignupForm from 'components/UseLocalStorage/UseLocalStorage';
-import Counter from 'components/Counter';
+import Counter from '@/components/Counter/Counter';
 import Dropdown from 'components/Dropdown';
 import ColorPicker from 'components/ColorPicker';
 import colorPickerOptions from '@/colorPickerOptions.json';
@@ -117,7 +117,6 @@ class App extends Component {
 
         <CafeFeedbackComponent />
 
-        {/* <PhonebookEditor onSubmit={this.addContact} /> */}
         <PhonebookEditor />
       </div>
     );
