@@ -12,6 +12,7 @@ import initialTodos from '@/todos.json';
 import UserForm from 'components/UserForm';
 import CafeFeedbackComponent from 'components/CafeFeedback/CafeFeedbackComponent';
 import PhonebookEditor from 'components/Phonebook/PhonebookEditor';
+import ProductReviewForm from 'components/ProductReviewForm';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -118,6 +119,8 @@ class App extends Component {
         <CafeFeedbackComponent />
 
         <PhonebookEditor />
+
+        <ProductReviewForm />
       </div>
     );
   }
