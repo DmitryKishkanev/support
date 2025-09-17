@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import { Formik, Field, ErrorMessage } from 'formik';
-import * as Yup from 'yup';
+import { object, string, number, date, boolean } from 'yup';
 import {
   ErrorText,
   DivForm,
@@ -17,15 +17,15 @@ const FormError = ({ name }) => {
 
 const products = ['Sweater', 'Keyboard', 'Sofa', 'Freezer'];
 
-const validationSchema = Yup.object({
-  product: Yup.string().required('Please select a product').oneOf(products),
-  name: Yup.string().required(),
-  email: Yup.string().email().required(),
-  title: Yup.string().required(),
-  review: Yup.string().required(),
-  rating: Yup.number().min(1).max(10).required(),
-  date: Yup.date().default(() => new Date()),
-  wouldRecommend: Yup.boolean().default(false),
+const validationSchema = object({
+  product: string().required('Please select a product').oneOf(products),
+  name: string().required(),
+  email: string().email().required(),
+  title: string().required(),
+  review: string().required(),
+  rating: number().min(1).max(10).required(),
+  date: date().default(() => new Date()),
+  wouldRecommend: boolean().default(false),
 });
 
 const initialValues = {
