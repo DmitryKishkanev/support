@@ -14,6 +14,7 @@ import CafeFeedbackComponent from 'components/CafeFeedback/CafeFeedbackComponent
 import PhonebookEditor from 'components/Phonebook/PhonebookEditor';
 import LoginForm from 'components/LoginForm/LoginForm';
 import ProductReviewForm from 'components/ProductReviewForm';
+import Modal from 'components/Modal';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -32,7 +33,23 @@ class App extends Component {
   state = {
     todos: initialTodos,
     filter: '',
+    showModal: false,
   };
+
+  // componentDidMount() {
+  //   const todos = localStorage.getItem('todos');
+  //   const parsedTodos = JSON.parse(todos);
+
+  //   if (parsedTodos) {
+  //     this.setState({ todos: parsedTodos });
+  //   }
+  // }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if (this.state.todos !== prevState.todos) {
+  //     localStorage.setItem('todos', JSON.stringify(this.state.todos));
+  //   }
+  // }
 
   addTodo = todoText => {
     const todo = {
@@ -90,8 +107,14 @@ class App extends Component {
     console.log(data);
   };
 
+  toggleModal = () => {
+    this.setState(({ showModal }) => ({
+      showModal: !showModal,
+    }));
+  };
+
   render() {
-    const { todos } = this.state;
+    const { todos, filter, showModal } = this.state;
 
     const filteredTodos = this.getFilteredTodos();
 
@@ -111,10 +134,7 @@ class App extends Component {
           onToggleCompleted={this.toggleCompleted}
         >
           <TodoEditor onSubmit={this.addTodo} />
-          <TodoFilter
-            value={this.state.filter}
-            onChangeFilter={this.changeFilter}
-          />
+          <TodoFilter value={filter} onChangeFilter={this.changeFilter} />
         </TodoList>
 
         <CafeFeedbackComponent />
@@ -124,6 +144,15 @@ class App extends Component {
         <LoginForm />
 
         <ProductReviewForm />
+
+        <button type="button" onClick={this.toggleModal}>
+          Open
+        </button>
+        {showModal && (
+          <Modal>
+            <h1>Контент модалки</h1>
+          </Modal>
+        )}
       </div>
     );
   }
