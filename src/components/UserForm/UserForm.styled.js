@@ -49,8 +49,7 @@ const Form = styled.form`
 
   .label__field {
     width: 270px;
-    height: 40px;
-    padding: 8px;
+    padding: 4px;
 
     border: 1px solid black;
     border-radius: 4px;

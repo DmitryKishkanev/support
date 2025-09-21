@@ -29,8 +29,7 @@ const Form = styled.form`
   }
 
   input {
-    height: 33px;
-    padding: 3px;
+    padding: 4px;
 
     border-radius: 4px;
     background-color: white;

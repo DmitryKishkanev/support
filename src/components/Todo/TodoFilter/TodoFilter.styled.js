@@ -18,8 +18,7 @@ export const FilterLabel = styled.label`
 
   .label__field {
     width: 100%;
-    height: 30px;
-    padding: 8px;
+    padding: 4px;
 
     border: 1px solid black;
     border-radius: 4px;

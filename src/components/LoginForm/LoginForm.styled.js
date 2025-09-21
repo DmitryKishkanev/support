@@ -23,6 +23,40 @@ const FormContainer = styled(Form)`
     line-height: 1.19;
     letter-spacing: 0.03em;
   }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    width: 270px;
+
+    span {
+      margin-bottom: 5px;
+
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.19;
+      letter-spacing: 0.03em;
+      color: black;
+    }
+
+    input {
+      width: 100%;
+      padding: 4px;
+
+      border-radius: 4px;
+      background-color: white;
+
+      outline: none;
+      cursor: pointer;
+
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.19;
+      letter-spacing: 0.03em;
+      color: black;
+    }
+  }
+
   button {
     width: 100px;
     margin-left: auto;

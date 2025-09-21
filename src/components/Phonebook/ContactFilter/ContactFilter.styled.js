@@ -18,8 +18,7 @@ const FilterLabel = styled.label`
 
   input {
     width: 220px;
-    height: 33px;
-    padding: 3px;
+    padding: 4px;
 
     border-radius: 4px;
     background-color: white;
@@ -27,12 +26,12 @@ const FilterLabel = styled.label`
     outline: none;
     cursor: pointer;
 
-    color: black;
-
     font-weight: 400;
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+
+    color: black;
   }
 `;
 

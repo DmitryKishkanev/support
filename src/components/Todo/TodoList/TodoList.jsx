@@ -1,11 +1,11 @@
 import React, { Children } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+import Todo from 'components/Todo/Todo';
 import {
   Container,
   TodoListBox,
   TodoItem,
-  TodoText,
 } from '@/components/Todo/TodoList/TodoList.styled';
 
 const TodoList = ({ todos, onDeleteTodo, onToggleCompleted, children }) => {
@@ -31,14 +31,21 @@ const TodoList = ({ todos, onDeleteTodo, onToggleCompleted, children }) => {
               completed: completed,
             })}
           >
-            <input
+            {/* <input
               type="checkbox"
               className="todoItem__checkbox"
               checked={completed}
               onChange={() => onToggleCompleted(id)}
             />
             <TodoText completed={completed}>{text}</TodoText>
-            <button onClick={() => onDeleteTodo(id)}>Удалить</button>
+            <button onClick={() => onDeleteTodo(id)}>Удалить</button> */}
+
+            <Todo
+              text={text}
+              completed={completed}
+              onToggleCompleted={() => onToggleCompleted(id)}
+              onDelete={() => onDeleteTodo(id)}
+            />
           </TodoItem>
         ))}
       </TodoListBox>

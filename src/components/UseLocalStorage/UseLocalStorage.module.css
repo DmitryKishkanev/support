@@ -51,8 +51,7 @@
 
 .label__field {
   width: 270px;
-  height: 40px;
-  padding: 8px;
+  padding: 4px;
 
   border: 1px solid black;
   border-radius: 4px;
@@ -65,4 +64,6 @@
   font-size: 18px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+
+  color: black;
 }

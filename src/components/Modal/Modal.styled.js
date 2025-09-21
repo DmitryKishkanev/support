@@ -1,11 +1,6 @@
 import styled from '@emotion/styled';
 
 const ModalContainer = styled.div`
-  /* display: flex;
-  width: 500px;
-  height: 300px;
-  border: 1px solid black; */
-
   position: fixed;
   top: 0;
   left: 0;
@@ -17,11 +12,14 @@ const ModalContainer = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
+    display: flex;
+    flex-direction: column;
     transform: translate(-50%, -50%);
     min-height: 300px;
     max-width: 600px;
     width: 100%;
     padding: 15px;
+
     background-color: #fff;
     border-radius: 3px;
     box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
@@ -39,4 +37,8 @@ const ModalContainer = styled.div`
   }
 `;
 
-export { ModalContainer };
+const OpenBtn = styled.button`
+  margin-bottom: 50px;
+`;
+
+export { ModalContainer, OpenBtn };

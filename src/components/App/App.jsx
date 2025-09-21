@@ -15,6 +15,10 @@ import PhonebookEditor from 'components/Phonebook/PhonebookEditor';
 import LoginForm from 'components/LoginForm/LoginForm';
 import ProductReviewForm from 'components/ProductReviewForm';
 import Modal from 'components/Modal';
+import { OpenBtn } from 'components/Modal/Modal.styled';
+import Clock from 'components/Clock';
+import initialTabs from '@/tabs.json';
+import Tabs from 'components/Tabs';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -133,7 +137,23 @@ class App extends Component {
           onDeleteTodo={this.deleteTodo}
           onToggleCompleted={this.toggleCompleted}
         >
-          <TodoEditor onSubmit={this.addTodo} />
+          <OpenBtn type="button" onClick={this.toggleModal}>
+            Open
+          </OpenBtn>
+          {showModal && (
+            <Modal onClose={this.toggleModal}>
+              <TodoEditor onSubmit={this.addTodo} />
+
+              <button
+                type="button"
+                className="Close__btn"
+                onClick={this.toggleModal}
+              >
+                Close
+              </button>
+            </Modal>
+          )}
+          {/* <TodoEditor onSubmit={this.addTodo} /> */}
           <TodoFilter value={filter} onChangeFilter={this.changeFilter} />
         </TodoList>
 
@@ -144,12 +164,12 @@ class App extends Component {
         <LoginForm />
 
         <ProductReviewForm />
-
-        <button type="button" onClick={this.toggleModal}>
+        {/* 
+        <OpenBtn type="button" onClick={this.toggleModal}>
           Open
-        </button>
+        </OpenBtn>
         {showModal && (
-          <Modal>
+          <Modal onClose={this.toggleModal}>
             <h1>Контент модалки</h1>
             <p>
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore
@@ -159,6 +179,9 @@ class App extends Component {
               incidunt cupiditate suscipit inventore nesciunt facere consectetur
               repudiandae perferendis! Inventore, deleniti a.
             </p>
+
+            <Clock />
+
             <button
               type="button"
               className="Close__btn"
@@ -167,7 +190,9 @@ class App extends Component {
               Close
             </button>
           </Modal>
-        )}
+        )} */}
+
+        <Tabs items={initialTabs} />
       </div>
     );
   }

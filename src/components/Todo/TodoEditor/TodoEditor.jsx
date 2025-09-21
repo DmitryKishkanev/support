@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import { TodoEditorForm } from 'components/Todo/TodoEditor/TodoEditor.styled';
 
 class TodoEditor extends Component {

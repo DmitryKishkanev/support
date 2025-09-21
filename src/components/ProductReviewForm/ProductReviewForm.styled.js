@@ -65,7 +65,6 @@ const DivForm = styled(Form)`
 
   input {
     width: 100%;
-    height: 33px;
     padding: 4px;
 
     border-radius: 4px;

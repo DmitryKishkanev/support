@@ -7,7 +7,7 @@ const Container = styled.div`
   padding: 15px;
 
   background-color: #d4f2ff;
-  border-radius: 5px;
+  border-radius: 4px;
 
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -55,29 +55,29 @@ const TodoItem = styled.li`
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
-  .todoItem__checkbox {
+  /* .todoItem__checkbox {
     width: 25px;
     height: 25px;
     margin-right: 10px;
-  }
+  } */
 `;
 
-const TodoText = styled.p`
-  height: 35px;
-  padding: 6px;
-  margin: 0 15px 0 0;
+// const TodoText = styled.p`
+//   height: 35px;
+//   padding: 6px;
+//   margin: 0 15px 0 0;
 
-  border-radius: 5px;
+//   border-radius: 5px;
 
-  font-weight: 400;
-  font-size: 20px !important;
-  line-height: 1.19;
-  text-align: center;
-  letter-spacing: 0.03em;
+//   font-weight: 400;
+//   font-size: 20px !important;
+//   line-height: 1.19;
+//   text-align: center;
+//   letter-spacing: 0.03em;
 
-  color: black !important;
+//   color: black !important;
 
-  text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
-`;
+//   text-decoration: ${({ completed }) => (completed ? 'line-through' : 'none')};
+// `;
 
-export { Container, TodoListBox, TodoItem, TodoText };
+export { Container, TodoListBox, TodoItem };
