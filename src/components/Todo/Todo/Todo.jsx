@@ -11,7 +11,7 @@ const Todo = ({ text, completed, onToggleCompleted, onDelete }) => (
       onChange={onToggleCompleted}
     />
     <TodoText completed={completed}>{text}</TodoText>
-    <IconButton onClick={onDelete}>
+    <IconButton onClick={onDelete} aria-label="Удалить todo">
       <DeleteIcon width="32" height="32" fill="red" />
     </IconButton>
   </>

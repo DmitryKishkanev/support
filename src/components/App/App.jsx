@@ -19,6 +19,8 @@ import { OpenBtn } from 'components/Modal/Modal.styled';
 import Clock from 'components/Clock';
 import initialTabs from '@/tabs.json';
 import Tabs from 'components/Tabs';
+import IconButton from 'components/Todo/IconButton';
+import AddIcon from '@/icons/add.svg?react';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -38,22 +40,30 @@ class App extends Component {
     todos: initialTodos,
     filter: '',
     showModal: false,
+    modalContent: null,
   };
 
-  // componentDidMount() {
-  //   const todos = localStorage.getItem('todos');
-  //   const parsedTodos = JSON.parse(todos);
+  componentDidMount() {
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
 
-  //   if (parsedTodos) {
-  //     this.setState({ todos: parsedTodos });
-  //   }
-  // }
+    if (parsedTodos) {
+      this.setState({ todos: parsedTodos });
+    }
+  }
 
-  // componentDidUpdate(prevProps, prevState) {
-  //   if (this.state.todos !== prevState.todos) {
-  //     localStorage.setItem('todos', JSON.stringify(this.state.todos));
-  //   }
-  // }
+  componentDidUpdate(prevProps, prevState) {
+    const nextTodos = this.state.todos;
+    const prevTodos = prevState.todos;
+
+    if (nextTodos !== prevTodos) {
+      localStorage.setItem('todos', JSON.stringify(nextTodos));
+    }
+
+    // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
+    //   this.toggleModal();
+    // }
+  }
 
   addTodo = todoText => {
     const todo = {
@@ -65,6 +75,8 @@ class App extends Component {
     this.setState(({ todos }) => ({
       todos: [todo, ...todos],
     }));
+
+    this.toggleModal();
   };
 
   deleteTodo = todoId => {
@@ -111,14 +123,21 @@ class App extends Component {
     console.log(data);
   };
 
-  toggleModal = () => {
-    this.setState(({ showModal }) => ({
-      showModal: !showModal,
+  // toggleModal = () => {
+  //   this.setState(({ showModal }) => ({
+  //     showModal: !showModal,
+  //   }));
+  // };
+
+  toggleModal = (content = null) => {
+    this.setState(prev => ({
+      showModal: !prev.showModal,
+      modalContent: content,
     }));
   };
 
   render() {
-    const { todos, filter, showModal } = this.state;
+    const { todos, filter, showModal, modalContent } = this.state;
 
     const filteredTodos = this.getFilteredTodos();
 
@@ -137,23 +156,14 @@ class App extends Component {
           onDeleteTodo={this.deleteTodo}
           onToggleCompleted={this.toggleCompleted}
         >
-          <OpenBtn type="button" onClick={this.toggleModal}>
-            Open
-          </OpenBtn>
-          {showModal && (
-            <Modal onClose={this.toggleModal}>
-              <TodoEditor onSubmit={this.addTodo} />
+          <IconButton
+            type="button"
+            onClick={() => this.toggleModal('todo')}
+            aria-label="Добавить todo"
+          >
+            <AddIcon width="32" height="32" fill="white" />
+          </IconButton>
 
-              <button
-                type="button"
-                className="Close__btn"
-                onClick={this.toggleModal}
-              >
-                Close
-              </button>
-            </Modal>
-          )}
-          {/* <TodoEditor onSubmit={this.addTodo} /> */}
           <TodoFilter value={filter} onChangeFilter={this.changeFilter} />
         </TodoList>
 
@@ -164,33 +174,55 @@ class App extends Component {
         <LoginForm />
 
         <ProductReviewForm />
-        {/* 
-        <OpenBtn type="button" onClick={this.toggleModal}>
-          Open
-        </OpenBtn>
+
+        <div className={style.timeFaceContainer}>
+          <h1 className={style.timeFaceTitle}>Time face</h1>
+          <OpenBtn type="button" onClick={() => this.toggleModal('info')}>
+            Open
+          </OpenBtn>
+        </div>
+
         {showModal && (
           <Modal onClose={this.toggleModal}>
-            <h1>Контент модалки</h1>
-            <p>
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore
-              omnis rem quam numquam iusto ipsa, laudantium expedita quo fuga!
-              Doloribus ad accusantium atque ullam, accusamus esse ipsam tempore
-              odit soluta nulla dolorum quidem voluptatem et cumque excepturi a
-              incidunt cupiditate suscipit inventore nesciunt facere consectetur
-              repudiandae perferendis! Inventore, deleniti a.
-            </p>
-
-            <Clock />
-
-            <button
-              type="button"
-              className="Close__btn"
-              onClick={this.toggleModal}
-            >
-              Close
-            </button>
+            {modalContent === 'todo' && (
+              <>
+                <TodoEditor
+                  onSubmit={this.addTodo}
+                  onClose={this.toggleModal}
+                />
+                <button
+                  type="button"
+                  className="Close__btn"
+                  onClick={this.toggleModal}
+                >
+                  Close
+                </button>
+              </>
+            )}
+            {modalContent === 'info' && (
+              <>
+                <h1>Контент модалки</h1>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Dolore omnis rem quam numquam iusto ipsa, laudantium expedita
+                  quo fuga! Doloribus ad accusantium atque ullam, accusamus esse
+                  ipsam tempore odit soluta nulla dolorum quidem voluptatem et
+                  cumque excepturi a incidunt cupiditate suscipit inventore
+                  nesciunt facere consectetur repudiandae perferendis!
+                  Inventore, deleniti a.
+                </p>
+                <Clock />
+                <button
+                  type="button"
+                  className="Close__btn"
+                  onClick={this.toggleModal}
+                >
+                  Close
+                </button>
+              </>
+            )}
           </Modal>
-        )} */}
+        )}
 
         <Tabs items={initialTabs} />
       </div>

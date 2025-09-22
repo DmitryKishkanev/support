@@ -15,7 +15,7 @@ const ModalContainer = styled.div`
     display: flex;
     flex-direction: column;
     transform: translate(-50%, -50%);
-    min-height: 300px;
+    /* min-height: 300px; */
     max-width: 600px;
     width: 100%;
     padding: 15px;
@@ -32,13 +32,17 @@ const ModalContainer = styled.div`
     text-align: center;
   }
 
+  p {
+    margin-top: 0;
+  }
+
   .Close__btn {
     margin-left: auto;
   }
 `;
 
 const OpenBtn = styled.button`
-  margin-bottom: 50px;
+  width: 100px;
 `;
 
 export { ModalContainer, OpenBtn };

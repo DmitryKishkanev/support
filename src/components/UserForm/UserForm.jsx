@@ -1,17 +1,17 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Form } from 'components/UserForm/UserForm.styled';
 
 export default class UserForm extends Component {
-  static propTypes = {
-    onSubmitForm: PropTypes.func.isRequired,
-  };
-
   state = {
     name: '',
     surname: '',
     experience: 'junior',
     license: false,
+  };
+
+  static propTypes = {
+    onSubmitForm: PropTypes.func.isRequired,
   };
 
   handleChange = event => {

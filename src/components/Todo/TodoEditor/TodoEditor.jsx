@@ -1,8 +1,14 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { TodoEditorForm } from 'components/Todo/TodoEditor/TodoEditor.styled';
 
 class TodoEditor extends Component {
   state = { message: '' };
+
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
 
   handleChange = e => {
     this.setState({ message: e.currentTarget.value });
