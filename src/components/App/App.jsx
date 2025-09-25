@@ -21,6 +21,7 @@ import initialTabs from '@/tabs.json';
 import Tabs from 'components/Tabs';
 import IconButton from 'components/Todo/IconButton';
 import AddIcon from '@/icons/add.svg?react';
+import Example from 'components/Player/Example';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -225,6 +226,8 @@ class App extends Component {
         )}
 
         <Tabs items={initialTabs} />
+
+        <Example />
       </div>
     );
   }
