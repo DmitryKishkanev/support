@@ -1,4 +1,4 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 import ContactFilter from 'components/Phonebook/ContactFilter';
 import {
   Container,
@@ -33,6 +33,20 @@ const PhonebookList = ({
       </ContactBox>
     </Container>
   );
+};
+
+PhonebookList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    }),
+  ),
+  filter: PropTypes.string.isRequired,
+  changeFilter: PropTypes.func.isRequired,
+  onDeleteContact: PropTypes.func.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default PhonebookList;

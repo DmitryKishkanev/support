@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { FilterLabel } from 'components/Phonebook/ContactFilter/ContactFilter.styled';
 
 const ContactFilter = ({ value, onChangeFilter }) => {
@@ -12,6 +13,11 @@ const ContactFilter = ({ value, onChangeFilter }) => {
       />
     </FilterLabel>
   );
+};
+
+ContactFilter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
 };
 
 export default ContactFilter;

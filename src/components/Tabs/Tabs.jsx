@@ -1,8 +1,18 @@
 import { PureComponent } from 'react';
+import PropTypes from 'prop-types';
 import { TabsBox, ItamsBox, ContentBox } from 'components/Tabs/Tabs.styled';
 
 class Tabs extends PureComponent {
   state = { activeTabIdx: 0 };
+
+  static propTypes = {
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        content: PropTypes.string.isRequired,
+      }),
+    ),
+  };
 
   // shouldComponentUpdate(nextProps, nextState) {
   //   return nextState.activeTabIdx !== this.state.activeTabIdx;

@@ -22,6 +22,8 @@ import Tabs from 'components/Tabs';
 import IconButton from 'components/Todo/IconButton';
 import AddIcon from '@/icons/add.svg?react';
 import Example from 'components/Player/Example';
+import ReaderComponent from 'components/Reader/ReaderComponent';
+import publication from '@/publications.json';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -228,6 +230,8 @@ class App extends Component {
         <Tabs items={initialTabs} />
 
         <Example />
+
+        <ReaderComponent items={publication} />
       </div>
     );
   }

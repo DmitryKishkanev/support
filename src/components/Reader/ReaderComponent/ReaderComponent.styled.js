@@ -1,12 +1,11 @@
 import styled from '@emotion/styled';
 
-const SelectedVideoContainer = styled.div`
+const ReaderComponentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 500px;
   padding: 15px;
-  margin-bottom: 50px;
 
   background-color: #d4f2ff;
   border-radius: 4px;
@@ -18,10 +17,10 @@ const SelectedVideoContainer = styled.div`
     margin-top: 0;
 
     font-weight: 700;
-    font-size: 20px;
+    font-size: 32px;
     line-height: 1.19;
     letter-spacing: 0.03em;
   }
 `;
 
-export { SelectedVideoContainer };
+export { ReaderComponentContainer };

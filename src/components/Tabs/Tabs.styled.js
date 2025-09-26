@@ -5,6 +5,7 @@ const TabsBox = styled.div`
   flex-direction: column;
   align-items: center;
   padding: 15px;
+  margin-bottom: 50px;
 
   background-color: #d4f2ff;
   border-radius: 4px;

@@ -1,15 +1,22 @@
-import ReactPlayer from 'react-player';
 import styled from '@emotion/styled';
+import ReactPlayer from 'react-player';
+
+const LoaderTitle = styled.h2`
+  margin: 0;
+`;
 
 const PlayerWrapper = styled.div`
   position: relative;
   padding-top: 56.25%;
+  width: 100%;
 `;
 
 const StyledPlayer = styled(ReactPlayer)`
   position: absolute;
-  top: 0;
-  left: 0;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
 
-export { PlayerWrapper, StyledPlayer };
+export { LoaderTitle, PlayerWrapper, StyledPlayer };
