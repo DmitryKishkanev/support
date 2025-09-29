@@ -24,6 +24,7 @@ import AddIcon from '@/icons/add.svg?react';
 import Example from 'components/Player/Example';
 import ReaderComponent from 'components/Reader/ReaderComponent';
 import publication from '@/publications.json';
+import Pokemon from 'components/Pokemon/Pokemon';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -232,6 +233,8 @@ class App extends Component {
         <Example />
 
         <ReaderComponent items={publication} />
+
+        <Pokemon />
       </div>
     );
   }

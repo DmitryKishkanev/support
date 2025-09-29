@@ -6,6 +6,7 @@ const ReaderComponentContainer = styled.div`
   align-items: center;
   width: 500px;
   padding: 15px;
+  margin-bottom: 50px;
 
   background-color: #d4f2ff;
   border-radius: 4px;
