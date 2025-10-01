@@ -2,6 +2,7 @@ import { Component } from 'react';
 import { ImSearch } from 'react-icons/im';
 import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
+import { PokemonFormBox } from 'components/Pokemon/PokemonForm/PokemonForm.styled';
 
 class PokemonForm extends Component {
   state = { pokemonName: '' };
@@ -27,7 +28,7 @@ class PokemonForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <PokemonFormBox onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="pokemonName"
@@ -38,7 +39,7 @@ class PokemonForm extends Component {
           <ImSearch style={{ marginRight: 8 }} />
           Найти
         </button>
-      </form>
+      </PokemonFormBox>
     );
   }
 }
