@@ -29,12 +29,15 @@ class PokemonForm extends Component {
   render() {
     return (
       <PokemonFormBox onSubmit={this.handleSubmit}>
-        <input
-          type="text"
-          name="pokemonName"
-          value={this.state.pokemonName}
-          onChange={this.handleNameChange}
-        />
+        <label>
+          <input
+            type="text"
+            name="pokemonName"
+            value={this.state.pokemonName}
+            onChange={this.handleNameChange}
+          />
+        </label>
+
         <button type="submit">
           <ImSearch style={{ marginRight: 8 }} />
           Найти

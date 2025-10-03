@@ -5,8 +5,13 @@ const PokemonFormBox = styled.form`
   gap: 15px;
   margin-bottom: 30px;
 
-  input {
+  label {
+    display: flex;
     width: 270px;
+  }
+
+  input {
+    width: 100%;
     padding: 4px;
 
     border-radius: 4px;

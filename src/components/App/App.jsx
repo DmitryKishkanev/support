@@ -25,6 +25,7 @@ import Example from 'components/Player/Example';
 import ReaderComponent from 'components/Reader/ReaderComponent';
 import publication from '@/publications.json';
 import Pokemon from 'components/Pokemon/Pokemon';
+import MaterialEditorForm from 'components/Material/MaterialEditorForm';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -141,7 +142,7 @@ class App extends Component {
   };
 
   render() {
-    const { todos, filter, showModal, modalContent } = this.state;
+    const { filter, showModal, modalContent } = this.state;
 
     const filteredTodos = this.getFilteredTodos();
 
@@ -235,6 +236,8 @@ class App extends Component {
         <ReaderComponent items={publication} />
 
         <Pokemon />
+
+        <MaterialEditorForm onSubmit={console.log} />
       </div>
     );
   }
