@@ -25,7 +25,7 @@ import Example from 'components/Player/Example';
 import ReaderComponent from 'components/Reader/ReaderComponent';
 import publication from '@/publications.json';
 import Pokemon from 'components/Pokemon/Pokemon';
-import MaterialEditorForm from 'components/Material/MaterialEditorForm';
+import MaterialRenderComponent from 'components/Materials/MaterialRenderComponent';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -237,7 +237,7 @@ class App extends Component {
 
         <Pokemon />
 
-        <MaterialEditorForm onSubmit={console.log} />
+        <MaterialRenderComponent />
       </div>
     );
   }
