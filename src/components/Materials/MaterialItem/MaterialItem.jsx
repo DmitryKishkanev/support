@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import Madal from 'components/Modal';
 
 export const EditMaterialModal = ({ onClose, onEdit }) => {
   return (
@@ -50,11 +51,20 @@ class MaterialItem extends Component {
         >
           Редактировать
         </button>
-        {isModalOpen && (
+        {/* {isModalOpen && (
           <EditMaterialModal
             onClose={this.closeModal}
             onEdit={() => onUpdate({ id: item.id, title: Date.now() })}
           />
+        )} */}
+
+        {isModalOpen && (
+          <Madal>
+            <EditMaterialModal
+              onClose={this.closeModal}
+              onEdit={() => onUpdate({ id: item.id, title: Date.now() })}
+            />
+          </Madal>
         )}
       </div>
     );
