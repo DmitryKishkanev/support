@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import errorImage from '@/assets/no-image.jpg';
 
 export default function PokemonErrorView({ message }) {
@@ -8,3 +9,7 @@ export default function PokemonErrorView({ message }) {
     </div>
   );
 }
+
+PokemonErrorView.propTypes = {
+  message: PropTypes.string.isRequired,
+};

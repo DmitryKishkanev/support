@@ -1,4 +1,8 @@
-export default function PokemonDataView({ pokemon: { sprites, name, stats } }) {
+import PropTypes from 'prop-types';
+
+export default function PokemonDataView({
+  PokemonDataView: { sprites, name, stats },
+}) {
   return (
     <div>
       <p>{name}</p>
@@ -17,3 +21,24 @@ export default function PokemonDataView({ pokemon: { sprites, name, stats } }) {
     </div>
   );
 }
+
+PokemonDataView.propTypes = {
+  PokemonDataView: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    sprites: PropTypes.shape({
+      other: PropTypes.shape({
+        'official-artwork': PropTypes.shape({
+          ront_default: PropTypes.string,
+        }),
+      }),
+    }),
+    stats: PropTypes.arrayOf(
+      PropTypes.shape({
+        base_stat: PropTypes.number,
+        stat: PropTypes.shape({
+          name: PropTypes.string,
+        }),
+      }),
+    ),
+  }).isRequired,
+};

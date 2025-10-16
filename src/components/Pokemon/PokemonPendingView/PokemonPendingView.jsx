@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import {
   SpinnerBox,
   StyledSpinner,
@@ -28,3 +29,7 @@ export default function PokemonPendingView({ pokemonName }) {
     </div>
   );
 }
+
+PokemonPendingView.propTypes = {
+  pokemonName: PropTypes.string.isRequired,
+};
