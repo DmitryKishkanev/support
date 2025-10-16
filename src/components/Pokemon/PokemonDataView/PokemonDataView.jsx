@@ -1,8 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function PokemonDataView({
-  PokemonDataView: { sprites, name, stats },
-}) {
+export default function PokemonDataView({ pokemon: { sprites, name, stats } }) {
   return (
     <div>
       <p>{name}</p>
@@ -23,7 +21,7 @@ export default function PokemonDataView({
 }
 
 PokemonDataView.propTypes = {
-  PokemonDataView: PropTypes.shape({
+  pokemon: PropTypes.shape({
     name: PropTypes.string.isRequired,
     sprites: PropTypes.shape({
       other: PropTypes.shape({
