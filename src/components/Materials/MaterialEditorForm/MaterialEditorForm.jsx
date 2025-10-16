@@ -1,4 +1,5 @@
 import { Formik, Field } from 'formik';
+import PropTypes from 'prop-types';
 import { MaterialForm } from 'components/Materials/MaterialEditorForm/MaterialEditorForm.styled';
 
 const MaterialEditorForm = ({ onSubmit }) => {
@@ -29,6 +30,10 @@ const MaterialEditorForm = ({ onSubmit }) => {
       )}
     </Formik>
   );
+};
+
+MaterialEditorForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };
 
 export default MaterialEditorForm;

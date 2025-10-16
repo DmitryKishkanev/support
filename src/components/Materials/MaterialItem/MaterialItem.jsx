@@ -1,33 +1,30 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Madal from 'components/Modal';
-
-export const EditMaterialModal = ({ onClose, onEdit }) => {
-  return (
-    <div>
-      <h2>Редактировать материал</h2>
-      <button
-        type="button"
-        onClick={() => {
-          onEdit();
-          onClose();
-        }}
-      >
-        Редактировать
-      </button>
-      <button type="button" onClick={onClose}>
-        Закрыть
-      </button>
-    </div>
-  );
-};
+import EditMaterialModal from 'components/Materials/EditMaterialModal';
 
 class MaterialItem extends Component {
   state = {
     isModalOpen: false,
   };
 
-  openModal = () => this.setState({ isModalOpen: true });
-  closeModal = () => this.setState({ isModalOpen: false });
+  static propTypes = {
+    items: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        link: PropTypes.string.isRequired,
+      }),
+    ),
+    onDelete: PropTypes.func.isRequired,
+    onUpdate: PropTypes.func.isRequired,
+  };
+
+  toggleModal = () => {
+    this.setState(prev => ({
+      isModalOpen: !prev.isModalOpen,
+    }));
+  };
 
   render() {
     const { item, onUpdate, onDelete } = this.props;
@@ -46,22 +43,16 @@ class MaterialItem extends Component {
 
         <button
           type="button"
-          onClick={this.openModal}
+          onClick={this.toggleModal}
           // onClick={() => onUpdate({ id: item.id, title: Date.now() })}
         >
           Редактировать
         </button>
-        {/* {isModalOpen && (
-          <EditMaterialModal
-            onClose={this.closeModal}
-            onEdit={() => onUpdate({ id: item.id, title: Date.now() })}
-          />
-        )} */}
 
         {isModalOpen && (
-          <Madal>
+          <Madal onClose={this.toggleModal}>
             <EditMaterialModal
-              onClose={this.closeModal}
+              onClose={this.toggleModal}
               onEdit={() => onUpdate({ id: item.id, title: Date.now() })}
             />
           </Madal>
