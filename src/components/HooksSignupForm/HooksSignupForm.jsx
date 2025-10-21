@@ -1,9 +1,13 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FormContainer } from 'components/HooksSignupForm/HooksSignupForm.styled';
 
 export default function HooksSignupForm() {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState(() => {
+    return JSON.parse(window.localStorage.getItem('email')) ?? '';
+  });
+  const [password, setPassword] = useState(() => {
+    return JSON.parse(window.localStorage.getItem('password')) ?? '';
+  });
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -21,6 +25,14 @@ export default function HooksSignupForm() {
         return;
     }
   };
+
+  useEffect(() => {
+    window.localStorage.setItem('email', JSON.stringify(email));
+  }, [email]);
+
+  useEffect(() => {
+    window.localStorage.setItem('password', JSON.stringify(password));
+  }, [password]);
 
   return (
     <FormContainer autoComplete="off">

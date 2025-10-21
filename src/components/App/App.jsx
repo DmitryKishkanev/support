@@ -28,6 +28,7 @@ import Pokemon from 'components/Pokemon/Pokemon';
 import MaterialRenderComponent from 'components/Materials/MaterialRenderComponent';
 import HooksSignupForm from 'components/HooksSignupForm';
 import HooksColorPicker from 'components/HooksColorPicker';
+import HooksCounter from 'components/HooksCounter';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -244,6 +245,8 @@ class App extends Component {
         <HooksSignupForm />
 
         <HooksColorPicker options={colorPickerOptions} />
+
+        <HooksCounter />
       </div>
     );
   }
