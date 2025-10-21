@@ -26,6 +26,8 @@ import ReaderComponent from 'components/Reader/ReaderComponent';
 import publication from '@/publications.json';
 import Pokemon from 'components/Pokemon/Pokemon';
 import MaterialRenderComponent from 'components/Materials/MaterialRenderComponent';
+import HooksSignupForm from 'components/HooksSignupForm';
+import HooksColorPicker from 'components/HooksColorPicker';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -238,6 +240,10 @@ class App extends Component {
         <Pokemon />
 
         <MaterialRenderComponent />
+
+        <HooksSignupForm />
+
+        <HooksColorPicker options={colorPickerOptions} />
       </div>
     );
   }

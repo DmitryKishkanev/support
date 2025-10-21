@@ -14,7 +14,7 @@ export default class ColorPicker extends PureComponent {
         label: PropTypes.string.isRequired,
         color: PropTypes.string.isRequired,
       }),
-    ),
+    ).isRequired,
   };
 
   setActiveIdx = index => {

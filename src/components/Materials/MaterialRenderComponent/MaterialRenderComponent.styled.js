@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 const MaterialContainer = styled.div`
   width: 500px;
   padding: 10px;
+  margin-bottom: 50px;
 
   background-color: #d4f2ff;
   border-radius: 4px;
