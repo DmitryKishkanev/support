@@ -1,13 +1,9 @@
-import { useState, useEffect } from 'react';
+import useLocalStorage from '@/hooks/useLocalStorage';
 import { FormContainer } from 'components/HooksSignupForm/HooksSignupForm.styled';
 
 export default function HooksSignupForm() {
-  const [email, setEmail] = useState(() => {
-    return JSON.parse(window.localStorage.getItem('email')) ?? '';
-  });
-  const [password, setPassword] = useState(() => {
-    return JSON.parse(window.localStorage.getItem('password')) ?? '';
-  });
+  const [email, setEmail] = useLocalStorage('email', '');
+  const [password, setPassword] = useLocalStorage('password', '');
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -26,13 +22,13 @@ export default function HooksSignupForm() {
     }
   };
 
-  useEffect(() => {
-    window.localStorage.setItem('email', JSON.stringify(email));
-  }, [email]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('email', JSON.stringify(email));
+  // }, [email]);
 
-  useEffect(() => {
-    window.localStorage.setItem('password', JSON.stringify(password));
-  }, [password]);
+  // useEffect(() => {
+  //   window.localStorage.setItem('password', JSON.stringify(password));
+  // }, [password]);
 
   return (
     <FormContainer autoComplete="off">
