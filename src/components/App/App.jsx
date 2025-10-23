@@ -29,6 +29,7 @@ import MaterialRenderComponent from 'components/Materials/MaterialRenderComponen
 import HooksSignupForm from 'components/HooksSignupForm';
 import HooksColorPicker from 'components/HooksColorPicker';
 import HooksCounter from 'components/HooksCounter';
+import HooksClock from 'components/HooksClock';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -247,6 +248,8 @@ class App extends Component {
         <HooksColorPicker options={colorPickerOptions} />
 
         <HooksCounter />
+
+        <HooksClock />
       </div>
     );
   }

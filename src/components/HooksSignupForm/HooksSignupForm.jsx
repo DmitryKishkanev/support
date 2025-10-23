@@ -22,14 +22,6 @@ export default function HooksSignupForm() {
     }
   };
 
-  // useEffect(() => {
-  //   window.localStorage.setItem('email', JSON.stringify(email));
-  // }, [email]);
-
-  // useEffect(() => {
-  //   window.localStorage.setItem('password', JSON.stringify(password));
-  // }, [password]);
-
   return (
     <FormContainer autoComplete="off">
       <h1>Форма регистрации</h1>
