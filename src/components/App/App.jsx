@@ -30,6 +30,7 @@ import HooksSignupForm from 'components/HooksSignupForm';
 import HooksColorPicker from 'components/HooksColorPicker';
 import HooksCounter from 'components/HooksCounter';
 import HooksClock from 'components/HooksClock';
+import AppBar from 'components/AppBar';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -250,6 +251,8 @@ class App extends Component {
         <HooksCounter />
 
         <HooksClock />
+
+        <AppBar />
       </div>
     );
   }
