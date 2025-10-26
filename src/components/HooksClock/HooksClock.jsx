@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { ClockBox } from 'components/HooksClock/HooksClock.styled';
 
 export default function HooksClock() {
   const [time, setTime] = useState(() => new Date());
@@ -17,11 +18,11 @@ export default function HooksClock() {
   };
 
   return (
-    <div>
+    <ClockBox>
       <p>Текущее время: {time.toLocaleTimeString()}</p>
       <button type="button" onClick={stop}>
         Остановить
       </button>
-    </div>
+    </ClockBox>
   );
 }

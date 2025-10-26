@@ -30,7 +30,7 @@ import HooksSignupForm from 'components/HooksSignupForm';
 import HooksColorPicker from 'components/HooksColorPicker';
 import HooksCounter from 'components/HooksCounter';
 import HooksClock from 'components/HooksClock';
-import AppBar from 'components/AppBar';
+import AppBar from '@/components/AppBarComponent/AppBar';
 import style from 'components/App/App.module.css';
 
 // export default function App() {

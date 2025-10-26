@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { CounterBox } from 'components/HooksCounter/HooksCounter.styled';
 
 export default function HooksCounter() {
   const [counterA, setCounterA] = useState(0);
   const [counterB, setCounterB] = useState(0);
+
+  const [totalClicks, setTotalClicks] = useState(0);
 
   const handleCounterAIncrement = () => {
     setCounterA(state => state + 1);
@@ -13,19 +16,28 @@ export default function HooksCounter() {
   };
 
   useEffect(() => {
-    const totalClicks = counterA + counterB;
+    setTotalClicks(counterA + counterB);
     document.title = `Всего кликнули ${totalClicks} раз`;
-  }, [counterA, counterB]);
+  }, [counterA, counterB, totalClicks]);
+
+  // useEffect(() => {
+  //   const totalClicks = counterA + counterB;
+  //   document.title = `Всего кликнули ${totalClicks} раз`;
+  // }, [counterA, counterB]);
 
   return (
-    <>
-      <button type="button" onClick={handleCounterAIncrement}>
-        Кликнули counterA {counterA} раз
-      </button>
+    <CounterBox>
+      <h2>Всего кликнули {totalClicks} раз</h2>
 
-      <button type="button" onClick={handleCounterBIncrement}>
-        Кликнули counterA {counterB} раз
-      </button>
-    </>
+      <div>
+        <button type="button" onClick={handleCounterAIncrement}>
+          Кликнули counterA {counterA} раз
+        </button>
+
+        <button type="button" onClick={handleCounterBIncrement}>
+          Кликнули counterA {counterB} раз
+        </button>
+      </div>
+    </CounterBox>
   );
 }
