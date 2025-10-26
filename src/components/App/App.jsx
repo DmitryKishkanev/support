@@ -31,6 +31,10 @@ import HooksColorPicker from 'components/HooksColorPicker';
 import HooksCounter from 'components/HooksCounter';
 import HooksClock from 'components/HooksClock';
 import AppBar from '@/components/AppBarComponent/AppBar';
+import SkipEffectOnFirstRender from 'components/SkipEffectOnFirstRender';
+import HooksPokemon from 'components/HooksPokemon/HooksPokemon';
+import Friends from 'components/Friends';
+import HooksUseReduserCounter from 'components/HooksUseReduserCounter';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -253,6 +257,14 @@ class App extends Component {
         <HooksClock />
 
         <AppBar />
+
+        <SkipEffectOnFirstRender />
+
+        <HooksPokemon />
+
+        <HooksUseReduserCounter />
+
+        <Friends />
       </div>
     );
   }

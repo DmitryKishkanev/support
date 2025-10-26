@@ -17,7 +17,6 @@ export default function HooksCounter() {
 
   useEffect(() => {
     setTotalClicks(counterA + counterB);
-    document.title = `Всего кликнули ${totalClicks} раз`;
   }, [counterA, counterB, totalClicks]);
 
   // useEffect(() => {

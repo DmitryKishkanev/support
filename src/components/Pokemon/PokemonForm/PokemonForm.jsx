@@ -1,6 +1,6 @@
 import { Component } from 'react';
-import { ImSearch } from 'react-icons/im';
 import PropTypes from 'prop-types';
+import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
 import { PokemonFormBox } from 'components/Pokemon/PokemonForm/PokemonForm.styled';
 
