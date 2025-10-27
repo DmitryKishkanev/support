@@ -1,6 +1,6 @@
 import styled from '@emotion/styled';
 
-export const OnFirstRenderBox = styled.div`
+export const FriendsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -22,5 +22,22 @@ export const OnFirstRenderBox = styled.div`
     font-size: 32px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+  }
+
+  input {
+    width: 270px;
+    padding: 4px;
+
+    border-radius: 4px;
+    background-color: white;
+
+    outline: none;
+    cursor: pointer;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: black;
   }
 `;

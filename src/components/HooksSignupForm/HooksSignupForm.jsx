@@ -18,12 +18,20 @@ export default function HooksSignupForm() {
         break;
 
       default:
-        return;
+        console.warn(`Тип поля - ${name} не обрабатывается`);
     }
   };
 
+  const handleSubmit = event => {
+    event.preventDefault();
+
+    console.log(email, password);
+    setEmail('');
+    setPassword('');
+  };
+
   return (
-    <FormContainer autoComplete="off">
+    <FormContainer autoComplete="off" onSubmit={handleSubmit}>
       <h1>Форма регистрации</h1>
       <label>
         <span>Почта</span>

@@ -16,6 +16,7 @@ export default function Provider({ children }) {
     setIsLoggedIn(false);
   };
 
+  // useMemo — это хук, который мемоизирует (кеширует) результат вычисления значения, чтобы не пересчитывать его при каждом рендере.
   const providerValue = useMemo(() => {
     return { user, isLoggedIn, onLogIn, onLogOut };
   }, [isLoggedIn, user]);

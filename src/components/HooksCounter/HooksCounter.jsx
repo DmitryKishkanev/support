@@ -34,7 +34,7 @@ export default function HooksCounter() {
         </button>
 
         <button type="button" onClick={handleCounterBIncrement}>
-          Кликнули counterA {counterB} раз
+          Кликнули counterB {counterB} раз
         </button>
       </div>
     </CounterBox>

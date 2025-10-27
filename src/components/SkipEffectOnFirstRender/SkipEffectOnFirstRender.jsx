@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { OnFirstRenderBox } from 'components/SkipEffectOnFirstRender/SkipEffectOnFirstRender.styled';
 
 export default function SkipEffectOnFirstRender() {
   const [count, setCount] = useState(0);
@@ -16,11 +17,12 @@ export default function SkipEffectOnFirstRender() {
   });
 
   return (
-    <div>
+    <OnFirstRenderBox>
+      <h1>SkipEffectOnFirstRender</h1>
       <button onClick={() => setCount(c => c + 1)}>{count}</button>
       <p>
         <code>useEffect</code> этот компонент не выполняется на первом рендере
       </p>
-    </div>
+    </OnFirstRenderBox>
   );
 }

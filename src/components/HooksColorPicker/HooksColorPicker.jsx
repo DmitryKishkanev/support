@@ -1,9 +1,9 @@
-import { useState } from 'react';
+import { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Container } from 'components/HooksColorPicker/HooksColorPicker.styled';
 
-export default function HooksColorPicker({ options }) {
+function HooksColorPicker({ options }) {
   const [activeOptionIdx, setActiveOptionIdx] = useState(0);
 
   const { label } = options[activeOptionIdx];
@@ -41,3 +41,6 @@ HooksColorPicker.propTypes = {
     }),
   ).isRequired,
 };
+
+//memo — это функция-обёртка для компонентов, которая предотвращает их повторный рендер, если пропсы не изменились.
+export default memo(HooksColorPicker);
