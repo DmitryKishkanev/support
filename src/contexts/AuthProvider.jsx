@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react';
-import authContext from '@/contexts/auth/Context';
-import avatar from '@/contexts/auth/avatar.png';
+import authContext from '@/contexts/authContext';
+import avatar from '@/contexts/avatar.png';
 
-export default function Provider({ children }) {
+export default function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
 import UserMenu from 'components/AppBarComponent/UserMenu';
-import authContext from '@/contexts/auth/Context';
+import authContext from '@/contexts/authContext';
 import { AppBarBox } from 'components/AppBarComponent/AppBar/AppBar.styled';
 
 export default function AppBar() {

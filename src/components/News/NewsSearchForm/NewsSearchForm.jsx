@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 
 export default function NewsSearchForm({ onSubmit }) {
   const [query, setQuery] = useState('');
@@ -8,7 +9,7 @@ export default function NewsSearchForm({ onSubmit }) {
   };
 
   const handleSubmit = e => {
-    e.prevendDefault();
+    e.preventDefault();
 
     onSubmit(query);
     setQuery('');
@@ -21,3 +22,7 @@ export default function NewsSearchForm({ onSubmit }) {
     </form>
   );
 }
+
+NewsSearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
