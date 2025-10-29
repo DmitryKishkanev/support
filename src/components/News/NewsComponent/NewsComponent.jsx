@@ -23,26 +23,25 @@ export default function NewsComponent() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [pageSize, setPageSize] = useState(1);
 
   useEffect(() => {
     if (!query) {
       return;
     }
 
-    const fetchArticles = ({ pageSize }) => {
+    const fetchArticles = () => {
       setIsLoading(true);
 
-      APIfetchArticles({ searchQuery: query, currentPage, pageSize: pageSize })
+      APIfetchArticles({ searchQuery: query, currentPage })
         .then(responseArticles => {
           setArticles(prevArticles => [...prevArticles, ...responseArticles]);
-          setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
+          // setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
         })
         .catch(error => setError(error.message))
         .finally(() => setIsLoading(false));
     };
 
-    fetchArticles(pageSize);
+    fetchArticles();
 
     // fetchArticles({ searchQuery: query, currentPage, pageSize })
     //   .then(responseArticles => {
@@ -51,14 +50,17 @@ export default function NewsComponent() {
     //   })
     //   .catch(error => setError(error.message))
     //   .finally(() => setIsLoading(false));
-  }, [currentPage, pageSize, query]);
+  }, [currentPage, query]);
+
+  const loadMore = () => {
+    setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
+  };
 
   const onChangeQuery = query => {
     setQuery(query);
     setCurrentPage(1);
     setArticles([]);
     setError(null);
-    setPageSize(1);
   };
 
   const shouldRenderLoadMoreButton = articles.length > 0 && !isLoading;
@@ -82,12 +84,7 @@ export default function NewsComponent() {
       </ul>
 
       {shouldRenderLoadMoreButton && (
-        <button
-          type="button"
-          onClick={() => {
-            setPageSize(prevPageSize => prevPageSize + 1);
-          }}
-        >
+        <button type="button" onClick={loadMore}>
           Загрузить ещё
         </button>
       )}

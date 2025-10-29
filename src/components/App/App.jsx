@@ -36,6 +36,7 @@ import HooksPokemon from 'components/HooksPokemon/HooksPokemon';
 import Friends from 'components/Friends';
 import HooksUseReduserCounter from 'components/HooksUseReduserCounter';
 import NewsComponent from 'components/News/NewsComponent';
+import LoadMoreComponent from 'components/LoadMoreComponent';
 import style from 'components/App/App.module.css';
 
 // export default function App() {
@@ -268,6 +269,8 @@ class App extends Component {
         <Friends />
 
         <NewsComponent />
+
+        <LoadMoreComponent />
       </div>
     );
   }
