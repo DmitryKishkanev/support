@@ -1,3 +1,5 @@
+const myKey = import.meta.env.VITE_TMDB_TOKEN;
+
 export default async function handler(request, response) {
   const { searchQuery = '', currentPage = 1, pageSize = 5 } = request.query;
 
@@ -5,7 +7,7 @@ export default async function handler(request, response) {
     `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=${pageSize}&page=${currentPage}`,
     {
       headers: {
-        Authorization: 'Bearer 2354ed4e6c9240248dc3bb35bb0911ea',
+        Authorization: `Bearer ${myKey}`,
       },
     },
   );

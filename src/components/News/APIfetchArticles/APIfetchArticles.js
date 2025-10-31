@@ -1,7 +1,8 @@
 import axios from 'axios';
 
-// axios.defaults.headers.common['Authorization'] =
-//   '2354ed4e6c9240248dc3bb35bb0911ea';
+// const myKey = import.meta.env.VITE_TMDB_TOKEN;
+
+// axios.defaults.headers.common['Authorization'] = `${myKey}`;
 
 // const APIfetchArticles = ({
 //   searchQuery = '',
