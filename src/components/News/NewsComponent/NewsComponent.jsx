@@ -33,6 +33,7 @@ export default function NewsComponent() {
 
     APIfetchArticles({ searchQuery: query, currentPage })
       .then(responseArticles => {
+        console.log('responseArticles:', responseArticles);
         setArticles(prevArticles => [...prevArticles, ...responseArticles]);
         // setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
       })
