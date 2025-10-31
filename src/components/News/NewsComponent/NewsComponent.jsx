@@ -1,21 +1,7 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
+import APIfetchArticles from 'components/News/APIfetchArticles';
 import NewsSearchForm from 'components/News/NewsSearchForm';
-
-axios.defaults.headers.common['Authorization'] =
-  '2354ed4e6c9240248dc3bb35bb0911ea';
-
-const APIfetchArticles = ({
-  searchQuery = '',
-  currentPage = 1,
-  pageSize = 5,
-} = {}) => {
-  return axios
-    .get(
-      `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=${pageSize}&page=${currentPage}`,
-    )
-    .then(response => response.data.articles);
-};
+import { NewsContainer } from 'components/News/NewsComponent/NewsComponent.styled';
 
 export default function NewsComponent() {
   const [articles, setArticles] = useState([]);
@@ -29,27 +15,29 @@ export default function NewsComponent() {
       return;
     }
 
-    const fetchArticles = () => {
-      setIsLoading(true);
+    // const fetchArticles = () => {
+    //   setIsLoading(true);
 
-      APIfetchArticles({ searchQuery: query, currentPage })
-        .then(responseArticles => {
-          setArticles(prevArticles => [...prevArticles, ...responseArticles]);
-          // setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
-        })
-        .catch(error => setError(error.message))
-        .finally(() => setIsLoading(false));
-    };
+    //   APIfetchArticles({ searchQuery: query, currentPage })
+    //     .then(responseArticles => {
+    //       setArticles(prevArticles => [...prevArticles, ...responseArticles]);
+    //       // setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
+    //     })
+    //     .catch(error => setError(error.message))
+    //     .finally(() => setIsLoading(false));
+    // };
 
-    fetchArticles();
+    // fetchArticles();
 
-    // fetchArticles({ searchQuery: query, currentPage, pageSize })
-    //   .then(responseArticles => {
-    //     setArticles(prevArticles => [...prevArticles, ...responseArticles]);
-    //     setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
-    //   })
-    //   .catch(error => setError(error.message))
-    //   .finally(() => setIsLoading(false));
+    setIsLoading(true);
+
+    APIfetchArticles({ searchQuery: query, currentPage })
+      .then(responseArticles => {
+        setArticles(prevArticles => [...prevArticles, ...responseArticles]);
+        // setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
+      })
+      .catch(error => setError(error.message))
+      .finally(() => setIsLoading(false));
   }, [currentPage, query]);
 
   const loadMore = () => {
@@ -66,9 +54,7 @@ export default function NewsComponent() {
   const shouldRenderLoadMoreButton = articles.length > 0 && !isLoading;
 
   return (
-    <>
-      <h1>News</h1>
-
+    <NewsContainer>
       <NewsSearchForm onSubmit={onChangeQuery} />
 
       {error && <h2>Ой ошибка, всё пропало!!!</h2>}
@@ -101,6 +87,6 @@ export default function NewsComponent() {
           </span>
         </p>
       )}
-    </>
+    </NewsContainer>
   );
 }

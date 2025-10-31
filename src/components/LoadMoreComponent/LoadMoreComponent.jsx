@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { LoadMoreComponentContainer } from 'components/LoadMoreComponent/LoadMoreComponent.styled';
 
 const LoadMoreComponent = () => {
   const [page, setPage] = useState(1);
@@ -19,19 +20,23 @@ const LoadMoreComponent = () => {
   };
 
   useEffect(() => {
+    if (!query) {
+      return;
+    }
     console.log(page);
     console.log(query);
   }, [page, query]);
 
   return (
-    <div>
+    <LoadMoreComponentContainer>
+      <h1>Load more component</h1>
       <form onSubmit={handleSubmit}>
         <input type="text" name="query" />
         <button type="submit">Search</button>
       </form>
 
-      <button onClick={loadMore}>Load more</button>
-    </div>
+      {query && <button onClick={loadMore}>Load more</button>}
+    </LoadMoreComponentContainer>
   );
 };
 

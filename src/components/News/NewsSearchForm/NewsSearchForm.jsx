@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
+import { NewsForm } from 'components/News/NewsSearchForm/NewsSearchForm.styled';
 
 export default function NewsSearchForm({ onSubmit }) {
   const [query, setQuery] = useState('');
@@ -16,10 +17,13 @@ export default function NewsSearchForm({ onSubmit }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={query} onChange={handleChange} />
-      <button type="submit">Искать</button>
-    </form>
+    <NewsForm onSubmit={handleSubmit}>
+      <h1>News</h1>
+      <div>
+        <input type="text" value={query} onChange={handleChange} />
+        <button type="submit">Искать</button>
+      </div>
+    </NewsForm>
   );
 }
 
