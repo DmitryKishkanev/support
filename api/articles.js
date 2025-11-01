@@ -1,4 +1,4 @@
-const myKey = import.meta.env.VITE_TMDB_TOKEN;
+const myKey = process.env.VITE_TMDB_TOKEN;
 
 export default async function handler(request, response) {
   const { searchQuery = '', currentPage = 1, pageSize = 5 } = request.query;
