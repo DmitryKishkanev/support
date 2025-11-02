@@ -38,7 +38,7 @@ export default function NewsComponent() {
   };
 
   const onChangeQuery = query => {
-    setQuery(query);
+    setQuery(query.trim());
     setCurrentPage(1);
     setArticles([]);
     setError(null);
