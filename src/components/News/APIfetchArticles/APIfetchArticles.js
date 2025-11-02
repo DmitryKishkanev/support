@@ -4,28 +4,26 @@ import axios from 'axios';
 
 // axios.defaults.headers.common['Authorization'] = `${myKey}`;
 
-// const APIfetchArticles = ({
+// const APIfetchArticles = async ({
 //   searchQuery = '',
 //   currentPage = 1,
 //   pageSize = 5,
 // } = {}) => {
-//   return axios
-//     .get(
-//       `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=${pageSize}&page=${currentPage}`,
-//     )
-//     .then(response => response.data.articles);
+//   const response = await axios.get(
+//     `https://newsapi.org/v2/everything?q=${searchQuery}&pageSize=${pageSize}&page=${currentPage}`,
+//   );
+//   return response.data.articles;
 // };
 
-export const APIfetchArticles = ({
+export const APIfetchArticles = async ({
   searchQuery = '',
   currentPage = 1,
   pageSize = 5,
 } = {}) => {
-  return axios
-    .get('/api/articles', {
-      params: { searchQuery, currentPage, pageSize },
-    })
-    .then(res => res.data);
+  const response = await axios.get('/api/articles', {
+    params: { searchQuery, currentPage, pageSize },
+  });
+  return response.data;
 };
 
 export default APIfetchArticles;

@@ -15,29 +15,22 @@ export default function NewsComponent() {
       return;
     }
 
-    // const fetchArticles = () => {
-    //   setIsLoading(true);
+    const fetchArticles = async () => {
+      try {
+        setIsLoading(true);
+        const resArticles = await APIfetchArticles({
+          searchQuery: query,
+          currentPage,
+        });
+        setArticles(prevArticles => [...prevArticles, ...resArticles]);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
 
-    //   APIfetchArticles({ searchQuery: query, currentPage })
-    //     .then(responseArticles => {
-    //       setArticles(prevArticles => [...prevArticles, ...responseArticles]);
-    //       // setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
-    //     })
-    //     .catch(error => setError(error.message))
-    //     .finally(() => setIsLoading(false));
-    // };
-
-    // fetchArticles();
-
-    setIsLoading(true);
-
-    APIfetchArticles({ searchQuery: query, currentPage })
-      .then(responseArticles => {
-        setArticles(prevArticles => [...prevArticles, ...responseArticles]);
-        // setCurrentPage(prevCurrentPage => prevCurrentPage + 1);
-      })
-      .catch(error => setError(error.message))
-      .finally(() => setIsLoading(false));
+    fetchArticles();
   }, [currentPage, query]);
 
   const loadMore = () => {
