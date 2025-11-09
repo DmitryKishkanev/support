@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { NavLink, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 // import shortid from 'shortid';
 // import SignupForm from 'components/UseLocalStorage/UseLocalStorage';
 // import Counter from '@/components/Counter/Counter';
@@ -40,6 +40,12 @@ import { NavLink, Route, Routes } from 'react-router-dom';
 // import LoadMoreComponent from 'components/LoadMoreComponent';
 // import ContextApp from 'components/ContextAlert/ContextApp';
 import style from 'components/App/App.module.css';
+import Home from '@/pages/Home';
+import Dogs from '@/pages/Dogs';
+import DogGetails from '@/pages/DogDetails';
+import Layout from '../Layout';
+import Gallery from '../Gallery';
+import Subbreeds from '../Subbreeds';
 
 // export default function App() {
 //   return (
@@ -287,18 +293,15 @@ class App extends Component {
   render() {
     return (
       <div className={style.app}>
-        <ul>
-          <li>
-            <NavLink to="/">Домашняя</NavLink>
-          </li>
-          <li>
-            <NavLink to="/dogs">Коллекция</NavLink>
-          </li>
-        </ul>
-
         <Routes>
-          <Route path="/" element={<div>Домашняя</div>}></Route>
-          <Route path="/dogs" element={<div>Коллекция</div>}></Route>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="/dogs" element={<Dogs />} />
+            <Route path="/dogs/:dogId" element={<DogGetails />}>
+              <Route path="subbreeds" element={<Subbreeds />} />
+              <Route path="gallery" element={<Gallery />} />
+            </Route>
+          </Route>
         </Routes>
       </div>
     );
