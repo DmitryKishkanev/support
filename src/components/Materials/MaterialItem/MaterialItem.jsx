@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import Madal from 'components/Modal';
+import Madal from '@/components/Modal/Modal';
 import EditMaterialModal from 'components/Materials/EditMaterialModal';
 
 class MaterialItem extends Component {

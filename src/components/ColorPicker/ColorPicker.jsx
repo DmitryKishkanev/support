@@ -35,7 +35,7 @@ export default class ColorPicker extends PureComponent {
 
     return (
       <Container>
-        <h2 className="ColorPicker__title">Выбор цвета</h2>
+        <h2 className="ColorPicker__title">Color Picker</h2>
         <p>Выбран цвет: {label}</p>
 
         <div>

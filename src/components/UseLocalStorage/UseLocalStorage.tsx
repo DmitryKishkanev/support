@@ -53,7 +53,7 @@ export default function SignupForm() {
 
   return (
     <form autoComplete="off" className={css.form}>
-      <h2 className={css.form__name}>Форма регистрации</h2>
+      <h2 className={css.form__name}>Use Local Storage</h2>
       <div className={css.form__box}>
         <label className={css.label}>
           <span className={css.label__name}>Почта</span>

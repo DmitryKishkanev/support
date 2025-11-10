@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
 import PropTypes from 'prop-types';
-import { ModalContainer } from 'components/Modal/Modal.styled';
+import { ModalContainer } from 'components/Modal/Modal/Modal.styled';
 
 const modalRoot = document.querySelector('#modal-root');
 
@@ -12,10 +12,12 @@ export default class Modal extends Component {
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleKeyDown);
+    document.body.style.overflow = 'hidden';
   }
 
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleKeyDown);
+    document.body.style.overflow = '';
   }
 
   handleKeyDown = e => {

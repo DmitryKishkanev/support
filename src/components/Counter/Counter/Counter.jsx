@@ -35,7 +35,7 @@ export default class Counter extends Component {
 
     return (
       <CounterContainer>
-        <Title text={'Счетчик'} />
+        <Title text={'Counter'} />
         <Value value={value} />
 
         <Controls
