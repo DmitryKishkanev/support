@@ -1,8 +1,7 @@
-// import { Component } from 'react';
-// import { Route, Routes } from 'react-router-dom';
-import UserFormComponent from '../UserForm/UserFormComponent';
+import { Route, Routes } from 'react-router-dom';
+import UserFormApp from 'components/UserForm/UserFormApp';
 import SignupForm from 'components/UseLocalStorage/UseLocalStorage';
-import Counter from '@/components/Counter/Counter';
+import CounterApp from 'components/Counter/CounterApp';
 import Dropdown from 'components/Dropdown';
 import ColorPicker from 'components/ColorPicker';
 import colorPickerOptions from '@/colorPickerOptions.json';
@@ -11,29 +10,113 @@ import CafeFeedbackComponent from 'components/CafeFeedback/CafeFeedbackComponent
 import PhonebookEditor from 'components/Phonebook/PhonebookEditor';
 import LoginForm from 'components/LoginForm/LoginForm';
 import ProductReviewForm from 'components/ProductReviewForm';
-import ModalComponent from 'components/Modal/ModalComponent';
-import initialTabs from '@/tabs.json';
+import ModalApp from 'components/Modal/ModalApp';
 import Tabs from 'components/Tabs';
-// import IconButton from 'components/Todo/IconButton';
-// import AddIcon from '@/icons/add.svg?react';
+import initialTabs from '@/tabs.json';
 import Example from 'components/Player/Example';
 import ReaderComponent from 'components/Reader/ReaderComponent';
 import publication from '@/publications.json';
 import Pokemon from 'components/Pokemon/Pokemon';
-// import MaterialRenderComponent from 'components/Materials/MaterialRenderComponent';
+import MaterialRenderComponent from 'components/Materials/MaterialRenderComponent';
 import HooksSignupForm from 'components/HooksSignupForm';
 import HooksColorPicker from 'components/HooksColorPicker';
 import HooksCounter from 'components/HooksCounter';
-import HooksClock from 'components/HooksClock';
-import AppBar from '@/components/AppBarComponent/AppBar';
-import SkipEffectOnFirstRender from 'components/SkipEffectOnFirstRender';
-import HooksPokemon from 'components/HooksPokemon/HooksPokemon';
-import Friends from 'components/Friends';
-import HooksUseReduserCounter from 'components/HooksUseReduserCounter';
-import NewsComponent from 'components/News/NewsComponent';
-import LoadMoreComponent from 'components/LoadMoreComponent';
-import ContextApp from 'components/ContextAlert/ContextApp';
+// import HooksClock from 'components/HooksClock';
+// import AppBar from '@/components/AppBarComponent/AppBar';
+// import SkipEffectOnFirstRender from 'components/SkipEffectOnFirstRender';
+// import HooksPokemon from 'components/HooksPokemon/HooksPokemon';
+// import Friends from 'components/Friends';
+// import HooksUseReduserCounter from 'components/HooksUseReduserCounter';
+// import NewsComponent from 'components/News/NewsComponent';
+// import LoadMoreComponent from 'components/LoadMoreComponent';
+// import ContextApp from 'components/ContextAlert/ContextApp';
 import style from 'components/App/App.module.css';
+
+import Layout from '../Layout';
+
+export default function App() {
+  return (
+    <div className={style.app}>
+      <Routes>
+        <Route path="/" element={<Layout />} />
+
+        <Route path="/UserForm" element={<UserFormApp />} />
+        <Route path="/SignupForm" element={<SignupForm />} />
+        <Route path="/Counter" element={<CounterApp />} />
+        <Route path="/Dropdown" element={<Dropdown />} />
+        <Route
+          path="/ColorPicker"
+          element={<ColorPicker options={colorPickerOptions} />}
+        />
+        <Route path="/TodoComponent" element={<TodoComponent />} />
+        <Route
+          path="/CafeFeedbackComponent"
+          element={<CafeFeedbackComponent />}
+        />
+        <Route path="/PhonebookEditor" element={<PhonebookEditor />} />
+        <Route path="/LoginForm" element={<LoginForm />} />
+        <Route path="/ProductReviewForm" element={<ProductReviewForm />} />
+        <Route path="/ModalApp" element={<ModalApp />} />
+        <Route path="/Tabs" element={<Tabs items={initialTabs} />} />
+        <Route path="/Example" element={<Example />} />
+        <Route
+          path="/ReaderComponent"
+          element={<ReaderComponent items={publication} />}
+        />
+        <Route path="/Pokemon" element={<Pokemon />} />
+        <Route
+          path="/MaterialRenderComponent"
+          element={<MaterialRenderComponent />}
+        />
+        <Route path="/HooksSignupForm" element={<HooksSignupForm />} />
+        <Route
+          path="/HooksColorPicker"
+          element={<HooksColorPicker options={colorPickerOptions} />}
+        />
+        <Route path="/HooksCounter" element={<HooksCounter />} />
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+        {/* <Route path="/" element={ } /> */}
+      </Routes>
+      {/* <UserFormComponent /> */}
+      {/* <SignupForm />
+      <Counter />
+      <Counter initialValue={10} />
+      <Dropdown />
+      <ColorPicker options={colorPickerOptions} />
+      <TodoComponent />
+      <CafeFeedbackComponent />
+      <PhonebookEditor />
+      <LoginForm />
+      <ProductReviewForm />
+      <ModalComponent />
+      <Tabs items={initialTabs} />
+      <Example />
+      <ReaderComponent items={publication} />
+      <Pokemon />
+      <MaterialRenderComponent />
+      <HooksSignupForm />
+      <HooksColorPicker options={colorPickerOptions} />
+      <HooksCounter />
+      <HooksClock />
+      <AppBar />
+      <SkipEffectOnFirstRender />
+      <HooksPokemon />
+      <HooksUseReduserCounter />
+      <Friends />
+      <NewsComponent />
+      <LoadMoreComponent />
+      <ContextApp /> */}
+    </div>
+  );
+}
 
 // import Home from '@/pages/Home';
 // import Dogs from '@/pages/Dogs';
@@ -41,244 +124,6 @@ import style from 'components/App/App.module.css';
 // import Layout from '../Layout';
 // import Gallery from '../Gallery';
 // import Subbreeds from '../Subbreeds';
-
-// export default function App() {
-//   return (
-//     <div className={style.app}>
-//       <SignupForm />
-//       <Counter />
-//       <Counter initialValue={10} />
-//       <Dropdown />
-//       <ColorPicker options={colorPickerOptions} />
-//     </div>
-//   );
-// }
-
-// export default class App extends Component {
-//   state = {
-//     todos: initialTodos,
-//     filter: '',
-//     showModal: false,
-//     modalContent: null,
-//   };
-
-//   componentDidMount() {
-//     const todos = localStorage.getItem('todos');
-//     const parsedTodos = JSON.parse(todos);
-
-//     if (parsedTodos) {
-//       this.setState({ todos: parsedTodos });
-//     }
-//   }
-
-//   componentDidUpdate(prevProps, prevState) {
-//     const nextTodos = this.state.todos;
-//     const prevTodos = prevState.todos;
-
-//     if (nextTodos !== prevTodos) {
-//       localStorage.setItem('todos', JSON.stringify(nextTodos));
-//     }
-
-//     // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
-//     //   this.toggleModal();
-//     // }
-//   }
-
-//   addTodo = todoText => {
-//     const todo = {
-//       id: shortid.generate(),
-//       text: todoText,
-//       completed: false,
-//     };
-
-//     this.setState(({ todos }) => ({
-//       todos: [todo, ...todos],
-//     }));
-
-//     this.toggleModal();
-//   };
-
-//   deleteTodo = todoId => {
-//     this.setState(prevState => ({
-//       todos: prevState.todos.filter(todo => todo.id !== todoId),
-//     }));
-//   };
-
-//   toggleCompleted = todoId => {
-//     // this.setState(prevState => ({
-//     //   todos: prevState.todos.map(todo => {
-//     //     if (todo.id === todoId) {
-//     //       return {
-//     //         ...todo,
-//     //         completed: !todo.completed,
-//     //       };
-//     //     }
-
-//     //     return todo;
-//     //   }),
-//     // }));
-
-//     this.setState(({ todos }) => ({
-//       todos: todos.map(todo =>
-//         todo.id === todoId ? { ...todo, completed: !todo.completed } : todo,
-//       ),
-//     }));
-//   };
-
-//   changeFilter = e => {
-//     this.setState({ filter: e.currentTarget.value });
-//   };
-
-//   getFilteredTodos = () => {
-//     const { filter, todos } = this.state;
-//     const normalizedFilter = filter.toLowerCase();
-
-//     return todos.filter(todo =>
-//       todo.text.toLowerCase().includes(normalizedFilter),
-//     );
-//   };
-
-//   // toggleModal = () => {
-//   //   this.setState(({ showModal }) => ({
-//   //     showModal: !showModal,
-//   //   }));
-//   // };
-
-//   toggleModal = (content = null) => {
-//     this.setState(prev => ({
-//       showModal: !prev.showModal,
-//       modalContent: content,
-//     }));
-//   };
-
-//   render() {
-//     const { filter, showModal, modalContent } = this.state;
-
-//     const filteredTodos = this.getFilteredTodos();
-
-//     return (
-//       <div className={style.app}>
-//         <UserFormComponent />
-
-//         <SignupForm />
-
-//         <Counter />
-//         <Counter initialValue={10} />
-
-//         <Dropdown />
-
-//         <ColorPicker options={colorPickerOptions} />
-
-//         <TodoList
-//           todos={filteredTodos}
-//           onDeleteTodo={this.deleteTodo}
-//           onToggleCompleted={this.toggleCompleted}
-//         >
-//           <IconButton
-//             type="button"
-//             onClick={() => this.toggleModal('todo')}
-//             aria-label="Добавить todo"
-//           >
-//             <AddIcon width="32" height="32" fill="white" />
-//           </IconButton>
-
-//           <TodoFilter value={filter} onChangeFilter={this.changeFilter} />
-//         </TodoList>
-
-//         <CafeFeedbackComponent />
-
-//         <PhonebookEditor />
-
-//         <LoginForm />
-
-//         <ProductReviewForm />
-
-//         <div className={style.timeFaceContainer}>
-//           <h1 className={style.timeFaceTitle}>Time face</h1>
-//           <OpenBtn type="button" onClick={() => this.toggleModal('info')}>
-//             Open
-//           </OpenBtn>
-//         </div>
-
-//         {showModal && (
-//           <Modal onClose={this.toggleModal}>
-//             {modalContent === 'todo' && (
-//               <>
-//                 <TodoEditor
-//                   onSubmit={this.addTodo}
-//                   onClose={this.toggleModal}
-//                 />
-//                 <button
-//                   type="button"
-//                   className="Close__btn"
-//                   onClick={this.toggleModal}
-//                 >
-//                   Close
-//                 </button>
-//               </>
-//             )}
-//             {modalContent === 'info' && (
-//               <>
-//                 <h1>Контент модалки</h1>
-//                 <p>
-//                   Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-//                   Dolore omnis rem quam numquam iusto ipsa, laudantium expedita
-//                   quo fuga! Doloribus ad accusantium atque ullam, accusamus esse
-//                   ipsam tempore odit soluta nulla dolorum quidem voluptatem et
-//                   cumque excepturi a incidunt cupiditate suscipit inventore
-//                   nesciunt facere consectetur repudiandae perferendis!
-//                   Inventore, deleniti a.
-//                 </p>
-//                 <Clock />
-//                 <button
-//                   type="button"
-//                   className="Close__btn"
-//                   onClick={this.toggleModal}
-//                 >
-//                   Close
-//                 </button>
-//               </>
-//             )}
-//           </Modal>
-//         )}
-
-//         <Tabs items={initialTabs} />
-
-//         <Example />
-
-//         <ReaderComponent items={publication} />
-
-//         <Pokemon />
-
-//         <MaterialRenderComponent />
-
-//         <HooksSignupForm />
-
-//         <HooksColorPicker options={colorPickerOptions} />
-
-//         <HooksCounter />
-
-//         <HooksClock />
-
-//         <AppBar />
-
-//         <SkipEffectOnFirstRender />
-
-//         <HooksPokemon />
-
-//         <HooksUseReduserCounter />
-
-//         <Friends />
-
-//         <NewsComponent />
-
-//         <LoadMoreComponent />
-
-//         <ContextApp />
-//       </div>
-//     );
-//   }
-// }
 
 // class App extends Component {
 //   render() {
@@ -300,39 +145,3 @@ import style from 'components/App/App.module.css';
 // }
 
 // export default App;
-
-export default function App() {
-  return (
-    <div className={style.app}>
-      <UserFormComponent />
-      <SignupForm />
-      <Counter />
-      <Counter initialValue={10} />
-      <Dropdown />
-      <ColorPicker options={colorPickerOptions} />
-      <TodoComponent />
-      <CafeFeedbackComponent />
-      <PhonebookEditor />
-      <LoginForm />
-      <ProductReviewForm />
-      <ModalComponent />
-      <Tabs items={initialTabs} />
-      <Example />
-      <ReaderComponent items={publication} />
-      <Pokemon />
-      {/* <MaterialRenderComponent /> */}
-      <HooksSignupForm />
-      <HooksColorPicker options={colorPickerOptions} />
-      <HooksCounter />
-      <HooksClock />
-      <AppBar />
-      <SkipEffectOnFirstRender />
-      <HooksPokemon />
-      <HooksUseReduserCounter />
-      <Friends />
-      <NewsComponent />
-      <LoadMoreComponent />
-      <ContextApp />
-    </div>
-  );
-}

@@ -5,9 +5,9 @@ import Clock from 'components/Clock';
 import {
   TimeFaceContainer,
   TimeFaceTitle,
-} from 'components/Modal/ModalComponent/ModalComponent.styled';
+} from 'components/Modal/ModalApp/ModalApp.styled';
 
-export default class ModalComponent extends Component {
+export default class ModalApp extends Component {
   state = { showModal: false };
 
   toggleModal = () => {

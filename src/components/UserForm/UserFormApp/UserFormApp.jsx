@@ -1,6 +1,6 @@
-import UserForm from '../UserForm/UserForm';
+import UserForm from 'components/UserForm/UserForm';
 
-export default function UserFormComponent() {
+export default function UserFormApp() {
   const formSubmitHandler = data => {
     console.log(data);
   };
