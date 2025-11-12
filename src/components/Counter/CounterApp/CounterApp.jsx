@@ -1,10 +1,11 @@
 import Counter from 'components/Counter/Counter';
+import { CounterAppContainer } from 'components/Counter/CounterApp/CounterApp.styled';
 
 export default function CounterApp() {
   return (
-    <div>
+    <CounterAppContainer>
       <Counter />
       <Counter initialValue={10} />
-    </div>
+    </CounterAppContainer>
   );
 }

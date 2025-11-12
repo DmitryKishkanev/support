@@ -21,15 +21,15 @@ import MaterialRenderComponent from 'components/Materials/MaterialRenderComponen
 import HooksSignupForm from 'components/HooksSignupForm';
 import HooksColorPicker from 'components/HooksColorPicker';
 import HooksCounter from 'components/HooksCounter';
-// import HooksClock from 'components/HooksClock';
-// import AppBar from '@/components/AppBarComponent/AppBar';
-// import SkipEffectOnFirstRender from 'components/SkipEffectOnFirstRender';
-// import HooksPokemon from 'components/HooksPokemon/HooksPokemon';
-// import Friends from 'components/Friends';
-// import HooksUseReduserCounter from 'components/HooksUseReduserCounter';
-// import NewsComponent from 'components/News/NewsComponent';
-// import LoadMoreComponent from 'components/LoadMoreComponent';
-// import ContextApp from 'components/ContextAlert/ContextApp';
+import HooksClock from 'components/HooksClock';
+import AppBar from 'components/AppBarComponent/AppBar';
+import SkipEffectOnFirstRender from 'components/SkipEffectOnFirstRender';
+import HooksPokemon from 'components/HooksPokemon/HooksPokemon';
+import HooksUseReduserCounter from 'components/HooksUseReduserCounter';
+import Friends from 'components/Friends';
+import NewsComponent from 'components/News/NewsComponent';
+import LoadMoreComponent from 'components/LoadMoreComponent';
+import ContextApp from 'components/ContextAlert/ContextApp';
 import style from 'components/App/App.module.css';
 
 import Layout from '../Layout';
@@ -74,46 +74,22 @@ export default function App() {
           element={<HooksColorPicker options={colorPickerOptions} />}
         />
         <Route path="/HooksCounter" element={<HooksCounter />} />
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
-        {/* <Route path="/" element={ } /> */}
+        <Route path="/HooksClock" element={<HooksClock />} />
+        <Route path="/AppBar" element={<AppBar />} />
+        <Route
+          path="/SkipEffectOnFirstRender"
+          element={<SkipEffectOnFirstRender />}
+        />
+        <Route path="/HooksPokemon" element={<HooksPokemon />} />
+        <Route
+          path="/HooksUseReduserCounter"
+          element={<HooksUseReduserCounter />}
+        />
+        <Route path="/Friends" element={<Friends />} />
+        <Route path="/NewsComponent" element={<NewsComponent />} />
+        <Route path="/LoadMoreComponent" element={<LoadMoreComponent />} />
+        <Route path="/ContextApp" element={<ContextApp />} />
       </Routes>
-      {/* <UserFormComponent /> */}
-      {/* <SignupForm />
-      <Counter />
-      <Counter initialValue={10} />
-      <Dropdown />
-      <ColorPicker options={colorPickerOptions} />
-      <TodoComponent />
-      <CafeFeedbackComponent />
-      <PhonebookEditor />
-      <LoginForm />
-      <ProductReviewForm />
-      <ModalComponent />
-      <Tabs items={initialTabs} />
-      <Example />
-      <ReaderComponent items={publication} />
-      <Pokemon />
-      <MaterialRenderComponent />
-      <HooksSignupForm />
-      <HooksColorPicker options={colorPickerOptions} />
-      <HooksCounter />
-      <HooksClock />
-      <AppBar />
-      <SkipEffectOnFirstRender />
-      <HooksPokemon />
-      <HooksUseReduserCounter />
-      <Friends />
-      <NewsComponent />
-      <LoadMoreComponent />
-      <ContextApp /> */}
     </div>
   );
 }

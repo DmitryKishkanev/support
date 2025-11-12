@@ -1,4 +1,5 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import { HeaderEl, LayoutList, NavLinkItem } from 'components/Layout.styled';
 
 // const Layout = () => {
 //   return (
@@ -24,94 +25,99 @@ import { NavLink, Outlet } from 'react-router-dom';
 const Layout = () => {
   return (
     <>
-      <header>
-        <ul>
+      <HeaderEl>
+        <h1>Support components</h1>
+        <LayoutList>
           <li>
-            <NavLink to="/UserForm">UserForm</NavLink>
+            <NavLinkItem to="/UserForm">UserForm</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/SignupForm">UseLocalStorage</NavLink>
+            <NavLinkItem to="/SignupForm">UseLocalStorage</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/Counter">Counter</NavLink>
+            <NavLinkItem to="/Counter">Counter</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/Dropdown">Dropdown</NavLink>
+            <NavLinkItem to="/Dropdown">Dropdown</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/ColorPicker">ColorPicker</NavLink>
+            <NavLinkItem to="/ColorPicker">ColorPicker</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/TodoComponent">Todo</NavLink>
+            <NavLinkItem to="/TodoComponent">Todo</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/CafeFeedbackComponent">CafeFeedback</NavLink>
+            <NavLinkItem to="/CafeFeedbackComponent">CafeFeedback</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/PhonebookEditor">Phonebook</NavLink>
+            <NavLinkItem to="/PhonebookEditor">Phonebook</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/LoginForm">LoginForm</NavLink>
+            <NavLinkItem to="/LoginForm">LoginForm</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/ProductReviewForm">ProductReviewForm</NavLink>
+            <NavLinkItem to="/ProductReviewForm">ProductReviewForm</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/ModalApp">Modal</NavLink>
+            <NavLinkItem to="/ModalApp">Modal</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/Tabs">Tabs</NavLink>
+            <NavLinkItem to="/Tabs">Tabs</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/Example">Player</NavLink>
+            <NavLinkItem to="/Example">Player</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/ReaderComponent">Reader</NavLink>
+            <NavLinkItem to="/ReaderComponent">Reader</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/Pokemon">Pokemon</NavLink>
+            <NavLinkItem to="/Pokemon">Pokemon</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/MaterialRenderComponent">Materials</NavLink>
+            <NavLinkItem to="/MaterialRenderComponent">Materials</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/HooksSignupForm">HooksSignupForm</NavLink>
+            <NavLinkItem to="/HooksSignupForm">HooksSignupForm</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/HooksColorPicker">HooksColorPicker</NavLink>
+            <NavLinkItem to="/HooksColorPicker">HooksColorPicker</NavLinkItem>
           </li>
           <li>
-            <NavLink to="/HooksCounter">HooksCounter</NavLink>
+            <NavLinkItem to="/HooksCounter">HooksCounter</NavLinkItem>
           </li>
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-          {/* <li>
-            <NavLink to="/"></NavLink>
-          </li> */}
-        </ul>
-      </header>
+          <li>
+            <NavLinkItem to="/HooksClock">HooksClock</NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/AppBar">AppBarComponent</NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/SkipEffectOnFirstRender">
+              SkipEffectOnFirstRender
+            </NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/HooksPokemon">HooksPokemon</NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/HooksUseReduserCounter">
+              HooksUseReduserCounter
+            </NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/Friends">Friends</NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/NewsComponent">News</NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/LoadMoreComponent">LoadMoreComponent</NavLinkItem>
+          </li>
+          <li>
+            <NavLinkItem to="/ContextApp">ContextAlert</NavLinkItem>
+          </li>
+        </LayoutList>
+      </HeaderEl>
       <main>
         <Outlet />
       </main>

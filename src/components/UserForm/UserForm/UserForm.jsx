@@ -43,7 +43,7 @@ export default class UserForm extends Component {
   render() {
     return (
       <Form autoComplete="off" onSubmit={this.handleSubmit}>
-        <h2 className="form__name">User Form</h2>
+        <h2 className="form__name">Форма пользователя</h2>
 
         <div className="form__box">
           <label className="label">

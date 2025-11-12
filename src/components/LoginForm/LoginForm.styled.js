@@ -7,7 +7,6 @@ const FormContainer = styled(Form)`
   flex-direction: column;
   width: 500px;
   padding: 15px;
-  margin-bottom: 50px;
 
   border-radius: 4px;
 

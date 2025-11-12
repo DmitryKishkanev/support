@@ -5,7 +5,6 @@ const Form = styled.form`
   flex-direction: column;
   width: 600px;
   padding: 15px;
-  margin-bottom: 50px;
 
   background-color: #d4f2ff;
   border-radius: 5px;

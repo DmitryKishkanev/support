@@ -17,7 +17,7 @@ export default class Dropdown extends Component {
 
     return (
       <Container>
-        <h2>Dropdown</h2>
+        <h2>Выпадающее меню</h2>
         <button
           type="button"
           className="Dropdown__toggle"
