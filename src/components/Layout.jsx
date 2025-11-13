@@ -1,5 +1,5 @@
-import { Outlet } from 'react-router-dom';
-import { HeaderEl, LayoutList, NavLinkItem } from 'components/Layout.styled';
+import { NavLink, Outlet } from 'react-router-dom';
+import { HeaderEl, LayoutList, StyledNavLink } from 'components/Layout.styled';
 
 // const Layout = () => {
 //   return (
@@ -26,101 +26,23 @@ const Layout = () => {
   return (
     <>
       <HeaderEl>
-        <h1>Support components</h1>
+        <StyledNavLink to="/">
+          <h1>Support</h1>
+        </StyledNavLink>
+
         <LayoutList>
           <li>
-            <NavLinkItem to="/UserForm">UserForm</NavLinkItem>
+            <StyledNavLink to="/">Home</StyledNavLink>
           </li>
           <li>
-            <NavLinkItem to="/SignupForm">UseLocalStorage</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/Counter">Counter</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/Dropdown">Dropdown</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/ColorPicker">ColorPicker</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/TodoComponent">Todo</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/CafeFeedbackComponent">CafeFeedback</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/PhonebookEditor">Phonebook</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/LoginForm">LoginForm</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/ProductReviewForm">ProductReviewForm</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/ModalApp">Modal</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/Tabs">Tabs</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/Example">Player</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/ReaderComponent">Reader</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/Pokemon">Pokemon</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/MaterialRenderComponent">Materials</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/HooksSignupForm">HooksSignupForm</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/HooksColorPicker">HooksColorPicker</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/HooksCounter">HooksCounter</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/HooksClock">HooksClock</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/AppBar">AppBarComponent</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/SkipEffectOnFirstRender">
-              SkipEffectOnFirstRender
-            </NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/HooksPokemon">HooksPokemon</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/HooksUseReduserCounter">
-              HooksUseReduserCounter
-            </NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/Friends">Friends</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/NewsComponent">News</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/LoadMoreComponent">LoadMoreComponent</NavLinkItem>
-          </li>
-          <li>
-            <NavLinkItem to="/ContextApp">ContextAlert</NavLinkItem>
+            <StyledNavLink to="/SupportApplications">
+              Support applications
+            </StyledNavLink>
           </li>
         </LayoutList>
       </HeaderEl>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
+
       {/* <footer>Footer</footer> */}
     </>
   );
