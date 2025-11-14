@@ -35,8 +35,7 @@ const LayoutList = styled.ul`
 
   li {
     display: inline-block;
-    padding: 6px;
-    border-radius: 4px;
+
     list-style-type: none;
 
     cursor: pointer;

@@ -18,6 +18,8 @@ export const StatisticsList = styled.ul`
   p {
     margin: 0;
 
+    color: black;
+
     font-weight: 500;
     font-size: 20px;
     line-height: 1.19;

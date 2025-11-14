@@ -1,9 +1,10 @@
 import PropTypes from 'prop-types';
+import { PokemonName } from 'components/Pokemon/PokemonDataView/PokemonDataView.styled';
 
 export default function PokemonDataView({ pokemon: { sprites, name, stats } }) {
   return (
     <div>
-      <p>{name}</p>
+      <PokemonName>{name}</PokemonName>
       <img
         src={sprites.other['official-artwork'].front_default}
         alt={name}

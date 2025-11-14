@@ -4,7 +4,7 @@ const ClockBox = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  gap: 20px;
   width: 500px;
   padding: 15px;
 
@@ -16,6 +16,8 @@ const ClockBox = styled.div`
 
   p {
     margin: 0;
+
+    color: black;
 
     font-weight: 700;
     font-size: 24px;

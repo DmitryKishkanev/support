@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types';
+import { ProgressFigures } from 'components/Reader/Progress/Progress.styled';
 
 const Progress = ({ currentPage, totalPages }) => {
   return (
-    <p>
+    <ProgressFigures>
       {currentPage}/{totalPages}
-    </p>
+    </ProgressFigures>
   );
 };
 

@@ -15,6 +15,7 @@ export const Container = styled.div`
 
   .ColorPicker__title {
     margin-top: 0;
+    margin-bottom: 25px;
 
     font-weight: 700;
     font-size: 24px;
@@ -24,9 +25,7 @@ export const Container = styled.div`
   }
 
   p {
-    margin-top: 0;
-    margin-right: auto;
-    margin-left: 55px;
+    margin: 0 auto 20px 32px;
 
     font-weight: 400;
     font-size: 18px;

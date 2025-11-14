@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { ControlsSection } from 'components/Reader/Controls/Controls.styled';
 
 const Controls = ({ currentItem, totalItems, onChangr }) => {
   return (
-    <section>
+    <ControlsSection>
       <button
         type="bytton"
         disabled={currentItem === 1}
@@ -17,7 +18,7 @@ const Controls = ({ currentItem, totalItems, onChangr }) => {
       >
         Вперёд
       </button>
-    </section>
+    </ControlsSection>
   );
 };
 

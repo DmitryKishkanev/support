@@ -18,8 +18,8 @@ const Container = styled.div`
   }
 
   h2 {
-    margin-right: auto;
     margin-top: 0;
+    margin-bottom: 10px;
 
     font-weight: 700;
     font-size: 32px;
@@ -49,6 +49,8 @@ const ContactEl = styled.li`
 
   p {
     margin: 0;
+
+    color: black;
 
     font-weight: 400;
     font-size: 18px;

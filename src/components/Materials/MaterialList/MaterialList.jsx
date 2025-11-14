@@ -1,16 +1,17 @@
 import PropTypes from 'prop-types';
 import MaterialItem from 'components/Materials/MaterialItem';
+import { StyledMaterialList } from 'components/Materials/MaterialList/MaterialList.styled';
 
 const MaterialList = ({ items, ...otherProps }) => {
   return (
-    <ul>
+    <StyledMaterialList>
       {items.map(item => (
         <li key={item.id}>
           <MaterialItem item={item} {...otherProps} />
           <hr />
         </li>
       ))}
-    </ul>
+    </StyledMaterialList>
   );
 };
 

@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import {
   SupportApplicationsMain,
   SupportApplicationsList,
@@ -10,94 +10,100 @@ export default function SupportApplications() {
   return (
     <SupportApplicationsMain>
       <h2>Support applications</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+      <p>Click any of the links below to open the application</p>
 
       <SupportApplicationsList>
         <SupportApplicationsItem>
           <StyledNavLink to="UserForm">UserForm</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="SignupForm">UseLocalStorage</NavLink>
+          <StyledNavLink to="SignupForm">UseLocalStorage</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="Counter">Counter</NavLink>
+          <StyledNavLink to="Counter">Counter</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="Dropdown">Dropdown</NavLink>
+          <StyledNavLink to="Dropdown">Dropdown</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="ColorPicker">ColorPicker</NavLink>
+          <StyledNavLink to="ColorPicker">ColorPicker</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="TodoComponent">Todo</NavLink>
+          <StyledNavLink to="TodoComponent">Todo</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="CafeFeedbackComponent">CafeFeedback</NavLink>
+          <StyledNavLink to="CafeFeedbackComponent">CafeFeedback</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="PhonebookEditor">Phonebook</NavLink>
+          <StyledNavLink to="PhonebookEditor">Phonebook</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="LoginForm">LoginForm</NavLink>
+          <StyledNavLink to="LoginForm">LoginForm</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="ProductReviewForm">ProductReviewForm</NavLink>
+          <StyledNavLink to="ProductReviewForm">
+            ProductReviewForm
+          </StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="ModalApp">Modal</NavLink>
+          <StyledNavLink to="ModalApp">Modal</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="Tabs">Tabs</NavLink>
+          <StyledNavLink to="Tabs">Tabs</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="Example">Player</NavLink>
+          <StyledNavLink to="Example">Player</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="ReaderComponent">Reader</NavLink>
+          <StyledNavLink to="ReaderComponent">Reader</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="Pokemon">Pokemon</NavLink>
+          <StyledNavLink to="Pokemon">Pokemon</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="MaterialRenderComponent">Materials</NavLink>
+          <StyledNavLink to="MaterialRenderComponent">Materials</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="HooksSignupForm">HooksSignupForm</NavLink>
+          <StyledNavLink to="HooksSignupForm">HooksSignupForm</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="HooksColorPicker">HooksColorPicker</NavLink>
+          <StyledNavLink to="HooksColorPicker">HooksColorPicker</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="HooksCounter">HooksCounter</NavLink>
+          <StyledNavLink to="HooksCounter">HooksCounter</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="HooksClock">HooksClock</NavLink>
+          <StyledNavLink to="HooksClock">HooksClock</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="AppBar">AppBarComponent</NavLink>
+          <StyledNavLink to="AppBar">AppBarComponent</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="SkipEffectOnFirstRender">
+          <StyledNavLink to="SkipEffectOnFirstRender">
             SkipEffectOnFirstRender
-          </NavLink>
+          </StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="HooksPokemon">HooksPokemon</NavLink>
+          <StyledNavLink to="HooksPokemon">HooksPokemon</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="HooksUseReduserCounter">HooksUseReduserCounter</NavLink>
+          <StyledNavLink to="HooksUseReduserCounter">
+            HooksUseReduserCounter
+          </StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="Friends">Friends</NavLink>
+          <StyledNavLink to="Friends">Friends</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="NewsComponent">News</NavLink>
+          <StyledNavLink to="NewsComponent">News</StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="LoadMoreComponent">LoadMoreComponent</NavLink>
+          <StyledNavLink to="LoadMoreComponent">
+            LoadMoreComponent
+          </StyledNavLink>
         </SupportApplicationsItem>
         <SupportApplicationsItem>
-          <NavLink to="ContextApp">ContextAlert</NavLink>
+          <StyledNavLink to="ContextApp">ContextAlert</StyledNavLink>
         </SupportApplicationsItem>
       </SupportApplicationsList>
       <Outlet />

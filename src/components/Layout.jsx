@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { HeaderEl, LayoutList, StyledNavLink } from 'components/Layout.styled';
 
 // const Layout = () => {
@@ -27,7 +27,7 @@ const Layout = () => {
     <>
       <HeaderEl>
         <StyledNavLink to="/">
-          <h1>Support</h1>
+          <h1>Bee_Support</h1>
         </StyledNavLink>
 
         <LayoutList>

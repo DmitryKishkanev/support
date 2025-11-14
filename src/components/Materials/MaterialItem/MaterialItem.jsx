@@ -1,7 +1,8 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import Madal from '@/components/Modal/Modal';
+import Madal from 'components/Modal/Modal';
 import EditMaterialModal from 'components/Materials/EditMaterialModal';
+import { MaterialItemContainer } from 'components/Materials/MaterialItem/MaterialItem.styled';
 
 class MaterialItem extends Component {
   state = {
@@ -30,7 +31,7 @@ class MaterialItem extends Component {
     const { item, onUpdate, onDelete } = this.props;
     const { isModalOpen } = this.state;
     return (
-      <div>
+      <MaterialItemContainer>
         <p>
           <b>Название:</b> {item.title}
         </p>
@@ -57,7 +58,7 @@ class MaterialItem extends Component {
             />
           </Madal>
         )}
-      </div>
+      </MaterialItemContainer>
     );
   }
 }

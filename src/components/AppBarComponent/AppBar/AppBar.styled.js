@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 const AppBarBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   align-items: center;
   width: 500px;
   padding: 15px;

@@ -23,7 +23,7 @@ const Container = styled.div`
   }
 
   p {
-    margin-top: 0;
+    margin: 0 auto 0 0;
 
     font-weight: 400;
     font-size: 18px;

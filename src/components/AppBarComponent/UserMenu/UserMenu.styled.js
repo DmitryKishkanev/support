@@ -23,6 +23,8 @@ const UserMenuContainer = styled.div`
   p {
     margin: 0;
 
+    color: black;
+
     font-weight: 400;
     font-size: 18px;
     line-height: 1.19;

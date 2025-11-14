@@ -15,7 +15,7 @@ const CounterBox = styled.div`
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
   h2 {
-    margin: 0 auto 0 auto;
+    margin: 0 auto 20px auto;
   }
 
   div {

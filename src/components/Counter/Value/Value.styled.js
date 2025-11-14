@@ -6,7 +6,6 @@ export const ValueEl = styled.span`
   align-items: center;
   width: 70px;
   height: 70px;
-  margin-bottom: 30px;
 
   color: white;
 

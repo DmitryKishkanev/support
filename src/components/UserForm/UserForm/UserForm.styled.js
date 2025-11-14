@@ -14,6 +14,7 @@ const Form = styled.form`
 
   .form__name {
     margin-top: 0;
+    margin-bottom: 30px;
 
     font-weight: 700;
     font-size: 24px;
@@ -72,6 +73,9 @@ const Form = styled.form`
   .level {
     margin-top: 0;
     margin-bottom: 10px;
+    margin-right: auto;
+
+    color: black;
 
     font-weight: 400;
     font-size: 20px;
