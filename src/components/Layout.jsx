@@ -1,51 +1,51 @@
-import { Outlet } from 'react-router-dom';
-import { HeaderEl, LayoutList, StyledNavLink } from 'components/Layout.styled';
-
-// const Layout = () => {
-//   return (
-//     <>
-//       <header>
-//         <ul>
-//           <li>
-//             <NavLink to="/">Домашняя</NavLink>
-//           </li>
-//           <li>
-//             <NavLink to="/dogs">Коллекция</NavLink>
-//           </li>
-//         </ul>
-//       </header>
-//       <main>
-//         <Outlet />
-//       </main>
-//       {/* <footer>Footer</footer> */}
-//     </>
-//   );
-// };
+import { NavLink, Outlet } from 'react-router-dom';
+// import { HeaderEl, LayoutList, StyledNavLink } from 'components/Layout.styled';
 
 const Layout = () => {
   return (
     <>
-      <HeaderEl>
-        <StyledNavLink to="/">
-          <h1>Bee_Support</h1>
-        </StyledNavLink>
-
-        <LayoutList>
+      <header>
+        <ul>
           <li>
-            <StyledNavLink to="/">Home</StyledNavLink>
+            <NavLink to="/">Домашняя</NavLink>
           </li>
           <li>
-            <StyledNavLink to="/SupportApplications">
-              Support applications
-            </StyledNavLink>
+            <NavLink to="/dogs">Коллекция</NavLink>
           </li>
-        </LayoutList>
-      </HeaderEl>
-      <Outlet />
-
+        </ul>
+      </header>
+      <main>
+        <Outlet />
+      </main>
       {/* <footer>Footer</footer> */}
     </>
   );
 };
+
+// const Layout = () => {
+//   return (
+//     <>
+//       <HeaderEl>
+//         <StyledNavLink to="/">
+//           <h1>Bee_Support</h1>
+//         </StyledNavLink>
+
+//         <LayoutList>
+//           <li>
+//             <StyledNavLink to="/">Home</StyledNavLink>
+//           </li>
+//           <li>
+//             <StyledNavLink to="/SupportApplications">
+//               Support applications
+//             </StyledNavLink>
+//           </li>
+//         </LayoutList>
+//       </HeaderEl>
+//       <Outlet />
+
+//       {/* <footer>Footer</footer> */}
+//     </>
+//   );
+// };
 
 export default Layout;

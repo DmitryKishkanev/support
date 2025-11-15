@@ -1,7 +1,10 @@
-import { Link, Outlet, useParams } from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
+import BackLink from 'components/BackLink';
 
-const DogGetails = () => {
+const DogDetails = () => {
   const { dogId } = useParams();
+  const location = useLocation();
+  const backLinkHref = location.state?.from ?? '/dogs';
 
   // useEffect(() => {
   //   // HTTP Запрос, если нужно
@@ -9,7 +12,8 @@ const DogGetails = () => {
 
   return (
     <>
-      <h1>DogGetails: {dogId}</h1>
+      <BackLink to={backLinkHref}>Back to dogs</BackLink>
+      <h1>DogDetails: {dogId}</h1>
       <ul>
         <li>
           <Link to="subbreeds">Типы породы</Link>
@@ -23,4 +27,4 @@ const DogGetails = () => {
   );
 };
 
-export default DogGetails;
+export default DogDetails;
