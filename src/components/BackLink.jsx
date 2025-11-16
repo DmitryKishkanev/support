@@ -12,8 +12,12 @@ const StyledLink = styled(Link)`
   font-weight: 500;
   text-transform: uppercase;
 
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
   :hover {
-    color: orangered;
+    transform: scale(1.07);
+    color: rgb(33, 150, 243);
   }
 `;
 
