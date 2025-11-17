@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 
-const Subbreeds = () => {
+export const SubBreeds = () => {
   const { dogId } = useParams();
 
   // useEffect(() => {
@@ -9,5 +9,3 @@ const Subbreeds = () => {
 
   return <div>Subbreeds: {dogId}</div>;
 };
-
-export default Subbreeds;

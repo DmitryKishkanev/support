@@ -1,10 +1,11 @@
+import { useRef, Suspense } from 'react';
 import { Link, Outlet, useParams, useLocation } from 'react-router-dom';
 import BackLink from 'components/BackLink';
 
 const DogDetails = () => {
   const { dogId } = useParams();
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/dogs';
+  const backLinkHref = useRef(location.state?.from ?? '/dogs');
 
   // useEffect(() => {
   //   // HTTP Запрос, если нужно
@@ -12,7 +13,7 @@ const DogDetails = () => {
 
   return (
     <>
-      <BackLink to={backLinkHref}>Back to dogs</BackLink>
+      <BackLink to={backLinkHref.current}>Back to dogs</BackLink>
       <h1>DogDetails: {dogId}</h1>
       <ul>
         <li>
@@ -22,7 +23,9 @@ const DogDetails = () => {
           <Link to="gallery">Галерея</Link>
         </li>
       </ul>
-      <Outlet />
+      <Suspense fallback={<div>Loading subpage...</div>}>
+        <Outlet />
+      </Suspense>
     </>
   );
 };
