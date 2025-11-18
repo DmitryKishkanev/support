@@ -1,17 +1,22 @@
+import { useLocation } from 'react-router-dom';
 import {
   SupportApplicationsList,
   SupportApplicationsItem,
-  StyledNavLink,
+  StyledLink,
 } from 'components/SupportApplicationsItems.styled';
 
 const SupportApplicationsItems = ({ supportConfig }) => {
+  const location = useLocation();
   return (
     <SupportApplicationsList>
       {supportConfig.map(({ path, label }) => (
         <SupportApplicationsItem key={path}>
-          <StyledNavLink to={`/SupportApplications/${path}/${path}`}>
+          <StyledLink
+            to={`/SupportApplications/${path}/${path}`}
+            state={{ from: location }}
+          >
             {label}
-          </StyledNavLink>
+          </StyledLink>
         </SupportApplicationsItem>
       ))}
     </SupportApplicationsList>

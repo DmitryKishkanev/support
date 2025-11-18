@@ -15,7 +15,7 @@ const SupportApplicationsItem = styled.li`
   list-style-type: none;
 `;
 
-const StyledNavLink = styled(Link)`
+const StyledLink = styled(Link)`
   display: inline-block;
   padding: 6px;
 
@@ -40,4 +40,4 @@ const StyledNavLink = styled(Link)`
   }
 `;
 
-export { SupportApplicationsList, SupportApplicationsItem, StyledNavLink };
+export { SupportApplicationsList, SupportApplicationsItem, StyledLink };
