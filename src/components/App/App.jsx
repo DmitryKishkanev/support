@@ -4,6 +4,7 @@ import Layout from 'components/Layout';
 import Home from '@/pages/Home';
 import SupportApplications from '@/pages/SupportApplications';
 import SupportApplicationsDetails from '@/pages/SupportApplicationsDetails';
+import ApplicationMoreDetails from 'components/ApplicationMoreDetails';
 import style from 'components/App/App.module.css';
 
 export default function App() {
@@ -18,8 +19,14 @@ export default function App() {
             element={<SupportApplicationsDetails />}
           >
             {supportConfig.map(({ path, element }) => (
-              <Route key={path} path={path} element={element} />
+              <>
+                <Route key={path} path={path} element={element} />
+              </>
             ))}
+            <Route
+              path="ApplicationMoreDetails"
+              element={<ApplicationMoreDetails />}
+            />
           </Route>
         </Route>
       </Routes>

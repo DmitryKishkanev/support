@@ -1,5 +1,5 @@
 // import { useRef } from 'react';
-import { useParams, Outlet, useLocation } from 'react-router-dom';
+import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
 import { supportConfig } from '@/routes/supportConfig';
 import BackLink from 'components/BackLink';
 import { Container } from '@/pages/SupportApplicationsDetails/SupportApplicationsDetails.styled';
@@ -16,6 +16,7 @@ const SupportApplicationsDetails = () => {
       <h3>Component: {supportConfigItem?.label ?? id}</h3>
 
       <Outlet />
+      <Link to="ApplicationMoreDetails">Application More Details</Link>
     </Container>
   );
 };
