@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { supportConfig } from '@/routes/supportConfig';
+import { supportConfig } from '../routes/supportConfig';
 
 export const ApplicationMoreDetails = () => {
   const navigate = useNavigate();
