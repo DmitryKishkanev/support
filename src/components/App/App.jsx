@@ -1,11 +1,23 @@
+import { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { supportConfig } from '@/routes/supportConfig';
 import Layout from 'components/Layout';
-import Home from '@/pages/Home';
-import SupportApplications from '@/pages/SupportApplications';
-import SupportApplicationsDetails from '@/pages/SupportApplicationsDetails';
-import ApplicationMoreDetails from 'components/ApplicationMoreDetails';
+// import Home from '@/pages/Home';
+// import SupportApplications from '@/pages/SupportApplications';
+// import SupportApplicationsDetails from '@/pages/SupportApplicationsDetails';
+// import { ApplicationMoreDetails } from 'components/ApplicationMoreDetails';
 import style from 'components/App/App.module.css';
+
+const Home = lazy(() => import('@/pages/Home'));
+const SupportApplications = lazy(() => import('@/pages/SupportApplications'));
+const SupportApplicationsDetails = lazy(() =>
+  import('@/pages/SupportApplicationsDetails'),
+);
+const ApplicationMoreDetails = lazy(() =>
+  import('components/ApplicationMoreDetails').then(module => ({
+    ...module,
+    default: module.ApplicationMoreDetails,
+  })),
+);
 
 export default function App() {
   return (
@@ -18,11 +30,6 @@ export default function App() {
             path="SupportApplications/:id"
             element={<SupportApplicationsDetails />}
           >
-            {supportConfig.map(({ path, element }) => (
-              <>
-                <Route key={path} path={path} element={element} />
-              </>
-            ))}
             <Route
               path="ApplicationMoreDetails"
               element={<ApplicationMoreDetails />}

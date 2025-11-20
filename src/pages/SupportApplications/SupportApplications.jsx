@@ -17,9 +17,7 @@ export default function SupportApplications() {
   };
 
   const visibleApplications = supportConfig.filter(application =>
-    application.label
-      .toLocaleLowerCase()
-      .includes(applicationName.toLocaleLowerCase()),
+    application.label.toLowerCase().includes(applicationName.toLowerCase()),
   );
 
   // useEffect(() => {

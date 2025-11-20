@@ -11,10 +11,7 @@ const SupportApplicationsItems = ({ supportConfig }) => {
     <SupportApplicationsList>
       {supportConfig.map(({ path, label }) => (
         <SupportApplicationsItem key={path}>
-          <StyledLink
-            to={`/SupportApplications/${path}/${path}`}
-            state={{ from: location }}
-          >
+          <StyledLink to={`${path}`} state={{ from: location }}>
             {label}
           </StyledLink>
         </SupportApplicationsItem>

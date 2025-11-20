@@ -1,13 +1,22 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
+import { supportConfig } from '@/routes/supportConfig';
 
-const ApplicationMoreDetails = () => {
+export const ApplicationMoreDetails = () => {
+  const navigate = useNavigate();
+  const { id } = useParams();
+  const item = supportConfig.find(el => el.path === id);
+
+  const handleClose = () => {
+    navigate(`/SupportApplications/${id}`);
+  };
+
   return (
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, at,
-      perspiciatis repellendus aperiam et vitae reprehenderit expedita cum quasi
-      dolorum mollitia quidem, nemo obcaecati quia excepturi? Vel amet
-      perferendis excepturi!
-    </p>
+    <div>
+      <h4>Component description: {item.label}</h4>
+      <p>{item.description}</p>
+      <button type="button" onClick={handleClose}>
+        Close
+      </button>
+    </div>
   );
 };
-export default ApplicationMoreDetails;
