@@ -13,7 +13,7 @@ const SupportApplicationsDetails = lazy(() =>
   import('@/pages/SupportApplicationsDetails'),
 );
 const ApplicationMoreDetails = lazy(() =>
-  import('components/ApplicationMoreDetails'),
+  import('@/components/ApplicationMoreDetails'),
 );
 
 // const ApplicationMoreDetails = lazy(() =>
