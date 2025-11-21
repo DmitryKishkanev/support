@@ -13,11 +13,15 @@ const SupportApplicationsDetails = lazy(() =>
   import('@/pages/SupportApplicationsDetails'),
 );
 const ApplicationMoreDetails = lazy(() =>
-  import('../ApplicationMoreDetails').then(module => ({
-    ...module,
-    default: module.ApplicationMoreDetails,
-  })),
+  import('components/ApplicationMoreDetails'),
 );
+
+// const ApplicationMoreDetails = lazy(() =>
+//   import('components/ApplicationMoreDetails').then(module => ({
+//     ...module,
+//     default: module.ApplicationMoreDetails,
+//   })),
+// );
 
 export default function App() {
   return (
