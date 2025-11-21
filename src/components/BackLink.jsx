@@ -7,6 +7,7 @@ const StyledLink = styled(Link)`
   align-items: center;
   gap: 4px;
   padding: 8px 0;
+  margin-left: auto;
   color: black;
   text-decoration: none;
   font-weight: 500;
@@ -15,7 +16,8 @@ const StyledLink = styled(Link)`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  :hover {
+  :hover,
+  :focus {
     transform: scale(1.07);
     color: rgb(33, 150, 243);
   }

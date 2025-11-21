@@ -2,7 +2,10 @@ import { useRef, Suspense } from 'react';
 import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
 import { supportConfig } from '@/routes/supportConfig';
 import BackLink from 'components/BackLink';
-import { Container } from '@/pages/SupportApplicationsDetails/SupportApplicationsDetails.styled';
+import {
+  Container,
+  SupportItemBox,
+} from '@/pages/SupportApplicationsDetails/SupportApplicationsDetails.styled';
 
 const SupportApplicationsDetails = () => {
   const { id } = useParams();
@@ -16,9 +19,10 @@ const SupportApplicationsDetails = () => {
         Back to Support applications
       </BackLink>
       <h3>Component: {supportConfigItem?.label ?? id}</h3>
-      {supportConfigItem?.element}
-
-      <Link to="ApplicationMoreDetails">Application More Details</Link>
+      <SupportItemBox>
+        {supportConfigItem?.element}
+        <Link to="ApplicationMoreDetails">Application more details</Link>
+      </SupportItemBox>
 
       <Suspense fallback={<div>Loading subpage...</div>}>
         <Outlet />
