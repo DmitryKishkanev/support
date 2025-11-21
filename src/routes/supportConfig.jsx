@@ -30,7 +30,7 @@ import {
   NewsComponent,
   LoadMoreComponent,
   ContextApp,
-} from '@/components';
+} from 'components';
 
 export const supportConfig = [
   {
