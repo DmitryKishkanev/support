@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { supportConfig } from '@/routes/supportConfig';
 
-export const ApplicationMoreDetails = () => {
+const ApplicationMoreDetails = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const item = supportConfig.find(el => el.path === id);
@@ -20,3 +20,5 @@ export const ApplicationMoreDetails = () => {
     </div>
   );
 };
+
+export default ApplicationMoreDetails;
