@@ -34,7 +34,7 @@ import {
 
 export const supportConfig = [
   {
-    path: 'UserForm',
+    path: 'UserFormApp',
     label: 'UserForm',
     description: 'Lorem lorem lorem',
     element: <UserFormApp />,
@@ -46,7 +46,7 @@ export const supportConfig = [
     element: <SignupForm />,
   },
   {
-    path: 'Counter',
+    path: 'CounterApp',
     label: 'Counter',
     description: 'Lorem lorem lorem',
     element: <CounterApp />,
