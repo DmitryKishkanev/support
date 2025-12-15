@@ -34,7 +34,8 @@ export const supportConfig = [
   {
     path: 'UserFormApp',
     label: 'UserForm',
-    description: 'Lorem lorem lorem',
+    description:
+      'Заполни форму, нажми кнопку “отправить”. Результат смотри в консоли.',
     element: <UserFormApp />,
   },
   {
