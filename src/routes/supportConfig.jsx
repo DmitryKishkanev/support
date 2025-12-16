@@ -41,25 +41,29 @@ export const supportConfig = [
   {
     path: 'SignupForm',
     label: 'UseLocalStorage',
-    description: 'Lorem lorem lorem',
+    description:
+      'Заполни пустые поля формы и перезагрузи страничку браузера, данные сохранятся. Это демонстрация работы local storage.',
     element: <SignupForm />,
   },
   {
     path: 'CounterApp',
     label: 'Counter',
-    description: 'Lorem lorem lorem',
+    description:
+      'Нажимая на кнопки “уменьшить на 1” или “увеличить на 1” – соответственно меняется счётчик. Левый счётчик начинается с нуля, правый - с десяти. ',
     element: <CounterApp />,
   },
   {
     path: 'Dropdown',
     label: 'Dropdown',
-    description: 'Lorem lorem lorem',
+    description:
+      'Нажимая на кнопку “показать/скрыть” - соответственно скрывается/показывается выпадающее меню.',
     element: <Dropdown />,
   },
   {
     path: 'ColorPicker',
     label: 'ColorPicker',
-    description: 'Lorem lorem lorem',
+    description:
+      'Нажимая на любой цвет – в поле «выбран цвет» отображается, соответственно, выбранный цвет.',
     element: <ColorPicker options={colorPickerOptions} />,
   },
   {
