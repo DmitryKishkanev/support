@@ -69,19 +69,22 @@ export const supportConfig = [
   {
     path: 'TodoComponent',
     label: 'Todo',
-    description: 'Lorem lorem lorem',
+    description:
+      'Приложение добавляет/удаляет заметки, есть возможность фильтровать созданные и отмечать выполненные заметки. Также в приложении отображается общее количество и количество выполненных заметок.',
     element: <TodoComponent />,
   },
   {
     path: 'CafeFeedbackComponent',
     label: 'CafeFeedback',
-    description: 'Lorem lorem lorem',
+    description:
+      'Приложение фиксирует отзывы в категориях – хороший, нейтральный, плохой. Отображает общее количество отзывов и подсчитывает процент положительных отзывов от общего количества. Кнопка reset сбрасывает все отображения.',
     element: <CafeFeedbackComponent />,
   },
   {
     path: 'PhonebookEditor',
     label: 'Phonebook',
-    description: 'Lorem lorem lorem',
+    description:
+      'Приложение записывает и сохраняет имя с номером телефона в виде классической телефонной книги. Контакты можно удалять или фильтровать по имени.',
     element: <PhonebookEditor />,
   },
   {
