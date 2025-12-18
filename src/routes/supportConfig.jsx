@@ -77,7 +77,7 @@ export const supportConfig = [
     path: 'CafeFeedbackComponent',
     label: 'CafeFeedback',
     description:
-      'Приложение фиксирует отзывы в категориях – хороший, нейтральный, плохой. Отображает общее количество отзывов и подсчитывает процент положительных отзывов от общего количества. Кнопка reset сбрасывает все отображения.',
+      'Приложение фиксирует отзывы в категориях – хороший, нейтральный, плохой. Отображает общее количество отзывов и подсчитывает процент положительных отзывов от общего количества. Кнопка "reset" сбрасывает все отображения.',
     element: <CafeFeedbackComponent />,
   },
   {
@@ -90,31 +90,36 @@ export const supportConfig = [
   {
     path: 'LoginForm',
     label: 'LoginForm',
-    description: 'Lorem lorem lorem',
+    description:
+      'Заполни форму, нажми кнопку “Submit”. Результат смотри в консоли.',
     element: <LoginForm />,
   },
   {
     path: 'ProductReviewForm',
     label: 'ProductReviewForm',
-    description: 'Lorem lorem lorem',
+    description:
+      'Заполни форму, нажми кнопку “Submit”. Результат смотри в консоли.',
     element: <ProductReviewForm />,
   },
   {
     path: 'ModalApp',
     label: 'Modal',
-    description: 'Lorem lorem lorem',
+    description:
+      'При нажатии на кнопку «Open» - открывается модельное окно, внутри которого может находиться любой контент, также тут рендерится таймер, который останавливается при закрытии модельного окна. Модельное окно закрывается не только при нажатии на кнопку «Close», но и при нажатии на кнопку «esc» на клавиатуре или щёлкнув мышкой в область backdrop. ',
     element: <ModalApp />,
   },
   {
     path: 'Tabs',
     label: 'Tabs',
-    description: 'Lorem lorem lorem',
+    description:
+      'При нажатии на любую из предложенных кнопок – «Tab1», «Tab2», «Tab3» - приложение отображает ниже соответствующую информацию.',
     element: <Tabs items={initialTabs} />,
   },
   {
     path: 'Example',
     label: 'Player',
-    description: 'Lorem lorem lorem',
+    description:
+      'При нажатии на любую из ссылок приложение показывает сообщение о том, что идёт загрузка видео, а при нажатии на кнопку «play» - исчезает сообщение и начинает проигрываться видео. ',
     element: <Example />,
   },
   {

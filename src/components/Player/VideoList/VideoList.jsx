@@ -1,13 +1,16 @@
 import PropTypes from 'prop-types';
-import { VideosList } from 'components/Player/VideoList/VideoList.styled';
+import {
+  VideosList,
+  VideosItem,
+} from 'components/Player/VideoList/VideoList.styled';
 
 const VideoList = ({ videos, onSelect }) => {
   return (
     <VideosList>
       {videos.map(video => (
-        <li key={video.id} onClick={() => onSelect(video.link)}>
+        <VideosItem key={video.id} onClick={() => onSelect(video.link)}>
           {video.link}
-        </li>
+        </VideosItem>
       ))}
     </VideosList>
   );
