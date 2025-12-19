@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import PropTypes from 'prop-types';
 import Controls from 'components/Reader/Controls';
 import Progress from 'components/Reader/Progress';
 import Publication from 'components/Reader/Publication';
@@ -8,6 +9,10 @@ const LS_KEY = 'reader_item_index';
 
 class ReaderComponent extends Component {
   state = { index: 0 };
+
+  static propTypes = {
+    items: PropTypes.arrayOf(PropTypes.object).isRequired,
+  };
 
   changeIndex = value => {
     this.setState(state => ({ index: state.index + value }));
