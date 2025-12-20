@@ -54,7 +54,12 @@ class MaterialItem extends Component {
           <Madal onClose={this.toggleModal}>
             <EditMaterialModal
               onClose={this.toggleModal}
-              onEdit={() => onUpdate({ id: item.id, title: Date.now() })}
+              onEdit={() =>
+                onUpdate({
+                  id: item.id,
+                  title: new Date(Date.now()).toLocaleDateString(),
+                })
+              }
             />
           </Madal>
         )}
