@@ -2,6 +2,13 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { logIn } from '@/redux/user/slice';
 import { useNavigate } from 'react-router-dom';
+import {
+  LoginForm,
+  LoginFormLabel,
+  LoginFormSpan,
+  LoginFormInput,
+  LoginFormButton,
+} from 'components/BeeSupportLoginForm.styled';
 
 const BeeSupportLoginForm = () => {
   const [loginValue, setLoginValue] = useState('');
@@ -15,18 +22,23 @@ const BeeSupportLoginForm = () => {
     setLoginValue('');
     navigate('/', { replace: true });
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        name="login"
-        value={loginValue}
-        onChange={e => setLoginValue(e.target.value)}
-      />
-      <button type="submit" disabled={!loginValue.trim()}>
+    <LoginForm onSubmit={handleSubmit}>
+      <LoginFormLabel>
+        <LoginFormSpan>Please enter your login</LoginFormSpan>
+        <LoginFormInput
+          type="text"
+          name="login"
+          value={loginValue}
+          onChange={e => setLoginValue(e.target.value)}
+        />
+      </LoginFormLabel>
+
+      <LoginFormButton type="submit" disabled={!loginValue.trim()}>
         Log in
-      </button>
-    </form>
+      </LoginFormButton>
+    </LoginForm>
   );
 };
 

@@ -1,17 +1,23 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { logOut } from '@/redux/user/slice';
+import {
+  UserMenuBox,
+  UserMenuName,
+  UserMenuButton,
+} from 'components/BeeSupportUserMenu.styled';
 
 const BeeSupportUserMenu = () => {
   const dispatch = useDispatch();
   const login = useSelector(state => state.user.login);
 
   return (
-    <div>
-      {login}
-      <button type="button" onClick={() => dispatch(logOut())}>
+    <UserMenuBox>
+      <UserMenuName>Hi, {login}</UserMenuName>
+
+      <UserMenuButton type="button" onClick={() => dispatch(logOut())}>
         Log out
-      </button>
-    </div>
+      </UserMenuButton>
+    </UserMenuBox>
   );
 };
 

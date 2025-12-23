@@ -2,7 +2,12 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import BeeSupportUserMenu from 'components/BeeSupportUserMenu';
-import { HeaderEl, LayoutList, StyledNavLink } from 'components/Layout.styled';
+import {
+  HeaderEl,
+  HeaderElBox,
+  LayoutList,
+  StyledNavLink,
+} from 'components/Layout.styled';
 
 const Layout = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);
@@ -10,9 +15,24 @@ const Layout = () => {
   return (
     <>
       <HeaderEl>
-        <StyledNavLink to="/">
-          <h1>Bee_Support</h1>
-        </StyledNavLink>
+        <HeaderElBox>
+          <StyledNavLink to="/">
+            <h1>Bee_Support</h1>
+          </StyledNavLink>
+
+          {isLoggedIn && (
+            <LayoutList>
+              <li>
+                <StyledNavLink to="/">Home</StyledNavLink>
+              </li>
+              <li>
+                <StyledNavLink to="/SupportApplications">
+                  Support applications
+                </StyledNavLink>
+              </li>
+            </LayoutList>
+          )}
+        </HeaderElBox>
 
         {!isLoggedIn && (
           <LayoutList>
@@ -21,19 +41,6 @@ const Layout = () => {
             </li>
             <li>
               <StyledNavLink to="/register">Register</StyledNavLink>
-            </li>
-          </LayoutList>
-        )}
-
-        {isLoggedIn && (
-          <LayoutList>
-            <li>
-              <StyledNavLink to="/">Home</StyledNavLink>
-            </li>
-            <li>
-              <StyledNavLink to="/SupportApplications">
-                Support applications
-              </StyledNavLink>
             </li>
           </LayoutList>
         )}

@@ -19,7 +19,7 @@ const HeaderEl = styled.header`
       color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     font-weight: 700;
-    font-size: 58px;
+    font-size: 48px;
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
@@ -32,12 +32,20 @@ const HeaderEl = styled.header`
   }
 `;
 
+const HeaderElBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
 const LayoutList = styled.ul`
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 24px;
 
   padding: 0;
+  margin: 0;
+  margin-bottom: 0;
 
   li {
     display: inline-block;
@@ -47,9 +55,10 @@ const LayoutList = styled.ul`
     cursor: pointer;
 
     & .active {
-      padding: 6px;
+      padding: 2px 8px;
       border-radius: 4px;
       background-color: rgb(33, 150, 243);
+      color: white;
     }
   }
 `;
@@ -74,4 +83,4 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export { HeaderEl, LayoutList, StyledNavLink };
+export { HeaderEl, HeaderElBox, LayoutList, StyledNavLink };

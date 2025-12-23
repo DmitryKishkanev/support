@@ -1,6 +1,6 @@
 import { useRef, Suspense } from 'react';
 import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
-import { supportConfig } from '@/routes/supportConfig';
+import { supportConfig } from '@/routesConfig/supportConfig';
 import BackLink from 'components/BackLink';
 import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
 import {

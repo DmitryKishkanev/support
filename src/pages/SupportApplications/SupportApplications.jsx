@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { supportConfig } from '@/routes/supportConfig';
+import { supportConfig } from '@/routesConfig/supportConfig';
 import SupportApplicationsItems from 'components/SupportApplicationsItems';
 import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
 import { SupportApplicationsMain } from '@/pages/SupportApplications/SupportApplications.styled';

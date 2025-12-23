@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { supportConfig } from '@/routes/supportConfig';
+import { supportConfig } from '@/routesConfig/supportConfig';
 import { Container } from 'components/ApplicationMoreDetails.styled';
 
 export const ApplicationMoreDetails = () => {
