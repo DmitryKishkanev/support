@@ -1,8 +1,10 @@
 import { lazy } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Navigate } from 'react-router-dom';
 import Layout from 'components/Layout';
 import style from 'components/App/App.module.css';
 
+const LoginPage = lazy(() => import('@/pages/LoginPage'));
+const RegisterPage = lazy(() => import('@/pages/RegisterPage'));
 const Home = lazy(() => import('@/pages/Home'));
 const SupportApplications = lazy(() => import('@/pages/SupportApplications'));
 const SupportApplicationsDetails = lazy(() =>
@@ -21,6 +23,8 @@ export default function App() {
     <div className={style.app}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
           <Route index element={<Home />} />
           <Route path="SupportApplications" element={<SupportApplications />} />
           <Route
@@ -32,6 +36,7 @@ export default function App() {
               element={<ApplicationMoreDetails />}
             />
           </Route>
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
     </div>

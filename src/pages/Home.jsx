@@ -1,7 +1,10 @@
+import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
+
 const Home = () => {
   // useEffect(() => {
   //   // HTTP Запрос, если нужно
   // }, []);
+  useLogOutRedirect();
 
   return (
     <div>

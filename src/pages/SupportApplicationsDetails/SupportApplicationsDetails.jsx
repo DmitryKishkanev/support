@@ -2,6 +2,7 @@ import { useRef, Suspense } from 'react';
 import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
 import { supportConfig } from '@/routes/supportConfig';
 import BackLink from 'components/BackLink';
+import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
 import {
   Container,
   SupportItemBox,
@@ -12,6 +13,8 @@ const SupportApplicationsDetails = () => {
   const location = useLocation();
   const supportConfigItem = supportConfig.find(item => item.path === id);
   const backLinkHref = useRef(location.state?.from ?? '/SupportApplications');
+
+  useLogOutRedirect();
 
   return (
     <Container>

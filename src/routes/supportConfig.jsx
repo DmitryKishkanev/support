@@ -167,7 +167,8 @@ export const supportConfig = [
   {
     path: 'HooksClock',
     label: 'HooksClock',
-    description: 'Lorem lorem lorem',
+    description:
+      'Данное приложение реализовано на основе функциональных компонентов React с использованием встроенных хуков useState и useEffect. Оно демонстрирует поведение компонента при внезапном размонтировании: таймер останавливается как по нажатию на кнопку «Остановить», так и при закрытии приложения.',
     element: <HooksClock />,
   },
   {

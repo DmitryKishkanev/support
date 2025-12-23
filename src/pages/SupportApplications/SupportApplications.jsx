@@ -1,7 +1,8 @@
 import { useSearchParams } from 'react-router-dom';
 import { supportConfig } from '@/routes/supportConfig';
-import { SupportApplicationsMain } from '@/pages/SupportApplications/SupportApplications.styled';
 import SupportApplicationsItems from 'components/SupportApplicationsItems';
+import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
+import { SupportApplicationsMain } from '@/pages/SupportApplications/SupportApplications.styled';
 
 export default function SupportApplications() {
   const [searchParams, setsearchParams] = useSearchParams();
@@ -19,6 +20,8 @@ export default function SupportApplications() {
   const visibleApplications = supportConfig.filter(application =>
     application.label.toLowerCase().includes(applicationName.toLowerCase()),
   );
+
+  useLogOutRedirect();
 
   // useEffect(() => {
   //   // HTTP Запрос, если нужно
