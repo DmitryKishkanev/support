@@ -2,9 +2,12 @@ import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import BeeSupportUserMenu from 'components/BeeSupportUserMenu';
+import beeSupportImg from '@/assets/bee_support.png';
 import {
   HeaderEl,
   HeaderElBox,
+  HeaderElLogoBox,
+  HeaderElTitle,
   LayoutList,
   StyledNavLink,
 } from 'components/Layout.styled';
@@ -17,7 +20,10 @@ const Layout = () => {
       <HeaderEl>
         <HeaderElBox>
           <StyledNavLink to="/">
-            <h1>Bee_Support</h1>
+            <HeaderElLogoBox>
+              <img src={beeSupportImg} alt="logo" width="70" />
+              <HeaderElTitle>Bee_Support</HeaderElTitle>
+            </HeaderElLogoBox>
           </StyledNavLink>
 
           {isLoggedIn && (

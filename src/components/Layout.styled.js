@@ -11,31 +11,36 @@ const HeaderEl = styled.header`
   width: 95%;
 
   border-bottom: 1px solid black;
-
-  h1 {
-    margin: 0 auto 0 0;
-
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-    font-weight: 700;
-    font-size: 48px;
-    line-height: 1.19;
-    text-align: center;
-    letter-spacing: 0.03em;
-
-    &:hover,
-    &:focus {
-      transform: scale(1);
-      color: rgb(33, 150, 243);
-    }
-  }
 `;
 
 const HeaderElBox = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
+`;
+
+const HeaderElLogoBox = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const HeaderElTitle = styled.h1`
+  margin: 0 auto 0 0;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.01);
+    color: rgb(33, 150, 243);
+  }
 `;
 
 const LayoutList = styled.ul`
@@ -83,4 +88,11 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
-export { HeaderEl, HeaderElBox, LayoutList, StyledNavLink };
+export {
+  HeaderEl,
+  HeaderElBox,
+  HeaderElLogoBox,
+  HeaderElTitle,
+  LayoutList,
+  StyledNavLink,
+};

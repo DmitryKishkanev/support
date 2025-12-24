@@ -1,4 +1,11 @@
 import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
+import beeSupportImg from '@/assets/bee_support.png';
+import {
+  HomePageContainer,
+  HomePageTitle,
+  HomePageLink,
+  HomePageImg,
+} from '@/pages/Home.styled';
 
 const Home = () => {
   // useEffect(() => {
@@ -7,12 +14,16 @@ const Home = () => {
   useLogOutRedirect();
 
   return (
-    <div>
-      <h2>
+    <HomePageContainer>
+      <HomePageTitle>
         Welcome! This resource provides reference material on building
         functional and class components in React
-      </h2>
-    </div>
+      </HomePageTitle>
+      <HomePageLink to="/SupportApplications">
+        <HomePageImg src={beeSupportImg} alt="logo" />
+        Go!
+      </HomePageLink>
+    </HomePageContainer>
   );
 };
 
