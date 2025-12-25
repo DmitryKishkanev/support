@@ -5,7 +5,7 @@ import style from 'components/App/App.module.css';
 
 const LoginPage = lazy(() => import('@/pages/LoginPage'));
 const RegisterPage = lazy(() => import('@/pages/RegisterPage'));
-const Home = lazy(() => import('@/pages/Home'));
+const HomePage = lazy(() => import('@/pages/HomePage'));
 const SupportApplications = lazy(() => import('@/pages/SupportApplications'));
 const SupportApplicationsDetails = lazy(() =>
   import('@/pages/SupportApplicationsDetails'),
@@ -25,7 +25,7 @@ export default function App() {
         <Route path="/" element={<Layout />}>
           <Route path="login" element={<LoginPage />} />
           <Route path="register" element={<RegisterPage />} />
-          <Route index element={<Home />} />
+          <Route index element={<HomePage />} />
           <Route path="SupportApplications" element={<SupportApplications />} />
           <Route
             path="SupportApplications/:id"

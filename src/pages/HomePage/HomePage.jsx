@@ -5,9 +5,9 @@ import {
   HomePageTitle,
   HomePageLink,
   HomePageImg,
-} from '@/pages/Home.styled';
+} from '@/pages/HomePage/HomePage.styled';
 
-const Home = () => {
+const HomePage = () => {
   // useEffect(() => {
   //   // HTTP Запрос, если нужно
   // }, []);
@@ -27,4 +27,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

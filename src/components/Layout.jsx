@@ -6,9 +6,11 @@ import beeSupportImg from '@/assets/bee_support.png';
 import {
   HeaderEl,
   HeaderElBox,
-  HeaderElLogoBox,
+  HeaderElLogoLink,
+  HeaderElImg,
   HeaderElTitle,
   LayoutList,
+  LayoutListItem,
   StyledNavLink,
 } from 'components/Layout.styled';
 
@@ -19,35 +21,33 @@ const Layout = () => {
     <>
       <HeaderEl>
         <HeaderElBox>
-          <StyledNavLink to="/">
-            <HeaderElLogoBox>
-              <img src={beeSupportImg} alt="logo" width="70" />
-              <HeaderElTitle>Bee_Support</HeaderElTitle>
-            </HeaderElLogoBox>
-          </StyledNavLink>
+          <HeaderElLogoLink to="/">
+            <HeaderElImg src={beeSupportImg} alt="logo" />
+            <HeaderElTitle>Bee_Support</HeaderElTitle>
+          </HeaderElLogoLink>
 
           {isLoggedIn && (
             <LayoutList>
-              <li>
+              <LayoutListItem>
                 <StyledNavLink to="/">Home</StyledNavLink>
-              </li>
-              <li>
+              </LayoutListItem>
+              <LayoutListItem>
                 <StyledNavLink to="/SupportApplications">
                   Support applications
                 </StyledNavLink>
-              </li>
+              </LayoutListItem>
             </LayoutList>
           )}
         </HeaderElBox>
 
         {!isLoggedIn && (
           <LayoutList>
-            <li>
+            <LayoutListItem>
               <StyledNavLink to="/login">Log in</StyledNavLink>
-            </li>
-            <li>
+            </LayoutListItem>
+            <LayoutListItem>
               <StyledNavLink to="/register">Register</StyledNavLink>
-            </li>
+            </LayoutListItem>
           </LayoutList>
         )}
 

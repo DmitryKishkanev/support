@@ -16,7 +16,10 @@ const HomePageTitle = styled.h2`
 const HomePageLink = styled(Link)`
   display: flex;
   align-items: center;
+  padding: 6px;
 
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(82, 103, 121, 1);
   color: black;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -35,7 +38,7 @@ const HomePageLink = styled(Link)`
 `;
 
 const HomePageImg = styled.img`
-  width: 600px;
+  width: 575px;
 `;
 
 export { HomePageContainer, HomePageTitle, HomePageLink, HomePageImg };

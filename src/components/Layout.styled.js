@@ -1,5 +1,5 @@
 import styled from '@emotion/styled';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 const HeaderEl = styled.header`
   display: flex;
@@ -16,55 +16,69 @@ const HeaderEl = styled.header`
 const HeaderElBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 24px;
 `;
 
-const HeaderElLogoBox = styled.div`
+const HeaderElLogoLink = styled(Link)`
   display: flex;
   align-items: center;
+  gap: 5px;
+  margin-left: 30px;
+  color: inherit;
+
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.07);
+  }
+
+  &:hover img,
+  &:focus img {
+    box-shadow: 0 0 10px rgba(234, 255, 0, 1);
+  }
+`;
+
+const HeaderElImg = styled.img`
+  width: 70px;
+
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(82, 103, 121, 1);
+
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
 const HeaderElTitle = styled.h1`
   margin: 0 auto 0 0;
-
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-weight: 700;
   font-size: 48px;
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.01);
-    color: rgb(33, 150, 243);
-  }
 `;
 
 const LayoutList = styled.ul`
   display: flex;
   align-items: center;
   gap: 24px;
+  margin: 0 0 0 0px;
 
   padding: 0;
-  margin: 0;
-  margin-bottom: 0;
+`;
 
-  li {
-    display: inline-block;
+const LayoutListItem = styled.li`
+  display: inline-block;
 
-    list-style-type: none;
+  list-style-type: none;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    & .active {
-      padding: 2px 8px;
-      border-radius: 4px;
-      background-color: rgb(33, 150, 243);
-      color: white;
-    }
+  & .active {
+    padding: 2px 8px;
+    border-radius: 8px;
+    background-color: rgb(33, 150, 243);
+    color: white;
   }
 `;
 
@@ -76,23 +90,24 @@ const StyledNavLink = styled(NavLink)`
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus {
-    transform: scale(1.07);
+  &:hover {
+    transform: scale(1.09);
     color: rgb(33, 150, 243);
   }
 
-  &.active {
-    /* background-color: rgba(84, 178, 255, 1); */
-    color: black;
+  &:focus {
+    transform: scale(1.09);
+    color: white;
   }
 `;
 
 export {
   HeaderEl,
   HeaderElBox,
-  HeaderElLogoBox,
+  HeaderElLogoLink,
+  HeaderElImg,
   HeaderElTitle,
   LayoutList,
+  LayoutListItem,
   StyledNavLink,
 };

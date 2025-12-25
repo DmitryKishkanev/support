@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const SupportApplicationsMain = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 30px;
   align-items: center;
   width: 100%;
 

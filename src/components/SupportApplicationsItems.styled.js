@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const SupportApplicationsList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
   padding: 0 15px;
   margin: 0 0 35px;
 
@@ -17,15 +17,16 @@ const SupportApplicationsItem = styled.li`
 
 const StyledLink = styled(Link)`
   display: inline-block;
-  padding: 6px;
+  padding: 8px;
 
-  border-radius: 4px;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(82, 103, 121, 1);
   color: black;
 
   cursor: pointer;
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-weight: 600;
   font-size: 18px;
@@ -35,8 +36,8 @@ const StyledLink = styled(Link)`
 
   &:hover,
   &:focus {
-    transform: scale(1.07);
-    color: rgb(33, 150, 243);
+    transform: scale(1.09);
+    box-shadow: 0 0 10px rgba(0, 140, 255, 1);
   }
 `;
 
