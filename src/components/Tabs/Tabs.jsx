@@ -11,7 +11,7 @@ class Tabs extends PureComponent {
         label: PropTypes.string.isRequired,
         content: PropTypes.string.isRequired,
       }),
-    ),
+    ).isRequired,
   };
 
   // shouldComponentUpdate(nextProps, nextState) {

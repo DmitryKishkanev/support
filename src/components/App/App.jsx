@@ -1,18 +1,20 @@
 import { lazy } from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
-import Layout from 'components/Layout';
+import Layout from '@/routes/Component/Layout';
 import style from 'components/App/App.module.css';
 
-const LoginPage = lazy(() => import('@/pages/LoginPage'));
-const RegisterPage = lazy(() => import('@/pages/RegisterPage'));
-const HomePage = lazy(() => import('@/pages/HomePage'));
-const SupportApplications = lazy(() => import('@/pages/SupportApplications'));
+const LoginPage = lazy(() => import('@/routes/Pages/LoginPage'));
+const RegisterPage = lazy(() => import('@/routes/Pages/RegisterPage'));
+const HomePage = lazy(() => import('@/routes/Pages/HomePage'));
+const SupportApplications = lazy(() =>
+  import('@/routes/Pages/SupportApplications'),
+);
 const SupportApplicationsDetails = lazy(() =>
-  import('@/pages/SupportApplicationsDetails'),
+  import('@/routes/Pages/SupportApplicationsDetails'),
 );
 
 const ApplicationMoreDetails = lazy(() =>
-  import('components/ApplicationMoreDetails').then(module => ({
+  import('@/routes/Component/ApplicationMoreDetails').then(module => ({
     ...module,
     default: module.ApplicationMoreDetails,
   })),

@@ -1,4 +1,4 @@
-import BeeSupportLoginForm from 'components/BeeSupportLoginForm';
+import BeeSupportLoginForm from '@/routes/Component/BeeSupportLoginForm';
 
 const LoginPage = () => {
   return <BeeSupportLoginForm />;

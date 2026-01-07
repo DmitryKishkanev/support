@@ -1,4 +1,4 @@
-import BeeSupportRegisterForm from 'components/BeeSupportRegisterForm';
+import BeeSupportRegisterForm from '@/routes/Component/BeeSupportRegisterForm';
 
 const RegisterPage = () => {
   return <BeeSupportRegisterForm />;

@@ -1,8 +1,8 @@
 import { useSearchParams } from 'react-router-dom';
 import { supportConfig } from '@/routesConfig/supportConfig';
-import SupportApplicationsItems from 'components/SupportApplicationsItems';
+import SupportApplicationsItems from '@/routes/Component/SupportApplicationsItems';
 import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
-import { SupportApplicationsMain } from '@/pages/SupportApplications/SupportApplications.styled';
+import { SupportApplicationsMain } from '@/routes/Pages/SupportApplications/SupportApplications.styled';
 
 export default function SupportApplications() {
   const [searchParams, setsearchParams] = useSearchParams();

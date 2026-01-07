@@ -4,7 +4,7 @@ import {
   UserMenuBox,
   UserMenuName,
   UserMenuButton,
-} from 'components/BeeSupportUserMenu.styled';
+} from '@/routes/Component/BeeSupportUserMenu/BeeSupportUserMenu.styled';
 
 const BeeSupportUserMenu = () => {
   const dispatch = useDispatch();

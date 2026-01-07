@@ -1,9 +1,10 @@
 import { useLocation } from 'react-router-dom';
+import PropTypes, { arrayOf } from 'prop-types';
 import {
   SupportApplicationsList,
   SupportApplicationsItem,
   StyledLink,
-} from 'components/SupportApplicationsItems.styled';
+} from '@/routes/Component/SupportApplicationsItems/SupportApplicationsItems.styled';
 
 const SupportApplicationsItems = ({ supportConfig }) => {
   const location = useLocation();
@@ -18,6 +19,15 @@ const SupportApplicationsItems = ({ supportConfig }) => {
       ))}
     </SupportApplicationsList>
   );
+};
+
+SupportApplicationsItems.propTypes = {
+  supportConfig: PropTypes.arrayOf(
+    PropTypes.shape({
+      path: PropTypes.string.isRequired,
+      label: PropTypes.number.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default SupportApplicationsItems;

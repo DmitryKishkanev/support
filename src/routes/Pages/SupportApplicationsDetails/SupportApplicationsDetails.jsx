@@ -1,12 +1,12 @@
 import { useRef, Suspense } from 'react';
 import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
 import { supportConfig } from '@/routesConfig/supportConfig';
-import BackLink from 'components/BackLink';
+import BackLink from '@/routes/Component/BackLink/BackLink';
 import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
 import {
   Container,
   SupportItemBox,
-} from '@/pages/SupportApplicationsDetails/SupportApplicationsDetails.styled';
+} from '@/routes/Pages/SupportApplicationsDetails/SupportApplicationsDetails.styled';
 
 const SupportApplicationsDetails = () => {
   const { id } = useParams();

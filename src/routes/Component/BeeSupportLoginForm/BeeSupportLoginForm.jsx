@@ -8,7 +8,7 @@ import {
   LoginFormSpan,
   LoginFormInput,
   LoginFormButton,
-} from 'components/BeeSupportLoginForm.styled';
+} from '@/routes/Component/BeeSupportLoginForm/BeeSupportLoginForm.styled';
 
 const BeeSupportLoginForm = () => {
   const [loginValue, setLoginValue] = useState('');

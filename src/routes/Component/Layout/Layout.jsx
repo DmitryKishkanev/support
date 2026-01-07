@@ -1,7 +1,7 @@
 import { Suspense } from 'react';
 import { Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import BeeSupportUserMenu from 'components/BeeSupportUserMenu';
+import BeeSupportUserMenu from '@/routes/Component/BeeSupportUserMenu';
 import beeSupportImg from '@/assets/bee_support.png';
 import {
   HeaderEl,
@@ -12,7 +12,7 @@ import {
   LayoutList,
   LayoutListItem,
   StyledNavLink,
-} from 'components/Layout.styled';
+} from '@/routes/Component/Layout/Layout.styled';
 
 const Layout = () => {
   const isLoggedIn = useSelector(state => state.user.isLoggedIn);

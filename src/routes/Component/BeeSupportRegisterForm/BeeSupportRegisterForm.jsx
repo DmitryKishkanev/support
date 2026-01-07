@@ -9,7 +9,7 @@ import {
   RegisterFormSpan,
   RegisterFormInput,
   RegisterFormButton,
-} from 'components/BeeSupportRegisterForm.styled';
+} from '@/routes/Component/BeeSupportRegisterForm/BeeSupportRegisterForm.styled';
 
 const BeeSupportRegisterForm = () => {
   const [nameValue, setNameValue] = useState('');

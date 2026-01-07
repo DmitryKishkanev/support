@@ -5,7 +5,7 @@ import {
   HomePageTitle,
   HomePageLink,
   HomePageImg,
-} from '@/pages/HomePage/HomePage.styled';
+} from '@/routes/Pages/HomePage/HomePage.styled';
 
 const HomePage = () => {
   // useEffect(() => {
