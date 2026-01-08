@@ -29,6 +29,7 @@ import Friends from 'components/Friends';
 import NewsComponent from 'components/News/NewsComponent';
 import LoadMoreComponent from 'components/LoadMoreComponent';
 import ContextApp from 'components/ContextAlert/ContextApp';
+import ReduxPhonebookApp from 'components/ReduxPhonebook/ReduxPhonebookApp';
 
 export const supportConfig = [
   {
@@ -227,5 +228,12 @@ export const supportConfig = [
     description:
       'Приложение является демонстрацией использования контекста в React. Создаётся глобальное состояние, доступное для всех компонентов приложения. В данном случае это состояние управляет отображением выпадающего меню. При нажатии на кнопку «Open alert» происходит переключение состояния, что приводит к открытию или закрытию меню.',
     element: <ContextApp />,
+  },
+  {
+    path: 'ReduxPhonebookApp',
+    label: 'ReduxPhonebook',
+    description:
+      'Данное приложение реализовано на основе функциональных компонентов React. Приложение записывает и сохраняет имя с номером телефона в виде классической телефонной книги. Контакты можно удалять или фильтровать по имени.',
+    element: <ReduxPhonebookApp />,
   },
 ];

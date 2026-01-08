@@ -12,9 +12,11 @@ const SupportApplications = lazy(() =>
 const SupportApplicationsDetails = lazy(() =>
   import('@/routes/Pages/SupportApplicationsDetails'),
 );
-
+// Пример именованного экспорта
 const ApplicationMoreDetails = lazy(() =>
-  import('@/routes/Component/ApplicationMoreDetails').then(module => ({
+  import(
+    '@/routes/Component/ApplicationMoreDetails/ApplicationMoreDetails'
+  ).then(module => ({
     ...module,
     default: module.ApplicationMoreDetails,
   })),
