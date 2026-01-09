@@ -1,39 +1,36 @@
 import styled from '@emotion/styled';
 
-const FilterLabel = styled.label`
+export const FilterLabel = styled.label`
   display: flex;
-  flex-direction: column;
-  margin-right: auto;
-  margin-bottom: 30px;
+  align-items: center;
 
-  span {
-    margin-bottom: 10px;
+  width: 300px;
+  margin-bottom: 10px;
 
-    font-weight: 400;
-    font-size: 22px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
-    color: black;
-  }
-
-  input {
-    width: 220px;
-    height: 33px;
-    padding: 3px;
-
-    border-radius: 4px;
-    background-color: white;
-
-    outline: none;
-    cursor: pointer;
-
-    color: black;
+  .label__name {
+    margin-right: 10px;
 
     font-weight: 400;
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
   }
-`;
 
-export { FilterLabel };
+  .label__field {
+    width: 100%;
+    padding: 4px;
+
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: white;
+
+    outline: none;
+    cursor: pointer;
+
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.19;
+    letter-spacing: 0.03em;
+    color: black;
+  }
+`;

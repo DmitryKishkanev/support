@@ -8,7 +8,7 @@ import TodoFilter from 'components/Todo/TodoFilter';
 import TodoEditor from 'components/Todo/TodoEditor';
 import Modal from 'components/Modal/Modal';
 
-export default class TodoComponent extends Component {
+export default class ReduxTodoComponent extends Component {
   state = {
     todos: initialTodos,
     filter: '',

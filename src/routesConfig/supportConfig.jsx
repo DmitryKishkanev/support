@@ -21,6 +21,7 @@ import HooksSignupForm from 'components/HooksSignupForm';
 import HooksColorPicker from 'components/HooksColorPicker';
 import HooksCounter from 'components/HooksCounter';
 import HooksClock from 'components/HooksClock';
+import HooksPhonebookApp from 'components/HooksPhonebook/HooksPhonebookApp';
 import AppBar from 'components/AppBarComponent/AppBar';
 import SkipEffectOnFirstRender from 'components/SkipEffectOnFirstRender';
 import HooksPokemon from 'components/HooksPokemon/HooksPokemon';
@@ -30,6 +31,7 @@ import NewsComponent from 'components/News/NewsComponent';
 import LoadMoreComponent from 'components/LoadMoreComponent';
 import ContextApp from 'components/ContextAlert/ContextApp';
 import ReduxPhonebookApp from 'components/ReduxPhonebook/ReduxPhonebookApp';
+import ReduxTodoComponent from 'components/ReduxTodo/ReduxTodoComponent';
 
 export const supportConfig = [
   {
@@ -173,18 +175,11 @@ export const supportConfig = [
     element: <HooksClock />,
   },
   {
-    path: 'AppBar',
-    label: 'AppBarComponent',
+    path: 'HooksPhonebookApp',
+    label: 'HooksPhonebook',
     description:
-      'Реализация данного приложения основана на функциональных компонентах React и использовании встроенных хуков. В рамках демонстрации работы с контекстом применяются хуки useState и useContext. Кроме того, используется хук useMemo, обеспечивающий мемоизацию вычислений для оптимизации производительности и предотвращения лишних пересчётов при повторных рендерах. Нажав кнопку «Войти» в User menu, пользователь видит свою аватарку, приветствие и кнопку «Выйти». При нажатии на «Выйти» меню возвращается в исходное состояние.',
-    element: <AppBar />,
-  },
-  {
-    path: 'SkipEffectOnFirstRender',
-    label: 'SkipEffectOnFirstRender',
-    description:
-      'Данное приложение реализовано на основе функциональных компонентов React с использованием встроенных хуков useState и useEffect. Оно демонстрирует поведение компонента на первом рендере: по нажатию на кнопку счётчик увеличивается на единицу, а в консоли отображается сообщение о срабатывании useEffect, но при запуске приложения этого сообщения нет – это говорит о том, что useEffect на первом рендере не срабатывает.',
-    element: <SkipEffectOnFirstRender />,
+      'Данное приложение реализовано на основе функциональных компонентов React. Приложение записывает и сохраняет имя с номером телефона в виде классической телефонной книги. Контакты можно удалять или фильтровать по имени.',
+    element: <HooksPhonebookApp />,
   },
   {
     path: 'HooksPokemon',
@@ -201,6 +196,21 @@ export const supportConfig = [
       'Данное приложение реализовано на основе функциональных компонентов React с использованием встроенного хука useReducer и демонстрирует его работу. При нажатии на кнопку «увеличить» или «уменьшить» значение счётчика соответственно изменяется на единицу.',
     element: <HooksUseReduserCounter />,
   },
+  {
+    path: 'AppBar',
+    label: 'AppBarComponent',
+    description:
+      'Реализация данного приложения основана на функциональных компонентах React и использовании встроенных хуков. В рамках демонстрации работы с контекстом применяются хуки useState и useContext. Кроме того, используется хук useMemo, обеспечивающий мемоизацию вычислений для оптимизации производительности и предотвращения лишних пересчётов при повторных рендерах. Нажав кнопку «Войти» в User menu, пользователь видит свою аватарку, приветствие и кнопку «Выйти». При нажатии на «Выйти» меню возвращается в исходное состояние.',
+    element: <AppBar />,
+  },
+  {
+    path: 'SkipEffectOnFirstRender',
+    label: 'SkipEffectOnFirstRender',
+    description:
+      'Данное приложение реализовано на основе функциональных компонентов React с использованием встроенных хуков useState и useEffect. Оно демонстрирует поведение компонента на первом рендере: по нажатию на кнопку счётчик увеличивается на единицу, а в консоли отображается сообщение о срабатывании useEffect, но при запуске приложения этого сообщения нет – это говорит о том, что useEffect на первом рендере не срабатывает.',
+    element: <SkipEffectOnFirstRender />,
+  },
+
   {
     path: 'Friends',
     label: 'Friends',
@@ -229,11 +239,19 @@ export const supportConfig = [
       'Приложение является демонстрацией использования контекста в React. Создаётся глобальное состояние, доступное для всех компонентов приложения. В данном случае это состояние управляет отображением выпадающего меню. При нажатии на кнопку «Open alert» происходит переключение состояния, что приводит к открытию или закрытию меню.',
     element: <ContextApp />,
   },
+
   {
     path: 'ReduxPhonebookApp',
     label: 'ReduxPhonebook',
     description:
       'Данное приложение реализовано на основе функциональных компонентов React. Приложение записывает и сохраняет имя с номером телефона в виде классической телефонной книги. Контакты можно удалять или фильтровать по имени.',
     element: <ReduxPhonebookApp />,
+  },
+  {
+    path: 'ReduxTodoComponent',
+    label: 'ReduxTodo',
+    description:
+      'Данное приложение реализовано на основе функциональных и классовых компонентов React с использованием методов жизненного цикла. Приложение добавляет/удаляет заметки, есть возможность фильтровать созданные и отмечать выполненные заметки. Также в приложении отображается общее количество и количество выполненных заметок.',
+    element: <ReduxTodoComponent />,
   },
 ];

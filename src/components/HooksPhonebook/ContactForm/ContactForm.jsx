@@ -1,9 +1,8 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
-import { insertContact } from '@/redux/reduxPhonebook/slice';
+import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
-import { FormContainer } from 'components/ReduxPhonebook/ContactForm/ContactForm.styled';
+import { FormContainer } from 'components/HooksPhonebook/ContactForm/ContactForm.styled';
 
 const schema = object({
   name: string().required(),
@@ -15,42 +14,15 @@ const initialValue = {
   number: '',
 };
 
-const ContactForm = () => {
-  const contacts = useSelector(state => state.reduxPhonebook.contacts);
-  const dispatch = useDispatch();
-
-  // const handleAddContact = newContact => {
-  //   const isNamePresent = contacts.some(
-  //     contact => contact.name.toLowerCase() === newContact.name.toLowerCase(),
-  //   );
-
-  //   if (isNamePresent) {
-  //     alert(`"${newContact.name}" is already in contacts `);
-  //     return;
-  //   }
-
-  //   dispatch(insertContact(newContact));
-  // };
-
+const ContactForm = ({ handleAddContact }) => {
   const onSubmit = (values, { resetForm }) => {
-    const newContact = {
+    const contact = {
       id: nanoid(),
       name: values.name,
       number: values.number,
     };
 
-    const isNamePresent = contacts.some(
-      contact => contact.name.toLowerCase() === newContact.name.toLowerCase(),
-    );
-
-    if (isNamePresent) {
-      alert(`"${newContact.name}" is already in contacts `);
-      return;
-    }
-
-    dispatch(insertContact(newContact));
-
-    // handleAddContact(contact);
+    handleAddContact(contact);
     resetForm();
   };
 
@@ -79,6 +51,10 @@ const ContactForm = () => {
       </FormContainer>
     </Formik>
   );
+};
+
+ContactForm.propTypes = {
+  handleAddContact: PropTypes.func.isRequired,
 };
 
 export default ContactForm;
