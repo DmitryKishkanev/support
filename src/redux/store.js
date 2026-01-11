@@ -13,6 +13,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { userSlice } from '@/redux/user/slice';
 import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
+import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -30,10 +31,17 @@ const persistReduxPhonebookReducer = persistReducer(
   reduxPhonebookSlice.reducer,
 );
 
+const reduxTodoPersistConfig = { key: 'reduxTodo', storage };
+const persistReduxTodoReducer = persistReducer(
+  reduxTodoPersistConfig,
+  reduxTodoSlice.reducer,
+);
+
 export const store = configureStore({
   reducer: {
     user: persistUserReducer,
     reduxPhonebook: persistReduxPhonebookReducer,
+    reduxTodo: persistReduxTodoReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({

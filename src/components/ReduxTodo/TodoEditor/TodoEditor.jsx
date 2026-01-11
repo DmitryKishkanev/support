@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-
-import { TodoEditorForm } from 'components/Todo/TodoEditor/TodoEditor.styled';
+import { TodoEditorForm } from 'components/ReduxTodo/TodoEditor/TodoEditor.styled';
 
 const TodoEditor = ({ onSubmit }) => {
   const [message, setMessage] = useState('');
@@ -14,7 +13,7 @@ const TodoEditor = ({ onSubmit }) => {
     e.preventDefault();
 
     onSubmit(message);
-    setMessage({ message: '' });
+    setMessage('');
   };
 
   return (
@@ -22,6 +21,9 @@ const TodoEditor = ({ onSubmit }) => {
       <textarea value={message} onChange={handleChange}></textarea>
       <button type="submit" className="todoEditor__button">
         Добавить
+      </button>
+      <button type="button" className="todoEditor__button">
+        Закрыть
       </button>
     </TodoEditorForm>
   );

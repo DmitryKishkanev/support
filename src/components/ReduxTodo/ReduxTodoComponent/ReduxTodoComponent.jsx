@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import shortid from 'shortid';
 import initialTodos from '@/todos.json';
-import TodoList from 'components/Todo/TodoList';
-import IconButton from 'components/Todo/IconButton';
+import TodoList from 'components/ReduxTodo/TodoList';
+import IconButton from 'components/ReduxTodo/IconButton';
 import AddIcon from '@/icons/add.svg?react';
-import TodoFilter from 'components/Todo/TodoFilter';
-import TodoEditor from 'components/Todo/TodoEditor';
+import TodoFilter from 'components/ReduxTodo/TodoFilter';
+import TodoEditor from 'components/ReduxTodo/TodoEditor';
 import Modal from 'components/Modal/Modal';
 
 export default class ReduxTodoComponent extends Component {
@@ -130,13 +130,13 @@ export default class ReduxTodoComponent extends Component {
           <Modal onClose={this.toggleModal}>
             <>
               <TodoEditor onSubmit={this.addTodo} onClose={this.toggleModal} />
-              <button
+              {/* <button
                 type="button"
                 className="Close__btn"
                 onClick={this.toggleModal}
               >
                 Close
-              </button>
+              </button> */}
             </>
           </Modal>
         )}
