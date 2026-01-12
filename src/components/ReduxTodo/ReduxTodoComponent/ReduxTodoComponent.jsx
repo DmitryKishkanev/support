@@ -1,6 +1,11 @@
-import { Component } from 'react';
-import shortid from 'shortid';
-import initialTodos from '@/todos.json';
+// import { Component } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  addTodo,
+  deleteTodo,
+  toggleModal,
+  toggleCompleted,
+} from '@/redux/reduxTodo/slice';
 import TodoList from 'components/ReduxTodo/TodoList';
 import IconButton from 'components/ReduxTodo/IconButton';
 import AddIcon from '@/icons/add.svg?react';
@@ -8,82 +13,11 @@ import TodoFilter from 'components/ReduxTodo/TodoFilter';
 import TodoEditor from 'components/ReduxTodo/TodoEditor';
 import Modal from 'components/Modal/Modal';
 
-export default class ReduxTodoComponent extends Component {
-  state = {
-    todos: initialTodos,
-    filter: '',
-    showModal: false,
-  };
+const ReduxTodoComponent = () => {
+  const { todos, filter, showModal } = useSelector(state => state.reduxTodo);
+  const dispatch = useDispatch();
 
-  componentDidMount() {
-    const todos = localStorage.getItem('todos');
-    const parsedTodos = JSON.parse(todos);
-
-    if (parsedTodos) {
-      this.setState({ todos: parsedTodos });
-    }
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    const nextTodos = this.state.todos;
-    const prevTodos = prevState.todos;
-
-    if (nextTodos !== prevTodos) {
-      localStorage.setItem('todos', JSON.stringify(nextTodos));
-    }
-
-    // if (nextTodos.length > prevTodos.length && prevTodos.length !== 0) {
-    //   this.toggleModal();
-    // }
-  }
-
-  addTodo = todoText => {
-    const todo = {
-      id: shortid.generate(),
-      text: todoText,
-      completed: false,
-    };
-
-    this.setState(({ todos }) => ({
-      todos: [todo, ...todos],
-    }));
-
-    this.toggleModal();
-  };
-
-  deleteTodo = todoId => {
-    this.setState(prevState => ({
-      todos: prevState.todos.filter(todo => todo.id !== todoId),
-    }));
-  };
-
-  toggleCompleted = todoId => {
-    // this.setState(prevState => ({
-    //   todos: prevState.todos.map(todo => {
-    //     if (todo.id === todoId) {
-    //       return {
-    //         ...todo,
-    //         completed: !todo.completed,
-    //       };
-    //     }
-
-    //     return todo;
-    //   }),
-    // }));
-
-    this.setState(({ todos }) => ({
-      todos: todos.map(todo =>
-        todo.id === todoId ? { ...todo, completed: !todo.completed } : todo,
-      ),
-    }));
-  };
-
-  changeFilter = e => {
-    this.setState({ filter: e.currentTarget.value });
-  };
-
-  getFilteredTodos = () => {
-    const { filter, todos } = this.state;
+  const getFilteredTodos = () => {
     const normalizedFilter = filter.toLowerCase();
 
     return todos.filter(todo =>
@@ -91,56 +25,47 @@ export default class ReduxTodoComponent extends Component {
     );
   };
 
-  toggleModal = () => {
-    this.setState(({ showModal }) => ({
-      showModal: !showModal,
-    }));
-  };
+  const filteredTodos = getFilteredTodos();
 
-  //   toggleModal = (content = null) => {
-  //     this.setState(prev => ({
-  //       showModal: !prev.showModal,
-  //       modalContent: content,
-  //     }));
-  //   };
-
-  render() {
-    const { filter, showModal } = this.state;
-    const filteredTodos = this.getFilteredTodos();
-
-    return (
-      <>
-        <TodoList
-          todos={filteredTodos}
-          onDeleteTodo={this.deleteTodo}
-          onToggleCompleted={this.toggleCompleted}
+  return (
+    <>
+      <TodoList
+        todos={filteredTodos}
+        onDeleteTodo={id => dispatch(deleteTodo(id))}
+        onToggleCompleted={id => dispatch(toggleCompleted(id))}
+      >
+        <IconButton
+          type="button"
+          onClick={() => dispatch(toggleModal('todo'))}
+          aria-label="Добавить todo"
         >
-          <IconButton
-            type="button"
-            onClick={() => this.toggleModal('todo')}
-            aria-label="Добавить todo"
-          >
-            <AddIcon width="32" height="32" fill="white" />
-          </IconButton>
+          <AddIcon width="32" height="32" fill="white" />
+        </IconButton>
 
-          <TodoFilter value={filter} onChangeFilter={this.changeFilter} />
-        </TodoList>
+        <TodoFilter />
+      </TodoList>
 
-        {showModal && (
-          <Modal onClose={this.toggleModal}>
-            <>
-              <TodoEditor onSubmit={this.addTodo} onClose={this.toggleModal} />
-              {/* <button
-                type="button"
-                className="Close__btn"
-                onClick={this.toggleModal}
-              >
-                Close
-              </button> */}
-            </>
-          </Modal>
-        )}
-      </>
-    );
-  }
-}
+      {showModal && (
+        <Modal onClose={() => dispatch(toggleModal())}>
+          <>
+            <TodoEditor
+              onSubmit={text => {
+                dispatch(addTodo(text));
+                dispatch(toggleModal());
+              }}
+            />
+            <button
+              type="button"
+              className="Close__btn"
+              onClick={() => dispatch(toggleModal())}
+            >
+              Close
+            </button>
+          </>
+        </Modal>
+      )}
+    </>
+  );
+};
+
+export default ReduxTodoComponent;

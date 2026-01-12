@@ -22,9 +22,6 @@ const TodoEditor = ({ onSubmit }) => {
       <button type="submit" className="todoEditor__button">
         Добавить
       </button>
-      <button type="button" className="todoEditor__button">
-        Закрыть
-      </button>
     </TodoEditorForm>
   );
 };
