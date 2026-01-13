@@ -24,6 +24,9 @@ export default function PokemonInfo({ pokemonName }) {
     }
     setStatus(Status.PENDING);
 
+    // Создаём контроллер для текущего запроса
+    const controller = new AbortController();
+
     pokemonAPI
       .fetchPokemon(pokemonName)
       .then(pokemon => {
@@ -32,9 +35,21 @@ export default function PokemonInfo({ pokemonName }) {
         setStatus(Status.RESOLVED);
       })
       .catch(error => {
+        if (error.name === 'AbortError') {
+          // Запрос отменён — просто игнорируем
+          return;
+        }
         setError(error);
         setStatus(Status.REJECTED);
       });
+
+    // Сleanup-функция: отмена запроса при размонтировании или смене pokemonName
+    return () => {
+      controller.abort();
+      console.log(
+        'HooksPokemon: Отмена запроса при размонтировании или смене pokemonName',
+      );
+    };
   }, [pokemonName]);
 
   if (status === Status.IDLE) {

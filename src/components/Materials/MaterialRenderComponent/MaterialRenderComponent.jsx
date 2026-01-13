@@ -14,50 +14,86 @@ class MaterialRenderComponent extends Component {
     error: false,
   };
 
+  // Будем хранить контроллер как свойство экземпляра
+  controller = null;
+
   componentDidMount = async () => {
+    this.controller = new AbortController();
+
     try {
-      this.setState({ isLoading: true });
-      const materials = await API.getMaterials();
+      this.setState({ isLoading: true, error: false });
+      const materials = await API.getMaterials(this.controller.signal); //Передаём signal
       this.setState({ materials, isLoading: false });
     } catch (error) {
+      if (error.name === 'CanceledError' || error.name === 'AbortError') {
+        // Запрос отменён — просто игнорируем (axios даёт CanceledError, fetch даёт AbortError)
+        return;
+      }
       this.setState({ error: true, isLoading: false });
       console.log(error);
     }
   };
 
+  componentWillUnmount() {
+    if (this.controller) {
+      this.controller.abort();
+      console.log('Material: Компонент размонтирован, запрос прерван');
+    }
+  }
+
   addMaterial = async values => {
+    this.controller = new AbortController();
+
     try {
-      const material = await API.addMaterial(values);
+      const material = await API.addMaterial(values, this.controller.signal); //Передаём signal
       this.setState(state => ({
         materials: [...state.materials, material],
       }));
     } catch (error) {
+      if (error.name === 'CanceledError' || error.name === 'AbortError') {
+        // Запрос отменён — просто игнорируем (axios даёт CanceledError, fetch даёт AbortError)
+        return;
+      }
       this.setState({ error: true, isLoading: false });
       console.log(error);
     }
   };
 
   deleteMaterial = async id => {
+    this.controller = new AbortController();
+
     try {
-      await API.deleteMaterial(id);
+      await API.deleteMaterial(id, this.controller.signal); //Передаём signal
       this.setState(state => ({
         materials: state.materials.filter(material => material.id !== id),
       }));
     } catch (error) {
+      if (error.name === 'CanceledError' || error.name === 'AbortError') {
+        // Запрос отменён — просто игнорируем (axios даёт CanceledError, fetch даёт AbortError)
+        return;
+      }
       this.setState({ error: true });
       console.log(error);
     }
   };
 
   updateMaterial = async fields => {
+    this.controller = new AbortController();
     try {
-      const updateMaterial = await API.updateMaterial(fields);
+      const updateMaterial = await API.updateMaterial(
+        fields,
+        this.controller.signal,
+      );
       this.setState(state => ({
         materials: state.materials.map(material =>
           material.id === fields.id ? updateMaterial : material,
         ),
       }));
     } catch (error) {
+      if (error.name === 'CanceledError' || error.name === 'AbortError') {
+        // Запрос отменён — просто игнорируем (axios даёт CanceledError, fetch даёт AbortError)
+        return;
+      }
       this.setState({ error: true });
       console.log(error);
     }

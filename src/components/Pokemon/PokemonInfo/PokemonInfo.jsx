@@ -12,6 +12,9 @@ class PokemonInfo extends Component {
     status: 'idle',
   };
 
+  // Будем хранить контроллер как свойство экземпляра
+  controller = null;
+
   static propTypes = {
     pokemonName: PropTypes.string.isRequired,
   };
@@ -21,12 +24,35 @@ class PokemonInfo extends Component {
     const nextName = this.props.pokemonName;
 
     if (prevName !== nextName) {
-      this.setState({ status: 'pending' });
+      // Отменяем предыдущий запрос, если он ещё идёт
+      if (this.controller) {
+        this.controller.abort();
+        console.log('Pokemon: Сменился запрос');
+      }
+
+      // Создаём новый контроллер для свежего запроса
+      this.controller = new AbortController();
+
+      this.setState({ status: 'pending', error: null, pokemon: null });
 
       pokemonAPI
-        .fetchPokemon(nextName)
+        .fetchPokemon(nextName, this.controller.signal) //Передаём signal
         .then(pokemon => this.setState({ pokemon, status: 'resolved' }))
-        .catch(error => this.setState({ error, status: 'rejected' }));
+        .catch(error => {
+          if (error.name === 'AbortError') {
+            // Запрос отменён — просто игнорируем
+            return;
+          }
+          this.setState({ error, status: 'rejected' });
+        });
+    }
+  }
+
+  componentWillUnmount() {
+    // При размонтировании отменяем текущий запрос
+    if (this.controller) {
+      this.controller.abort();
+      console.log('Pokemon: Компонент размонтирован, запрос прерван');
     }
   }
 
