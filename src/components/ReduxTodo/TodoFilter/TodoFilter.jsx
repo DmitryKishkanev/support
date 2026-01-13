@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from '@/redux/reduxTodoTemp/slice';
+import { setFilter } from '@/redux/reduxTodo/slice';
 import { FilterLabel } from 'components/Todo/TodoFilter/TodoFilter.styled';
 
 const TodoFilter = () => {

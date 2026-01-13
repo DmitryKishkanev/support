@@ -13,7 +13,7 @@ import storage from 'redux-persist/lib/storage';
 
 import { userSlice } from '@/redux/user/slice';
 import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
-import { reduxTodoSlice } from '@/redux/reduxTodoTemp/slice';
+import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 
 // Store для user без persist
 // export const store = configureStore({

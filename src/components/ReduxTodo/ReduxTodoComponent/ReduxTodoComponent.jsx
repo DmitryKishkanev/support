@@ -5,7 +5,7 @@ import {
   deleteTodo,
   toggleModal,
   toggleCompleted,
-} from '@/redux/reduxTodoTemp/slice';
+} from '@/redux/reduxTodo/slice';
 import TodoList from 'components/ReduxTodo/TodoList';
 import IconButton from 'components/ReduxTodo/IconButton';
 import AddIcon from '@/icons/add.svg?react';
