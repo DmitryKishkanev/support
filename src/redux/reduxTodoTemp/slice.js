@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import shortid from 'shortid';
-import { reduxTodoInitialState } from '@/redux/reduxTodo/initialState';
+import { reduxTodoInitialState } from '@/redux/reduxTodoTemp/initialState';
 
 export const reduxTodoSlice = createSlice({
   name: 'reduxTodo',
