@@ -28,7 +28,7 @@ export default function PokemonInfo({ pokemonName }) {
     const controller = new AbortController();
 
     pokemonAPI
-      .fetchPokemon(pokemonName)
+      .fetchPokemon(pokemonName, controller.signal)
       .then(pokemon => {
         // Порядок setState-ов - важен. Сначала кладём данные, потом статус.
         setPokemon(pokemon);

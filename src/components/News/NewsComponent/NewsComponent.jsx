@@ -25,7 +25,7 @@ export default function NewsComponent() {
         const resArticles = await APIfetchArticles({
           searchQuery: query,
           currentPage,
-          signal: controller.signal,
+          signal: controller.signal, //Передаём signal
         });
         setArticles(prevArticles => [...prevArticles, ...resArticles]);
       } catch (error) {
