@@ -32,6 +32,7 @@ import LoadMoreComponent from 'components/LoadMoreComponent';
 import ContextApp from 'components/ContextAlert/ContextApp';
 import ReduxPhonebookApp from 'components/ReduxPhonebook/ReduxPhonebookApp';
 import ReduxTodoComponent from 'components/ReduxTodo/ReduxTodoComponent';
+import ReduxPokemon from 'components/ReduxPokemon/ReduxPokemon';
 
 export const supportConfig = [
   {
@@ -253,5 +254,13 @@ export const supportConfig = [
     description:
       'Приложение разработано с использованием функциональных и классовых компонентов React. Управление состоянием реализовано через Redux, что демонстрирует практическое применение внешнего хранилища данных. Функционал включает добавление и удаление заметок, фильтрацию по тексту, а также возможность отмечать выполненные задачи. Дополнительно отображается общее количество заметок и количество завершённых.',
     element: <ReduxTodoComponent />,
+  },
+  {
+    path: 'ReduxPokemon',
+    label: 'ReduxPokemon',
+    description:
+      'Данное приложение реализовано на основе функциональных компонентов React с использованием встроенных хуков и демонстрирует взаимодействие с серверной частью (бэкендом) посредством fetch‑запросов. Пользователь может выполнить поиск покемона по имени: при отправке запроса сначала отображается индикатор загрузки, затем — карточка с информацией о найденном покемоне. В случае ввода несуществующего имени или случайного набора символов после индикатора появится сообщение об ошибке и изображение‑заглушка. Дополнительно в приложении реализован подход прерывания HTTP‑запроса с использованием AbortController. Это позволяет корректно отменять запросы в случае размонтирования компонента или смены параметров поиска, предотвращая утечки памяти и обработку устаревших данных.',
+
+    element: <ReduxPokemon />,
   },
 ];
