@@ -14,7 +14,8 @@ import storage from 'redux-persist/lib/storage';
 import { userSlice } from '@/redux/user/slice';
 import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
 import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
-import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
+// import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
+import { reduxPokemonSlice } from './ReduxPokemon/slice';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -38,7 +39,11 @@ const persistReduxTodoReducer = persistReducer(
   reduxTodoSlice.reducer,
 );
 
-// const reduxPokemonConfig = { key: 'reduxPokemon', storage };
+// const reduxPokemonConfig = {
+//   key: 'reduxPokemon',
+//   storage,
+//   blacklist: ['isLoading', 'error'],
+// };
 // const persistReduxPokemonReducer = persistReducer(
 //   reduxPokemonConfig,
 //   reduxPokemonSlice.reducer,
@@ -49,7 +54,8 @@ export const store = configureStore({
     user: persistUserReducer,
     reduxPhonebook: persistReduxPhonebookReducer,
     reduxTodo: persistReduxTodoReducer,
-    ReduxPokemon: pokemonReducer,
+    // reduxPokemon: persistReduxPokemonReducer,
+    reduxPokemon: reduxPokemonSlice.reducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
