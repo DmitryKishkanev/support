@@ -76,7 +76,11 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchPokemon } from '@/redux/ReduxPokemon/pokemonOperations';
-import { getPokemon } from '@/redux/ReduxPokemon/selectors';
+import {
+  selectPokemon,
+  selectIsLoading,
+  selectError,
+} from '@/redux/ReduxPokemon/selectors';
 import PropTypes from 'prop-types';
 import PokemonErrorView from 'components/ReduxPokemon/PokemonErrorView';
 import PokemonDataView from 'components/ReduxPokemon/PokemonDataView';
@@ -84,7 +88,9 @@ import PokemonPendingView from 'components/ReduxPokemon/PokemonPendingView';
 
 export default function PokemonInfo({ pokemonName }) {
   const dispatch = useDispatch();
-  const { pokemon, isLoading, error } = useSelector(getPokemon);
+  const pokemon = useSelector(selectPokemon);
+  const isLoading = useSelector(selectIsLoading);
+  const error = useSelector(selectError);
 
   useEffect(() => {
     // Игнор первого рендера (pokemonName - пустая строка)
@@ -93,13 +99,13 @@ export default function PokemonInfo({ pokemonName }) {
     }
 
     // Создаём контроллер для текущего запроса
-    const controller = new AbortController();
+    // const controller = new AbortController();
 
-    dispatch(fetchPokemon(pokemonName, controller.signal));
+    const promise = dispatch(fetchPokemon(pokemonName));
 
     // Сleanup-функция: отмена запроса при размонтировании или смене pokemonName
     return () => {
-      controller.abort();
+      promise.abort();
       console.log(
         'HooksPokemon: Отмена запроса при размонтировании или смене pokemonName',
       );

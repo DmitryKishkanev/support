@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 // import * as pokemonActions from './pokemonActions';
 import { pokemonInitialState } from './initialState';
+import { fetchPokemon } from './pokemonOperations';
 
 // export const reduxPokemonSlice = createSlice({
 //   extraReducers: builder => {
@@ -20,23 +21,19 @@ import { pokemonInitialState } from './initialState';
 export const reduxPokemonSlice = createSlice({
   name: 'reduxPokemon',
   initialState: pokemonInitialState,
-  reducers: {
-    fetchPokemonRequest: state => {
-      state.isLoading = true;
-    },
-
-    fetchPokemonSuccess: (state, action) => {
-      state.isLoading = false;
-      state.error = null;
-      state.pokemon = action.payload;
-    },
-
-    fetchPokemonError: (state, action) => {
-      state.isLoading = false;
-      state.error = action.payload;
-    },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchPokemon.pending, (state, action) => {
+        state.isLoading = true;
+      })
+      .addCase(fetchPokemon.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.pokemon = action.payload;
+      })
+      .addCase(fetchPokemon.rejected, (state, action) => {
+        state.isLoading = false;
+        state.error = action.payload;
+      });
   },
 });
-
-export const { fetchPokemonRequest, fetchPokemonSuccess, fetchPokemonError } =
-  reduxPokemonSlice.actions;

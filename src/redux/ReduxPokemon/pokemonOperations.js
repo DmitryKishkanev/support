@@ -17,22 +17,34 @@
 //   }
 // };
 
-import {
-  fetchPokemonRequest,
-  fetchPokemonSuccess,
-  fetchPokemonError,
-} from './slice';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 import pokemonAPI from 'components/ReduxPokemon/Services/pokemon-api';
 
-export const fetchPokemon = (pokemonName, signal) => async dispatch => {
-  // если без async/await fetch().then().catch();
+// export const fetchPokemon = (pokemonName, signal) => async dispatch => {
+//   // если без async/await fetch().then().catch();
 
-  try {
-    dispatch(fetchPokemonRequest());
-    const pokemon = await pokemonAPI.fetchPokemon(pokemonName, signal);
-    dispatch(fetchPokemonSuccess(pokemon));
-  } catch (error) {
-    // dispatch(fetchPokemonError(error.message));
-    dispatch(fetchPokemonError(error.message));
-  }
-};
+//   try {
+//     dispatch(fetchPokemonRequest());
+//     const pokemon = await pokemonAPI.fetchPokemon(pokemonName, signal);
+//     dispatch(fetchPokemonSuccess(pokemon));
+//   } catch (error) {
+//     // dispatch(fetchPokemonError(error.message));
+//     dispatch(fetchPokemonError(error.message));
+//   }
+// };
+
+export const fetchPokemon = createAsyncThunk(
+  'pokemon/fetchAll',
+  // если без async/await - fetch().then().catch();
+  async (pokemonName, thunkAPI) => {
+    try {
+      const pokemon = await pokemonAPI.fetchPokemon(
+        pokemonName,
+        thunkAPI.signal,
+      );
+      return pokemon;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  },
+);
