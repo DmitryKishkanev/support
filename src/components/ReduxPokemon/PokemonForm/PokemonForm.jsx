@@ -1,11 +1,14 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+// import PropTypes from 'prop-types';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
 import { PokemonFormBox } from 'components/ReduxPokemon/PokemonForm/PokemonForm.styled';
+import { fetchPokemon } from '@/redux/ReduxPokemon/pokemonOperations';
 
-export default function PokemonForm({ onSubmit }) {
+export default function PokemonForm() {
   const [pokemonName, setPokemonName] = useState('');
+  const dispatch = useDispatch();
 
   const handleNameChange = event => {
     setPokemonName(event.currentTarget.value.toLowerCase());
@@ -18,8 +21,16 @@ export default function PokemonForm({ onSubmit }) {
       toast.warn('Введите имя покемона');
       return;
     }
-    onSubmit(pokemonName);
+    // onSubmit(pokemonName);
+    const promise = dispatch(fetchPokemon(pokemonName));
     setPokemonName('');
+
+    return () => {
+      promise.abort();
+      console.log(
+        'HooksPokemon: Отмена запроса при размонтировании или смене pokemonName',
+      );
+    };
   };
 
   return (
@@ -41,6 +52,6 @@ export default function PokemonForm({ onSubmit }) {
   );
 }
 
-PokemonForm.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
+// PokemonForm.propTypes = {
+//   onSubmit: PropTypes.func.isRequired,
+// };

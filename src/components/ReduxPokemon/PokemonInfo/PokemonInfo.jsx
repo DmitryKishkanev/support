@@ -73,51 +73,45 @@
 //   pokemonName: PropTypes.string.isRequired,
 // };
 
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchPokemon } from '@/redux/ReduxPokemon/pokemonOperations';
+import { useSelector } from 'react-redux';
 import {
   selectPokemon,
   selectIsLoading,
   selectError,
 } from '@/redux/ReduxPokemon/selectors';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import PokemonErrorView from 'components/ReduxPokemon/PokemonErrorView';
 import PokemonDataView from 'components/ReduxPokemon/PokemonDataView';
 import PokemonPendingView from 'components/ReduxPokemon/PokemonPendingView';
 
-export default function PokemonInfo({ pokemonName }) {
-  const dispatch = useDispatch();
+export default function PokemonInfo() {
   const pokemon = useSelector(selectPokemon);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-  useEffect(() => {
-    // Игнор первого рендера (pokemonName - пустая строка)
-    if (!pokemonName) {
-      return;
-    }
+  // useEffect(() => {
+  //   // Игнор первого рендера (pokemonName - пустая строка)
+  //   if (!pokemon) {
+  //     return;
+  //   }
 
-    // Создаём контроллер для текущего запроса
-    // const controller = new AbortController();
+  //   const promise = dispatch(fetchPokemon(pokemon));
 
-    const promise = dispatch(fetchPokemon(pokemonName));
+  //   // Сleanup-функция: отмена запроса при размонтировании или смене pokemonName
+  //   return () => {
+  //     promise.abort();
+  //     console.log(
+  //       'HooksPokemon: Отмена запроса при размонтировании или смене pokemonName',
+  //     );
+  //   };
+  // }, [dispatch, pokemon]);
 
-    // Сleanup-функция: отмена запроса при размонтировании или смене pokemonName
-    return () => {
-      promise.abort();
-      console.log(
-        'HooksPokemon: Отмена запроса при размонтировании или смене pokemonName',
-      );
-    };
-  }, [dispatch, pokemonName]);
-
-  if (!pokemonName) {
+  if (!pokemon) {
     return <div>Введите имя покемона</div>;
   }
 
   if (isLoading) {
-    return <PokemonPendingView pokemonName={pokemonName} />;
+    return <PokemonPendingView pokemonName={pokemon.name} />;
   }
 
   if (error) {
@@ -131,6 +125,6 @@ export default function PokemonInfo({ pokemonName }) {
   return null;
 }
 
-PokemonInfo.propTypes = {
-  pokemonName: PropTypes.string.isRequired,
-};
+// PokemonInfo.propTypes = {
+//   pokemonName: PropTypes.string.isRequired,
+// };
