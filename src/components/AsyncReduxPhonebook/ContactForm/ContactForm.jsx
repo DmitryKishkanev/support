@@ -1,9 +1,10 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
-import { insertContact } from '@/redux/reduxPhonebook/slice';
 import { nanoid } from 'nanoid';
-import { FormContainer } from 'components/ReduxPhonebook/ContactForm/ContactForm.styled';
+import { FormContainer } from 'components/AsyncReduxPhonebook/ContactForm/ContactForm.styled';
+import { addContact } from '@/redux/asyncReduxPhonebook/phonebookOperations';
+import { selectContacts } from '@/redux/asyncReduxPhonebook/selectors';
 
 const schema = object({
   name: string().required(),
@@ -16,7 +17,7 @@ const initialValue = {
 };
 
 const ContactForm = () => {
-  const contacts = useSelector(state => state.reduxPhonebook.contacts);
+  const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
 
   const onSubmit = (values, { resetForm }) => {
@@ -35,9 +36,16 @@ const ContactForm = () => {
       return;
     }
 
-    dispatch(insertContact(newContact));
+    const promise = dispatch(addContact(newContact));
 
     resetForm();
+
+    return () => {
+      promise.abort();
+      console.log(
+        'AsyncReduxPhonebook: Отмена запроса при размонтировании компонента',
+      );
+    };
   };
 
   return (

@@ -59,7 +59,6 @@ const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
   width: 500px;
-  height: 260px;
   padding: 15px;
   margin-bottom: 35px;
 
@@ -100,7 +99,7 @@ const FormContainer = styled(Form)`
   }
 
   button {
-    width: 150px;
+    margin-left: auto;
   }
 `;
 

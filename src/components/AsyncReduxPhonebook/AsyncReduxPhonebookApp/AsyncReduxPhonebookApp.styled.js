@@ -15,9 +15,7 @@ const Container = styled.div`
   border-radius: 4px;
 
   background-color: #d4f2ff;
-  box-shadow:
-    0px 1px 1px rgba(0, 0, 0, 0.12),
-    0px 4px 4px rgba(0, 0, 0, 0.06),
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 
   h1 {
@@ -26,9 +24,9 @@ const Container = styled.div`
 
   h2 {
     margin-top: 0;
-    margin-bottom: 10px;
-    /* margin-right: auto;
-    margin-left: 315px; */
+    margin-bottom: 15px;
+    /* margin-right: auto; */
+    /* margin-left: 315px; */
 
     font-weight: 700;
     font-size: 32px;

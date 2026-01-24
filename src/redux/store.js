@@ -15,7 +15,9 @@ import { userSlice } from '@/redux/user/slice';
 import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
 import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 // import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
-import { reduxPokemonSlice } from './ReduxPokemon/slice';
+import { reduxPokemonSlice } from './reduxPokemon/slice';
+import { asyncReduxPhonebookSlice } from './asyncReduxPhonebook/contactsSlice';
+import { asyncReduxPhonebookFilterSlice } from './asyncReduxPhonebook/filterSlice';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -49,6 +51,24 @@ const persistReduxTodoReducer = persistReducer(
 //   reduxPokemonSlice.reducer,
 // );
 
+const asyncReduxPhonebookPersistConfig = {
+  key: 'asyncReduxPhonebook',
+  storage,
+};
+const persistAsyncReduxPhonebookReducer = persistReducer(
+  asyncReduxPhonebookPersistConfig,
+  asyncReduxPhonebookSlice.reducer,
+);
+
+const asyncReduxPhonebookFilterPersistConfig = {
+  key: 'asyncReduxPhonebookFilter',
+  storage,
+};
+const persistAsyncReduxPhonebookFilterReducer = persistReducer(
+  asyncReduxPhonebookFilterPersistConfig,
+  asyncReduxPhonebookFilterSlice.reducer,
+);
+
 export const store = configureStore({
   reducer: {
     user: persistUserReducer,
@@ -56,6 +76,8 @@ export const store = configureStore({
     reduxTodo: persistReduxTodoReducer,
     // reduxPokemon: persistReduxPokemonReducer,
     reduxPokemon: reduxPokemonSlice.reducer,
+    asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
+    asyncReduxPhonebookFilter: persistAsyncReduxPhonebookFilterReducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
