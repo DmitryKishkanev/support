@@ -15,9 +15,15 @@ const ContactItem = () => {
     dispatch(deleteContact(contactId));
   };
 
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase()),
-  );
+  // const filteredContacts = contacts.filter(contact =>
+  //   contact.name.toLowerCase().includes(filter?.toLowerCase()),
+  // );
+
+  const filteredContacts = filter?.trim()
+    ? contacts.filter(contact =>
+        contact.name.toLowerCase().includes(filter.toLowerCase()),
+      )
+    : contacts;
 
   return (
     <>
