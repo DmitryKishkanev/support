@@ -4,4 +4,4 @@ export const selectIsLoading = state => state.asyncReduxPhonebook.isLoading;
 
 export const selectError = state => state.asyncReduxPhonebook.error;
 
-export const selectFilter = state => state.asyncReduxPhonebookFilter.filter;
+export const selectFilter = state => state.asyncReduxPhonebookFilter;

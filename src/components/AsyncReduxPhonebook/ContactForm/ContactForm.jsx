@@ -8,12 +8,12 @@ import { selectContacts } from '@/redux/asyncReduxPhonebook/selectors';
 
 const schema = object({
   name: string().required(),
-  number: string().min(7).max(9).required(),
+  phone: string().min(7).max(12).required(),
 });
 
 const initialValue = {
   name: '',
-  number: '',
+  phone: '',
 };
 
 const ContactForm = () => {
@@ -24,7 +24,7 @@ const ContactForm = () => {
     const newContact = {
       id: nanoid(),
       name: values.name,
-      number: values.number,
+      phone: values.phone,
     };
 
     const isNamePresent = contacts.some(
@@ -36,16 +36,17 @@ const ContactForm = () => {
       return;
     }
 
-    const promise = dispatch(addContact(newContact));
+    // const promise = dispatch(addContact(newContact));
+    dispatch(addContact(newContact));
 
     resetForm();
 
-    return () => {
-      promise.abort();
-      console.log(
-        'AsyncReduxPhonebook: Отмена запроса при размонтировании компонента',
-      );
-    };
+    // return () => {
+    //   promise.abort();
+    //   console.log(
+    //     'AsyncReduxPhonebook: Отмена запроса при размонтировании компонента',
+    //   );
+    // };
   };
 
   return (
@@ -63,8 +64,8 @@ const ContactForm = () => {
 
         <label>
           <span>Number</span>
-          <Field type="tel" name="number" required />
-          <ErrorMessage name="number" />
+          <Field type="tel" name="phone" required />
+          <ErrorMessage name="phone" />
         </label>
 
         <button type="submit" className="phonebook__button">

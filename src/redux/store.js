@@ -60,15 +60,6 @@ const persistAsyncReduxPhonebookReducer = persistReducer(
   asyncReduxPhonebookSlice.reducer,
 );
 
-const asyncReduxPhonebookFilterPersistConfig = {
-  key: 'asyncReduxPhonebookFilter',
-  storage,
-};
-const persistAsyncReduxPhonebookFilterReducer = persistReducer(
-  asyncReduxPhonebookFilterPersistConfig,
-  asyncReduxPhonebookFilterSlice.reducer,
-);
-
 export const store = configureStore({
   reducer: {
     user: persistUserReducer,
@@ -77,7 +68,7 @@ export const store = configureStore({
     // reduxPokemon: persistReduxPokemonReducer,
     reduxPokemon: reduxPokemonSlice.reducer,
     asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
-    asyncReduxPhonebookFilter: persistAsyncReduxPhonebookFilterReducer,
+    asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
   },
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
