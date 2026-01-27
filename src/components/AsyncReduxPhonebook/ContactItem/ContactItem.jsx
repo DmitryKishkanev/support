@@ -8,6 +8,7 @@ import { deleteContact } from '@/redux/asyncReduxPhonebook/phonebookOperations';
 
 const ContactItem = () => {
   const contacts = useSelector(selectContacts);
+
   const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
@@ -18,6 +19,13 @@ const ContactItem = () => {
   const filteredContacts = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.toLowerCase()),
   );
+
+  // Если в contacts попал null
+  // const filteredContacts = contacts
+  //   .filter(contact => contact)
+  //   .filter(contact =>
+  //     contact.name.toLowerCase().includes(filter.toLowerCase()),
+  //   );
 
   return (
     <>

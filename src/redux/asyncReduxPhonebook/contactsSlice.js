@@ -10,9 +10,20 @@ const handlePending = state => {
   state.isLoading = true;
 };
 
+// const handleRejected = (state, action) => {
+//   state.isLoading = false;
+//   console.log('DEBUG rejected action:', action);
+//   state.error = action.payload;
+// };
+
 const handleRejected = (state, action) => {
   state.isLoading = false;
-  state.error = action.payload;
+  // Обработка прерывания http - запроса
+  if (action.error.name === 'AbortError') {
+    console.log('Запрос был отменён');
+  } else {
+    state.error = action.payload;
+  }
 };
 
 export const asyncReduxPhonebookSlice = createSlice({
