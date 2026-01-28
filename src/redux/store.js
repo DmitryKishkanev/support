@@ -15,7 +15,7 @@ import { userSlice } from '@/redux/user/slice';
 import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
 import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 // import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
-import { reduxPokemonSlice } from '@/redux/reduxPokemonOn/slice';
+import { reduxPokemonSlice } from '@/redux/reduxPokemon/slice';
 import { asyncReduxPhonebookSlice } from '@/redux/asyncReduxPhonebook/contactsSlice';
 import { asyncReduxPhonebookFilterSlice } from '@/redux/asyncReduxPhonebook/filterSlice';
 
