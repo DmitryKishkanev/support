@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { resetPokemon } from '@/redux/reduxPokemon/slice';
+import { resetPokemon } from '@/redux/reduxPokemonOn/slice';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
 import { PokemonFormBox } from 'components/ReduxPokemon/PokemonForm/PokemonForm.styled';
-import { fetchPokemon } from '@/redux/reduxPokemon/pokemonOperations';
+import { fetchPokemon } from '@/redux/reduxPokemonOn/pokemonOperations';
 
 export default function PokemonForm() {
   const [pokemonName, setPokemonName] = useState('');

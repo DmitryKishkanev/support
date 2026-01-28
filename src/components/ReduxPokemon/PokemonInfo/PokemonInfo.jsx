@@ -3,7 +3,7 @@ import {
   selectPokemon,
   selectIsLoading,
   selectError,
-} from '@/redux/reduxPokemon/selectors';
+} from '@/redux/reduxPokemonOn/selectors';
 import PokemonErrorView from 'components/ReduxPokemon/PokemonErrorView';
 import PokemonDataView from 'components/ReduxPokemon/PokemonDataView';
 import PokemonPendingView from 'components/ReduxPokemon/PokemonPendingView';
