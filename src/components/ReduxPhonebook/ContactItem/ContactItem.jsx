@@ -10,13 +10,16 @@ const ContactItem = () => {
     dispatch(removeContact(contactId));
   };
 
-  const filteredCntacts = contacts.filter(contact =>
-    contact.name.toLocaleLowerCase().includes(filter.toLowerCase()),
+  const filteredContacts = contacts.filter(contact =>
+    contact.name.toLowerCase().includes(filter.toLowerCase()),
   );
+
+  const contactsToRender =
+    filteredContacts.length > 0 ? filteredContacts : contacts;
 
   return (
     <>
-      {filteredCntacts.map(({ id, name, number }) => (
+      {contactsToRender.map(({ id, name, number }) => (
         <ContactEl key={id}>
           <div>
             <p>

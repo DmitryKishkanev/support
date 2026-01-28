@@ -43,7 +43,12 @@ export const asyncReduxPhonebookSlice = createSlice({
       .addCase(addContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.items.push(action.payload);
+        // Добавляем контакт в конец списка
+        // state.items.push(action.payload);
+        // Добавляем контакт в начало списка
+        state.items.unshift(action.payload);
+        // Добавляем контакт в начало списка
+        // state.items = [action.payload, ...state.items];
       })
       .addCase(addContact.rejected, handleRejected)
       .addCase(deleteContact.pending, handlePending)

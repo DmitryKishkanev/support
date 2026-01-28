@@ -6,7 +6,11 @@ export const reduxPhonebookSlice = createSlice({
   initialState: phonebookInitialState,
   reducers: {
     insertContact: (state, action) => {
-      state.contacts.push(action.payload);
+      // Добавляем контакт в конец списка
+      // state.contacts.push(action.payload);
+
+      // Добавляем контакт в начало списка
+      state.contacts.unshift(action.payload);
     },
 
     removeContact: (state, action) => {

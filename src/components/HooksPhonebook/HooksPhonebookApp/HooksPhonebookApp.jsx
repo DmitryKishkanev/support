@@ -34,9 +34,10 @@ export default function HooksPhonebookApp() {
 
   const getFilteredCntacts = () => {
     const normalizedFilter = filter.toLowerCase();
-    return contacts.filter(contact =>
-      contact.name.toLocaleLowerCase().includes(normalizedFilter),
+    const result = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter),
     );
+    return result.length > 0 ? result : contacts;
   };
 
   return (

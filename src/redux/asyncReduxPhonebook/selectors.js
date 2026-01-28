@@ -12,8 +12,10 @@ export const selectFilter = state => state.asyncReduxPhonebookFilter;
 export const selectFilteredContacts = createSelector(
   [selectContacts, selectFilter],
   (contacts, filter) => {
-    return contacts.filter(contact =>
+    const result = contacts.filter(contact =>
       contact.name.toLowerCase().includes(filter.trim().toLowerCase()),
     );
+
+    return result.length > 0 ? result : contacts;
   },
 );
