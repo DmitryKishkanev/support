@@ -15,9 +15,9 @@ import { userSlice } from '@/redux/user/slice';
 import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
 import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 // import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
-import { reduxPokemonSlice } from './reduxPokemon/slice';
-import { asyncReduxPhonebookSlice } from './asyncReduxPhonebook/contactsSlice';
-import { asyncReduxPhonebookFilterSlice } from './asyncReduxPhonebook/filterSlice';
+import { reduxPokemonSlice } from '@/redux/reduxPokemon/slice';
+import { asyncReduxPhonebookSlice } from '@/redux/asyncReduxPhonebook/contactsSlice';
+import { asyncReduxPhonebookFilterSlice } from '@/redux/asyncReduxPhonebook/filterSlice';
 
 // Store для user без persist
 // export const store = configureStore({
