@@ -10,7 +10,17 @@ export default function AsyncReduxPhonebookApp() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchContacts());
+    const promise = dispatch(fetchContacts());
+
+    return () => {
+      // На первом рендере в консоли будет срабатывать abort() из-за особенности работы React.StrictMode
+      if (promise.abort) {
+        promise.abort();
+        console.log(
+          'asyncReduxPhonebook_fetchContacts: Отмена запроса при размонтировании компонента',
+        );
+      }
+    };
   }, [dispatch]);
 
   return (

@@ -4,7 +4,7 @@ const ContactBox = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 350px;
+  /* width: 350px; */
 
   padding: 0;
   margin-right: auto;

@@ -5,6 +5,13 @@ import { fetchPokemon } from './pokemonOperations';
 export const reduxPokemonSlice = createSlice({
   name: 'reduxPokemon',
   initialState: pokemonInitialState,
+  reducers: {
+    resetPokemon: state => {
+      state.pokemon = null;
+      state.isLoading = false;
+      state.error = null;
+    },
+  },
   extraReducers: builder => {
     builder
       .addCase(fetchPokemon.pending, (state, action) => {
@@ -17,7 +24,14 @@ export const reduxPokemonSlice = createSlice({
       })
       .addCase(fetchPokemon.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.payload;
+        // Обработка ошибки при прерывании http - запроса
+        if (action.error.name === 'AbortError') {
+          console.log('Запрос был отменён');
+        } else {
+          state.error = action.payload;
+        }
       });
   },
 });
+
+export const { resetPokemon } = reduxPokemonSlice.actions;

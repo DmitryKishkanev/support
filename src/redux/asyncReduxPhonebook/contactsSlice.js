@@ -18,7 +18,7 @@ const handlePending = state => {
 
 const handleRejected = (state, action) => {
   state.isLoading = false;
-  // Обработка прерывания http - запроса
+  // Обработка ошибки при прерывании http - запроса
   if (action.error.name === 'AbortError') {
     console.log('Запрос был отменён');
   } else {
@@ -50,7 +50,8 @@ export const asyncReduxPhonebookSlice = createSlice({
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        const index = action.meta.arg;
+        // const index = action.meta.arg;
+        const index = action.payload.id;
         state.items = state.items.filter(contact => contact.id !== index);
       })
       .addCase(deleteContact.rejected, handleRejected);

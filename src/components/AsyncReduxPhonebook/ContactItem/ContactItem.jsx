@@ -1,31 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ContactEl } from 'components/AsyncReduxPhonebook/ContactItem/ContactItem.styled';
-import {
-  selectContacts,
-  selectFilter,
-} from '@/redux/asyncReduxPhonebook/selectors';
+import { selectFilteredContacts } from '@/redux/asyncReduxPhonebook/selectors';
 import { deleteContact } from '@/redux/asyncReduxPhonebook/phonebookOperations';
 
 const ContactItem = () => {
-  const contacts = useSelector(selectContacts);
-
-  const filter = useSelector(selectFilter);
+  // Перенесли фильтрацию в selectors
+  const filteredContacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
 
   const handleDeleteContact = contactId => {
     dispatch(deleteContact(contactId));
   };
-
-  const filteredContacts = contacts.filter(contact =>
-    contact.name.toLowerCase().includes(filter.toLowerCase()),
-  );
-
-  // Если в contacts попал null
-  // const filteredContacts = contacts
-  //   .filter(contact => contact)
-  //   .filter(contact =>
-  //     contact.name.toLowerCase().includes(filter.toLowerCase()),
-  //   );
 
   return (
     <>

@@ -52,7 +52,7 @@ const ContactForm = () => {
       if (promiseRef.current) {
         promiseRef.current.abort();
         console.log(
-          'AsyncReduxPhonebook: Отмена запроса при размонтировании компонента',
+          'asyncReduxPhonebook_addContact: Отмена запроса при размонтировании компонента',
         );
       }
     };

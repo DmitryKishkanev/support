@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 const ContactEl = styled.li`
   div {
     display: flex;
+    gap: 20px;
     align-items: center;
   }
 
