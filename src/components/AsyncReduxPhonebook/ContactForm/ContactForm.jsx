@@ -4,8 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { FormContainer } from 'components/AsyncReduxPhonebook/ContactForm/ContactForm.styled';
-import { addContact } from '@/redux/asyncReduxPhonebook/phonebookOperations';
-import { selectContacts } from '@/redux/asyncReduxPhonebook/selectors';
+import { addContact, selectContacts } from '@/redux/asyncReduxPhonebook';
 
 const schema = object({
   name: string().required(),

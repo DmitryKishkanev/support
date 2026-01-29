@@ -1,7 +1,9 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ContactEl } from 'components/AsyncReduxPhonebook/ContactItem/ContactItem.styled';
-import { selectFilteredContacts } from '@/redux/asyncReduxPhonebook/selectors';
-import { deleteContact } from '@/redux/asyncReduxPhonebook/phonebookOperations';
+import {
+  selectFilteredContacts,
+  deleteContact,
+} from '@/redux/asyncReduxPhonebook';
 
 const ContactItem = () => {
   // Перенесли фильтрацию в selectors

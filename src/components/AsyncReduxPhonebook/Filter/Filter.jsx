@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { setFilter } from '@/redux/asyncReduxPhonebook/filterSlice';
 import { FilterLabel } from 'components/AsyncReduxPhonebook/Filter/Filter.styled';
-import { selectFilter } from '@/redux/asyncReduxPhonebook/selectors';
+import { setFilter, selectFilter } from '@/redux/asyncReduxPhonebook';
 
 const Filter = () => {
   const filter = useSelector(selectFilter);

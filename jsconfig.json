@@ -7,3 +7,10 @@
   },
   "include": ["src"]
 }
+
+// {
+//   "compilerOptions": {
+//     "baseUrl": "src"
+//   },
+//   "include": ["src"]
+// }
