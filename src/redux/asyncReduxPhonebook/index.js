@@ -13,3 +13,6 @@ export {
 } from './selectors';
 
 export { setFilter } from './filterSlice';
+
+export { asyncReduxPhonebookSlice } from './contactsSlice';
+export { asyncReduxPhonebookFilterSlice } from './filterSlice';

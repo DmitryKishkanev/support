@@ -16,8 +16,10 @@ import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
 import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 // import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
 import { reduxPokemonSlice } from '@/redux/reduxPokemon/slice';
-import { asyncReduxPhonebookSlice } from '@/redux/asyncReduxPhonebook/contactsSlice';
-import { asyncReduxPhonebookFilterSlice } from '@/redux/asyncReduxPhonebook/filterSlice';
+import { rtkQueryPokemonSlice } from '@/redux/rtkQueryPokemon';
+// import { pokemonApi } from '@/redux/rtkQueryPokemon';
+import { asyncReduxPhonebookSlice } from '@/redux/asyncReduxPhonebook';
+import { asyncReduxPhonebookFilterSlice } from '@/redux/asyncReduxPhonebook';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -67,9 +69,11 @@ export const store = configureStore({
     reduxTodo: persistReduxTodoReducer,
     // reduxPokemon: persistReduxPokemonReducer,
     reduxPokemon: reduxPokemonSlice.reducer,
+    rtkQueryPokemon: rtkQueryPokemonSlice.reducer,
     asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
   },
+  //Middleware в Redux — это промежуточное программное обеспечение (прослойка), расположенное между отправкой действия (dispatch) и редьюсером (reducer).
   middleware(getDefaultMiddleware) {
     return getDefaultMiddleware({
       serializableCheck: {
@@ -78,5 +82,28 @@ export const store = configureStore({
     });
   },
 });
+
+// export const store = configureStore({
+//   reducer: {
+//     user: persistUserReducer,
+//     reduxPhonebook: persistReduxPhonebookReducer,
+//     reduxTodo: persistReduxTodoReducer,
+//     // reduxPokemon: persistReduxPokemonReducer,
+//     reduxPokemon: reduxPokemonSlice.reducer,
+//     rtkQueryPokemon: rtkQueryPokemonSlice.reducer,
+//     [pokemonApi.reducerPath]: pokemonApi.reducer,
+//     asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
+//     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
+//   },
+//   //Middleware в Redux — это промежуточное программное обеспечение (прослойка), расположенное между отправкой действия (dispatch) и редьюсером (reducer).
+//   middleware: getDefaultMiddleware => [
+//     ...getDefaultMiddleware({
+//       serializableCheck: {
+//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+//       },
+//     }),
+//     pokemonApi.middleware,
+//   ],
+// });
 
 export const persistor = persistStore(store);

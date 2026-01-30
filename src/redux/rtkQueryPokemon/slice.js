@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { pokemonInitialState } from './initialState';
 import { fetchPokemon } from './pokemonOperations';
 
-export const reduxPokemonSlice = createSlice({
-  name: 'reduxPokemon',
+export const rtkQueryPokemonSlice = createSlice({
+  name: 'rtkQueryPokemon',
   initialState: pokemonInitialState,
   reducers: {
     resetPokemon: () => pokemonInitialState,
@@ -30,4 +30,4 @@ export const reduxPokemonSlice = createSlice({
   },
 });
 
-export const { resetPokemon } = reduxPokemonSlice.actions;
+export const { resetPokemon } = rtkQueryPokemonSlice.actions;

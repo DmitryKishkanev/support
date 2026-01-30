@@ -33,6 +33,7 @@ import ContextApp from 'components/ContextAlert/ContextApp';
 import ReduxPhonebookApp from 'components/ReduxPhonebook/ReduxPhonebookApp';
 import ReduxTodoComponent from 'components/ReduxTodo/ReduxTodoComponent';
 import ReduxPokemon from 'components/ReduxPokemon/ReduxPokemon';
+import RTKQueryPokemon from 'components/RTKQueryPokemon/RTKQueryPokemon';
 import AsyncReduxPhonebookApp from 'components/AsyncReduxPhonebook/AsyncReduxPhonebookApp';
 
 export const supportConfig = [
@@ -262,6 +263,13 @@ export const supportConfig = [
     description:
       'Приложение разработано с использованием функциональных компонентов React. Управление состоянием и взаимодействие с серверной частью реализованы через асинхронный Redux с использованием fetch‑запросов. Пользователь может выполнить поиск покемона по имени: при отправке запроса сначала отображается индикатор загрузки, затем — карточка с информацией о найденном покемоне. В случае ввода несуществующего имени или случайного набора символов после индикатора появится сообщение об ошибке и изображение‑заглушка. Дополнительно в приложении реализован механизм прерывания HTTP‑запросов с помощью AbortController. Это позволяет корректно отменять запросы при размонтировании компонента или смене параметров поиска, предотвращая утечки памяти и обработку устаревших данных.',
     element: <ReduxPokemon />,
+  },
+  {
+    path: 'RTKQueryPokemon',
+    label: 'RTKQueryPokemon',
+    description:
+      'Приложение разработано с использованием функциональных компонентов React. Управление состоянием и взаимодействие с серверной частью реализованы через асинхронный Redux с использованием fetch‑запросов. Пользователь может выполнить поиск покемона по имени: при отправке запроса сначала отображается индикатор загрузки, затем — карточка с информацией о найденном покемоне. В случае ввода несуществующего имени или случайного набора символов после индикатора появится сообщение об ошибке и изображение‑заглушка. Дополнительно в приложении реализован механизм прерывания HTTP‑запросов с помощью AbortController. Это позволяет корректно отменять запросы при размонтировании компонента или смене параметров поиска, предотвращая утечки памяти и обработку устаревших данных.',
+    element: <RTKQueryPokemon />,
   },
   {
     path: 'AsyncReduxPhonebookApp',
