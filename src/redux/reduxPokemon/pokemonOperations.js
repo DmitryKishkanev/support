@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import pokemonAPI from '@/components/ReduxPokemon/Services/pokemon-api';
 
-export const fetchPokemon = createAsyncThunk(
-  'pokemon/fetchAll',
+export const fetchPokemonRedux = createAsyncThunk(
+  'reduxPokemon/fetchPokemon',
   // если без async/await - fetch().then().catch();
   async (pokemonName, thunkAPI) => {
     try {

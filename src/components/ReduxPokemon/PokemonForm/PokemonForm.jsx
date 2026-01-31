@@ -1,10 +1,10 @@
 import { useState, useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
-import { resetPokemon } from '@/redux/reduxPokemon/slice';
+import { resetReduxPokemon } from '@/redux/reduxPokemon/slice';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
 import { PokemonFormBox } from 'components/ReduxPokemon/PokemonForm/PokemonForm.styled';
-import { fetchPokemon } from '@/redux/reduxPokemon/pokemonOperations';
+import { fetchPokemonRedux } from '@/redux/reduxPokemon/pokemonOperations';
 
 export default function PokemonForm() {
   const [pokemonName, setPokemonName] = useState('');
@@ -23,7 +23,7 @@ export default function PokemonForm() {
       return;
     }
 
-    promiseRef.current = dispatch(fetchPokemon(pokemonName));
+    promiseRef.current = dispatch(fetchPokemonRedux(pokemonName));
 
     setPokemonName('');
   };
@@ -37,7 +37,7 @@ export default function PokemonForm() {
           'ReduxPokemon: Отмена запроса при размонтировании или смене pokemonName',
         );
       }
-      dispatch(resetPokemon()); // Сброс состояния при размонтировании компонента
+      dispatch(resetReduxPokemon()); // Сброс состояния при размонтировании компонента
     };
   }, [dispatch]);
 

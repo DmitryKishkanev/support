@@ -3,28 +3,46 @@ import { useDispatch } from 'react-redux';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
 import { PokemonFormBox } from 'components/RTKQueryPokemon/PokemonForm/PokemonForm.styled';
-import { resetPokemon, fetchPokemon } from '@/redux/rtkQueryPokemon';
+import { resetRtkPokemon, fetchPokemonRtk } from '@/redux/rtkQueryPokemon';
+import { useGetPokemonByNameQuery } from '@/redux/rtkQueryPokemon';
 
 export default function PokemonForm() {
   const [pokemonName, setPokemonName] = useState('');
   const dispatch = useDispatch();
   const promiseRef = useRef(null);
 
-  const handleNameChange = event => {
-    setPokemonName(event.currentTarget.value.toLowerCase());
-  };
+  const { data, error, isFetching } = useGetPokemonByNameQuery(pokemonName, {
+    skip: pokemonName === '',
+    // fetch - запрос автоматически каждые 3 сек.
+    // pollingInterval: 3000,
+
+    // fetch - запрос автоматически при возвращении фокуса на страницу.
+    // refetchOnFocus: true,
+
+    // fetch - запрос автоматически при востановлении интерент-связи после разрыва.
+    // refetchOnReconnect: true,
+  });
+
+  // const handleNameChange = event => {
+  //   setPokemonName(event.currentTarget.value.toLowerCase());
+  // };
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (pokemonName.trim() === '') {
-      toast.warn('Введите имя покемона');
-      return;
-    }
+    setPokemonName(
+      event.currentTarget.elements.pokemonName.value.toLowerCase(),
+    );
+    event.currentTarget.reset();
 
-    promiseRef.current = dispatch(fetchPokemon(pokemonName));
+    // if (pokemonName.trim() === '') {
+    //   toast.warn('Введите имя покемона');
+    //   return;
+    // }
 
-    setPokemonName('');
+    // promiseRef.current = dispatch(fetchPokemonRtk(pokemonName));
+
+    // setPokemonName('');
   };
 
   // Для прерывания http - запроса, при размонтировании компонента
@@ -36,7 +54,7 @@ export default function PokemonForm() {
           'rtkQueryPokemon: Отмена запроса при размонтировании или смене pokemonName',
         );
       }
-      dispatch(resetPokemon()); // Сброс состояния при размонтировании компонента
+      dispatch(resetRtkPokemon()); // Сброс состояния при размонтировании компонента
     };
   }, [dispatch]);
 
@@ -46,8 +64,8 @@ export default function PokemonForm() {
         <input
           type="text"
           name="pokemonName"
-          value={pokemonName}
-          onChange={handleNameChange}
+          // value={pokemonName}
+          // onChange={handleNameChange}
         />
       </label>
 

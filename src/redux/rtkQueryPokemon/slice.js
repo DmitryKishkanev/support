@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { pokemonInitialState } from './initialState';
-import { fetchPokemon } from './pokemonOperations';
+import { fetchPokemonRtk } from './pokemonOperations';
 
 export const rtkQueryPokemonSlice = createSlice({
   name: 'rtkQueryPokemon',
   initialState: pokemonInitialState,
   reducers: {
-    resetPokemon: () => pokemonInitialState,
+    resetRtkPokemon: () => pokemonInitialState,
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchPokemon.pending, (state, action) => {
+      .addCase(fetchPokemonRtk.pending, (state, action) => {
         state.isLoading = true;
       })
-      .addCase(fetchPokemon.fulfilled, (state, action) => {
+      .addCase(fetchPokemonRtk.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.pokemon = action.payload;
       })
-      .addCase(fetchPokemon.rejected, (state, action) => {
+      .addCase(fetchPokemonRtk.rejected, (state, action) => {
         state.isLoading = false;
         // Обработка ошибки при прерывании http - запроса
         if (action.error.name === 'AbortError') {
@@ -30,4 +30,4 @@ export const rtkQueryPokemonSlice = createSlice({
   },
 });
 
-export const { resetPokemon } = rtkQueryPokemonSlice.actions;
+export const { resetRtkPokemon } = rtkQueryPokemonSlice.actions;

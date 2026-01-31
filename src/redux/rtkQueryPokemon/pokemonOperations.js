@@ -1,8 +1,8 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import pokemonAPI from '@/components/RTKQueryPokemon/Services/pokemon-api';
 
-export const fetchPokemon = createAsyncThunk(
-  'pokemon/fetchAll',
+export const fetchPokemonRtk = createAsyncThunk(
+  'rtkQueryPokemon/fetchPokemon',
   // если без async/await - fetch().then().catch();
   async (pokemonName, thunkAPI) => {
     try {
@@ -20,16 +20,16 @@ export const fetchPokemon = createAsyncThunk(
   },
 );
 
-// import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-// export const pokemonApi = createApi({
-//   reducerPath: 'rtkQueryPokemonApi',
-//   baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2' }),
-//   endpoints: build => ({
-//     getPokemonByName: build.query({
-//       query: name => `/pokemon/${name}`,
-//     }),
-//   }),
-// });
+export const pokemonApi = createApi({
+  reducerPath: 'rtkQueryPokemonApi',
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://pokeapi.co/api/v2' }),
+  endpoints: build => ({
+    getPokemonByName: build.query({
+      query: name => `/pokemon/${name}`,
+    }),
+  }),
+});
 
-// export const { useGetPokemonByNameQuery } = pokemonApi;
+export const { useGetPokemonByNameQuery } = pokemonApi;

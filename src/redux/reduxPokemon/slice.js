@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { pokemonInitialState } from './initialState';
-import { fetchPokemon } from './pokemonOperations';
+import { fetchPokemonRedux } from './pokemonOperations';
 
 export const reduxPokemonSlice = createSlice({
   name: 'reduxPokemon',
   initialState: pokemonInitialState,
   reducers: {
-    resetPokemon: () => pokemonInitialState,
+    resetReduxPokemon: () => pokemonInitialState,
   },
   extraReducers: builder => {
     builder
-      .addCase(fetchPokemon.pending, (state, action) => {
+      .addCase(fetchPokemonRedux.pending, (state, action) => {
         state.isLoading = true;
       })
-      .addCase(fetchPokemon.fulfilled, (state, action) => {
+      .addCase(fetchPokemonRedux.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.pokemon = action.payload;
       })
-      .addCase(fetchPokemon.rejected, (state, action) => {
+      .addCase(fetchPokemonRedux.rejected, (state, action) => {
         state.isLoading = false;
         // Обработка ошибки при прерывании http - запроса
         if (action.error.name === 'AbortError') {
@@ -30,4 +30,4 @@ export const reduxPokemonSlice = createSlice({
   },
 });
 
-export const { resetPokemon } = reduxPokemonSlice.actions;
+export const { resetReduxPokemon } = reduxPokemonSlice.actions;
