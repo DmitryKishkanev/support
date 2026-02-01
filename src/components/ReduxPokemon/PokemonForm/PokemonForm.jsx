@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import { resetReduxPokemon } from '@/redux/reduxPokemon/slice';
 import { ImSearch } from 'react-icons/im';
@@ -6,26 +6,27 @@ import { toast } from 'react-toastify';
 import { PokemonFormBox } from 'components/ReduxPokemon/PokemonForm/PokemonForm.styled';
 import { fetchPokemonRedux } from '@/redux/reduxPokemon/pokemonOperations';
 
-export default function PokemonForm() {
-  const [pokemonName, setPokemonName] = useState('');
+export default function PokemonForm({ onSearch }) {
   const dispatch = useDispatch();
   const promiseRef = useRef(null);
-
-  const handleNameChange = event => {
-    setPokemonName(event.currentTarget.value.toLowerCase());
-  };
 
   const handleSubmit = event => {
     event.preventDefault();
 
-    if (pokemonName.trim() === '') {
+    const name = event.currentTarget.elements.pokemonName.value
+      .trim()
+      .toLowerCase();
+
+    if (name === '') {
       toast.warn('Введите имя покемона');
       return;
     }
 
-    promiseRef.current = dispatch(fetchPokemonRedux(pokemonName));
+    promiseRef.current = dispatch(fetchPokemonRedux(name));
 
-    setPokemonName('');
+    onSearch(name);
+
+    event.currentTarget.reset();
   };
 
   // Для прерывания http - запроса, при размонтировании компонента
@@ -44,12 +45,7 @@ export default function PokemonForm() {
   return (
     <PokemonFormBox onSubmit={handleSubmit}>
       <label>
-        <input
-          type="text"
-          name="pokemonName"
-          value={pokemonName}
-          onChange={handleNameChange}
-        />
+        <input type="text" name="pokemonName" />
       </label>
 
       <button type="submit">

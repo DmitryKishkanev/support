@@ -8,17 +8,13 @@ import PokemonErrorView from 'components/ReduxPokemon/PokemonErrorView';
 import PokemonDataView from 'components/ReduxPokemon/PokemonDataView';
 import PokemonPendingView from 'components/ReduxPokemon/PokemonPendingView';
 
-export default function PokemonInfo() {
+export default function PokemonInfo({ pokemonName }) {
   const pokemon = useSelector(selectPokemon);
   const isLoading = useSelector(selectIsLoading);
   const error = useSelector(selectError);
 
-  if (!pokemon) {
-    return <div>Введите имя покемона</div>;
-  }
-
   if (isLoading) {
-    return <PokemonPendingView pokemonName={pokemon.name} />;
+    return <PokemonPendingView pokemonName={pokemonName} />;
   }
 
   if (error) {

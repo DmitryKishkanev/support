@@ -4,6 +4,7 @@ import { ImSpinner } from 'react-icons/im';
 const SpinnerBox = styled.div`
   display: flex;
   align-items: center;
+  justify-content: center;
 `;
 
 const StyledSpinner = styled(ImSpinner)`

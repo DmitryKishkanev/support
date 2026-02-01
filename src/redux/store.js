@@ -17,10 +17,10 @@ import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
 import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 // import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
 import { reduxPokemonSlice } from '@/redux/reduxPokemon/slice';
-import { rtkQueryPokemonSlice } from '@/redux/rtkQueryPokemon';
-import { pokemonApi } from '@/redux/rtkQueryPokemon';
 import { asyncReduxPhonebookSlice } from '@/redux/asyncReduxPhonebook';
 import { asyncReduxPhonebookFilterSlice } from '@/redux/asyncReduxPhonebook';
+import { pokemonApi } from '@/redux/rtkQueryPokemon';
+import { phonebookApi } from '@/redux/rtkQueryPhonebook';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -63,27 +63,6 @@ const persistAsyncReduxPhonebookReducer = persistReducer(
   asyncReduxPhonebookSlice.reducer,
 );
 
-// export const store = configureStore({
-//   reducer: {
-//     user: persistUserReducer,
-//     reduxPhonebook: persistReduxPhonebookReducer,
-//     reduxTodo: persistReduxTodoReducer,
-//     // reduxPokemon: persistReduxPokemonReducer,
-//     reduxPokemon: reduxPokemonSlice.reducer,
-//     rtkQueryPokemon: rtkQueryPokemonSlice.reducer,
-//     asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
-//     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
-//   },
-//   //Middleware в Redux — это промежуточное программное обеспечение (прослойка), расположенное между отправкой действия (dispatch) и редьюсером (reducer).
-//   middleware(getDefaultMiddleware) {
-//     return getDefaultMiddleware({
-//       serializableCheck: {
-//         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
-//       },
-//     });
-//   },
-// });
-
 export const store = configureStore({
   reducer: {
     user: persistUserReducer,
@@ -91,8 +70,8 @@ export const store = configureStore({
     reduxTodo: persistReduxTodoReducer,
     // reduxPokemon: persistReduxPokemonReducer,
     reduxPokemon: reduxPokemonSlice.reducer,
-    rtkQueryPokemon: rtkQueryPokemonSlice.reducer,
     [pokemonApi.reducerPath]: pokemonApi.reducer,
+    [phonebookApi.reducerPath]: phonebookApi.reducer,
     asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
   },
@@ -104,6 +83,7 @@ export const store = configureStore({
       },
     }),
     pokemonApi.middleware,
+    phonebookApi.middleware,
   ],
 });
 

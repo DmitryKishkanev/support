@@ -1,32 +1,35 @@
-import { useSelector } from 'react-redux';
-import {
-  selectPokemon,
-  selectIsLoading,
-  selectError,
-} from '@/redux/rtkQueryPokemon';
+import { useGetPokemonByNameQuery } from '@/redux/rtkQueryPokemon';
 import PokemonErrorView from 'components/RTKQueryPokemon/PokemonErrorView';
 import PokemonDataView from 'components/RTKQueryPokemon/PokemonDataView';
 import PokemonPendingView from 'components/RTKQueryPokemon/PokemonPendingView';
 
-export default function PokemonInfo() {
-  const pokemon = useSelector(selectPokemon);
-  const isLoading = useSelector(selectIsLoading);
-  const error = useSelector(selectError);
+export default function PokemonInfo({ pokemonName }) {
+  const { data, error, isFetching } = useGetPokemonByNameQuery(pokemonName, {
+    skip: pokemonName === '',
+    // fetch - запрос автоматически каждые 3 сек.
+    // pollingInterval: 3000,
 
-  if (!pokemon) {
-    return <div>Введите имя покемона</div>;
-  }
+    // fetch - запрос автоматически при возвращении фокуса на страницу.
+    // refetchOnFocus: true,
 
-  if (isLoading) {
-    return <PokemonPendingView pokemonName={pokemon.name} />;
-  }
+    // fetch - запрос автоматически при востановлении интерент-связи после разрыва.
+    // refetchOnReconnect: true,
+  });
+
+  // if (!data) {
+  //   return <div>Введите имя покемона</div>;
+  // }
 
   if (error) {
-    return <PokemonErrorView message={error} />;
+    return <PokemonErrorView message={error.data} pokemonName={pokemonName} />;
   }
 
-  if (pokemon) {
-    return <PokemonDataView pokemon={pokemon} />;
+  if (isFetching) {
+    return <PokemonPendingView pokemonName={pokemonName} />;
+  }
+
+  if (data) {
+    return <PokemonDataView pokemon={data} />;
   }
 
   return null;
