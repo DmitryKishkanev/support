@@ -5,6 +5,7 @@ import { useEffect, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { FormContainer } from 'components/RTKQueryPhonebook/ContactForm/ContactForm.styled';
 import { addContact, selectContacts } from '@/redux/asyncReduxPhonebook';
+import { useCreateContactMutation } from '@/redux/rtkQueryPhonebook';
 
 const schema = object({
   name: string().required(),
@@ -17,6 +18,8 @@ const initialValue = {
 };
 
 const ContactForm = () => {
+  const [createContact, { isLoading }] = useCreateContactMutation();
+
   const contacts = useSelector(selectContacts);
   const dispatch = useDispatch();
   const promiseRef = useRef(null);
@@ -38,6 +41,8 @@ const ContactForm = () => {
     }
 
     promiseRef.current = dispatch(addContact(newContact));
+
+    createContact(newContact);
 
     // const promise = dispatch(addContact(newContact));
     // dispatch(addContact(newContact));
@@ -76,7 +81,12 @@ const ContactForm = () => {
           <ErrorMessage name="phone" />
         </label>
 
-        <button type="submit" className="phonebook__button">
+        <button
+          type="submit"
+          disabled={isLoading}
+          className="phonebook__button"
+        >
+          {isLoading && '☎'}
           Добавить
         </button>
       </FormContainer>

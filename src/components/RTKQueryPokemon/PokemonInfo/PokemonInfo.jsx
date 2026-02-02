@@ -4,7 +4,11 @@ import PokemonDataView from 'components/RTKQueryPokemon/PokemonDataView';
 import PokemonPendingView from 'components/RTKQueryPokemon/PokemonPendingView';
 
 export default function PokemonInfo({ pokemonName }) {
-  const { data, error, isFetching } = useGetPokemonByNameQuery(pokemonName, {
+  const {
+    data: pokemon,
+    error,
+    isFetching,
+  } = useGetPokemonByNameQuery(pokemonName, {
     skip: pokemonName === '',
     // fetch - запрос автоматически каждые 3 сек.
     // pollingInterval: 3000,
@@ -28,8 +32,8 @@ export default function PokemonInfo({ pokemonName }) {
     return <PokemonPendingView pokemonName={pokemonName} />;
   }
 
-  if (data) {
-    return <PokemonDataView pokemon={data} />;
+  if (pokemon) {
+    return <PokemonDataView pokemon={pokemon} />;
   }
 
   return null;

@@ -1,6 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { useGetContactsByNameQuery } from '@/redux/rtkQueryPhonebook';
+import { useFetchContactsQuery } from '@/redux/rtkQueryPhonebook';
 import ContactForm from 'components/RTKQueryPhonebook/ContactForm';
 import Filter from 'components/RTKQueryPhonebook/Filter';
 import ContactList from 'components/RTKQueryPhonebook/ContactList';
@@ -8,7 +8,7 @@ import { Container } from '@/components/RTKQueryPhonebook/RTKQueryPhonebookApp/R
 import { fetchContacts } from '@/redux/asyncReduxPhonebook';
 
 export default function RTKQueryPhonebookApp() {
-  const { data, error, isFetching } = useGetContactsByNameQuery();
+  const { data, error, isFetching } = useFetchContactsQuery();
   const dispatch = useDispatch();
 
   useEffect(() => {

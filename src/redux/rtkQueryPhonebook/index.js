@@ -1,2 +1,6 @@
 export { phonebookApi } from './phonebookOperations';
-export { useGetContactsByNameQuery } from './phonebookOperations';
+export {
+  useFetchContactsQuery,
+  useDeleteContactMutation,
+  useCreateContactMutation,
+} from './phonebookOperations';
