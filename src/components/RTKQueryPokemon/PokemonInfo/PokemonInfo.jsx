@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useGetPokemonByNameQuery } from '@/redux/rtkQueryPokemon';
 import PokemonErrorView from 'components/RTKQueryPokemon/PokemonErrorView';
 import PokemonDataView from 'components/RTKQueryPokemon/PokemonDataView';
@@ -38,3 +39,7 @@ export default function PokemonInfo({ pokemonName }) {
 
   return null;
 }
+
+PokemonInfo.propTypes = {
+  pokemonName: PropTypes.string.isRequired,
+};

@@ -1,47 +1,33 @@
-import { useDispatch, useSelector } from 'react-redux';
-import {
-  useFetchContactsQuery,
-  useDeleteContactMutation,
-} from '@/redux/rtkQueryPhonebook';
+import PropTypes from 'prop-types';
+import { useDeleteContactMutation } from '@/redux/rtkQueryPhonebook';
 import { ContactEl } from 'components/RTKQueryPhonebook/ContactItem/ContactItem.styled';
-import {
-  selectFilteredContacts,
-  deleteContact,
-} from '@/redux/asyncReduxPhonebook';
 
-const ContactItem = () => {
-  const { data: contacts, isFatching } = useFetchContactsQuery();
+const ContactItem = ({ id, name, phone }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();
-  // Перенесли фильтрацию в selectors
-  const filteredContacts = useSelector(selectFilteredContacts);
-  const dispatch = useDispatch();
 
   const handleDeleteContact = contactId => {
-    dispatch(deleteContact(contactId));
-
     deleteContact(contactId);
   };
 
   return (
-    <>
-      {filteredContacts.map(({ id, name, phone }) => (
-        <ContactEl key={id}>
-          <div>
-            <p>
-              {name}: {phone}
-            </p>
+    <ContactEl>
+      <div>
+        <p>
+          {name}: {phone}
+        </p>
 
-            <button
-              onClick={() => handleDeleteContact(id)}
-              disabled={isDeleting}
-            >
-              {isDeleting && 'Deleting...'}Delete
-            </button>
-          </div>
-        </ContactEl>
-      ))}
-    </>
+        <button onClick={() => handleDeleteContact(id)} disabled={isDeleting}>
+          {isDeleting && '🗑'} Delete
+        </button>
+      </div>
+    </ContactEl>
   );
+};
+
+ContactItem.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  phone: PropTypes.string.isRequired,
 };
 
 export default ContactItem;

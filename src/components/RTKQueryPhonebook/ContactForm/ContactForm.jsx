@@ -1,10 +1,8 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect, useRef } from 'react';
 import { nanoid } from 'nanoid';
 import { FormContainer } from 'components/RTKQueryPhonebook/ContactForm/ContactForm.styled';
-import { addContact, selectContacts } from '@/redux/asyncReduxPhonebook';
+import { useFetchContactsQuery } from '@/redux/rtkQueryPhonebook';
 import { useCreateContactMutation } from '@/redux/rtkQueryPhonebook';
 
 const schema = object({
@@ -18,11 +16,8 @@ const initialValue = {
 };
 
 const ContactForm = () => {
+  const { data: contacts } = useFetchContactsQuery();
   const [createContact, { isLoading }] = useCreateContactMutation();
-
-  const contacts = useSelector(selectContacts);
-  const dispatch = useDispatch();
-  const promiseRef = useRef(null);
 
   const onSubmit = (values, { resetForm }) => {
     const newContact = {
@@ -40,27 +35,10 @@ const ContactForm = () => {
       return;
     }
 
-    promiseRef.current = dispatch(addContact(newContact));
-
     createContact(newContact);
-
-    // const promise = dispatch(addContact(newContact));
-    // dispatch(addContact(newContact));
 
     resetForm();
   };
-
-  // Для прерывания http - запроса, при размонтировании компонента
-  useEffect(() => {
-    return () => {
-      if (promiseRef.current) {
-        promiseRef.current.abort();
-        console.log(
-          'asyncReduxPhonebook_addContact: Отмена запроса при размонтировании компонента',
-        );
-      }
-    };
-  }, []);
 
   return (
     <Formik
@@ -86,8 +64,7 @@ const ContactForm = () => {
           disabled={isLoading}
           className="phonebook__button"
         >
-          {isLoading && '☎'}
-          Добавить
+          {isLoading && '☎'} Добавить
         </button>
       </FormContainer>
     </Formik>

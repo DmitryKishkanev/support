@@ -1,21 +1,22 @@
-import { useDispatch, useSelector } from 'react-redux';
+import PropTypes from 'prop-types';
 import { FilterLabel } from 'components/RTKQueryPhonebook/Filter/Filter.styled';
-import { setFilter, selectFilter } from '@/redux/asyncReduxPhonebook';
 
-const Filter = () => {
-  const filter = useSelector(selectFilter);
-  const dispatch = useDispatch();
-
+const Filter = ({ value, onChangeFilter }) => {
   const handleChange = e => {
-    dispatch(setFilter(e.currentTarget.value));
+    onChangeFilter(e.currentTarget.value);
   };
 
   return (
     <FilterLabel>
       <span>Find contacts by name </span>
-      <input type="text" name="filter" value={filter} onChange={handleChange} />
+      <input type="text" name="filter" value={value} onChange={handleChange} />
     </FilterLabel>
   );
+};
+
+Filter.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
 };
 
 export default Filter;

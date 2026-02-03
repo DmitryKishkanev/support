@@ -1,6 +1,8 @@
-export { phonebookApi } from './phonebookOperations';
+export { phonebookApi } from './contactsApi';
 export {
   useFetchContactsQuery,
   useDeleteContactMutation,
   useCreateContactMutation,
-} from './phonebookOperations';
+} from './contactsApi';
+
+export { filterContacts } from './filter';
