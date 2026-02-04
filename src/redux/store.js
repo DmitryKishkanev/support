@@ -90,3 +90,24 @@ export const store = configureStore({
 setupListeners(store.dispatch);
 
 export const persistor = persistStore(store);
+
+// Пример кастомного middleware
+// const customMiddle = state => {
+//   return next => {
+//     return action => {
+//       if (typeof action === 'function') {
+//         return next(action(state.dispatch));
+//       }
+//       return next(action);
+//     };
+//   };
+// };
+
+// const persistReducer = persistReducer(persistConfig, reducer);
+
+// export const store = configureStore({
+//   reducer: persistReducer,
+//   middleware: [customMiddle],
+// });
+
+// export const persistor = persistStore(store);

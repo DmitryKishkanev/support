@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, isAnyOf } from '@reduxjs/toolkit';
 import { phonebookInitialState } from '@/redux/asyncReduxPhonebook/initialState';
 import {
   fetchContacts,
@@ -32,14 +32,14 @@ export const asyncReduxPhonebookSlice = createSlice({
 
   extraReducers: builder => {
     builder
-      .addCase(fetchContacts.pending, handlePending)
+      // .addCase(fetchContacts.pending, handlePending)
       .addCase(fetchContacts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.items = action.payload;
       })
-      .addCase(fetchContacts.rejected, handleRejected)
-      .addCase(addContact.pending, handlePending)
+      // .addCase(fetchContacts.rejected, handleRejected)
+      // .addCase(addContact.pending, handlePending)
       .addCase(addContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -50,8 +50,8 @@ export const asyncReduxPhonebookSlice = createSlice({
         // Добавляем контакт в начало списка
         // state.items = [action.payload, ...state.items];
       })
-      .addCase(addContact.rejected, handleRejected)
-      .addCase(deleteContact.pending, handlePending)
+      // .addCase(addContact.rejected, handleRejected)
+      // .addCase(deleteContact.pending, handlePending)
       .addCase(deleteContact.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
@@ -59,6 +59,22 @@ export const asyncReduxPhonebookSlice = createSlice({
         const index = action.payload.id;
         state.items = state.items.filter(contact => contact.id !== index);
       })
-      .addCase(deleteContact.rejected, handleRejected);
+      // .addCase(deleteContact.rejected, handleRejected)
+      .addMatcher(
+        isAnyOf(
+          fetchContacts.pending,
+          addContact.pending,
+          deleteContact.pending,
+        ),
+        handlePending,
+      )
+      .addMatcher(
+        isAnyOf(
+          fetchContacts.rejected,
+          addContact.rejected,
+          deleteContact.rejected,
+        ),
+        handleRejected,
+      );
   },
 });
