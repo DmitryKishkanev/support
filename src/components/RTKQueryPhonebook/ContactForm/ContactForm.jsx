@@ -1,6 +1,6 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { FormContainer } from 'components/RTKQueryPhonebook/ContactForm/ContactForm.styled';
 import { useFetchContactsQuery } from '@/redux/rtkQueryPhonebook';
 import { useCreateContactMutation } from '@/redux/rtkQueryPhonebook';
@@ -21,7 +21,7 @@ const ContactForm = () => {
 
   const onSubmit = (values, { resetForm }) => {
     const newContact = {
-      id: nanoid(),
+      // id: nanoid(),
       name: values.name,
       phone: values.phone,
     };

@@ -76,15 +76,14 @@ export const store = configureStore({
     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
   },
   //Middleware в Redux — это промежуточное программное обеспечение (прослойка), расположенное между отправкой действия (dispatch) и редьюсером (reducer).
-  middleware: getDefaultMiddleware => [
-    ...getDefaultMiddleware({
+  middleware: getDefaultMiddleware =>
+    getDefaultMiddleware({
       serializableCheck: {
         ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
       },
-    }),
-    pokemonApi.middleware,
-    phonebookApi.middleware,
-  ],
+    })
+      .concat(pokemonApi.middleware)
+      .concat(phonebookApi.middleware),
 });
 
 setupListeners(store.dispatch);

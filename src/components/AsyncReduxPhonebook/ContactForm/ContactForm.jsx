@@ -2,7 +2,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import { FormContainer } from 'components/AsyncReduxPhonebook/ContactForm/ContactForm.styled';
 import { addContact, selectContacts } from '@/redux/asyncReduxPhonebook';
 
@@ -23,7 +23,7 @@ const ContactForm = () => {
 
   const onSubmit = (values, { resetForm }) => {
     const newContact = {
-      id: nanoid(),
+      // id: nanoid(),
       name: values.name,
       phone: values.phone,
     };

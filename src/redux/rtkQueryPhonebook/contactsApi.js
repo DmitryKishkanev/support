@@ -5,19 +5,13 @@ export const phonebookApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: 'https://68dfdefa93207c4b4793043b.mockapi.io',
   }),
+  // Для обновления отображения контента
   tagTypes: ['Contact'],
   endpoints: build => ({
     fetchContacts: build.query({
       query: () => '/contacts',
+      // Для обновления отображения контента
       providesTags: ['Contact'],
-    }),
-
-    deleteContact: build.mutation({
-      query: contactId => ({
-        url: `/contacts/${contactId}`,
-        method: 'DELETE',
-      }),
-      invalidatesTags: ['Contact'],
     }),
 
     createContact: build.mutation({
@@ -26,6 +20,16 @@ export const phonebookApi = createApi({
         method: 'POST',
         body: newContact,
       }),
+      // Для обновления отображения контента
+      invalidatesTags: ['Contact'],
+    }),
+
+    deleteContact: build.mutation({
+      query: contactId => ({
+        url: `/contacts/${contactId}`,
+        method: 'DELETE',
+      }),
+      // Для обновления отображения контента
       invalidatesTags: ['Contact'],
     }),
   }),
@@ -33,6 +37,6 @@ export const phonebookApi = createApi({
 
 export const {
   useFetchContactsQuery,
-  useDeleteContactMutation,
   useCreateContactMutation,
+  useDeleteContactMutation,
 } = phonebookApi;

@@ -3,5 +3,10 @@ export const filterContacts = (contacts, filter) => {
   const result = contacts.filter(contact =>
     contact.name.toLowerCase().includes(filter.trim().toLowerCase()),
   );
-  return result.length > 0 ? result : contacts;
+
+  // Сортируем по времени создания => новый контакт ставим в начало списка
+  const sortedContacts = [...result].sort((a, b) =>
+    b.createdAt.localeCompare(a.createdAt),
+  );
+  return sortedContacts.length > 0 ? sortedContacts : contacts;
 };
