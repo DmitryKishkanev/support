@@ -21,6 +21,7 @@ import { asyncReduxPhonebookSlice } from '@/redux/asyncReduxPhonebook';
 import { asyncReduxPhonebookFilterSlice } from '@/redux/asyncReduxPhonebook';
 import { pokemonApi } from '@/redux/rtkQueryPokemon';
 import { phonebookApi } from '@/redux/rtkQueryPhonebook';
+import { materialsApi } from '@/redux/rtkQueryMaterials';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -74,6 +75,7 @@ export const store = configureStore({
     [phonebookApi.reducerPath]: phonebookApi.reducer,
     asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
+    [materialsApi.reducerPath]: materialsApi.reducer,
   },
   //Middleware в Redux — это промежуточное программное обеспечение (прослойка), расположенное между отправкой действия (dispatch) и редьюсером (reducer).
   middleware: getDefaultMiddleware =>
@@ -83,7 +85,8 @@ export const store = configureStore({
       },
     })
       .concat(pokemonApi.middleware)
-      .concat(phonebookApi.middleware),
+      .concat(phonebookApi.middleware)
+      .concat(materialsApi.middleware),
 });
 
 setupListeners(store.dispatch);

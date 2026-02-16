@@ -2,8 +2,10 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
 // import { nanoid } from 'nanoid';
 import { FormContainer } from 'components/RTKQueryPhonebook/ContactForm/ContactForm.styled';
-import { useFetchContactsQuery } from '@/redux/rtkQueryPhonebook';
-import { useCreateContactMutation } from '@/redux/rtkQueryPhonebook';
+import {
+  useFetchContactsQuery,
+  useCreateContactMutation,
+} from '@/redux/rtkQueryPhonebook';
 
 const schema = object({
   name: string().required(),
