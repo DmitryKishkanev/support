@@ -10,6 +10,7 @@ import {
   RegisterFormInput,
   RegisterFormButton,
 } from '@/routes/Component/BeeSupportRegisterForm/BeeSupportRegisterForm.styled';
+import { authOperations } from '@/redux/auth';
 
 const BeeSupportRegisterForm = () => {
   const [nameValue, setNameValue] = useState('');
@@ -29,6 +30,14 @@ const BeeSupportRegisterForm = () => {
     e.preventDefault();
 
     dispatch(logIn(nameValue));
+    dispatch(
+      authOperations.register({
+        nameValue,
+        emailValue,
+        passwordValue,
+        passwordAgainValue,
+      }),
+    );
     setNameValue('');
     navigate('/', { replace: true });
   };

@@ -22,6 +22,7 @@ import { asyncReduxPhonebookFilterSlice } from '@/redux/asyncReduxPhonebook';
 import { pokemonApi } from '@/redux/rtkQueryPokemon';
 import { phonebookApi } from '@/redux/rtkQueryPhonebook';
 import { materialsApi } from '@/redux/rtkQueryMaterials';
+import { authSlice } from '@/redux/auth';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -64,6 +65,14 @@ const persistAsyncReduxPhonebookReducer = persistReducer(
   asyncReduxPhonebookSlice.reducer,
 );
 
+const authPersistConfig = {
+  key: 'auth',
+  storage,
+  whitelist: ['token'],
+};
+
+const persistAuthReducer = persistReducer(authPersistConfig, authSlice.reducer);
+
 export const store = configureStore({
   reducer: {
     user: persistUserReducer,
@@ -76,6 +85,7 @@ export const store = configureStore({
     asyncReduxPhonebook: persistAsyncReduxPhonebookReducer,
     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
     [materialsApi.reducerPath]: materialsApi.reducer,
+    auth: persistAuthReducer,
   },
   //Middleware в Redux — это промежуточное программное обеспечение (прослойка), расположенное между отправкой действия (dispatch) и редьюсером (reducer).
   middleware: getDefaultMiddleware =>
