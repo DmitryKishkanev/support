@@ -5,10 +5,12 @@ import {
   UserMenuName,
   UserMenuButton,
 } from '@/routes/Component/BeeSupportUserMenu/BeeSupportUserMenu.styled';
+// import { getIsLoggedIn } from '@/redux/auth/';
 
 const BeeSupportUserMenu = () => {
   const dispatch = useDispatch();
   const login = useSelector(state => state.user.login);
+  // const login = useSelector(getIsLoggedIn);
 
   return (
     <UserMenuBox>

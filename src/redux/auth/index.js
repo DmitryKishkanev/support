@@ -1,5 +1,6 @@
 export { authSlice } from './auth-slice';
 
-export { getisLoggedIn, getUserName } from './auth-selectors';
+// export { getIsLoggedIn, getUserName } from './auth-selectors';
+export { getIsLoggedIn } from './auth-selectors';
 
-export { register } from './auth-operations';
+export { register, logInIn } from './auth-operations';

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { logIn } from '@/redux/user/slice';
+// import { logIn } from '@/redux/user/slice';
 import { useNavigate } from 'react-router-dom';
 import {
   RegisterForm,
@@ -10,35 +10,36 @@ import {
   RegisterFormInput,
   RegisterFormButton,
 } from '@/routes/Component/BeeSupportRegisterForm/BeeSupportRegisterForm.styled';
-import { authOperations } from '@/redux/auth';
+import { register } from '@/redux/auth';
 
 const BeeSupportRegisterForm = () => {
-  const [nameValue, setNameValue] = useState('');
-  const [emailValue, setEmailValue] = useState('');
-  const [passwordValue, setPasswordValue] = useState('');
-  const [passwordAgainValue, setPasswordAgainValue] = useState('');
+  // const [nameValue, setNameValue] = useState('');
+  // const [emailValue, setEmailValue] = useState('');
+  // const [passwordValue, setPasswordValue] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  // const [passwordAgainValue, setPasswordAgainValue] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const allFieldsFilled =
-    nameValue.trim() &&
-    emailValue.trim() &&
-    passwordValue.trim() &&
-    passwordAgainValue.trim();
+    // name.trim() && email.trim() && password.trim() && passwordAgainValue.trim();
+    name.trim() && email.trim() && password.trim();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(logIn(nameValue));
+    // dispatch(logIn(name));
     dispatch(
-      authOperations.register({
-        nameValue,
-        emailValue,
-        passwordValue,
-        passwordAgainValue,
+      register({
+        name,
+        email,
+        password,
+        // passwordAgainValue,
       }),
     );
-    setNameValue('');
+    setName('');
     navigate('/', { replace: true });
   };
 
@@ -50,29 +51,32 @@ const BeeSupportRegisterForm = () => {
         <RegisterFormInput
           type="text"
           name="name"
-          value={nameValue}
-          onChange={e => setNameValue(e.target.value)}
+          value={name}
+          onChange={e => setName(e.target.value)}
         />
       </RegisterFormLabel>
+
       <RegisterFormLabel>
         <RegisterFormSpan>Email</RegisterFormSpan>
         <RegisterFormInput
           type="text"
           name="email"
-          value={emailValue}
-          onChange={e => setEmailValue(e.target.value)}
+          value={email}
+          onChange={e => setEmail(e.target.value)}
         />
       </RegisterFormLabel>
+
       <RegisterFormLabel>
         <RegisterFormSpan>Create a password</RegisterFormSpan>
         <RegisterFormInput
           type="text"
           name="password"
-          value={passwordValue}
-          onChange={e => setPasswordValue(e.target.value)}
+          value={password}
+          onChange={e => setPassword(e.target.value)}
         />
       </RegisterFormLabel>
-      <RegisterFormLabel>
+
+      {/* <RegisterFormLabel>
         <RegisterFormSpan>Please enter your password again</RegisterFormSpan>
         <RegisterFormInput
           type="text"
@@ -80,7 +84,7 @@ const BeeSupportRegisterForm = () => {
           value={passwordAgainValue}
           onChange={e => setPasswordAgainValue(e.target.value)}
         />
-      </RegisterFormLabel>
+      </RegisterFormLabel> */}
 
       <RegisterFormButton type="submit" disabled={!allFieldsFilled.trim()}>
         Register

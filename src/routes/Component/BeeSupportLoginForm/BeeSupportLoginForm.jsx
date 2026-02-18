@@ -9,17 +9,22 @@ import {
   LoginFormInput,
   LoginFormButton,
 } from '@/routes/Component/BeeSupportLoginForm/BeeSupportLoginForm.styled';
+import { logInIn } from '@/redux/auth';
 
 const BeeSupportLoginForm = () => {
-  const [loginValue, setLoginValue] = useState('');
+  const [login, setLogin] = useState('');
+  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const handleSubmit = e => {
     e.preventDefault();
 
-    dispatch(logIn(loginValue));
-    setLoginValue('');
+    dispatch(logIn(login));
+    dispatch(logInIn({ email, password }));
+    setLogin('');
+    setEmail('');
     navigate('/', { replace: true });
   };
 
@@ -30,12 +35,32 @@ const BeeSupportLoginForm = () => {
         <LoginFormInput
           type="text"
           name="login"
-          value={loginValue}
-          onChange={e => setLoginValue(e.target.value)}
+          value={login}
+          onChange={e => setLogin(e.target.value)}
         />
       </LoginFormLabel>
 
-      <LoginFormButton type="submit" disabled={!loginValue.trim()}>
+      <LoginFormLabel>
+        <LoginFormSpan>Please enter your email</LoginFormSpan>
+        <LoginFormInput
+          type="text"
+          name="email"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+        />
+      </LoginFormLabel>
+
+      <LoginFormLabel>
+        <LoginFormSpan>Please enter your password</LoginFormSpan>
+        <LoginFormInput
+          type="text"
+          name="password"
+          value={password}
+          onChange={e => setPassword(e.target.value)}
+        />
+      </LoginFormLabel>
+
+      <LoginFormButton type="submit" disabled={!login.trim()}>
         Log in
       </LoginFormButton>
     </LoginForm>
