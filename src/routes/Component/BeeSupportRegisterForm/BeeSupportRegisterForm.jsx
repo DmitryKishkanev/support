@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import { logIn } from '@/redux/user/slice';
 import { useNavigate } from 'react-router-dom';
 import {
   RegisterForm,
@@ -13,13 +12,9 @@ import {
 import { register } from '@/redux/auth';
 
 const BeeSupportRegisterForm = () => {
-  // const [nameValue, setNameValue] = useState('');
-  // const [emailValue, setEmailValue] = useState('');
-  // const [passwordValue, setPasswordValue] = useState('');
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const [passwordAgainValue, setPasswordAgainValue] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -27,20 +22,28 @@ const BeeSupportRegisterForm = () => {
     // name.trim() && email.trim() && password.trim() && passwordAgainValue.trim();
     name.trim() && email.trim() && password.trim();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    // dispatch(logIn(name));
-    dispatch(
-      register({
-        name,
-        email,
-        password,
-        // passwordAgainValue,
-      }),
-    );
-    setName('');
-    navigate('/', { replace: true });
+    try {
+      // dispatch возвращает промис, а unwrap превращает его в обычный промис с payload
+      await dispatch(
+        register({
+          name,
+          email,
+          password,
+          // passwordAgainValue,
+        }),
+      );
+      // если регистрация успешна, очищаем форму и переходим на главную
+      setName('');
+      setEmail('');
+      setPassword('');
+      navigate('/', { replace: true });
+    } catch (error) {
+      // если логин неуспешный, ловим ошибку
+      console.error('Login failed:', error);
+    }
   };
 
   return (

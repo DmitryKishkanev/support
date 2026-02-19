@@ -12,7 +12,7 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-import { userSlice } from '@/redux/user/slice';
+// import { userSlice } from '@/redux/user/slice';
 import { reduxPhonebookSlice } from '@/redux/reduxPhonebook/slice';
 import { reduxTodoSlice } from '@/redux/reduxTodo/slice';
 // import pokemonReducer from '@/redux/ReduxPokemon/pokemonReducer';
@@ -31,8 +31,8 @@ import { authSlice } from '@/redux/auth';
 //   },
 // });
 
-const userPersistConfig = { key: 'user', storage };
-const persistUserReducer = persistReducer(userPersistConfig, userSlice.reducer);
+// const userPersistConfig = { key: 'user', storage };
+// const persistUserReducer = persistReducer(userPersistConfig, userSlice.reducer);
 
 const reduxPhonebookPersistConfig = { key: 'reduxPhonebook', storage };
 const persistReduxPhonebookReducer = persistReducer(
@@ -75,7 +75,7 @@ const persistAuthReducer = persistReducer(authPersistConfig, authSlice.reducer);
 
 export const store = configureStore({
   reducer: {
-    user: persistUserReducer,
+    // user: persistUserReducer,
     reduxPhonebook: persistReduxPhonebookReducer,
     reduxTodo: persistReduxTodoReducer,
     // reduxPokemon: persistReduxPokemonReducer,

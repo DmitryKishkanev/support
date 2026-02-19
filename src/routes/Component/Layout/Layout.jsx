@@ -13,9 +13,10 @@ import {
   LayoutListItem,
   StyledNavLink,
 } from '@/routes/Component/Layout/Layout.styled';
+import { getIsLoggedIn } from '@/redux/auth';
 
 const Layout = () => {
-  const isLoggedIn = useSelector(state => state.user.isLoggedIn);
+  const isLoggedIn = useSelector(getIsLoggedIn);
 
   return (
     <>

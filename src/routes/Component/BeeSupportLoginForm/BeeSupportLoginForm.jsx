@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { logIn } from '@/redux/user/slice';
 import { useNavigate } from 'react-router-dom';
 import {
   LoginForm,
@@ -9,37 +8,33 @@ import {
   LoginFormInput,
   LoginFormButton,
 } from '@/routes/Component/BeeSupportLoginForm/BeeSupportLoginForm.styled';
-import { logInIn } from '@/redux/auth';
+import { logIn } from '@/redux/auth';
 
 const BeeSupportLoginForm = () => {
-  const [login, setLogin] = useState('');
-  const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const handleSubmit = e => {
+  const handleSubmit = async e => {
     e.preventDefault();
 
-    dispatch(logIn(login));
-    dispatch(logInIn({ email, password }));
-    setLogin('');
-    setEmail('');
-    navigate('/', { replace: true });
+    try {
+      // dispatch возвращает промис, а unwrap превращает его в обычный промис с payload
+      await dispatch(logIn({ email, password })).unwrap();
+
+      // если логин успешный, очищаем форму и переходим на главную
+      setEmail('');
+      setPassword('');
+      navigate('/', { replace: true });
+    } catch (error) {
+      // если логин неуспешный, ловим ошибку
+      console.error('Login failed:', error);
+    }
   };
 
   return (
     <LoginForm onSubmit={handleSubmit}>
-      <LoginFormLabel>
-        <LoginFormSpan>Please enter your login</LoginFormSpan>
-        <LoginFormInput
-          type="text"
-          name="login"
-          value={login}
-          onChange={e => setLogin(e.target.value)}
-        />
-      </LoginFormLabel>
-
       <LoginFormLabel>
         <LoginFormSpan>Please enter your email</LoginFormSpan>
         <LoginFormInput
@@ -53,14 +48,14 @@ const BeeSupportLoginForm = () => {
       <LoginFormLabel>
         <LoginFormSpan>Please enter your password</LoginFormSpan>
         <LoginFormInput
-          type="text"
+          type="password"
           name="password"
           value={password}
           onChange={e => setPassword(e.target.value)}
         />
       </LoginFormLabel>
 
-      <LoginFormButton type="submit" disabled={!login.trim()}>
+      <LoginFormButton type="submit" disabled={!email.trim()}>
         Log in
       </LoginFormButton>
     </LoginForm>

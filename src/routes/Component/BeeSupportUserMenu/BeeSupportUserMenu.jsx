@@ -1,16 +1,15 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { logOut } from '@/redux/user/slice';
 import {
   UserMenuBox,
   UserMenuName,
   UserMenuButton,
 } from '@/routes/Component/BeeSupportUserMenu/BeeSupportUserMenu.styled';
-// import { getIsLoggedIn } from '@/redux/auth/';
+import { getUserName } from '@/redux/auth/';
+import { logOut } from '@/redux/auth';
 
 const BeeSupportUserMenu = () => {
   const dispatch = useDispatch();
-  const login = useSelector(state => state.user.login);
-  // const login = useSelector(getIsLoggedIn);
+  const login = useSelector(getUserName);
 
   return (
     <UserMenuBox>
