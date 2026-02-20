@@ -10,7 +10,7 @@ const token = {
     apiConnections.defaults.headers.common.Authorization = `Bearer ${token}`;
   },
 
-  apiConnections() {
+  unset() {
     apiConnections.defaults.headers.common.Authorization = '';
   },
 };

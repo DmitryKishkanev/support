@@ -1,28 +1,36 @@
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Layout from '@/routes/Component/Layout';
 import style from 'components/App/App.module.css';
+import { refreshCurrentUser } from '@/redux/auth';
 
 const LoginPage = lazy(() => import('@/routes/Pages/LoginPage'));
 const RegisterPage = lazy(() => import('@/routes/Pages/RegisterPage'));
 const HomePage = lazy(() => import('@/routes/Pages/HomePage'));
-const SupportApplications = lazy(() =>
-  import('@/routes/Pages/SupportApplications'),
+const SupportApplications = lazy(
+  () => import('@/routes/Pages/SupportApplications'),
 );
-const SupportApplicationsDetails = lazy(() =>
-  import('@/routes/Pages/SupportApplicationsDetails'),
+const SupportApplicationsDetails = lazy(
+  () => import('@/routes/Pages/SupportApplicationsDetails'),
 );
 // Пример именованного экспорта
 const ApplicationMoreDetails = lazy(() =>
-  import(
-    '@/routes/Component/ApplicationMoreDetails/ApplicationMoreDetails'
-  ).then(module => ({
-    ...module,
-    default: module.ApplicationMoreDetails,
-  })),
+  import('@/routes/Component/ApplicationMoreDetails/ApplicationMoreDetails').then(
+    module => ({
+      ...module,
+      default: module.ApplicationMoreDetails,
+    }),
+  ),
 );
 
 export default function App() {
+  const dispatch = useDispatch();
+  // При перезагрузке страницы возвращаем пользователя
+  useEffect(() => {
+    dispatch(refreshCurrentUser());
+  }, [dispatch]);
+
   return (
     <div className={style.app}>
       <Routes>

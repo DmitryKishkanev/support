@@ -37,6 +37,7 @@ import RTKQueryPokemon from 'components/RTKQueryPokemon/RTKQueryPokemon';
 import AsyncReduxPhonebookApp from 'components/AsyncReduxPhonebook/AsyncReduxPhonebookApp';
 import RTKQueryPhonebookApp from 'components/RTKQueryPhonebook/RTKQueryPhonebookApp';
 import RTKQueryMaterialRenderComponent from 'components/RTKQueryMaterials/RTKQueryMaterialRenderComponent';
+import AuthBackendAsyncReduxPhonebookApp from 'components/AsyncReduxPhonebookAuthBackend/AuthBackendPhonebookApp';
 
 export const supportConfig = [
   {
@@ -266,7 +267,6 @@ export const supportConfig = [
       'Приложение разработано с использованием функциональных компонентов React. Управление состоянием и взаимодействие с серверной частью реализованы через асинхронный Redux с использованием fetch‑запросов. Пользователь может выполнить поиск покемона по имени: при отправке запроса сначала отображается индикатор загрузки, затем — карточка с информацией о найденном покемоне. В случае ввода несуществующего имени или случайного набора символов после индикатора появится сообщение об ошибке и изображение‑заглушка. Дополнительно в приложении реализован механизм прерывания HTTP‑запросов с помощью AbortController. Это позволяет корректно отменять запросы при размонтировании компонента или смене параметров поиска, предотвращая утечки памяти и обработку устаревших данных.',
     element: <ReduxPokemon />,
   },
-
   {
     path: 'AsyncReduxPhonebookApp',
     label: 'AsyncReduxPhonebook',
@@ -294,5 +294,12 @@ export const supportConfig = [
     description:
       'Приложение реализовано на основе функциональных компонентов React. Для управления состоянием и взаимодействия с серверной частью используется Redux Toolkit с интеграцией RTK Query. В приложении реализованы следующие возможности: загрузка списка материалов при первом рендере с помощью query‑хука; удаление материала с автоматическим обновлением списка через mutation‑хук; редактирование материала через модальное окно, где данные подтягиваются по id с помощью useFetchMaterialByIdQuery, а изменения отправляются через updateMaterial mutation; добавление нового материала через форму, реализованное как мутация. Таким образом, приложение демонстрирует, как можно работать с данными декларативно: разработчик использует хуки useGet...Query, useUpdate...Mutation и другие, а RTK Query берёт на себя детали сетевого взаимодействия, кэширования и синхронизации состояния.',
     element: <RTKQueryMaterialRenderComponent />,
+  },
+  {
+    path: 'AuthBackendAsyncReduxPhonebookApp',
+    label: 'AuthBackendAsyncReduxPhonebook',
+    description:
+      'Приложение разработано на основе функциональных компонентов React. Управление состоянием и взаимодействие с серверной частью реализованы через асинхронный Redux с использованием библиотеки axios, что демонстрирует практическое применение внешнего хранилища данных. Приложение позволяет сохранять имена и номера телефонов в формате классической телефонной книги. Реализованы функции добавления, удаления и фильтрации контактов по имени.',
+    element: <AuthBackendAsyncReduxPhonebookApp />,
   },
 ];

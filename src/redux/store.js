@@ -23,6 +23,8 @@ import { pokemonApi } from '@/redux/rtkQueryPokemon';
 import { phonebookApi } from '@/redux/rtkQueryPhonebook';
 import { materialsApi } from '@/redux/rtkQueryMaterials';
 import { authSlice } from '@/redux/auth';
+import { authBackendPhonebookSlice } from '@/redux/authBackendAsyncReduxPhonebook';
+import { authBackendPhonebookFilterSlice } from '@/redux/authBackendAsyncReduxPhonebook';
 
 // Store для user без persist
 // export const store = configureStore({
@@ -68,10 +70,20 @@ const persistAsyncReduxPhonebookReducer = persistReducer(
 const authPersistConfig = {
   key: 'auth',
   storage,
+  // token из authInitialState сохраняется в local storage
   whitelist: ['token'],
 };
 
 const persistAuthReducer = persistReducer(authPersistConfig, authSlice.reducer);
+
+const authBackendPhonebookPersistConfig = {
+  key: 'AuthBackendPhonebook',
+  storage,
+};
+const persistAuthBackendPhonebookReducer = persistReducer(
+  authBackendPhonebookPersistConfig,
+  authBackendPhonebookSlice.reducer,
+);
 
 export const store = configureStore({
   reducer: {
@@ -86,6 +98,8 @@ export const store = configureStore({
     asyncReduxPhonebookFilter: asyncReduxPhonebookFilterSlice.reducer,
     [materialsApi.reducerPath]: materialsApi.reducer,
     auth: persistAuthReducer,
+    authBackendPhonebook: persistAuthBackendPhonebookReducer,
+    authBackendPhonebookFilter: authBackendPhonebookFilterSlice.reducer,
   },
   //Middleware в Redux — это промежуточное программное обеспечение (прослойка), расположенное между отправкой действия (dispatch) и редьюсером (reducer).
   middleware: getDefaultMiddleware =>
