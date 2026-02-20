@@ -1,12 +1,11 @@
-// import axios from 'axios';
-import { apiConnections } from './apiConnections';
 import { createAsyncThunk } from '@reduxjs/toolkit';
-
-// axios.defaults.baseURL = 'https://connections-api.goit.global/';
+import { apiConnections, set, unset } from './apiConnections';
 
 export const register = createAsyncThunk('auth/register', async credentials => {
   try {
     const { data } = await apiConnections.post('/users/signup', credentials);
+    // Запись token для всех последующих операций
+    set(data.token);
     return data;
   } catch (error) {}
 });
@@ -14,13 +13,16 @@ export const register = createAsyncThunk('auth/register', async credentials => {
 export const logIn = createAsyncThunk('auth/login', async credentials => {
   try {
     const { data } = await apiConnections.post('/users/login', credentials);
+    // Запись token для всех последующих операций
+    set(data.token);
     return data;
   } catch (error) {}
 });
 
-export const logOut = createAsyncThunk('auth/logout', async credentials => {
+export const logOut = createAsyncThunk('auth/logout', async () => {
   try {
-    const { data } = await apiConnections.post('/users/logout', credentials);
-    return data;
+    await apiConnections.post('/users/logout');
+    // Очищаем token после logOut
+    unset();
   } catch (error) {}
 });
