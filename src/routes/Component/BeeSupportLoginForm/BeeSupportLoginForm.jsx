@@ -26,7 +26,7 @@ const BeeSupportLoginForm = () => {
       // если логин успешный, очищаем форму и переходим на главную
       setEmail('');
       setPassword('');
-      navigate('/SupportApplications', { replace: true });
+      // navigate('/SupportApplications', { replace: true });
     } catch (error) {
       // если логин неуспешный, ловим ошибку
       console.error('Login failed:', error);

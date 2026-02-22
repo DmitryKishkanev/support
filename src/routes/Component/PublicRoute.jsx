@@ -1,49 +1,31 @@
-import { useSelector } from 'react-redux';
 import { Outlet, Navigate } from 'react-router-dom';
-import { getIsLoggedIn } from '@/redux/auth';
+import { useAuth } from '@/redux/auth/useAuth';
 
 export default function PublicRoute() {
-  const isLoggedIn = useSelector(getIsLoggedIn);
+  const { isLoggedIn } = useAuth();
   return isLoggedIn ? <Navigate to="/" /> : <Outlet />;
 }
 
 // Если оборачивать отдельно каждый маршрут, что бы залогированного пользователя пербрасывало куда мы укажем
 // export default function PublicRoute({
-//   children,
-//   restricted = false,
+//   component: Component,
 //   redirectTo = '/',
 // }) {
-//   const isLoggedIn = useSelector(getIsLoggedIn);
-//   const shouldRedirect = isLoggedIn && restricted;
-//   return shouldRedirect ? <Navigate to={redirectTo} /> : children;
+//   const { isLoggedIn } = useAuth();
+//   return isLoggedIn ? <Navigate to={redirectTo} /> : Component;
 // }
 
 // и пример использования
-{
-  /* <Route
-  path="login"
-  element={
-    <PublicRoute restricted redirectTo="/SupportApplications">
-      <LoginPage />
-    </PublicRoute>
-  }
-/>
+//    <Route
+//   path="login"
+//   element={
+//     <PublicRoute redirectTo="/SupportApplications" component={ <LoginPage />} />
+//   }
+// />
 
-<Route
-  path="register"
-  element={
-    <PublicRoute restricted redirectTo="/SupportApplications">
-      <RegisterPage />
-    </PublicRoute>
-  }
-/>
-
-<Route
-  index
-  element={
-    <PublicRoute>
-      <HomePage />
-    </PublicRoute>
-  }
-/> */
-}
+// <Route
+//   path="register"
+//   element={
+//     <PublicRoute redirectTo="/SupportApplications" component={ <RegisterPage />} />
+//   }
+// />
