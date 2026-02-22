@@ -12,7 +12,8 @@ const STATUS = {
   REJECTED: 'rejected',
 };
 
-const arrThunks = [fetchContacts, addContact, deleteContact];
+// const arrThunks = [fetchContacts, addContact, deleteContact];
+const arrThunks = [fetchContacts, addContact];
 
 const oneOfTheThunks = type => arrThunks.map(el => el[type]);
 

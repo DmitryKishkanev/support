@@ -22,9 +22,16 @@ export const authSlice = createSlice({
         state.token = null;
         state.isLoggedIn = false;
       })
+      .addCase(refreshCurrentUser.pending, (state, action) => {
+        state.isRefreshing = true;
+      })
       .addCase(refreshCurrentUser.fulfilled, (state, action) => {
         state.user = action.payload;
         state.isLoggedIn = true;
+        state.isRefreshing = false;
+      })
+      .addCase(refreshCurrentUser.rejected, (state, action) => {
+        state.isRefreshing = false;
       });
   },
 });

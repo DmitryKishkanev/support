@@ -16,11 +16,11 @@ const ContactItem = () => {
 
   return (
     <>
-      {filteredContacts.map(({ id, name, phone }) => (
+      {filteredContacts.map(({ id, name, number }) => (
         <ContactEl key={id}>
           <div>
             <p>
-              {name}: {phone}
+              {name}: {number}
             </p>
 
             <button onClick={() => handleDeleteContact(id)}>Delete</button>
@@ -32,3 +32,29 @@ const ContactItem = () => {
 };
 
 export default ContactItem;
+
+// import { useDispatch } from 'react-redux';
+// import { ContactEl } from 'components/AsyncReduxPhonebookAuthBackend/ContactItem/ContactItem.styled';
+// import { deleteContact } from '@/redux/authBackendAsyncReduxPhonebook';
+
+// const ContactItem = ({ id, name, number }) => {
+//   const dispatch = useDispatch();
+
+//   const handleDeleteContact = contactId => {
+//     dispatch(deleteContact(contactId));
+//   };
+
+//   return (
+//     <ContactEl key={id}>
+//       <div>
+//         <p>
+//           {name}: {number}
+//         </p>
+
+//         <button onClick={() => handleDeleteContact(id)}>Delete</button>
+//       </div>
+//     </ContactEl>
+//   );
+// };
+
+// export default ContactItem;
