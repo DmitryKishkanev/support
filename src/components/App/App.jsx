@@ -7,7 +7,7 @@ import style from 'components/App/App.module.css';
 // import PublicRoute from '@/routes/Component/PublicRoute';
 import { refreshCurrentUser } from '@/redux/auth';
 import { useAuth } from '@/redux/auth/useAuth';
-import { PrivateRoute } from '@/routes/Component/PRoute';
+import { PrivateRoute } from '@/routes/Component/PrivateRoute';
 import { RestrictedRoute } from '@/routes/Component/RestrictedRoute';
 
 const LoginPage = lazy(() => import('@/routes/Pages/LoginPage'));
@@ -38,13 +38,14 @@ export default function App() {
   }, [dispatch]);
 
   return (
+    // Добавляем проверку isRefreshing, что бы убирать мигание странички Login
     !isRefreshing && (
       <div className={style.app}>
         <Routes>
           <Route path="/" element={<Layout />}>
             {/* Если HomePage, к примеру, должна быть не защищённым публичным маршрутом то её просто оставляем вне публичных/приватных маршрутов */}
-            {/* Публичные маршруты */}
 
+            {/* Публичные маршруты */}
             <Route
               path="login"
               element={
@@ -63,8 +64,12 @@ export default function App() {
             />
 
             {/* Приватные маршруты  */}
-
-            <Route index element={<HomePage />} />
+            <Route
+              index
+              element={
+                <PrivateRoute redirectTo="/login" component={<HomePage />} />
+              }
+            />
 
             <Route
               path="SupportApplications"
@@ -101,40 +106,5 @@ export default function App() {
         </Routes>
       </div>
     )
-    // Добавляем проверку isRefreshing, что бы убирать мигание странички Login
-    // !isRefreshing && (
-    //   <div className={style.app}>
-    //     <Routes>
-    //       <Route path="/" element={<Layout />}>
-    //         {/* Если HomePage, к примеру, должна быть не защищённым публичным маршрутом то её просто оставляем вне публичных/приватных маршрутов */}
-    //         {/* Публичные маршруты */}
-    //         <Route element={<PublicRoute />}>
-    //           <Route path="login" element={<LoginPage />} />
-    //           <Route path="register" element={<RegisterPage />} />
-    //         </Route>
-
-    //         {/* Приватные маршруты  */}
-    //         <Route element={<PrivateRoute />}>
-    //           <Route index element={<HomePage />} />
-    //           <Route
-    //             path="SupportApplications"
-    //             element={<SupportApplications />}
-    //           />
-    //           <Route
-    //             path="SupportApplications/:id"
-    //             element={<SupportApplicationsDetails />}
-    //           >
-    //             <Route
-    //               path="ApplicationMoreDetails"
-    //               element={<ApplicationMoreDetails />}
-    //             />
-    //           </Route>
-    //         </Route>
-
-    //         <Route path="*" element={<Navigate to="/" replace />} />
-    //       </Route>
-    //     </Routes>
-    //   </div>
-    // )
   );
 }
