@@ -297,7 +297,7 @@ export const supportConfig = [
   },
   {
     path: 'AuthBackendAsyncReduxPhonebookApp',
-    label: 'AuthBackendAsyncReduxPhonebook',
+    label: 'AsyncReduxPhonebookAuthBackend',
     description:
       'Приложение разработано на основе функциональных компонентов React. Управление состоянием и взаимодействие с серверной частью реализованы через асинхронный Redux с использованием библиотеки axios, что демонстрирует практическое применение внешнего хранилища данных. Приложение позволяет сохранять имена и номера телефонов в формате классической телефонной книги. Реализованы функции добавления, удаления и фильтрации контактов по имени.',
     element: <AuthBackendAsyncReduxPhonebookApp />,

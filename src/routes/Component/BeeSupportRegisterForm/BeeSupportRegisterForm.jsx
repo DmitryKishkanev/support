@@ -42,7 +42,7 @@ const BeeSupportRegisterForm = () => {
       navigate('/', { replace: true });
     } catch (error) {
       // если логин неуспешный, ловим ошибку
-      console.error('Login failed:', error);
+      console.error('Register failed:', error);
     }
   };
 

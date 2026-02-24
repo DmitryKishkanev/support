@@ -23,7 +23,8 @@ const ContactItem = () => {
               {name}: {number}
             </p>
 
-            <button onClick={() => handleDeleteContact(id)}>Delete</button>
+            <button onClick={() => handleDeleteContact(id)}>Удалить</button>
+            <button>Изменить</button>
           </div>
         </ContactEl>
       ))}
