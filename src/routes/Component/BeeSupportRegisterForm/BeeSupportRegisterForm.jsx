@@ -39,6 +39,7 @@ const BeeSupportRegisterForm = () => {
       setName('');
       setEmail('');
       setPassword('');
+      // Можно не делать если есть приватные и публичные роуты
       navigate('/', { replace: true });
     } catch (error) {
       // если логин неуспешный, ловим ошибку

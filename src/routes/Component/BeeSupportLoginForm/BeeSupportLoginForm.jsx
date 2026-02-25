@@ -26,6 +26,7 @@ const BeeSupportLoginForm = () => {
       // если логин успешный, очищаем форму и переходим на главную
       setEmail('');
       setPassword('');
+      // Можно не делать если есть приватные и публичные роуты
       navigate('/SupportApplications', { replace: true });
     } catch (error) {
       // если логин неуспешный, ловим ошибку

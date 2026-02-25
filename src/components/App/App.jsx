@@ -7,7 +7,10 @@ import style from 'components/App/App.module.css';
 // import PublicRoute from '@/routes/Component/PublicRoute';
 import { refreshCurrentUser } from '@/redux/auth';
 import { useAuth } from '@/redux/auth/useAuth';
-import { PrivateRoute } from '@/routes/Component/PrivateRoute';
+import {
+  PrivateRoute,
+  PrivateRouteWithChildren,
+} from '@/routes/Component/PrivateRoute';
 import { RestrictedRoute } from '@/routes/Component/RestrictedRoute';
 
 const LoginPage = lazy(() => import('@/routes/Pages/LoginPage'));
@@ -73,11 +76,11 @@ export default function App() {
 
             <Route
               path="SupportApplications"
+              // Пример приватного роута через children
               element={
-                <PrivateRoute
-                  redirectTo="/login"
-                  component={<SupportApplications />}
-                />
+                <PrivateRouteWithChildren>
+                  <SupportApplications />
+                </PrivateRouteWithChildren>
               }
             />
 
