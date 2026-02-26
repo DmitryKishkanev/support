@@ -2,6 +2,7 @@ export {
   fetchContacts,
   addContact,
   deleteContact,
+  updateContact,
 } from './phonebookOperations';
 
 export {

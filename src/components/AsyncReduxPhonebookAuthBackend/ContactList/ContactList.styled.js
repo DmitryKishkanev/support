@@ -4,13 +4,9 @@ const ContactBox = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* width: 350px; */
-
+  width: 100%;
   padding: 0;
-  margin-right: auto;
-  margin-left: 50px;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin: 0;
 `;
 
 export { ContactBox };

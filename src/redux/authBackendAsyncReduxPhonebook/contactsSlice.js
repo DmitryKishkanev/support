@@ -4,6 +4,7 @@ import {
   fetchContacts,
   addContact,
   deleteContact,
+  updateContact,
 } from './phonebookOperations';
 
 const STATUS = {
@@ -13,7 +14,7 @@ const STATUS = {
 };
 
 // const arrThunks = [fetchContacts, addContact, deleteContact];
-const arrThunks = [fetchContacts, addContact];
+const arrThunks = [fetchContacts, addContact, updateContact];
 
 const oneOfTheThunks = type => arrThunks.map(el => el[type]);
 
@@ -43,6 +44,15 @@ const handleFulfilledDel = (state, action) => {
   // const index = action.meta.arg;
   const index = action.payload.id;
   state.items = state.items.filter(contact => contact.id !== index);
+};
+
+const handleFulfilledUpdate = (state, action) => {
+  const updateContact = action.payload;
+  const index = state.items.findIndex(item => item.id === updateContact.id);
+
+  if (index !== -1) {
+    state.items[index] = updateContact;
+  }
 };
 
 // const handleRejected = (state, action) => {
@@ -78,6 +88,9 @@ export const authBackendPhonebookSlice = createSlice({
       // .addCase(deleteContact.pending, handlePending)
       .addCase(deleteContact.fulfilled, handleFulfilledDel)
       // .addCase(deleteContact.rejected, handleRejected)
+      // .addCase(updateContact.pending, handlePending)
+      .addCase(updateContact.fulfilled, handleFulfilledUpdate)
+      // .addCase(updateContact.rejected, handleRejected)
       .addMatcher(
         isAnyOf(
           // fetchContacts.pending,

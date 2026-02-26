@@ -1,25 +1,35 @@
 import styled from '@emotion/styled';
 
-const ContactEl = styled.li`
-  div {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-  }
+const ContactEl = styled.li``;
 
-  p {
-    margin: 0;
-
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 1.19;
-    letter-spacing: 0.03em;
-  }
-
-  button {
-    padding: 5px 15px;
-    margin-left: auto;
-  }
+const ContactContentBox = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
-export { ContactEl };
+const ContactContent = styled.p`
+  margin: 0;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.19;
+  letter-spacing: 0.03em;
+`;
+
+const ContactContentButtonBox = styled.div`
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+`;
+
+const ContactContentButton = styled.button`
+  padding: 5px 15px;
+  margin-left: auto;
+`;
+
+export {
+  ContactEl,
+  ContactContentBox,
+  ContactContent,
+  ContactContentButtonBox,
+};

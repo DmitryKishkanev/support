@@ -1,5 +1,11 @@
 import PropTypes from 'prop-types';
-import { MaterialModalContainer } from 'components/RTKQueryMaterials/EditMaterialModal/EditMaterialModal.styled';
+import {
+  MaterialModalContainer,
+  MaterialModalTitle,
+  MaterialModalFieldsContainer,
+  MaterialModalFieldsName,
+  MaterialModalButtonsBox,
+} from 'components/RTKQueryMaterials/EditMaterialModal/EditMaterialModal.styled';
 import { useFetchMaterialByIdQuery } from '@/redux/rtkQueryMaterials';
 
 const EditMaterialModal = ({ materialId, onClose, onEdit }) => {
@@ -8,31 +14,33 @@ const EditMaterialModal = ({ materialId, onClose, onEdit }) => {
 
   return (
     <MaterialModalContainer>
-      <h2>Редактировать материал</h2>
+      <MaterialModalTitle>Редактировать материал</MaterialModalTitle>
 
       {material && (
-        <div>
-          <p>
+        <MaterialModalFieldsContainer>
+          <MaterialModalFieldsName>
             <b>Название:</b> {material.title}
-          </p>
-          <p>
+          </MaterialModalFieldsName>
+          <MaterialModalFieldsName>
             <b>Ссылка:</b> {material.link}
-          </p>
-        </div>
+          </MaterialModalFieldsName>
+        </MaterialModalFieldsContainer>
       )}
 
-      <button
-        type="button"
-        onClick={() => {
-          onEdit();
-          onClose();
-        }}
-      >
-        Редактировать
-      </button>
-      <button type="button" onClick={onClose}>
-        Закрыть
-      </button>
+      <MaterialModalButtonsBox>
+        <button
+          type="button"
+          onClick={() => {
+            onEdit();
+            onClose();
+          }}
+        >
+          Редактировать
+        </button>
+        <button type="button" onClick={onClose}>
+          Закрыть
+        </button>
+      </MaterialModalButtonsBox>
     </MaterialModalContainer>
   );
 };

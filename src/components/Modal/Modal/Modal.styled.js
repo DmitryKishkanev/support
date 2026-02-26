@@ -14,16 +14,20 @@ const ModalContainer = styled.div`
     left: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
+
     transform: translate(-50%, -50%);
     /* min-height: 300px; */
     max-width: 600px;
     width: 100%;
     padding: 15px;
 
-    background-color: #fff;
+    background-color: #b5e3f7;
     border-radius: 3px;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    box-shadow:
+      0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+      0px 1px 3px 0px rgba(0, 0, 0, 0.12);
   }
 
   h1 {
