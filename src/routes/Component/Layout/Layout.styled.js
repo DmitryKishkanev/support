@@ -3,9 +3,9 @@ import { Link, NavLink } from 'react-router-dom';
 
 const HeaderEl = styled.header`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
-  padding: 15px 0;
+  padding: 0 0 15px 0;
   margin-bottom: 30px;
 
   width: 95%;
@@ -16,7 +16,7 @@ const HeaderEl = styled.header`
 const HeaderElBox = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 `;
 
 const HeaderElLogoLink = styled(Link)`
@@ -52,7 +52,7 @@ const HeaderElTitle = styled.h1`
   margin: 0 auto 0 0;
 
   font-weight: 700;
-  font-size: 48px;
+  font-size: 38px;
   line-height: 1.19;
   text-align: center;
   letter-spacing: 0.03em;
@@ -60,7 +60,9 @@ const HeaderElTitle = styled.h1`
 
 const LayoutList = styled.ul`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
+  align-items: flex-end;
+
   gap: 24px;
   margin: 0 0 0 0px;
 
@@ -79,6 +81,10 @@ const LayoutListItem = styled.li`
     border-radius: 8px;
     background-color: rgb(33, 150, 243);
     color: white;
+
+    &:hover {
+      color: white;
+    }
   }
 `;
 
@@ -87,7 +93,8 @@ const StyledNavLink = styled(NavLink)`
 
   color: black;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
@@ -101,6 +108,18 @@ const StyledNavLink = styled(NavLink)`
   }
 `;
 
+const MainContainer = styled.main`
+  display: flex;
+  width: 100%;
+  min-height: calc(100vh - 207px);
+  /* height: calc(100vh - 207px); */
+  justify-content: center;
+  align-items: center;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+`;
+
 export {
   HeaderEl,
   HeaderElBox,
@@ -110,4 +129,5 @@ export {
   LayoutList,
   LayoutListItem,
   StyledNavLink,
+  MainContainer,
 };

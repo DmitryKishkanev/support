@@ -48,6 +48,8 @@ export default function App() {
           <Route path="/" element={<Layout />}>
             {/* Если HomePage, к примеру, должна быть не защищённым публичным маршрутом то её просто оставляем вне публичных/приватных маршрутов */}
 
+            <Route index element={<HomePage />} />
+
             {/* Публичные маршруты */}
             <Route
               path="login"
@@ -67,12 +69,6 @@ export default function App() {
             />
 
             {/* Приватные маршруты  */}
-            <Route
-              index
-              element={
-                <PrivateRoute redirectTo="/login" component={<HomePage />} />
-              }
-            />
 
             <Route
               path="SupportApplications"
@@ -88,7 +84,7 @@ export default function App() {
               path="SupportApplications/:id"
               element={
                 <PrivateRoute
-                  redirectTo="/login"
+                  redirectTo="/"
                   component={<SupportApplicationsDetails />}
                 />
               }
@@ -97,7 +93,7 @@ export default function App() {
                 path="ApplicationMoreDetails"
                 element={
                   <PrivateRoute
-                    redirectTo="/login"
+                    redirectTo="/"
                     component={<ApplicationMoreDetails />}
                   />
                 }
@@ -111,3 +107,83 @@ export default function App() {
     )
   );
 }
+
+// export default function App() {
+//   const dispatch = useDispatch();
+//   const { isRefreshing } = useAuth();
+//   // При перезагрузке страницы возвращаем пользователя
+//   useEffect(() => {
+//     dispatch(refreshCurrentUser());
+//   }, [dispatch]);
+
+//   return (
+//     // Добавляем проверку isRefreshing, что бы убирать мигание странички Login
+//     !isRefreshing && (
+//       <div className={style.app}>
+//         <Routes>
+//           <Route path="/" element={<Layout />}>
+//             {/* Если HomePage, к примеру, должна быть не защищённым публичным маршрутом то её просто оставляем вне публичных/приватных маршрутов */}
+
+//             {/* Публичные маршруты */}
+//             <Route
+//               path="login"
+//               element={
+//                 <RestrictedRoute
+//                   redirectTo="/SupportApplications"
+//                   component={<LoginPage />}
+//                 />
+//               }
+//             />
+
+//             <Route
+//               path="register"
+//               element={
+//                 <RestrictedRoute redirectTo="/" component={<RegisterPage />} />
+//               }
+//             />
+
+//             {/* Приватные маршруты  */}
+//             <Route
+//               index
+//               element={
+//                 <PrivateRoute redirectTo="/login" component={<HomePage />} />
+//               }
+//             />
+
+//             <Route
+//               path="SupportApplications"
+//               // Пример приватного роута через children
+//               element={
+//                 <PrivateRouteWithChildren>
+//                   <SupportApplications />
+//                 </PrivateRouteWithChildren>
+//               }
+//             />
+
+//             <Route
+//               path="SupportApplications/:id"
+//               element={
+//                 <PrivateRoute
+//                   redirectTo="/login"
+//                   component={<SupportApplicationsDetails />}
+//                 />
+//               }
+//             >
+//               <Route
+//                 path="ApplicationMoreDetails"
+//                 element={
+//                   <PrivateRoute
+//                     redirectTo="/login"
+//                     component={<ApplicationMoreDetails />}
+//                   />
+//                 }
+//               />
+//             </Route>
+
+//             <Route path="*" element={<Navigate to="/" replace />} />
+//           </Route>
+//         </Routes>
+//       </div>
+//     )
+//   );
+// }

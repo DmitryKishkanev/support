@@ -6,8 +6,7 @@ const LoginForm = styled.form`
   gap: 15px;
   width: 500px;
   padding: 15px;
-  /* align-items: flex-end; */
-  justify-content: center;
+  /* justify-content: center; */
 
   border-radius: 4px;
 
