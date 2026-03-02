@@ -6,7 +6,7 @@ const HeaderEl = styled.header`
   /* align-items: center; */
   justify-content: space-between;
   padding: 0 0 15px 0;
-  margin-bottom: 30px;
+  /* margin-bottom: 30px; */
 
   width: 95%;
 
@@ -114,7 +114,7 @@ const MainContainer = styled.main`
   min-height: calc(100vh - 207px);
   /* height: calc(100vh - 207px); */
   justify-content: center;
-  align-items: center;
+  /* align-items: center; */
   /* display: flex;
   justify-content: center;
   align-items: center; */

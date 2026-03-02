@@ -3,17 +3,25 @@ import styled from '@emotion/styled';
 
 const HomePageContainer = styled.div`
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   width: 100%;
+  padding: 0;
   height: 100%;
+  /* height: 100vh;
+  background-image: url('/public/homePage.png');
+  background-size: cover;
+  background-position: center; */
 `;
 
 const LogOutHomePageList = styled.ul`
   display: flex;
-  gap: 15px;
-  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  /* align-items: center; */
+  margin-left: auto;
+  margin-right: 200px;
   padding: 0;
-  margin: 0;
+  /* margin: 0; */
   list-style: none;
 `;
 
@@ -52,11 +60,17 @@ const LogOutHomePageImg = styled.img`
   box-shadow: 0 0 10px rgba(82, 103, 121, 1);
 `;
 
+const LogOutHomePageBtn = styled.span`
+  padding: 6px;
+  border: 1px solid black;
+  border-radius: 4px;
+`;
+
 const LogInHomePageBox = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: center; */
   width: 100%;
   height: 100%;
 `;
@@ -69,6 +83,8 @@ const HomePageLink = styled(Link)`
   display: flex;
   align-items: center;
   padding: 6px;
+  margin-left: auto;
+  margin-right: 100px;
 
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(82, 103, 121, 1);
@@ -100,6 +116,7 @@ export {
   LogOutHomePageItem,
   LogOutHomePageLink,
   LogOutHomePageImg,
+  LogOutHomePageBtn,
   LogInHomePageBox,
   HomePageTitle,
   HomePageLink,

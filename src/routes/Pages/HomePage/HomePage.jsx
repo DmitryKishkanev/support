@@ -1,11 +1,13 @@
 // import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
 import beeSupportImg from '@/assets/bee_support.png';
+// import beeSupportBackgroundImage from '@/assets/support_homePage.png';
 import {
   HomePageContainer,
   LogOutHomePageList,
   LogOutHomePageItem,
   LogOutHomePageLink,
   LogOutHomePageImg,
+  LogOutHomePageBtn,
   LogInHomePageBox,
   HomePageTitle,
   HomePageLink,
@@ -24,13 +26,13 @@ const HomePage = () => {
           <LogOutHomePageItem>
             <LogOutHomePageLink to="/login">
               <LogOutHomePageImg src={beeSupportImg} alt="logo" />
-              Log in
+              <LogOutHomePageBtn>Log in</LogOutHomePageBtn>
             </LogOutHomePageLink>
           </LogOutHomePageItem>
           <LogOutHomePageItem>
             <LogOutHomePageLink to="/register">
               <LogOutHomePageImg src={beeSupportImg} alt="logo" />
-              Register
+              <LogOutHomePageBtn>Register</LogOutHomePageBtn>
             </LogOutHomePageLink>
           </LogOutHomePageItem>
         </LogOutHomePageList>
