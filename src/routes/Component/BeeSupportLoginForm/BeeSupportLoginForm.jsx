@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  LoginForm,
-  LoginFormLabel,
-  LoginFormSpan,
-  LoginFormInput,
+  LoginFormBox,
+  LoginFormTitle,
+  LoginFormField,
+  LoginFormError,
   LoginFormButton,
 } from '@/routes/Component/BeeSupportLoginForm/BeeSupportLoginForm.styled';
 import { logIn } from '@/redux/auth';
@@ -13,6 +13,7 @@ import { logIn } from '@/redux/auth';
 const BeeSupportLoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -30,36 +31,44 @@ const BeeSupportLoginForm = () => {
       navigate('/SupportApplications', { replace: true });
     } catch (error) {
       // если логин неуспешный, ловим ошибку
-      console.error('Login failed:', error);
+      setErrorMessage(error.message || 'Login failed');
     }
   };
 
   return (
-    <LoginForm onSubmit={handleSubmit}>
-      <LoginFormLabel>
-        <LoginFormSpan>Please enter your email</LoginFormSpan>
-        <LoginFormInput
-          type="text"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-      </LoginFormLabel>
+    <LoginFormBox component="form" onSubmit={handleSubmit}>
+      <LoginFormTitle variant="h5">Log In</LoginFormTitle>
 
-      <LoginFormLabel>
-        <LoginFormSpan>Please enter your password</LoginFormSpan>
-        <LoginFormInput
-          type="password"
-          name="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-      </LoginFormLabel>
+      <LoginFormField
+        label="Email"
+        type="email"
+        name="email"
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      />
 
-      <LoginFormButton type="submit" disabled={!email.trim()}>
+      <LoginFormField
+        label="Password"
+        type="password"
+        name="password"
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+      />
+
+      {errorMessage && (
+        <LoginFormError color="error" variant="body2">
+          {`${errorMessage} - try again`}
+        </LoginFormError>
+      )}
+
+      <LoginFormButton
+        variant="outlined"
+        type="submit"
+        disabled={!email || !password}
+      >
         Log in
       </LoginFormButton>
-    </LoginForm>
+    </LoginFormBox>
   );
 };
 

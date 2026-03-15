@@ -2,11 +2,10 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import {
-  RegisterForm,
+  RegisterFormBox,
   RegisterFormTitle,
-  RegisterFormLabel,
-  RegisterFormSpan,
-  RegisterFormInput,
+  RegisterFormField,
+  RegisterFormError,
   RegisterFormButton,
 } from '@/routes/Component/BeeSupportRegisterForm/BeeSupportRegisterForm.styled';
 import { register } from '@/redux/auth';
@@ -15,12 +14,13 @@ const BeeSupportRegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const allFieldsFilled =
-    // name.trim() && email.trim() && password.trim() && passwordAgainValue.trim();
-    name.trim() && email.trim() && password.trim();
+  // const allFieldsFilled =
+  //   // name.trim() && email.trim() && password.trim() && passwordAgainValue.trim();
+  //   name.trim() && email.trim() && password.trim();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -43,57 +43,57 @@ const BeeSupportRegisterForm = () => {
       navigate('/', { replace: true });
     } catch (error) {
       // если логин неуспешный, ловим ошибку
-      console.error('Register failed:', error);
+      setErrorMessage(error.message || 'Register failed');
     }
   };
 
   return (
-    <RegisterForm onSubmit={handleSubmit}>
-      <RegisterFormTitle>Please fill in all fields</RegisterFormTitle>
-      <RegisterFormLabel>
-        <RegisterFormSpan>Name</RegisterFormSpan>
-        <RegisterFormInput
-          type="text"
-          name="name"
-          value={name}
-          onChange={e => setName(e.target.value)}
-        />
-      </RegisterFormLabel>
+    <RegisterFormBox component="form" onSubmit={handleSubmit}>
+      <RegisterFormTitle variant="h5">Registration</RegisterFormTitle>
+      <RegisterFormField
+        label="Name"
+        type="text"
+        name="name"
+        required
+        fullWidth
+        value={name}
+        onChange={e => setName(e.target.value)}
+      />
 
-      <RegisterFormLabel>
-        <RegisterFormSpan>Email</RegisterFormSpan>
-        <RegisterFormInput
-          type="text"
-          name="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-      </RegisterFormLabel>
+      <RegisterFormField
+        label="Email"
+        type="email"
+        name="email"
+        required
+        fullWidth
+        value={email}
+        onChange={e => setEmail(e.target.value)}
+      />
 
-      <RegisterFormLabel>
-        <RegisterFormSpan>Create a password</RegisterFormSpan>
-        <RegisterFormInput
-          type="text"
-          name="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-      </RegisterFormLabel>
+      <RegisterFormField
+        label="Password"
+        type="password"
+        name="password"
+        required
+        fullWidth
+        value={password}
+        onChange={e => setPassword(e.target.value)}
+      />
 
-      {/* <RegisterFormLabel>
-        <RegisterFormSpan>Please enter your password again</RegisterFormSpan>
-        <RegisterFormInput
-          type="text"
-          name="passwordAgain"
-          value={passwordAgainValue}
-          onChange={e => setPasswordAgainValue(e.target.value)}
-        />
-      </RegisterFormLabel> */}
+      {errorMessage && (
+        <RegisterFormError variant="body2">
+          {`${errorMessage} - try again`}
+        </RegisterFormError>
+      )}
 
-      <RegisterFormButton type="submit" disabled={!allFieldsFilled.trim()}>
-        Register
+      <RegisterFormButton
+        variant="outlined"
+        type="submit"
+        disabled={!name || !email || !password}
+      >
+        Sign Up
       </RegisterFormButton>
-    </RegisterForm>
+    </RegisterFormBox>
   );
 };
 

@@ -1,76 +1,85 @@
 import styled from '@emotion/styled';
+import { Box, Typography, TextField, Button } from '@mui/material';
 
-const RegisterForm = styled.form`
+const RegisterFormBox = styled(Box)`
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  width: 500px;
+  gap: 16px;
+  width: 400px;
   padding: 15px;
 
-  justify-content: center;
-
   border-radius: 4px;
-
-  background-color: #d4f2ff;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: rgba(20, 125, 223, 0.5);
+  box-shadow: 0 0 10px rgba(82, 103, 121, 1);
 `;
 
-const RegisterFormTitle = styled.h1`
-  margin: 0;
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
+const RegisterFormTitle = styled(Typography)`
+  font-weight: 600;
   text-align: center;
-  color: black;
+  color: white;
 `;
 
-const RegisterFormLabel = styled.label`
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-`;
-
-const RegisterFormSpan = styled.span`
-  margin-bottom: 5px;
-
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-  color: black;
-`;
-
-const RegisterFormInput = styled.input`
-  width: 100%;
-  padding: 6px;
-
+const RegisterFormField = styled(TextField)`
   border-radius: 4px;
   background-color: white;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  outline: none;
-  cursor: pointer;
+  & .MuiOutlinedInput-root {
+    & fieldset {
+      border: none;
+    }
+    &:hover fieldset {
+      border: none;
+    }
+    &.Mui-focused fieldset {
+      border: none;
+    }
+  }
 
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1.19;
-  letter-spacing: 0.03em;
-  color: black;
+  &:hover {
+    transform: scale(1.05);
+  }
+  &:focus {
+    transform: scale(1.05);
+  }
+
+  /* стили для label */
+  & .MuiInputLabel-root {
+    color: black; /* цвет по умолчанию */
+  }
+
+  & .MuiInputLabel-root.Mui-focused {
+    color: black; /* цвет при фокусе */
+    font-size: 1.2rem;
+  }
 `;
 
-const RegisterFormButton = styled.button`
-  margin-left: auto;
+const RegisterFormError = styled(Typography)`
+  color: red;
+  font-size: 20px;
+  text-align: center;
+`;
 
-  background-color: rgb(33, 150, 243);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+const RegisterFormButton = styled(Button)`
+  align-self: center;
+  width: 100px;
+  border: 2px solid white;
+  color: white;
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.09);
+    border-color: white;
+  }
 `;
 
 export {
-  RegisterForm,
+  RegisterFormBox,
   RegisterFormTitle,
-  RegisterFormLabel,
-  RegisterFormSpan,
-  RegisterFormInput,
+  RegisterFormField,
+  RegisterFormError,
   RegisterFormButton,
 };
