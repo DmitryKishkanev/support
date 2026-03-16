@@ -1,30 +1,51 @@
 import styled from '@emotion/styled';
 import { Link, NavLink } from 'react-router-dom';
+import {
+  AppBar,
+  Box,
+  Container,
+  Toolbar,
+  Typography,
+  Button,
+} from '@mui/material';
 
-const HeaderEl = styled.header`
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  padding: 0 0 15px 0;
-  /* margin-bottom: 30px; */
+const AppBarComponent = styled(AppBar)`
+  position: static;
 
-  width: 95%;
-
-  border-bottom: 1px solid black;
+  background-color: rgba(25, 118, 210, 0.9);
 `;
 
-const HeaderElBox = styled.div`
+const AppBarContainer = styled(Container)`
+  max-width: false;
+`;
+
+const AppBarToolbar = styled(Toolbar)`
+  display: flex;
+  justify-content: space-between;
+  height: 108px;
+
+  &.MuiToolbar-root {
+    padding: 10px 0;
+  }
+`;
+
+const AppBarBox = styled(Box)`
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  height: 100%;
 `;
 
-const HeaderElLogoLink = styled(Link)`
+const AppBarLogo = styled(Typography)`
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-left: 30px;
-  color: inherit;
+  gap: 10px;
+  color: rgb(223, 186, 1);
+
+  font-weight: 700;
+  font-size: 27px;
+  line-height: 1.19;
+  text-align: center;
+  letter-spacing: 0.03em;
 
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
@@ -39,79 +60,68 @@ const HeaderElLogoLink = styled(Link)`
   }
 `;
 
-const HeaderElImg = styled.img`
-  width: 70px;
+const AppBarImg = styled(Box)`
+  width: 60px;
 
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(82, 103, 121, 1);
+  background-color: rgb(223, 186, 1);
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 
-const HeaderElTitle = styled.h1`
-  margin: 0 auto 0 0;
-
-  font-weight: 700;
-  font-size: 38px;
-  line-height: 1.19;
-  text-align: center;
-  letter-spacing: 0.03em;
-`;
-
-const LayoutList = styled.ul`
+const LayoutList = styled(Box)`
   display: flex;
-  /* align-items: center; */
-  align-items: flex-end;
-
-  gap: 24px;
-  margin: 0 0 0 0px;
+  gap: 16px;
+  margin: 0 0 0 60px;
 
   padding: 0;
 `;
 
-const LayoutListItem = styled.li`
+const LayoutListItem = styled(Box)`
   display: inline-block;
 
   list-style-type: none;
 
   cursor: pointer;
-
-  & .active {
-    padding: 2px 8px;
-    border-radius: 8px;
-    background-color: rgb(33, 150, 243);
-    color: white;
-
-    &:hover {
-      color: white;
-    }
-  }
 `;
 
-const StyledNavLink = styled(NavLink)`
-  display: inline-block;
-
-  color: black;
+const LayoutListButton = styled(Button)`
+  color: rgb(223, 186, 1);
 
   transition:
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover {
-    transform: scale(1.09);
-    color: rgb(33, 150, 243);
-  }
-
+  &:hover,
   &:focus {
     transform: scale(1.09);
-    color: white;
+    color: black;
+    /* color: rgb(33, 150, 243); */
+  }
+
+  &.active {
+    color: black;
   }
 `;
+
+export {
+  AppBarComponent,
+  AppBarContainer,
+  AppBarToolbar,
+  AppBarBox,
+  AppBarLogo,
+  AppBarImg,
+  LayoutList,
+  LayoutListItem,
+  LayoutListButton,
+};
 
 const MainContainer = styled.main`
   display: flex;
   width: 100%;
-  min-height: calc(100vh - 207px);
+  height: calc(100vh - 140px);
+  /* min-height: calc(100vh - 207px); */
   /* height: calc(100vh - 207px); */
   justify-content: center;
   /* align-items: center; */
@@ -120,14 +130,4 @@ const MainContainer = styled.main`
   align-items: center; */
 `;
 
-export {
-  HeaderEl,
-  HeaderElBox,
-  HeaderElLogoLink,
-  HeaderElImg,
-  HeaderElTitle,
-  LayoutList,
-  LayoutListItem,
-  StyledNavLink,
-  MainContainer,
-};
+export { MainContainer };

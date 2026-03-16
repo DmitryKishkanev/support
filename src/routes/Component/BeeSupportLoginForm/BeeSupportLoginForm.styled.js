@@ -9,7 +9,7 @@ const LoginFormBox = styled(Box)`
   padding: 15px;
 
   border-radius: 4px;
-  background-color: rgba(20, 125, 223, 0.5);
+  background-color: rgba(20, 125, 223, 0.9);
   box-shadow: 0 0 10px rgba(82, 103, 121, 1);
 `;
 
