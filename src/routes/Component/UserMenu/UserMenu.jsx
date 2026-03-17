@@ -3,11 +3,11 @@ import {
   UserMenuBox,
   UserMenuName,
   UserMenuButton,
-} from '@/routes/Component/BeeSupportUserMenu/BeeSupportUserMenu.styled';
+} from '@/routes/Component/UserMenu/UserMenu.styled';
 import { logOut } from '@/redux/auth';
 import { useAuth } from '@/redux/auth/useAuth';
 
-const BeeSupportUserMenu = () => {
+const UserMenu = () => {
   const dispatch = useDispatch();
   const { userName } = useAuth();
 
@@ -22,4 +22,4 @@ const BeeSupportUserMenu = () => {
   );
 };
 
-export default BeeSupportUserMenu;
+export default UserMenu;
