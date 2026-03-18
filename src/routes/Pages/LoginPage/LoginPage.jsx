@@ -1,11 +1,11 @@
 import BeeSupportLoginForm from '@/routes/Component/BeeSupportLoginForm';
-import { LoginPageBox } from '@/routes/Pages/LoginPage/LoginPage.styled';
+import { LoginPageBackdrop } from '@/routes/Pages/LoginPage/LoginPage.styled';
 
 const LoginPage = () => {
   return (
-    <LoginPageBox>
+    <LoginPageBackdrop>
       <BeeSupportLoginForm />
-    </LoginPageBox>
+    </LoginPageBackdrop>
   );
 };
 

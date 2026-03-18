@@ -29,8 +29,6 @@ const AppBar = () => {
           </AppBarBox>
 
           {isLoggedIn ? <UserMenu /> : <AuthNav />}
-
-          {isLoggedIn && <BeeSupportUserMenu />}
         </AppBarToolbar>
       </AppBarContainer>
     </AppBarComponent>

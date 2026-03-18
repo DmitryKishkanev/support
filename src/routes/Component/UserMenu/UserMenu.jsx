@@ -15,7 +15,12 @@ const UserMenu = () => {
     <UserMenuBox>
       <UserMenuName>Hi, {userName}</UserMenuName>
 
-      <UserMenuButton type="button" onClick={() => dispatch(logOut())}>
+      <UserMenuButton
+        variant="contained"
+        disableElevation
+        type="button"
+        onClick={() => dispatch(logOut())}
+      >
         Log out
       </UserMenuButton>
     </UserMenuBox>

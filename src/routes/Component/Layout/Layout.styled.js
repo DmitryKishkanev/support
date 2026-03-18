@@ -1,17 +1,27 @@
 import styled from '@emotion/styled';
 import { Box } from '@mui/material';
+import GuestBg from '@/assets/homePage.png';
+import LoggedInBg from '@/assets/isLoggedInHomePage.jpg';
 
 const LayoutMainContainer = styled(Box)`
   display: flex;
+  flex: 1;
   width: 100%;
-  height: calc(100vh - 108px);
-  /* min-height: calc(100vh - 207px); */
-  /* height: calc(100vh - 207px); */
+
   justify-content: center;
-  /* align-items: center; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 `;
 
-export { LayoutMainContainer };
+const BackgroundWrapper = styled.div(({ isLoggedIn }) => {
+  return {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    minHeight: '100vh',
+    backgroundImage: `url(${isLoggedIn ? LoggedInBg : GuestBg})`,
+    backgroundSize: 'cover',
+    backgroundPositionY: 'center',
+    backgroundRepeat: 'no-repeat',
+  };
+});
+
+export { LayoutMainContainer, BackgroundWrapper };

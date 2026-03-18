@@ -1,17 +1,13 @@
 // import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
 import beeSupportImg from '@/assets/bee_support.png';
-// import beeSupportBackgroundImage from '@/assets/support_homePage.png';
+import { Link, NavLink } from 'react-router-dom';
 import {
-  HomePageContainer,
-  LogOutHomePageList,
-  LogOutHomePageItem,
-  LogOutHomePageLink,
-  LogOutHomePageImg,
-  LogOutHomePageBtn,
-  LogInHomePageBox,
-  HomePageTitle,
-  HomePageLink,
-  HomePageImg,
+  IsLoggedOutHomePageBox,
+  IsLoggedOutHomePageBtn,
+  IsLoggedInHomePageBox,
+  IsLoggedInHomePageTitle,
+  IsLoggedInHomePageBtn,
+  IsLoggedInHomePageImg,
 } from '@/routes/Pages/HomePage/HomePage.styled';
 import { useAuth } from '@/redux/auth/useAuth';
 
@@ -20,60 +16,43 @@ const HomePage = () => {
   // useLogOutRedirect();
 
   return (
-    <HomePageContainer>
-      {!isLoggedIn && (
-        <LogOutHomePageList>
-          <LogOutHomePageItem>
-            <LogOutHomePageLink to="/login">
-              <LogOutHomePageImg src={beeSupportImg} alt="logo" />
-              <LogOutHomePageBtn>Log in</LogOutHomePageBtn>
-            </LogOutHomePageLink>
-          </LogOutHomePageItem>
-          <LogOutHomePageItem>
-            <LogOutHomePageLink to="/register">
-              <LogOutHomePageImg src={beeSupportImg} alt="logo" />
-              <LogOutHomePageBtn>Register</LogOutHomePageBtn>
-            </LogOutHomePageLink>
-          </LogOutHomePageItem>
-        </LogOutHomePageList>
-      )}
-
-      {isLoggedIn && (
-        <LogInHomePageBox>
-          <HomePageTitle>
+    <>
+      {isLoggedIn ? (
+        <IsLoggedInHomePageBox>
+          <IsLoggedInHomePageTitle variant="h2">
             Welcome! This resource provides reference material on building
             functional and class components in React
-          </HomePageTitle>
-          <HomePageLink to="/SupportApplications">
-            <HomePageImg src={beeSupportImg} alt="logo" />
+          </IsLoggedInHomePageTitle>
+          <IsLoggedInHomePageBtn component={Link} to="/SupportApplications">
+            <IsLoggedInHomePageImg
+              component="img"
+              src={beeSupportImg}
+              alt="logo"
+            />
             Go!
-          </HomePageLink>
-        </LogInHomePageBox>
+          </IsLoggedInHomePageBtn>
+        </IsLoggedInHomePageBox>
+      ) : (
+        <IsLoggedOutHomePageBox>
+          <IsLoggedOutHomePageBtn
+            component={NavLink}
+            to="/login"
+            variant="outlined"
+          >
+            Log in
+          </IsLoggedOutHomePageBtn>
+
+          <IsLoggedOutHomePageBtn
+            component={NavLink}
+            to="/register"
+            variant="outlined"
+          >
+            Sign Up
+          </IsLoggedOutHomePageBtn>
+        </IsLoggedOutHomePageBox>
       )}
-    </HomePageContainer>
+    </>
   );
 };
 
 export default HomePage;
-
-// const HomePage = () => {
-//   // useEffect(() => {
-//   //   // HTTP Запрос, если нужно
-//   // }, []);
-//   useLogOutRedirect();
-
-//   return (
-//     <HomePageContainer>
-//       <HomePageTitle>
-//         Welcome! This resource provides reference material on building
-//         functional and class components in React
-//       </HomePageTitle>
-//       <HomePageLink to="/SupportApplications">
-//         <HomePageImg src={beeSupportImg} alt="logo" />
-//         Go!
-//       </HomePageLink>
-//     </HomePageContainer>
-//   );
-// };
-
-// export default HomePage;
