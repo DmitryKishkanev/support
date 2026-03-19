@@ -32,7 +32,7 @@ export default function SupportApplications() {
       <h2>Support applications</h2>
       <p>Click any of the links below to open the application</p>
       <label>
-        <span>Application</span>
+        <span>Application filter</span>
         <input
           type="text"
           value={applicationName}

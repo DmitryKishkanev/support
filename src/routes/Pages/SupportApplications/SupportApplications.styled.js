@@ -16,12 +16,13 @@ const SupportApplicationsMain = styled.main`
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
+    color: rgb(199, 141, 75);
   }
 
   p {
     margin: 0;
 
-    color: rgb(33, 150, 243);
+    color: rgb(223, 186, 1);
 
     font-weight: 400;
     font-size: 32px;
@@ -45,6 +46,8 @@ const SupportApplicationsMain = styled.main`
     line-height: 1.19;
 
     letter-spacing: 0.03em;
+
+    color: rgb(199, 141, 75);
   }
 
   input {
@@ -53,7 +56,7 @@ const SupportApplicationsMain = styled.main`
 
     border: 1px solid black;
     border-radius: 4px;
-    background-color: white;
+    /* background-color: rgb(199, 141, 75); */
 
     outline: none;
     cursor: pointer;
@@ -62,7 +65,8 @@ const SupportApplicationsMain = styled.main`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
+
+    color: rgb(223, 186, 1);
   }
 `;
 

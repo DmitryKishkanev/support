@@ -10,7 +10,7 @@ const NavigationBox = styled(Box)`
 `;
 
 const NavigationButton = styled(Button)`
-  color: rgb(223, 186, 1);
+  color: rgb(199, 141, 75);
 
   transition:
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -19,12 +19,11 @@ const NavigationButton = styled(Button)`
   &:hover,
   &:focus {
     transform: scale(1.09);
-    color: black;
-    /* color: rgb(33, 150, 243); */
+    color: rgb(223, 186, 1);
   }
 
   &.active {
-    color: black;
+    color: rgb(223, 186, 1);
   }
 `;
 

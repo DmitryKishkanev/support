@@ -18,20 +18,10 @@ const HomePage = () => {
   return (
     <>
       {isLoggedIn ? (
-        <IsLoggedInHomePageBox>
-          <IsLoggedInHomePageTitle variant="h2">
-            Welcome! This resource provides reference material on building
-            functional and class components in React
-          </IsLoggedInHomePageTitle>
-          <IsLoggedInHomePageBtn component={Link} to="/SupportApplications">
-            <IsLoggedInHomePageImg
-              component="img"
-              src={beeSupportImg}
-              alt="logo"
-            />
-            Go!
-          </IsLoggedInHomePageBtn>
-        </IsLoggedInHomePageBox>
+        <IsLoggedInHomePageTitle variant="h2">
+          Welcome! This resource provides reference material on building
+          functional and class components in React
+        </IsLoggedInHomePageTitle>
       ) : (
         <IsLoggedOutHomePageBox>
           <IsLoggedOutHomePageBtn

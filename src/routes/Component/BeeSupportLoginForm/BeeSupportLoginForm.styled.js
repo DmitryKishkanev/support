@@ -9,7 +9,7 @@ const LoginFormBox = styled(Box)`
   padding: 15px;
 
   border-radius: 4px;
-  background-color: rgba(20, 125, 223, 0.9);
+  background-color: rgba(8, 121, 120, 0.7);
   box-shadow: 0 0 10px rgba(82, 103, 121, 1);
 `;
 
@@ -63,16 +63,26 @@ const LoginFormError = styled(Typography)`
 const LoginFormButton = styled(Button)`
   align-self: center;
   width: 100px;
-  border: 2px solid white;
-  color: white;
+  border: 2px solid rgb(199, 141, 75);
+  color: rgb(199, 141, 75);
   transition:
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus {
+  &:hover {
     transform: scale(1.09);
-    border-color: white;
+    color: rgb(223, 186, 1);
+    border-color: rgb(223, 186, 1);
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    border-color: rgb(223, 186, 1);
+    color: rgb(223, 186, 1);
+    outline: none;
+    box-shadow: none;
   }
 `;
 

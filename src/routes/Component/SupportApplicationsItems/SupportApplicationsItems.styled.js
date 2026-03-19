@@ -21,12 +21,15 @@ const StyledLink = styled(Link)`
 
   border-radius: 16px;
   box-shadow: 0 0 10px rgba(82, 103, 121, 1);
-  color: black;
+  color: rgb(199, 141, 75);
+  background-color: rgba(8, 121, 120, 0.7);
 
   cursor: pointer;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   font-weight: 600;
   font-size: 18px;
@@ -37,7 +40,8 @@ const StyledLink = styled(Link)`
   &:hover,
   &:focus {
     transform: scale(1.09);
-    box-shadow: 0 0 10px rgba(0, 140, 255, 1);
+    color: rgb(223, 186, 1);
+    box-shadow: 0 0 10px rgba(223, 186, 1, 1);
   }
 `;
 

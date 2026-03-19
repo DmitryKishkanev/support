@@ -10,7 +10,7 @@ const AuthNavBox = styled(Box)`
 `;
 
 const AuthNavButton = styled(Button)`
-  color: rgb(223, 186, 1);
+  color: rgb(199, 141, 75);
 
   transition:
     transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -19,12 +19,12 @@ const AuthNavButton = styled(Button)`
   &:hover,
   &:focus {
     transform: scale(1.09);
-    color: black;
+    color: rgb(223, 186, 1);
     /* color: rgb(33, 150, 243); */
   }
 
   &.active {
-    color: black;
+    color: rgb(223, 186, 1);
   }
 `;
 

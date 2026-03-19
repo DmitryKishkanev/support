@@ -11,7 +11,8 @@ import {
 const AppBarComponent = styled(AppBar)`
   position: static;
 
-  background-color: rgba(25, 118, 210, 0.9);
+  /* background-color: rgba(25, 118, 210, 0.3); */
+  background-color: rgba(8, 121, 120, 0.5);
 `;
 
 const AppBarContainer = styled(Container)`
@@ -38,7 +39,7 @@ const AppBarLogo = styled(Typography)`
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgb(223, 186, 1);
+  color: rgb(199, 141, 75);
 
   font-weight: 700;
   font-size: 27px;
@@ -64,7 +65,7 @@ const AppBarImg = styled(Box)`
 
   border-radius: 50%;
   box-shadow: 0 0 10px rgba(82, 103, 121, 1);
-  background-color: rgb(223, 186, 1);
+  background-color: rgb(199, 141, 75);
 
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;

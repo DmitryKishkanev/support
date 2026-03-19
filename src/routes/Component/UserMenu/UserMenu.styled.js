@@ -14,11 +14,11 @@ const UserMenuName = styled(Typography)`
   font-size: 18px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  color: rgb(223, 186, 1);
+  color: rgb(199, 141, 75);
 `;
 
 const UserMenuButton = styled(Button)`
-  color: rgb(223, 186, 1);
+  color: rgb(199, 141, 75);
   background-color: black;
   border-radius: 6px;
   transition:
@@ -26,10 +26,18 @@ const UserMenuButton = styled(Button)`
     color 250ms cubic-bezier(0.4, 0, 0.2, 1),
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: black;
     background-color: red;
+  }
+
+  &:focus,
+  &:focus-visible,
+  &:active {
+    color: black;
+    background-color: red;
+    outline: none; /* убираем белый outline */
+    box-shadow: none; /* убираем glow */
   }
 `;
 
