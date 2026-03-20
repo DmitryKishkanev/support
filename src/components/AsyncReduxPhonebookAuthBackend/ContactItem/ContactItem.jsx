@@ -14,7 +14,7 @@ import Modal from 'components/Modal/Modal';
 import EditContactModal from 'components/AsyncReduxPhonebookAuthBackend/EditContactModal';
 
 const ContactItem = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedContactId, setSelectedContactId] = useState(null);
   // Перенесли фильтрацию в selectors
   const filteredContacts = useSelector(selectFilteredContacts);
   const dispatch = useDispatch();
@@ -27,8 +27,12 @@ const ContactItem = () => {
   //   dispatch(updateContact(contactId));
   // };
 
-  const toggleModal = () => {
-    setIsModalOpen(prev => !prev);
+  const handleOpenModal = id => {
+    setSelectedContactId(id);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedContactId(null);
   };
 
   return (
@@ -44,15 +48,18 @@ const ContactItem = () => {
               <button type="button" onClick={() => handleDeleteContact(id)}>
                 Delete
               </button>
-              <button type="button" onClick={toggleModal}>
+              <button type="button" onClick={() => handleOpenModal(id)}>
                 Edit
               </button>
             </ContactContentButtonBox>
           </ContactContentBox>
 
-          {isModalOpen && (
-            <Modal onClose={toggleModal}>
-              <EditContactModal onClose={toggleModal} contactId={id} />
+          {selectedContactId && (
+            <Modal onClose={handleCloseModal}>
+              <EditContactModal
+                onClose={handleCloseModal}
+                contactId={selectedContactId}
+              />
             </Modal>
           )}
         </ContactEl>

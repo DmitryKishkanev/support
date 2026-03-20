@@ -9,7 +9,7 @@ const LayoutMainContainer = styled(Box)`
   width: 100%;
   justify-content: center;
 
-  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4));
+  background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.4));
   background-size: cover;
 `;
 

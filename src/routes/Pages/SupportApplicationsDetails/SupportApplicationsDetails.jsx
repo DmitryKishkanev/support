@@ -1,4 +1,4 @@
-import { useRef, Suspense } from 'react';
+import { useEffect, useRef, Suspense } from 'react';
 import { useParams, Outlet, useLocation, Link } from 'react-router-dom';
 import { supportConfig } from '@/routesConfig/supportConfig';
 import BackLink from '@/routes/Component/BackLink/BackLink';
@@ -15,6 +15,13 @@ const SupportApplicationsDetails = () => {
   const backLinkHref = useRef(location.state?.from ?? '/SupportApplications');
 
   useLogOutRedirect();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: 'smooth',
+    });
+  }, [location]);
 
   return (
     <Container>

@@ -8,9 +8,6 @@ const FormContainer = styled(Form)`
   width: 100%;
   padding: 15px;
 
-  border: 1px solid black;
-  border-radius: 4px;
-
   h2 {
     margin: 0;
     text-align: center;
@@ -37,7 +34,6 @@ const FormContainer = styled(Form)`
     padding: 3px;
 
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
@@ -46,7 +42,6 @@ const FormContainer = styled(Form)`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 
   div {

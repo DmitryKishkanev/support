@@ -13,15 +13,22 @@ const schema = object({
   number: string().min(7).max(12).required(),
 });
 
-const initialValue = {
-  name: '',
-  number: '',
-};
+// const initialValue = {
+//   name: '',
+//   number: '',
+// };
 
 const EditContactModal = ({ onClose, contactId }) => {
   const contacts = useSelector(selectContacts);
   //   const isLoading = useSelector(selectIsLoading);
   const dispatch = useDispatch();
+
+  const contact = contacts.find(contact => contact.id === contactId);
+
+  const initialValue = {
+    name: contact?.name || '',
+    number: contact?.number || '',
+  };
 
   const onSubmit = (values, { resetForm }) => {
     const newContact = {
@@ -30,7 +37,9 @@ const EditContactModal = ({ onClose, contactId }) => {
     };
 
     const isNamePresent = contacts.some(
-      contact => contact.name.toLowerCase() === newContact.name.toLowerCase(),
+      contact =>
+        contact.name.toLowerCase() === newContact.name.toLowerCase() &&
+        contact.id !== contactId,
     );
 
     if (isNamePresent) {
@@ -54,6 +63,8 @@ const EditContactModal = ({ onClose, contactId }) => {
       initialValues={initialValue}
       validationSchema={schema}
       onSubmit={onSubmit}
+      // Опция обновления формы при изменении пропсов (если переключать контакты не закрывая модалку)
+      // enableReinitialize
     >
       {({ values }) => (
         <FormContainer>
@@ -76,11 +87,11 @@ const EditContactModal = ({ onClose, contactId }) => {
               className="phonebook__button"
               disabled={!values.name || !values.number}
             >
-              Add
+              Save
             </button>
 
             <button type="button" onClick={onClose}>
-              Close
+              Cancel
             </button>
           </div>
         </FormContainer>

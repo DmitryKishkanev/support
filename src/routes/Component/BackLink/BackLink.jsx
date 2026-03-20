@@ -9,18 +9,19 @@ const StyledLink = styled(Link)`
   gap: 4px;
   padding: 8px 0;
   margin-left: auto;
-  color: black;
+  color: rgb(199, 141, 75);
   text-decoration: none;
   font-weight: 500;
   text-transform: uppercase;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
     color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   :hover,
   :focus {
     transform: scale(1.07);
-    color: rgb(33, 150, 243);
+    color: rgb(223, 186, 1);
   }
 `;
 

@@ -34,12 +34,10 @@ const IsLoggedOutHomePageBtn = styled(Button)`
 
 const IsLoggedInHomePageBox = styled(Box)`
   display: flex;
-  /* gap: 100px; */
-  /* align-items: center; */
-  /* justify-content: center; */
-
+  align-items: center;
   width: 100%;
-  height: calc(100vh - 108px);
+
+  /* height: calc(100vh - 108px); */
 `;
 
 const pulse = keyframes`
@@ -56,58 +54,39 @@ const pulse = keyframes`
     color: rgb(199, 141, 75);
     text-shadow: 0 0 5px rgba(223, 186, 1, 0.5);
   }
-
-
 `;
 
 const IsLoggedInHomePageTitle = styled(Typography)`
   display: flex;
-  padding: 10px;
+
+  padding: 8px;
   align-items: center;
   margin-left: auto;
   margin-right: 20px;
   margin-top: 40px;
 
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(199, 141, 75, 1);
+  background-color: rgba(0, 0, 0, 0.7);
   color: rgb(199, 141, 75);
-  text-shadow: 0 0 15px rgb(223, 186, 1);
+
+  transition:
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(223, 186, 1, 1);
+  }
 
   font-weight: 700;
   font-size: 15px;
   line-height: 1.19;
-  /* text-align: center; */
   letter-spacing: 0.03em;
   text-transform: uppercase;
 
   animation: ${pulse} 2s infinite;
-`;
-
-const IsLoggedInHomePageBtn = styled(Button)`
-  display: flex;
-  align-items: center;
-  padding: 6px;
-
-  border-radius: 50%;
-  box-shadow: 0 0 10px rgba(82, 103, 121, 1);
-  color: black;
-  transition:
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
-  font-weight: 700;
-  font-size: 70px;
-  line-height: 1.19;
-  text-align: center;
-  letter-spacing: 0.03em;
-
-  &:hover,
-  &:focus {
-    transform: scale(1.07);
-    color: rgb(223, 186, 1);
-  }
-`;
-
-const IsLoggedInHomePageImg = styled(Box)`
-  width: 450px;
 `;
 
 export {
@@ -115,6 +94,4 @@ export {
   IsLoggedOutHomePageBtn,
   IsLoggedInHomePageBox,
   IsLoggedInHomePageTitle,
-  IsLoggedInHomePageBtn,
-  IsLoggedInHomePageImg,
 };

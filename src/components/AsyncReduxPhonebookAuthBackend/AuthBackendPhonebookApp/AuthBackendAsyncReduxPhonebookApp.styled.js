@@ -7,31 +7,30 @@ const Container = styled.div`
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 36px;
+  padding-right: 36px;
   padding-top: 30px;
   padding-bottom: 30px;
 
   border-radius: 4px;
 
-  background-color: #d4f2ff;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: rgba(8, 121, 120, 0.5);
+  box-shadow: 0 0 10px rgba(199, 141, 75, 1);
 
   h1 {
     margin-top: 0;
+    color: rgba(199, 141, 75, 1);
   }
 
   h2 {
     margin-top: 0;
     margin-bottom: 15px;
-    /* margin-right: auto; */
-    /* margin-left: 315px; */
 
     font-weight: 700;
     font-size: 32px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    color: rgba(199, 141, 75, 1);
   }
 `;
 

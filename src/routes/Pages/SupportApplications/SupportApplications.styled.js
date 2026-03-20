@@ -56,7 +56,6 @@ const SupportApplicationsMain = styled.main`
 
     border: 1px solid black;
     border-radius: 4px;
-    /* background-color: rgb(199, 141, 75); */
 
     outline: none;
     cursor: pointer;

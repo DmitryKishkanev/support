@@ -16,12 +16,12 @@ const LoginFormBox = styled(Box)`
 const LoginFormTitle = styled(Typography)`
   font-weight: 600;
   text-align: center;
-  color: white;
+  color: rgb(199, 141, 75);
 `;
 
 const LoginFormField = styled(TextField)`
   border-radius: 4px;
-  background-color: white;
+  background-color: rgb(59, 59, 59);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   & .MuiOutlinedInput-root {
@@ -43,13 +43,23 @@ const LoginFormField = styled(TextField)`
     transform: scale(1.05);
   }
 
+  /* цвет текста внутри input */
+  & .MuiInputBase-input {
+    color: rgb(223, 186, 1);
+  }
+
+  /* стили для автозаполнения */
+  & input:-webkit-autofill {
+    -webkit-text-fill-color: rgb(223, 186, 1); /* цвет текста */
+  }
+
   /* стили для label */
   & .MuiInputLabel-root {
-    color: black; /* цвет по умолчанию */
+    color: rgba(199, 141, 75); /* цвет по умолчанию */
   }
 
   & .MuiInputLabel-root.Mui-focused {
-    color: black; /* цвет при фокусе */
+    color: rgba(223, 186, 1, 1); /* цвет при фокусе */
     font-size: 1.2rem;
   }
 `;

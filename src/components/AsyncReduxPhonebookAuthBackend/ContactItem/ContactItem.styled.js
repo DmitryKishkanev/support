@@ -1,9 +1,12 @@
 import styled from '@emotion/styled';
 
-const ContactEl = styled.li``;
+const ContactEl = styled.li`
+  color: rgb(199, 141, 75); /* цвет маркера совпадает с цветом текста */
+`;
 
 const ContactContentBox = styled.div`
   display: flex;
+  gap: 16px;
   align-items: center;
 `;
 
@@ -14,6 +17,7 @@ const ContactContent = styled.p`
   font-size: 18px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  color: rgb(199, 141, 75);
 `;
 
 const ContactContentButtonBox = styled.div`

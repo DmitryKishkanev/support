@@ -1,13 +1,10 @@
 // import useLogOutRedirect from '@/hooks/useLogOuteRedirect';
-import beeSupportImg from '@/assets/bee_support.png';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {
   IsLoggedOutHomePageBox,
   IsLoggedOutHomePageBtn,
   IsLoggedInHomePageBox,
   IsLoggedInHomePageTitle,
-  IsLoggedInHomePageBtn,
-  IsLoggedInHomePageImg,
 } from '@/routes/Pages/HomePage/HomePage.styled';
 import { useAuth } from '@/redux/auth/useAuth';
 
@@ -18,10 +15,16 @@ const HomePage = () => {
   return (
     <>
       {isLoggedIn ? (
-        <IsLoggedInHomePageTitle variant="h2">
-          Welcome! This resource provides reference material on building
-          functional and class components in React
-        </IsLoggedInHomePageTitle>
+        <IsLoggedInHomePageBox>
+          <IsLoggedInHomePageTitle
+            variant="h2"
+            component={NavLink}
+            to="/SupportApplications"
+          >
+            Welcome! This resource provides reference material on building
+            functional and class components in React
+          </IsLoggedInHomePageTitle>
+        </IsLoggedInHomePageBox>
       ) : (
         <IsLoggedOutHomePageBox>
           <IsLoggedOutHomePageBtn

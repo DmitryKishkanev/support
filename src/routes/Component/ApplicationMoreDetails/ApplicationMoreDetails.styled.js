@@ -6,14 +6,11 @@ export const Container = styled.div`
   align-items: start;
   gap: 15px;
   padding: 15px;
-
   width: 100%;
 
   border-radius: 5px;
-
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16), 0px -1px 1px rgba(0, 0, 0, 0.12),
-    0px -4px 4px rgba(0, 0, 0, 0.06), -1px -4px 6px rgba(0, 0, 0, 0.16);
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 10px rgba(199, 141, 75, 1);
 
   h4 {
     margin: 0;
@@ -23,20 +20,30 @@ export const Container = styled.div`
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
+    color: rgb(199, 141, 75);
   }
 
   p {
     margin: 0;
+    color: rgb(199, 141, 75);
   }
 
   button {
     margin-left: auto;
+    background-color: transparent;
+    color: rgb(199, 141, 75);
+    border-color: rgb(199, 141, 75);
 
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition:
+      transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      bordwer-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     :hover,
     :focus {
       transform: scale(1.07);
+      color: rgb(223, 186, 1);
+      border-color: rgb(223, 186, 1);
     }
   }
 `;

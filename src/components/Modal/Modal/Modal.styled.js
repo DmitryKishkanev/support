@@ -22,12 +22,9 @@ const ModalContainer = styled.div`
     width: 100%;
     padding: 15px;
 
-    background-color: #b5e3f7;
-    border-radius: 3px;
-    box-shadow:
-      0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-      0px 1px 1px 0px rgba(0, 0, 0, 0.14),
-      0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    background-color: rgb(8, 121, 120);
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(199, 141, 75, 1);
   }
 
   h1 {

@@ -56,7 +56,7 @@ const AppBarLogo = styled(Typography)`
 
   &:hover img,
   &:focus img {
-    box-shadow: 0 0 10px rgba(234, 255, 0, 1);
+    box-shadow: 0 0 10px rgba(223, 186, 1, 1);
   }
 `;
 
@@ -64,9 +64,7 @@ const AppBarImg = styled(Box)`
   width: 60px;
 
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(82, 103, 121, 1);
   background-color: rgb(199, 141, 75);
-
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 `;
 

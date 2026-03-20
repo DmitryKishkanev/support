@@ -1,4 +1,5 @@
 import styled from '@emotion/styled';
+import { keyframes } from '@emotion/react';
 import { Link } from 'react-router-dom';
 
 const SupportApplicationsList = styled.ul`
@@ -15,14 +16,30 @@ const SupportApplicationsItem = styled.li`
   list-style-type: none;
 `;
 
+const pulse = keyframes`
+  0% {
+    color: rgb(199, 141, 75);
+    text-shadow: 0 0 5px rgba(223, 186, 1, 0.5);
+  }
+  50% {
+    color: rgb(223, 186, 1);
+    text-shadow: 0 0 20px rgba(223, 186, 1, 1),
+                 0 0 40px rgba(223, 186, 1, 0.8);
+  }
+  100% {
+    color: rgb(199, 141, 75);
+    text-shadow: 0 0 5px rgba(223, 186, 1, 0.5);
+  }
+`;
+
 const StyledLink = styled(Link)`
   display: inline-block;
   padding: 8px;
 
   border-radius: 16px;
-  box-shadow: 0 0 10px rgba(82, 103, 121, 1);
+  box-shadow: 0 0 10px rgba(199, 141, 75, 1);
+  background-color: rgba(0, 0, 0, 0.7);
   color: rgb(199, 141, 75);
-  background-color: rgba(8, 121, 120, 0.7);
 
   cursor: pointer;
 
@@ -43,6 +60,8 @@ const StyledLink = styled(Link)`
     color: rgb(223, 186, 1);
     box-shadow: 0 0 10px rgba(223, 186, 1, 1);
   }
+
+  animation: ${pulse} 2s infinite;
 `;
 
 export { SupportApplicationsList, SupportApplicationsItem, StyledLink };
