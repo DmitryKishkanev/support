@@ -2,9 +2,10 @@ import styled from '@emotion/styled';
 
 export const FilterLabel = styled.label`
   display: flex;
-  align-items: center;
+  gap: 8px;
+  flex-direction: column;
 
-  width: 300px;
+  width: 270px;
   margin-bottom: 10px;
 
   .label__name {
@@ -20,9 +21,7 @@ export const FilterLabel = styled.label`
     width: 100%;
     padding: 4px;
 
-    border: 1px solid black;
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
@@ -31,6 +30,5 @@ export const FilterLabel = styled.label`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 `;

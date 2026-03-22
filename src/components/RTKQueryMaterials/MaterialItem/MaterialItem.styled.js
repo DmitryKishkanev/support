@@ -7,7 +7,7 @@ export const MaterialItemContainer = styled.div`
 
   p {
     text-align: left;
-    color: black;
+    color: var(--secondary-color);
 
     font-weight: 400;
     font-size: 16px;
@@ -20,6 +20,7 @@ export const MaterialItemContainer = styled.div`
     font-size: 22px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    color: var(--primary-color);
   }
 
   button:first-of-type {

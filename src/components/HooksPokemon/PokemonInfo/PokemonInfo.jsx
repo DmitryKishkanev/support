@@ -53,7 +53,9 @@ export default function PokemonInfo({ pokemonName }) {
   }, [pokemonName]);
 
   if (status === Status.IDLE) {
-    return <div>Введите имя покемона</div>;
+    return (
+      <div style={{ color: 'rgb(199, 141, 75)' }}>Введите имя покемона</div>
+    );
   }
 
   if (status === Status.PENDING) {

@@ -21,7 +21,7 @@ export default function NewsSearchForm({ onSubmit }) {
       <h1>News</h1>
       <div>
         <input type="text" value={query} onChange={handleChange} />
-        <button type="submit">Искать</button>
+        <button type="submit">Search</button>
       </div>
     </NewsForm>
   );

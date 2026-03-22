@@ -5,7 +5,7 @@ import {
   Container,
   TodoListBox,
   TodoItem,
-} from '@/components/Todo/TodoList/TodoList.styled';
+} from '@/components/ReduxTodo/TodoList/TodoList.styled';
 
 const TodoList = ({ todos, onDeleteTodo, onToggleCompleted, children }) => {
   // const [TodoFilter, TodoEditor] = React.Children.toArray(children);

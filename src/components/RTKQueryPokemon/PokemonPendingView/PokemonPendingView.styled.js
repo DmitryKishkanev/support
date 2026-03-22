@@ -5,11 +5,13 @@ const SpinnerBox = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  color: var(--primary-color);
 `;
 
 const StyledSpinner = styled(ImSpinner)`
   margin-right: 10px;
   animation: spin 2s infinite linear;
+  color: var(--primary-color);
 
   @keyframes spin {
     0% {

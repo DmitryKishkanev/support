@@ -8,7 +8,11 @@ const MaterialList = ({ items }) => {
       {items.map(item => (
         <li key={item.id}>
           <MaterialItem item={item} />
-          <hr />
+          <hr
+            style={{
+              borderColor: 'rgb(199, 141, 75)',
+            }}
+          />
         </li>
       ))}
     </StyledMaterialList>

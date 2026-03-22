@@ -24,7 +24,7 @@ const ModalContainer = styled.div`
 
     background-color: rgb(8, 121, 120);
     border-radius: 4px;
-    box-shadow: 0 0 10px rgba(199, 141, 75, 1);
+    box-shadow: var(--primary-item-shadow);
   }
 
   h1 {

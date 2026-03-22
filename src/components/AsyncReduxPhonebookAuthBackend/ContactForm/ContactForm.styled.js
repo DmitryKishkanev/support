@@ -4,12 +4,13 @@ import { Form } from 'formik';
 const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
-  width: 500px;
+  width: 530px;
   padding: 15px;
   margin-bottom: 35px;
 
-  border: 2px solid black;
   border-radius: 4px;
+
+  box-shadow: var(--primary-item-shadow);
 
   label {
     display: flex;

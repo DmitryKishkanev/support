@@ -11,8 +11,7 @@ import {
 const AppBarComponent = styled(AppBar)`
   position: static;
 
-  /* background-color: rgba(25, 118, 210, 0.3); */
-  background-color: rgba(8, 121, 120, 0.5);
+  background-color: var(--primary-background-color);
 `;
 
 const AppBarContainer = styled(Container)`
@@ -39,7 +38,7 @@ const AppBarLogo = styled(Typography)`
   display: flex;
   align-items: center;
   gap: 10px;
-  color: rgb(199, 141, 75);
+  color: var(--primary-color);
 
   font-weight: 700;
   font-size: 27px;
@@ -47,7 +46,7 @@ const AppBarLogo = styled(Typography)`
   text-align: center;
   letter-spacing: 0.03em;
 
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-time) var(--transition-type);
 
   &:hover,
   &:focus {
@@ -56,7 +55,7 @@ const AppBarLogo = styled(Typography)`
 
   &:hover img,
   &:focus img {
-    box-shadow: 0 0 10px rgba(223, 186, 1, 1);
+    box-shadow: var(--secondary-item-shadow);
   }
 `;
 
@@ -64,8 +63,8 @@ const AppBarImg = styled(Box)`
   width: 60px;
 
   border-radius: 50%;
-  background-color: rgb(199, 141, 75);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: var(--primary-color);
+  transition: box-shadow var(--transition-time) var(--transition-type);
 `;
 
 export {

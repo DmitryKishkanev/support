@@ -66,7 +66,7 @@ const ContactForm = () => {
           disabled={isLoading}
           className="phonebook__button"
         >
-          {isLoading && '☎'} Добавить
+          {isLoading && '☎'} Add
         </button>
       </FormContainer>
     </Formik>

@@ -13,21 +13,17 @@ const FilterLabel = styled.label`
     font-size: 22px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
+    color: var(--primary-color);
   }
 
   input {
-    width: 220px;
     height: 33px;
     padding: 3px;
 
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
-
-    color: black;
 
     font-weight: 400;
     font-size: 18px;

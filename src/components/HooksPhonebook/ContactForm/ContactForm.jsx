@@ -46,7 +46,7 @@ const ContactForm = ({ handleAddContact }) => {
         </label>
 
         <button type="submit" className="phonebook__button">
-          Добавить
+          Add
         </button>
       </FormContainer>
     </Formik>

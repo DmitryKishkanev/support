@@ -4,9 +4,9 @@ export default function UserMenu({ onLogOut, user }) {
   return (
     <UserMenuContainer>
       <img src={user.avatar} alt="" />
-      <p>Добро пожаловать, {user.name}</p>
+      <p>Welcome, {user.name}</p>
       <button type="button" onClick={onLogOut}>
-        Выйти
+        Log out
       </button>
     </UserMenuContainer>
   );

@@ -5,7 +5,7 @@ const Main = () => {
 
   return (
     <button onClick={() => contextValue.toggle(!contextValue.toggleValue)}>
-      Open Alert
+      {contextValue.toggleValue ? 'Close Alert' : 'Open Alert'}
     </button>
   );
 };

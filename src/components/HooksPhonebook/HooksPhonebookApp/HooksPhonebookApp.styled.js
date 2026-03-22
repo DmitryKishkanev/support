@@ -7,18 +7,15 @@ const Container = styled.div`
   max-width: 1170px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-left: 36px;
+  padding-right: 36px;
   padding-top: 30px;
   padding-bottom: 30px;
 
   border-radius: 4px;
 
-  background-color: #d4f2ff;
-  box-shadow:
-    0px 1px 1px rgba(0, 0, 0, 0.12),
-    0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: var(--primary-background-color);
+  box-shadow: var(--primary-item-shadow);
 
   h1 {
     margin-top: 0;
@@ -27,8 +24,6 @@ const Container = styled.div`
   h2 {
     margin-top: 0;
     margin-bottom: 10px;
-    /* margin-right: auto;
-    margin-left: 315px; */
 
     font-weight: 700;
     font-size: 32px;

@@ -7,8 +7,6 @@ const ContactBox = styled.ul`
   /* width: 350px; */
 
   padding: 0;
-  margin-right: auto;
-  margin-left: 50px;
   margin-top: 0;
   margin-bottom: 0;
 `;

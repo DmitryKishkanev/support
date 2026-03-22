@@ -14,7 +14,7 @@ const Container = styled.div`
 
   border-radius: 4px;
 
-  background-color: rgba(8, 121, 120, 0.5);
+  background-color: var(--primary-background-color);
   box-shadow: 0 0 10px rgba(199, 141, 75, 1);
 
   h1 {

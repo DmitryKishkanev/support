@@ -17,12 +17,10 @@ const FilterLabel = styled.label`
   }
 
   input {
-    width: 220px;
     height: 33px;
     padding: 3px;
 
     border-radius: 4px;
-    /* background-color: white; */
 
     outline: none;
     cursor: pointer;

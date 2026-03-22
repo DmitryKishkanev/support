@@ -8,18 +8,17 @@ const ClockBox = styled.div`
   width: 500px;
   padding: 15px;
 
-  background-color: #d4f2ff;
+  background-color: var(--primary-background-color);
   border-radius: 5px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--primary-item-shadow);
 
   p {
     margin: 0;
 
-    color: black;
+    color: var(--primary-color);
 
-    font-weight: 700;
+    font-weight: 600;
     font-size: 24px;
     line-height: 1.19;
     text-align: center;

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { IconBtn } from 'components/Todo/IconButton/IconButton.styled';
+import { IconBtn } from 'components/ReduxTodo/IconButton/IconButton.styled';
 
 const IconButton = ({ children, onClick, ...allyProps }) => (
   <IconBtn

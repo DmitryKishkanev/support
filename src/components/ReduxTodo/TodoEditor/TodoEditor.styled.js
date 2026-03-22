@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 const TodoEditorForm = styled.form`
   display: flex;
   margin-bottom: 20px;
+  margin-right: auto;
 
   textarea {
     width: 300px;

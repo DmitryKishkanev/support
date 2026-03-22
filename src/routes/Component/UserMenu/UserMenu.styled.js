@@ -14,17 +14,17 @@ const UserMenuName = styled(Typography)`
   font-size: 18px;
   line-height: 1.19;
   letter-spacing: 0.03em;
-  color: rgb(199, 141, 75);
+  color: var(--primary-color);
 `;
 
 const UserMenuButton = styled(Button)`
-  color: rgb(199, 141, 75);
+  color: var(--primary-color);
   background-color: black;
   border-radius: 6px;
   transition:
-    transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transform var(--transition-time) var(--transition-type),
+    color var(--transition-time) var(--transition-type),
+    background-color var(--transition-time) var(--transition-type);
 
   &:hover {
     color: black;

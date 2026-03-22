@@ -16,13 +16,13 @@ const SupportApplicationsMain = styled.main`
     line-height: 1.19;
     text-align: center;
     letter-spacing: 0.03em;
-    color: rgb(199, 141, 75);
+    color: var(--primary-color);
   }
 
   p {
     margin: 0;
 
-    color: rgb(223, 186, 1);
+    color: var(--secondary-color);
 
     font-weight: 400;
     font-size: 32px;
@@ -47,7 +47,7 @@ const SupportApplicationsMain = styled.main`
 
     letter-spacing: 0.03em;
 
-    color: rgb(199, 141, 75);
+    color: var(--primary-color);
   }
 
   input {
@@ -65,7 +65,7 @@ const SupportApplicationsMain = styled.main`
     line-height: 1.19;
     letter-spacing: 0.03em;
 
-    color: rgb(223, 186, 1);
+    color: var(--secondary-color);
   }
 `;
 

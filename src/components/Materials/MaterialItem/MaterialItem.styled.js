@@ -7,7 +7,7 @@ export const MaterialItemContainer = styled.div`
 
   p {
     text-align: left;
-    color: black;
+    color: var(--primary-color);
 
     font-weight: 400;
     font-size: 16px;

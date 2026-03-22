@@ -26,7 +26,6 @@ export const NewsForm = styled.form`
     padding: 4px;
 
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
@@ -35,6 +34,5 @@ export const NewsForm = styled.form`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 `;

@@ -21,11 +21,9 @@ const MaterialForm = styled(Form)`
 
   input {
     width: 100%;
-
     padding: 4px;
 
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
@@ -34,7 +32,6 @@ const MaterialForm = styled(Form)`
     font-size: 20px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 
   button {

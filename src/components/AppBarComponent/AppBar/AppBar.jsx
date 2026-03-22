@@ -13,7 +13,7 @@ export default function AppBar() {
         <AppBarBox>
           <h1>User menu</h1>
           <button type="button" onClick={onLogIn}>
-            Войти
+            Log in
           </button>
         </AppBarBox>
       )}

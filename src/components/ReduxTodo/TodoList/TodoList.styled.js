@@ -3,13 +3,13 @@ import styled from '@emotion/styled';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  min-height: 434px;
   padding: 15px;
 
-  background-color: #d4f2ff;
+  background-color: var(--primary-background-color);
   border-radius: 4px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--primary-item-shadow);
 
   h2 {
     margin-top: 0;
@@ -30,7 +30,7 @@ const Container = styled.div`
     line-height: 1.19;
     letter-spacing: 0.03em;
 
-    color: grey;
+    color: var(--primary-color);
   }
 
   button {
@@ -54,11 +54,19 @@ const TodoItem = styled.li`
   align-items: center;
   padding: 8px;
 
-  border: 1px solid black;
   border-radius: 4px;
+  box-shadow: var(--primary-item-shadow);
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  transition:
+    /* transform var(--transition-time) var(--transition-type), */ box-shadow
+    var(--transition-time) var(--transition-type);
+
+  &:hover,
+  &:focus {
+    /* transform: scale(1.01); */
+    /* border: 1px solid var(--primary-color); */
+    box-shadow: var(--secondary-item-shadow);
+  }
 `;
 
 export { Container, TodoListBox, TodoItem };

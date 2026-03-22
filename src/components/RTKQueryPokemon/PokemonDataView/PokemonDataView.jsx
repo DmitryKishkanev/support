@@ -1,5 +1,8 @@
 import PropTypes from 'prop-types';
-import { PokemonName } from 'components/RTKQueryPokemon/PokemonDataView/PokemonDataView.styled';
+import {
+  PokemonName,
+  PokemonStatsItem,
+} from 'components/RTKQueryPokemon/PokemonDataView/PokemonDataView.styled';
 
 export default function PokemonDataView({ pokemon: { sprites, name, stats } }) {
   return (
@@ -12,9 +15,9 @@ export default function PokemonDataView({ pokemon: { sprites, name, stats } }) {
       />
       <ul>
         {stats.map(entry => (
-          <li key={entry.stat.name}>
+          <PokemonStatsItem key={entry.stat.name}>
             {entry.stat.name}: {entry.base_stat}
-          </li>
+          </PokemonStatsItem>
         ))}
       </ul>
     </div>

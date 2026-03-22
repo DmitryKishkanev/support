@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 const ContactEl = styled.li`
+  color: var(--primary-color);
+
   div {
     display: flex;
     align-items: center;
@@ -16,7 +18,7 @@ const ContactEl = styled.li`
   }
 
   button {
-    padding: 5px 15px;
+    padding: 8px 18px;
     margin-left: auto;
   }
 `;

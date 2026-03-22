@@ -7,11 +7,10 @@ const FormContainer = styled.form`
   width: 500px;
   padding: 15px;
 
-  background-color: #d4f2ff;
+  background-color: var(--primary-background-color);
   border-radius: 5px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--primary-item-shadow);
 
   h1 {
     margin-top: 0;
@@ -42,9 +41,7 @@ const FormContainer = styled.form`
     width: 270px;
     padding: 4px;
 
-    border: 1px solid black;
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
@@ -53,8 +50,6 @@ const FormContainer = styled.form`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-
-    color: black;
   }
 
   button {

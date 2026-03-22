@@ -7,7 +7,7 @@ const IconBtn = styled.button`
   border-radius: 50%;
   color: white;
   font: inherit;
-  background-color: #326d87;
+  background-color: rgba(8, 121, 120, 1);
   cursor: pointer;
 
   display: inline-flex;

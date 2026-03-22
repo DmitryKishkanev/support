@@ -87,13 +87,20 @@ export default function NewsComponent() {
 
       {shouldRenderLoadMoreButton && (
         <button type="button" onClick={loadMore}>
-          Загрузить ещё
+          Load more
         </button>
       )}
 
       {isLoading && (
-        <p style={{ fontSize: 24, display: 'flex', alignItems: 'center' }}>
-          Загружаем...{' '}
+        <p
+          style={{
+            fontSize: 24,
+            display: 'flex',
+            alignItems: 'center',
+            color: 'rgb(199, 141, 75)',
+          }}
+        >
+          Загружаем...
           <span
             aria-label="Иконка"
             role="img"

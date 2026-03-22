@@ -1,6 +1,8 @@
 import styled from '@emotion/styled';
 
 const ContactEl = styled.li`
+  color: var(--primary-color);
+
   div {
     display: flex;
     gap: 20px;
@@ -14,6 +16,7 @@ const ContactEl = styled.li`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
+    color: var(--primary-color);
   }
 
   button {

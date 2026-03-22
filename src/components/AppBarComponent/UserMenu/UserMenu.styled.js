@@ -8,21 +8,22 @@ const UserMenuContainer = styled.div`
   width: 500px;
   padding: 15px;
 
-  background-color: #d4f2ff;
+  background-color: var(--primary-background-color);
   border-radius: 5px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--secondary-item-shadow);
 
   img {
     width: 100px;
     height: 100px;
+    border: 3px solid var(--primary-color)
+    border-radius: 50px;
   }
 
   p {
     margin: 0;
 
-    color: black;
+    color: var(--primary-color);
 
     font-weight: 400;
     font-size: 18px;

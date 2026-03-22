@@ -20,11 +20,12 @@ const MaterialModalFieldsContainer = styled.div`
 `;
 
 const MaterialModalFieldsName = styled.p`
-  width: 270px;
   padding: 5px;
   margin: 0;
   border: 1px solid black;
   border-radius: 4px;
+  color: var(--secondary-color);
+  background-color: rgb(59, 59, 59);
 `;
 
 const MaterialModalButtonsBox = styled.div`
