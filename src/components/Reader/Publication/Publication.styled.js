@@ -10,7 +10,7 @@ const PublicationTitle = styled.h2`
 `;
 
 const PublicationText = styled.p`
-  color: black !important;
+  color: var(--primary-color);
 
   font-weight: 400;
   font-size: 20px !important;

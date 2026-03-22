@@ -5,13 +5,12 @@ const ReaderComponentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 500px;
-  padding: 15px;
+  padding: 26px;
 
-  background-color: #d4f2ff;
+  background-color: var(--primary-background-color);
   border-radius: 4px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--primary-item-shadow);
 
   h1 {
     margin-top: 0;

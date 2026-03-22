@@ -121,7 +121,7 @@ class PhonebookEditor extends Component {
           </label>
 
           <button type="submit" className="phonebook__button">
-            Добавить
+            Add
           </button>
         </Form>
       </PhonebookList>

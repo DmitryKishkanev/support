@@ -12,7 +12,7 @@ const CafeFeedbackButton = styled.button`
   height: 40px;
 
   background-color: ${({ variant }) =>
-    variant === 'reset' ? '#dc3545' : '#212121'};
+    variant === 'reset' ? '#dc3545' : 'none'};
 
   outline: none;
 

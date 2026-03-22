@@ -74,7 +74,7 @@ export default class UserForm extends Component {
         <div className="form__box">
           <label className="level__field">
             <input
-              className="level__name"
+              className="level__status"
               type="radio"
               name="experience"
               value="junior"
@@ -86,7 +86,7 @@ export default class UserForm extends Component {
 
           <label className="level__field">
             <input
-              className="level__name"
+              className="level__status"
               type="radio"
               name="experience"
               value="middle"
@@ -98,7 +98,7 @@ export default class UserForm extends Component {
 
           <label className="level__field">
             <input
-              className="level__name"
+              className="level__status"
               type="radio"
               name="experience"
               value="senior"

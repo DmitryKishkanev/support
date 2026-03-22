@@ -14,9 +14,8 @@ const DivForm = styled(Form)`
 
   border-radius: 4px;
 
-  background-color: #d4f2ff;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: var(--primary-background-color);
+  box-shadow: var(--primary-item-shadow);
 
   h1 {
     margin: 0 auto 0 auto;
@@ -38,8 +37,7 @@ const DivForm = styled(Form)`
   }
 
   select {
-    background-color: white;
-    color: black;
+    color: var(--secondary-color);
   }
 
   textarea {
@@ -47,7 +45,6 @@ const DivForm = styled(Form)`
     height: 70px;
     padding: 8px;
 
-    background-color: white;
     border-radius: 4px;
 
     resize: none;
@@ -59,7 +56,7 @@ const DivForm = styled(Form)`
     line-height: 1.19;
     letter-spacing: 0.03em;
 
-    color: black;
+    color: var(--secondary-color);
   }
 
   input {
@@ -68,8 +65,6 @@ const DivForm = styled(Form)`
 
     border-radius: 4px;
 
-    background-color: white;
-
     outline: none;
     cursor: pointer;
 
@@ -77,7 +72,6 @@ const DivForm = styled(Form)`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 
   div .checkbox {
@@ -85,8 +79,27 @@ const DivForm = styled(Form)`
     align-items: center;
 
     input {
+      appearance: none;
+      position: relative;
       width: 20px;
       height: 20px;
+      border: 1px solid var(--primary-color);
+      border-radius: 4px;
+
+      &:checked {
+        background-color: var(--primary-color);
+        border-color: var(--secondary-color);
+      }
+
+      &:checked::after {
+        content: '✔';
+        color: white;
+        font-size: 18px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
 
     span {

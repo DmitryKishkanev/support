@@ -7,6 +7,7 @@ const ClockFace = styled.div`
   font-size: 72px;
   line-height: 1.19;
   letter-spacing: 0.03em;
+  color: var(--primary-color);
 `;
 
 export { ClockFace };

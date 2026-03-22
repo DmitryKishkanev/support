@@ -3,7 +3,7 @@ import styled from '@emotion/styled';
 export const Title = styled.h1`
   margin: 0;
   padding: 15px;
-  border: 1px solid black;
+  box-shadow: var(--primary-item-shadow);
   width: 100%;
 
   border-radius: 4px;

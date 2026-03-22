@@ -6,11 +6,10 @@ const TabsBox = styled.div`
   align-items: center;
   padding: 15px;
 
-  background-color: #d4f2ff;
+  background-color: var(--primary-background-color);
   border-radius: 4px;
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--primary-item-shadow);
 
   h1 {
     margin-top: 0;
@@ -34,7 +33,7 @@ const ContentBox = styled.div`
   width: 500px;
   padding: 15px;
 
-  border: 1px solid black;
+  box-shadow: var(--primary-item-shadow);
 
   h2 {
     margin-top: 0;
@@ -49,7 +48,7 @@ const ContentBox = styled.div`
   p {
     margin: 0;
 
-    color: black;
+    color: var(--primary-color);
 
     font-weight: 400;
     font-size: 20px;

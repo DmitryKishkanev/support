@@ -6,11 +6,10 @@ const Form = styled.form`
   width: 600px;
   padding: 15px;
 
-  background-color: #d4f2ff;
   border-radius: 5px;
+  background-color: var(--primary-background-color);
 
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  box-shadow: var(--primary-item-shadow);
 
   .form__name {
     margin-top: 0;
@@ -51,9 +50,7 @@ const Form = styled.form`
     width: 270px;
     padding: 4px;
 
-    border: 1px solid black;
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
@@ -62,7 +59,6 @@ const Form = styled.form`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 
   button {
@@ -75,7 +71,7 @@ const Form = styled.form`
     margin-bottom: 10px;
     margin-right: auto;
 
-    color: black;
+    color: var(--primary-color);
 
     font-weight: 400;
     font-size: 20px;
@@ -88,12 +84,65 @@ const Form = styled.form`
     display: flex;
     flex-direction: row;
     align-items: center;
+
+    input {
+    }
+  }
+
+  .level__status {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+
+    &:checked {
+      border-color: var(--secondary-color);
+    }
+
+    &:checked::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      background-color: var(--secondary-color);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .level__name {
-    width: 17px;
-    height: 17px;
+    appearance: none;
+    position: relative;
+    width: 25px;
+    height: 25px;
     margin-right: 10px;
+
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+
+    cursor: pointer;
+
+    &:checked {
+      border-color: var(--secondary-color);
+    }
+
+    &:checked::after {
+      content: '✔';
+      color: var(--secondary-color);
+      font-size: 18px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
   .level__title {

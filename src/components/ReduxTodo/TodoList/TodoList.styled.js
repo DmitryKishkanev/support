@@ -3,7 +3,6 @@ import styled from '@emotion/styled';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 434px;
   padding: 15px;
 
   background-color: var(--primary-background-color);
@@ -57,14 +56,10 @@ const TodoItem = styled.li`
   border-radius: 4px;
   box-shadow: var(--primary-item-shadow);
 
-  transition:
-    /* transform var(--transition-time) var(--transition-type), */ box-shadow
-    var(--transition-time) var(--transition-type);
+  transition: box-shadow var(--transition-time) var(--transition-type);
 
   &:hover,
   &:focus {
-    /* transform: scale(1.01); */
-    /* border: 1px solid var(--primary-color); */
     box-shadow: var(--secondary-item-shadow);
   }
 `;

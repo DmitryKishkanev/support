@@ -10,9 +10,8 @@ const FormContainer = styled(Form)`
 
   border-radius: 4px;
 
-  background-color: #d4f2ff;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: var(--primary-background-color);
+  box-shadow: var(--primary-item-shadow);
 
   h1 {
     margin: 0 auto 0 auto;
@@ -35,7 +34,7 @@ const FormContainer = styled(Form)`
       font-size: 18px;
       line-height: 1.19;
       letter-spacing: 0.03em;
-      color: black;
+      color: var(--primary-color);
     }
 
     input {
@@ -43,7 +42,6 @@ const FormContainer = styled(Form)`
       padding: 4px;
 
       border-radius: 4px;
-      background-color: white;
 
       outline: none;
       cursor: pointer;
@@ -52,7 +50,6 @@ const FormContainer = styled(Form)`
       font-size: 18px;
       line-height: 1.19;
       letter-spacing: 0.03em;
-      color: black;
     }
   }
 

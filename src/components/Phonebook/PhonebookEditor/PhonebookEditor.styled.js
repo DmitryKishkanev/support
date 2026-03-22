@@ -7,7 +7,7 @@ const Form = styled.form`
   padding: 15px;
   margin-bottom: 35px;
 
-  border: 1px solid black;
+  box-shadow: var(--primary-item-shadow);
   border-radius: 4px;
 
   label {
@@ -24,14 +24,12 @@ const Form = styled.form`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 
   input {
     padding: 4px;
 
     border-radius: 4px;
-    background-color: white;
 
     outline: none;
     cursor: pointer;
@@ -40,7 +38,6 @@ const Form = styled.form`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-    color: black;
   }
 
   button {

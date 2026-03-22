@@ -18,7 +18,7 @@ export const StatisticsList = styled.ul`
   p {
     margin: 0;
 
-    color: black;
+    color: var(--primary-color);
 
     font-weight: 500;
     font-size: 20px;

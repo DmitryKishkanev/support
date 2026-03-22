@@ -35,6 +35,7 @@ const ModalContainer = styled.div`
 
   p {
     margin-top: 0;
+    color: var(--primary-color);
   }
 
   .Close__btn {

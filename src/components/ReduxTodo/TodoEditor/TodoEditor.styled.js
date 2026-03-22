@@ -11,7 +11,6 @@ const TodoEditorForm = styled.form`
     padding: 8px;
     margin-right: 15px;
 
-    background-color: white;
     border-radius: 6px;
 
     resize: none;
@@ -22,8 +21,7 @@ const TodoEditorForm = styled.form`
     font-size: 18px;
     line-height: 1.19;
     letter-spacing: 0.03em;
-
-    color: black;
+    color: var(--secondary-color);
   }
 
   .todoEditor__button {

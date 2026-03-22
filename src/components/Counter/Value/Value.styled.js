@@ -7,10 +7,10 @@ export const ValueEl = styled.span`
   width: 70px;
   height: 70px;
 
-  color: white;
+  color: var(--secondary-color);
 
   border-radius: 6px;
-  background-color: black;
+  background-color: rgb(59, 59, 59);
 
   font-weight: 500;
   font-size: 62px;

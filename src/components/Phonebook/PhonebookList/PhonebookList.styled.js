@@ -5,13 +5,12 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 500px;
-  padding: 15px;
+  padding: 36px;
 
   border-radius: 4px;
 
-  background-color: #d4f2ff;
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
-    1px 4px 6px rgba(0, 0, 0, 0.16);
+  background-color: var(--primary-background-color);
+  box-shadow: var(--primary-item-shadow);
 
   h1 {
     margin-top: 0;
@@ -32,13 +31,11 @@ const ContactBox = styled.ul`
   display: flex;
   gap: 20px;
   flex-direction: column;
-  width: 350px;
-
-  padding: 0;
-  margin-right: auto;
-  margin-left: 50px;
+  width: 100%;
+  padding: 20px;
   margin-top: 0;
   margin-bottom: 0;
+  color: var(--primary-color);
 `;
 
 const ContactEl = styled.li`
@@ -49,8 +46,6 @@ const ContactEl = styled.li`
 
   p {
     margin: 0;
-
-    color: black;
 
     font-weight: 400;
     font-size: 18px;

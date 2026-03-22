@@ -61,7 +61,9 @@ class PokemonInfo extends Component {
     const { pokemonName } = this.props;
 
     if (status === 'idle') {
-      return <div>Введите имя покемона</div>;
+      return (
+        <div style={{ color: 'rgb(199, 141, 75)' }}>Введите имя покемона</div>
+      );
     }
 
     if (status === 'pending') {
