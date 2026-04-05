@@ -1,0 +1,132 @@
+import React, { Component } from 'react';
+import shortid from 'shortid';
+import PhonebookList from 'components/Phonebook/PhonebookList';
+import initialContacts from '@/contacts.json';
+import { Form } from 'components/Phonebook/PhonebookEditor/PhonebookEditor.styled';
+
+class PhonebookEditor extends Component {
+  state = {
+    contacts: initialContacts,
+    filter: '',
+    name: '',
+    number: '',
+  };
+
+  handleChange = e => {
+    const { name, value } = e.currentTarget;
+
+    this.setState({ [name]: value });
+  };
+
+  addContact = e => {
+    e.preventDefault();
+
+    const nameRegex = /^[a-zA-Zа-яА-ЯёЁ]{2,}(?:[ '-][a-zA-Zа-яА-ЯёЁ]+)*$/u;
+    const phoneRegex = /^\+?[0-9\s\-()]{7,}$/;
+
+    const name = this.state.name.trim().toLowerCase();
+    const number = this.state.number.trim();
+
+    // Валидация имени
+    if (!nameRegex.test(name)) {
+      alert('Имя может содержать только буквы, пробелы, апостроф и дефис.');
+      return;
+    }
+
+    // Валидация номера
+    if (!phoneRegex.test(number)) {
+      alert(
+        'Номер телефона должен содержать только цифры, пробелы, скобки, дефисы и может начинаться с +.',
+      );
+      return;
+    }
+
+    const isNamePresent = this.state.contacts.some(
+      contact => contact.name.toLowerCase() === name,
+    );
+
+    if (isNamePresent) {
+      alert(`"${name}" is already in contacts `);
+      this.setState({
+        name: '',
+        number: '',
+      });
+      return;
+    }
+
+    const contact = {
+      id: shortid.generate(),
+      name: this.state.name,
+      number: this.state.number,
+    };
+
+    this.setState(({ contacts }) => ({
+      contacts: [contact, ...contacts],
+      name: '',
+      number: '',
+    }));
+  };
+
+  deleteContact = contactId => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== contactId),
+    }));
+  };
+
+  handleChangeFilter = e => {
+    this.setState({ filter: e.currentTarget.value });
+  };
+
+  getFilteredCntacts = () => {
+    const { filter, contacts } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+
+    const result = contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter),
+    );
+    return result.length > 0 ? result : contacts;
+  };
+
+  render() {
+    const filteredContacts = this.getFilteredCntacts();
+
+    return (
+      <PhonebookList
+        contacts={filteredContacts}
+        filter={this.state.filter}
+        changeFilter={this.handleChangeFilter}
+        onDeleteContact={this.deleteContact}
+      >
+        <Form onSubmit={this.addContact}>
+          <label>
+            <span>Name</span>
+            <input
+              value={this.state.name}
+              onChange={this.handleChange}
+              type="text"
+              name="name"
+              required
+            />
+          </label>
+
+          <label>
+            <span>Number</span>
+            <input
+              value={this.state.number}
+              onChange={this.handleChange}
+              type="tel"
+              name="number"
+              required
+            />
+          </label>
+
+          <button type="submit" className="phonebook__button">
+            Add
+          </button>
+        </Form>
+      </PhonebookList>
+    );
+  }
+}
+
+export default PhonebookEditor;
