@@ -3,7 +3,7 @@ import { object, string } from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useRef } from 'react';
 // import { nanoid } from 'nanoid';
-import { FormContainer } from 'components/AsyncReduxPhonebookAuthBackend/ContactForm/ContactForm.styled';
+import { FormContainer } from '@/components/AsyncReduxPhonebookAuthBackend/ContactForm/ContactForm.styled.js';
 import {
   addContact,
   selectContacts,

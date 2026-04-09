@@ -1,1 +1,1 @@
-export { default } from 'components/AppBarComponent/AppBar/AppBar';
+export { default } from '@/components/AppBarComponent/AppBar/AppBar.jsx';

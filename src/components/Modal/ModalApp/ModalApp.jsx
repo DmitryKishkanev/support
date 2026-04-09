@@ -1,11 +1,7 @@
 import { Component } from 'react';
-import Modal from 'components/Modal/Modal';
-import { OpenBtn } from 'components/Modal/Modal/Modal.styled';
-import Clock from 'components/Clock';
-import {
-  TimeFaceContainer,
-  TimeFaceTitle,
-} from 'components/Modal/ModalApp/ModalApp.styled';
+import Modal from '@/components/Modal/Modal';
+import Clock from '@/components/Clock';
+import { OpenBtn, TimeFaceContainer, TimeFaceTitle } from './ModalApp.styled';
 
 export default class ModalApp extends Component {
   state = { showModal: false };

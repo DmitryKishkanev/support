@@ -1,1 +1,1 @@
-export { default } from 'components/Materials/MaterialRenderComponent/MaterialRenderComponent';
+export { default } from '@/components/Materials/MaterialRenderComponent/MaterialRenderComponent.jsx';

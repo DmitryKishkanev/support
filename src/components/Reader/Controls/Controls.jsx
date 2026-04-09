@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ControlsSection } from 'components/Reader/Controls/Controls.styled';
+import { ControlsSection } from './Controls.styled';
 
 const Controls = ({ currentItem, totalItems, onChangr }) => {
   return (

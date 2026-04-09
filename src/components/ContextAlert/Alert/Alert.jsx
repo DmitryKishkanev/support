@@ -1,5 +1,5 @@
-import useCustomContext from 'components/ContextAlert/Context/useCustomContext';
-import { AlertBox } from 'components/ContextAlert/Alert/Alert.styled';
+import useCustomContext from '@/components/ContextAlert/Context/useCustomContext.js';
+import { AlertBox } from './Alert.styled';
 
 const Alert = () => {
   const contextValue = useCustomContext();

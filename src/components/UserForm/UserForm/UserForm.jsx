@@ -1,6 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Form } from 'components/UserForm/UserForm/UserForm.styled';
+import { Form } from './UserForm.styled';
 
 export default class UserForm extends Component {
   state = {

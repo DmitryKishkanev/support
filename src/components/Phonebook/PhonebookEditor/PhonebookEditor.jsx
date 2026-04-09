@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import shortid from 'shortid';
-import PhonebookList from 'components/Phonebook/PhonebookList';
+import PhonebookList from '@/components/Phonebook/PhonebookList';
 import initialContacts from '@/contacts.json';
-import { Form } from 'components/Phonebook/PhonebookEditor/PhonebookEditor.styled';
+import { Form } from './PhonebookEditor.styled';
 
 class PhonebookEditor extends Component {
   state = {

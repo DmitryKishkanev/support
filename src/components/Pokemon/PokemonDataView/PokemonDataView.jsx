@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  PokemonName,
-  PokemonStatsItem,
-} from 'components/Pokemon/PokemonDataView/PokemonDataView.styled';
+import { PokemonName, PokemonStatsItem } from './PokemonDataView.styled';
 
 export default function PokemonDataView({ pokemon: { sprites, name, stats } }) {
   return (

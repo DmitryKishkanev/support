@@ -2,7 +2,7 @@ import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
 import PropTypes from 'prop-types';
 import { nanoid } from 'nanoid';
-import { FormContainer } from 'components/HooksPhonebook/ContactForm/ContactForm.styled';
+import { FormContainer } from './ContactForm.styled';
 
 const schema = object({
   name: string().required(),

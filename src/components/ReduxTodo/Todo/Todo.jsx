@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import IconButton from 'components/ReduxTodo/IconButton';
+import IconButton from '@/components/ReduxTodo/IconButton';
 import DeleteIcon from '@/icons/delete.svg?react';
-import { TodoCheckbox, TodoText } from 'components/ReduxTodo/Todo/Todo.styled';
+import { TodoCheckbox, TodoText } from './Todo.styled';
 
 const Todo = ({ text, completed, onToggleCompleted, onDelete }) => (
   <>

@@ -1,7 +1,7 @@
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Container } from 'components/ColorPicker/ColorPicker.styled';
+import { Container } from './ColorPicker.styled';
 
 export default class ColorPicker extends PureComponent {
   state = {

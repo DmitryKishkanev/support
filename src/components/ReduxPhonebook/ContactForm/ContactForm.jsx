@@ -3,7 +3,7 @@ import { object, string } from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { insertContact } from '@/redux/reduxPhonebook/slice';
 import { nanoid } from 'nanoid';
-import { FormContainer } from 'components/ReduxPhonebook/ContactForm/ContactForm.styled';
+import { FormContainer } from './ContactForm.styled';
 
 const schema = object({
   name: string().required(),

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import css from 'components/UseLocalStorage/UseLocalStorage.module.css';
+import css from './UseLocalStorage.module.css';
 
 // Кастомный хук для работы с local storage
 function useLocalStorage<T>(

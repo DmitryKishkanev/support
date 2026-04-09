@@ -1,1 +1,1 @@
-export { default } from 'components/Dropdown/Dropdown';
+export { default } from '@/components/Dropdown/Dropdown.jsx';

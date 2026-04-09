@@ -1,1 +1,1 @@
-export { default } from 'components/SkipEffectOnFirstRender/SkipEffectOnFirstRender';
+export { default } from '@/components/SkipEffectOnFirstRender/SkipEffectOnFirstRender.jsx';

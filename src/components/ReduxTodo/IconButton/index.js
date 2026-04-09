@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxTodo/IconButton/IconButton';
+export { default } from '@/components/ReduxTodo/IconButton/IconButton.jsx';

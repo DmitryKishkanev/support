@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxPhonebook/Filter/Filter';
+export { default } from '@/components/ReduxPhonebook/Filter/Filter.jsx';

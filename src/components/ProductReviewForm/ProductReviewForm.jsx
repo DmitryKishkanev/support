@@ -1,9 +1,6 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string, number, date, boolean } from 'yup';
-import {
-  ErrorText,
-  DivForm,
-} from 'components/ProductReviewForm/ProductReviewForm.styled';
+import { ErrorText, DivForm } from './ProductReviewForm.styled';
 
 const FormError = ({ name }) => {
   return (

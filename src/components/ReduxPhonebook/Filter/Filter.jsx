@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { setFilter } from '@/redux/reduxPhonebook/slice';
-import { FilterLabel } from 'components/ReduxPhonebook/Filter/Filter.styled';
+import { FilterLabel } from './Filter.styled';
 
 const Filter = () => {
   const filter = useSelector(state => state.reduxPhonebook.filter);

@@ -1,1 +1,1 @@
-export { default } from 'components/News/APIfetchArticles/APIfetchArticles';
+export { default } from '@/components/News/APIfetchArticles/APIfetchArticles';

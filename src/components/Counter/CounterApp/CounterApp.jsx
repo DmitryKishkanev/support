@@ -1,5 +1,5 @@
-import Counter from 'components/Counter/Counter';
-import { CounterAppContainer } from 'components/Counter/CounterApp/CounterApp.styled';
+import Counter from '@/components/Counter/Counter';
+import { CounterAppContainer } from './CounterApp.styled';
 
 export default function CounterApp() {
   return (

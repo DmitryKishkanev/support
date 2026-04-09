@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxTodo/Todo/Todo';
+export { default } from '@/components/ReduxTodo/Todo/Todo.jsx';

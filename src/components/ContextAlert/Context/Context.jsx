@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import authContext from 'components/ContextAlert/Context/authContext';
+import authContext from '@/components/ContextAlert/Context/authContext.js';
 
 const Context = ({ children }) => {
   const [toggleAlert, setToggleAlert] = useState(false);

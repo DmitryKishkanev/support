@@ -1,1 +1,1 @@
-export { default } from 'components/HooksSignupForm/HooksSignupForm';
+export { default } from '@/components/HooksSignupForm/HooksSignupForm.jsx';

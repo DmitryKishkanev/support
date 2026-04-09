@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxPokemon/PokemonPendingView/PokemonPendingView';
+export { default } from '@/components/ReduxPokemon/PokemonPendingView/PokemonPendingView.jsx';

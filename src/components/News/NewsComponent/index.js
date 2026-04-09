@@ -1,1 +1,1 @@
-export { default } from 'components/News/NewsComponent/NewsComponent';
+export { default } from '@/components/News/NewsComponent/NewsComponent.jsx';

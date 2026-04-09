@@ -1,5 +1,5 @@
 import useLocalStorage from '@/hooks/useLocalStorage';
-import { FormContainer } from 'components/HooksSignupForm/HooksSignupForm.styled';
+import { FormContainer } from './HooksSignupForm.styled';
 
 export default function HooksSignupForm() {
   const [email, setEmail] = useLocalStorage('email', '');

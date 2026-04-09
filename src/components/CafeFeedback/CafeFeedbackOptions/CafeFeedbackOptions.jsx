@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import {
   Container,
   CafeFeedbackButton,
-} from 'components/CafeFeedback/CafeFeedbackOptions/CafeFeedbackOptions.styled';
+} from '@/components/CafeFeedback/CafeFeedbackOptions/CafeFeedbackOptions.styled.js';
 
 const CafeFeedbackOptions = ({
   options,

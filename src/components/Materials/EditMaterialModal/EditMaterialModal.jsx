@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { MaterialModalContainer } from 'components/Materials/EditMaterialModal/EditMaterialModal.styled';
+import { MaterialModalContainer } from './EditMaterialModal.styled';
 
 const EditMaterialModal = ({ onClose, onEdit }) => {
   return (

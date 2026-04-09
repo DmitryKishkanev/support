@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryMaterials/EditMaterialModal/EditMaterialModal';
+export { default } from '@/components/RTKQueryMaterials/EditMaterialModal/EditMaterialModal.jsx';

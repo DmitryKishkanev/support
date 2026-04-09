@@ -1,1 +1,1 @@
-export { default } from 'components/CafeFeedback/CafeFeedbackTitle/CafeFeedbackTitle';
+export { default } from '@/components/CafeFeedback/CafeFeedbackTitle/CafeFeedbackTitle.jsx';

@@ -2,7 +2,7 @@ import { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
-import { PokemonFormBox } from 'components/Pokemon/PokemonForm/PokemonForm.styled';
+import { PokemonFormBox } from './PokemonForm.styled';
 
 class PokemonForm extends Component {
   state = { pokemonName: '' };

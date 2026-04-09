@@ -1,1 +1,1 @@
-export { default } from 'components/Friends/Friends';
+export { default } from '@/components/Friends/Friends.jsx';

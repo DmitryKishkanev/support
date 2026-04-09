@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ContactEl } from 'components/HooksPhonebook/ContactItem/ContactItem.styled';
+import { ContactEl } from './ContactItem.styled';
 
 const ContactItem = ({ contacts, handleDeleteContact }) => {
   return (

@@ -1,1 +1,1 @@
-export { default } from 'components/Todo/IconButton/IconButton';
+export { default } from '@/components/Todo/IconButton/IconButton.jsx';

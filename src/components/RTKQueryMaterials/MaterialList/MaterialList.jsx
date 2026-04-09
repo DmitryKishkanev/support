@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import MaterialItem from 'components/RTKQueryMaterials/MaterialItem';
-import { StyledMaterialList } from 'components/RTKQueryMaterials/MaterialList/MaterialList.styled';
+import MaterialItem from '@/components/RTKQueryMaterials/MaterialItem';
+import { StyledMaterialList } from './MaterialList.styled';
 
 const MaterialList = ({ items }) => {
   return (

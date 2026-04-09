@@ -1,1 +1,1 @@
-export { default } from 'components/AsyncReduxPhonebook/ContactItem/ContactItem';
+export { default } from '@/components/AsyncReduxPhonebook/ContactItem/ContactItem.jsx';

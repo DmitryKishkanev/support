@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxPhonebook/ContactForm/ContactForm';
+export { default } from '@/components/ReduxPhonebook/ContactForm/ContactForm.jsx';

@@ -1,1 +1,1 @@
-export { default } from 'components/HooksUseReduserCounter/HooksUseReduserCounter';
+export { default } from '@/components/HooksUseReduserCounter/HooksUseReduserCounter.jsx';

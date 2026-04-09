@@ -1,1 +1,1 @@
-export { default } from 'components/AppBarComponent/UserMenu/UserMenu';
+export { default } from '@/components/AppBarComponent/UserMenu/UserMenu.jsx';

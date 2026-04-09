@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FilterLabel } from 'components/HooksPhonebook/Filter/Filter.styled';
+import { FilterLabel } from './Filter.styled';
 
 const Filter = ({ filter, onChangeFilter }) => {
   return (

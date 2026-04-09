@@ -1,9 +1,6 @@
 import PropTypes from 'prop-types';
-import {
-  SpinnerBox,
-  StyledSpinner,
-} from 'components/Pokemon/PokemonPendingView/PokemonPendingView.styled';
-import PokemonDataView from 'components/Pokemon/PokemonDataView';
+import { SpinnerBox, StyledSpinner } from './PokemonPendingView.styled';
+import PokemonDataView from '@/components/Pokemon/PokemonDataView';
 import pendingImage from '@/assets/loaded.jpg';
 
 export default function PokemonPendingView({ pokemonName }) {

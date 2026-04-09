@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { ClockBox } from 'components/HooksClock/HooksClock.styled';
+import { ClockBox } from './HooksClock.styled';
 
 export default function HooksClock() {
   const [time, setTime] = useState(() => new Date());

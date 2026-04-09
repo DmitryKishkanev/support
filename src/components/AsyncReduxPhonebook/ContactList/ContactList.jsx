@@ -1,5 +1,5 @@
-import ContactItem from 'components/AsyncReduxPhonebook/ContactItem';
-import { ContactBox } from 'components/AsyncReduxPhonebook/ContactList/ContactList.styled';
+import ContactItem from '@/components/AsyncReduxPhonebook/ContactItem';
+import { ContactBox } from '@/components/AsyncReduxPhonebook/ContactList/ContactList.styled.js';
 
 const ContactList = () => {
   return (

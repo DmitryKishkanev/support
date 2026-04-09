@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { LoadMoreComponentContainer } from 'components/LoadMoreComponent/LoadMoreComponent.styled';
+import { LoadMoreComponentContainer } from './LoadMoreComponent.styled';
 
 const LoadMoreComponent = () => {
   const [page, setPage] = useState(1);

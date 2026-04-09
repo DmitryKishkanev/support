@@ -1,9 +1,9 @@
-import MaterialEditorForm from 'components/RTKQueryMaterials/MaterialEditorForm';
+import MaterialEditorForm from '@/components/RTKQueryMaterials/MaterialEditorForm';
 import {
   MaterialContainer,
   Loader,
-} from 'components/RTKQueryMaterials/RTKQueryMaterialRenderComponent/RTKQueryMaterialRenderComponent.styled';
-import MaterialList from 'components/RTKQueryMaterials/MaterialList';
+} from './RTKQueryMaterialRenderComponent.styled';
+import MaterialList from '@/components/RTKQueryMaterials/MaterialList';
 import { useFetchMaterialsQuery } from '@/redux/rtkQueryMaterials';
 
 const RTKQueryMaterialRenderComponent = () => {

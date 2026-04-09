@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from 'components/Dropdown/Dropdown.styled';
+import { Container } from './Dropdown.styled';
 
 export default class Dropdown extends Component {
   state = {

@@ -1,1 +1,1 @@
-export { default } from 'components/HooksColorPicker/HooksColorPicker';
+export { default } from '@/components/HooksColorPicker/HooksColorPicker.jsx';

@@ -1,8 +1,8 @@
 import { Component } from 'react';
-import VideoList from 'components/Player/VideoList';
-import Player from 'components/Player/Player';
+import VideoList from '@/components/Player/VideoList';
+import Player from '@/components/Player/Player';
 import videos from '@/videos.json';
-import { SelectedVideoContainer } from 'components/Player/Example/Example.styled';
+import { SelectedVideoContainer } from './Example.styled';
 
 class Example extends Component {
   state = { selectedVideo: null };

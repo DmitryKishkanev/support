@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  VideosList,
-  VideosItem,
-} from 'components/Player/VideoList/VideoList.styled';
+import { VideosList, VideosItem } from './VideoList.styled';
 
 const VideoList = ({ videos, onSelect }) => {
   return (

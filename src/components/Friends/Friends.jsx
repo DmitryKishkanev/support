@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { FriendsContainer } from 'components/Friends/Friends.styled';
+import { FriendsContainer } from './Friends.styled';
 
 const initalFriends = [
   'Kolby Thompson',

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import errorImage from '@/assets/no-image.jpg';
-import { ErrorMessage } from 'components/RTKQueryPokemon/PokemonErrorView/PokemonErrorView.styled';
+import { ErrorMessage } from './PokemonErrorView.styled';
 
 export default function PokemonErrorView({ message, pokemonName }) {
   return (

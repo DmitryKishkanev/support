@@ -1,1 +1,1 @@
-export { default } from 'components/Reader/Publication/Publication';
+export { default } from '@/components/Reader/Publication/Publication.jsx';

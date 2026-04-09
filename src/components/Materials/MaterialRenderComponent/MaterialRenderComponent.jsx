@@ -1,11 +1,8 @@
 import { Component } from 'react';
-import MaterialEditorForm from 'components/Materials/MaterialEditorForm';
-import * as API from 'components/Materials/Services/api';
-import {
-  MaterialContainer,
-  Loader,
-} from 'components/Materials/MaterialRenderComponent/MaterialRenderComponent.styled';
-import MaterialList from 'components/Materials/MaterialList';
+import MaterialEditorForm from '@/components/Materials/MaterialEditorForm';
+import * as API from '@/components/Materials/Services/api.js';
+import { MaterialContainer, Loader } from './MaterialRenderComponent.styled';
+import MaterialList from '@/components/Materials/MaterialList';
 
 class MaterialRenderComponent extends Component {
   state = {

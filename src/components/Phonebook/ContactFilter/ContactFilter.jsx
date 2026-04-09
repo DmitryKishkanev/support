@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FilterLabel } from 'components/Phonebook/ContactFilter/ContactFilter.styled';
+import { FilterLabel } from './ContactFilter.styled';
 
 const ContactFilter = ({ value, onChangeFilter }) => {
   return (

@@ -1,5 +1,5 @@
 import { ToastContainer } from 'react-toastify';
-import PokemonForm from 'components/RTKQueryPokemon/PokemonForm';
+import PokemonForm from '@/components/RTKQueryPokemon/PokemonForm';
 import { PokemonInfoContainer } from '@/components/RTKQueryPokemon/RTKQueryPokemon/RTKQueryPokemon.styled';
 
 export default function RTKQueryPokemon() {

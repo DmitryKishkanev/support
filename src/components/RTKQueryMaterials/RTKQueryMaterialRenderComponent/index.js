@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryMaterials/RTKQueryMaterialRenderComponent/RTKQueryMaterialRenderComponent';
+export { default } from '@/components/RTKQueryMaterials/RTKQueryMaterialRenderComponent/RTKQueryMaterialRenderComponent.jsx';

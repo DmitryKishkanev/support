@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { ControlsContainer } from 'components/Counter/Controls/Controls.styled';
+import { ControlsContainer } from './Controls.styled';
 
 export const Controls = ({ onDecrement, onIncrement }) => (
   <ControlsContainer>

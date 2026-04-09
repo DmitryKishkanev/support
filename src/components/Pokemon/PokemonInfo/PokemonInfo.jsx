@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import PokemonErrorView from 'components/Pokemon/PokemonErrorView';
-import PokemonDataView from 'components/Pokemon/PokemonDataView';
-import PokemonPendingView from 'components/Pokemon/PokemonPendingView';
-import pokemonAPI from 'components/Pokemon/Services/pokemon-api';
+import PokemonErrorView from '@/components/Pokemon/PokemonErrorView';
+import PokemonDataView from '@/components/Pokemon/PokemonDataView';
+import PokemonPendingView from '@/components/Pokemon/PokemonPendingView';
+import pokemonAPI from '@/components/Pokemon/Services/pokemon-api.js';
 
 class PokemonInfo extends Component {
   state = {

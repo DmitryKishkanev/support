@@ -1,1 +1,1 @@
-export { default } from 'components/Phonebook/ContactFilter/ContactFilter';
+export { default } from '@/components/Phonebook/ContactFilter/ContactFilter.jsx';

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FilterLabel } from 'components/RTKQueryPhonebook/Filter/Filter.styled';
+import { FilterLabel } from './Filter.styled';
 
 const Filter = ({ value, onChangeFilter }) => {
   const handleChange = e => {

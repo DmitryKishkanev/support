@@ -1,1 +1,1 @@
-export { default } from 'components/HooksPhonebook/HooksPhonebookApp/HooksPhonebookApp';
+export { default } from '@/components/HooksPhonebook/HooksPhonebookApp/HooksPhonebookApp.jsx';

@@ -1,7 +1,7 @@
 import { useContext } from 'react';
-import UserMenu from 'components/AppBarComponent/UserMenu';
+import UserMenu from '@/components/AppBarComponent/UserMenu';
 import authContext from '@/contexts/authContext';
-import { AppBarBox } from 'components/AppBarComponent/AppBar/AppBar.styled';
+import { AppBarBox } from '@/components/AppBarComponent/AppBar/AppBar.styled.js';
 
 export default function AppBar() {
   const { isLoggedIn, user, onLogIn, onLogOut } = useContext(authContext);

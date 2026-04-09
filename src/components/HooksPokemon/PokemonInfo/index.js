@@ -1,1 +1,1 @@
-export { default } from 'components/HooksPokemon/PokemonInfo/PokemonInfo';
+export { default } from '@/components/HooksPokemon/PokemonInfo/PokemonInfo.jsx';

@@ -1,1 +1,1 @@
-export { default } from 'components/Reader/Controls/Controls';
+export { default } from '@/components/Reader/Controls/Controls.jsx';

@@ -1,1 +1,1 @@
-export { default } from 'components/ProductReviewForm/ProductReviewForm';
+export { default } from '@/components/ProductReviewForm/ProductReviewForm.jsx';

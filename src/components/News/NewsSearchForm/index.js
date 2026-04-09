@@ -1,1 +1,1 @@
-export { default } from 'components/News/NewsSearchForm/NewsSearchForm';
+export { default } from '@/components/News/NewsSearchForm/NewsSearchForm.jsx';

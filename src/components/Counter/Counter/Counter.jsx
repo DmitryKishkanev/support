@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { Title } from '@/components/Counter/Title/Title';
 import { Controls } from '@/components/Counter/Controls/Controls';
 import { Value } from '@/components/Counter/Value/Value';
-import { CounterContainer } from 'components/Counter/Counter/Counter.styled';
+import { CounterContainer } from './Counter.styled';
 
 export default class Counter extends Component {
   static defaultProps = {

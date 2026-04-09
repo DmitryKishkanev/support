@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { FilterLabel } from 'components/AsyncReduxPhonebookAuthBackend/Filter/Filter.styled';
+import { FilterLabel } from '@/components/AsyncReduxPhonebookAuthBackend/Filter/Filter.styled.js';
 import {
   setFilter,
   selectFilter,

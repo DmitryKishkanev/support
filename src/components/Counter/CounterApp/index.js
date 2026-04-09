@@ -1,1 +1,1 @@
-export { default } from 'components/Counter/CounterApp/CounterApp';
+export { default } from '@/components/Counter/CounterApp/CounterApp.jsx';

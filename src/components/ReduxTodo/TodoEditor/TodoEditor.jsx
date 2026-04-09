@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { TodoEditorForm } from 'components/ReduxTodo/TodoEditor/TodoEditor.styled';
+import { TodoEditorForm } from './TodoEditor.styled';
 
 const TodoEditor = ({ onSubmit }) => {
   const [message, setMessage] = useState('');

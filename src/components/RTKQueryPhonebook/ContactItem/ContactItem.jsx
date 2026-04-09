@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { useDeleteContactMutation } from '@/redux/rtkQueryPhonebook';
-import { ContactEl } from 'components/RTKQueryPhonebook/ContactItem/ContactItem.styled';
+import { ContactEl } from './ContactItem.styled';
 
 const ContactItem = ({ id, name, phone }) => {
   const [deleteContact, { isLoading: isDeleting }] = useDeleteContactMutation();

@@ -1,1 +1,1 @@
-export { default } from 'components/Modal/Modal/Modal';
+export { default } from '@/components/Modal/Modal/Modal.jsx';

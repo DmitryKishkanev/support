@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
-import ContactFilter from 'components/Phonebook/ContactFilter';
-import {
-  Container,
-  ContactBox,
-  ContactEl,
-} from 'components/Phonebook/PhonebookList/PhonebookList.styled';
+import ContactFilter from '@/components/Phonebook/ContactFilter';
+import { Container, ContactBox, ContactEl } from './PhonebookList.styled';
 
 const PhonebookList = ({
   contacts,

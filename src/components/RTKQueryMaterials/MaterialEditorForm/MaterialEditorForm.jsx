@@ -1,5 +1,5 @@
 import { Formik, Field } from 'formik';
-import { MaterialForm } from 'components/RTKQueryMaterials/MaterialEditorForm/MaterialEditorForm.styled';
+import { MaterialForm } from './MaterialEditorForm.styled';
 import {
   useFetchMaterialsQuery,
   useCreateMaterialMutation,

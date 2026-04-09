@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryPokemon/PokemonForm/PokemonForm';
+export { default } from '@/components/RTKQueryPokemon/PokemonForm/PokemonForm.jsx';

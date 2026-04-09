@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { NewsForm } from 'components/News/NewsSearchForm/NewsSearchForm.styled';
+import { NewsForm } from './NewsSearchForm.styled';
 
 export default function NewsSearchForm({ onSubmit }) {
   const [query, setQuery] = useState('');

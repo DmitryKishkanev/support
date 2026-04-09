@@ -1,10 +1,6 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import {
-  LoaderTitle,
-  PlayerWrapper,
-  StyledPlayer,
-} from 'components/Player/Player/Player.styled';
+import { LoaderTitle, PlayerWrapper, StyledPlayer } from './Player.styled';
 
 class Player extends Component {
   state = { isVideoLoaded: false };

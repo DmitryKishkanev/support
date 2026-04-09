@@ -1,1 +1,1 @@
-export { default } from 'components/AsyncReduxPhonebookAuthBackend/ContactList/ContactList';
+export { default } from '@/components/AsyncReduxPhonebookAuthBackend/ContactList/ContactList.jsx';

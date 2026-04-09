@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { removeContact } from '@/redux/reduxPhonebook/slice';
-import { ContactEl } from 'components/ReduxPhonebook/ContactItem/ContactItem.styled';
+import { ContactEl } from './ContactItem.styled';
 
 const ContactItem = () => {
   const { contacts, filter } = useSelector(state => state.reduxPhonebook);

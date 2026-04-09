@@ -1,7 +1,7 @@
-import ContactForm from 'components/ReduxPhonebook/ContactForm';
-import Filter from 'components/ReduxPhonebook/Filter';
-import ContactList from 'components/ReduxPhonebook/ContactList';
-import { Container } from 'components/ReduxPhonebook/ReduxPhonebookApp/ReduxPhonebookApp.styled';
+import ContactForm from '@/components/ReduxPhonebook/ContactForm';
+import Filter from '@/components/ReduxPhonebook/Filter';
+import ContactList from '@/components/ReduxPhonebook/ContactList';
+import { Container } from './ReduxPhonebookApp.styled';
 
 export default function ReduxPhonebookApp() {
   return (

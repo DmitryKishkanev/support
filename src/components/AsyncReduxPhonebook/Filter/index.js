@@ -1,1 +1,1 @@
-export { default } from 'components/AsyncReduxPhonebook/Filter/Filter';
+export { default } from '@/components/AsyncReduxPhonebook/Filter/Filter.jsx';

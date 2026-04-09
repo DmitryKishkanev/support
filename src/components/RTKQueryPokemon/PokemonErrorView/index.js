@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryPokemon/PokemonErrorView/PokemonErrorView';
+export { default } from '@/components/RTKQueryPokemon/PokemonErrorView/PokemonErrorView.jsx';

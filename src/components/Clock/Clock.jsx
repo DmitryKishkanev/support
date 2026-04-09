@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { ClockFace } from 'components/Clock/Clock.styled';
+import { ClockFace } from './Clock.styled';
 
 class Clock extends Component {
   state = { time: new Date().toLocaleTimeString() };

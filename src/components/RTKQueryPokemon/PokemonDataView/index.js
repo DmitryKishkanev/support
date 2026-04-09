@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryPokemon/PokemonDataView/PokemonDataView';
+export { default } from '@/components/RTKQueryPokemon/PokemonDataView/PokemonDataView.jsx';

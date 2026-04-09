@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryPhonebook/Filter/Filter';
+export { default } from '@/components/RTKQueryPhonebook/Filter/Filter.jsx';

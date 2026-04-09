@@ -1,1 +1,1 @@
-export { default } from 'components/ContextAlert/Alert/Alert';
+export { default } from '@/components/ContextAlert/Alert/Alert.jsx';

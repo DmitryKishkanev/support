@@ -1,1 +1,1 @@
-export { default } from 'components/AsyncReduxPhonebookAuthBackend/AuthBackendPhonebookApp/AuthBackendAsyncReduxPhonebookApp';
+export { default } from '@/components/AsyncReduxPhonebookAuthBackend/AuthBackendPhonebookApp/AuthBackendAsyncReduxPhonebookApp.jsx';

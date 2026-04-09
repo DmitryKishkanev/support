@@ -1,7 +1,7 @@
 import { Formik, Field, ErrorMessage } from 'formik';
 import { object, string } from 'yup';
 // import { nanoid } from 'nanoid';
-import { FormContainer } from 'components/RTKQueryPhonebook/ContactForm/ContactForm.styled';
+import { FormContainer } from './ContactForm.styled';
 import {
   useFetchContactsQuery,
   useCreateContactMutation,

@@ -1,8 +1,8 @@
 import PropTypes from 'prop-types';
 import { useGetPokemonByNameQuery } from '@/redux/rtkQueryPokemon';
-import PokemonErrorView from 'components/RTKQueryPokemon/PokemonErrorView';
-import PokemonDataView from 'components/RTKQueryPokemon/PokemonDataView';
-import PokemonPendingView from 'components/RTKQueryPokemon/PokemonPendingView';
+import PokemonErrorView from '@/components/RTKQueryPokemon/PokemonErrorView';
+import PokemonDataView from '@/components/RTKQueryPokemon/PokemonDataView';
+import PokemonPendingView from '@/components/RTKQueryPokemon/PokemonPendingView';
 
 export default function PokemonInfo({ pokemonName }) {
   const {

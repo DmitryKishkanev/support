@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxPhonebook/ReduxPhonebookApp/ReduxPhonebookApp';
+export { default } from '@/components/ReduxPhonebook/ReduxPhonebookApp/ReduxPhonebookApp.jsx';

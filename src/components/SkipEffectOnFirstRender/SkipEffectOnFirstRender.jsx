@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { OnFirstRenderBox } from 'components/SkipEffectOnFirstRender/SkipEffectOnFirstRender.styled';
+import { OnFirstRenderBox } from './SkipEffectOnFirstRender.styled';
 
 export default function SkipEffectOnFirstRender() {
   const [count, setCount] = useState(0);

@@ -5,13 +5,13 @@ import {
   ContactContentBox,
   ContactContent,
   ContactContentButtonBox,
-} from 'components/AsyncReduxPhonebookAuthBackend/ContactItem/ContactItem.styled';
+} from '@/components/AsyncReduxPhonebookAuthBackend/ContactItem/ContactItem.styled.js';
 import {
   selectFilteredContacts,
   deleteContact,
 } from '@/redux/authBackendAsyncReduxPhonebook';
-import Modal from 'components/Modal/Modal';
-import EditContactModal from 'components/AsyncReduxPhonebookAuthBackend/EditContactModal';
+import Modal from '@/components/Modal/Modal';
+import EditContactModal from '@/components/AsyncReduxPhonebookAuthBackend/EditContactModal';
 
 const ContactItem = () => {
   const [selectedContactId, setSelectedContactId] = useState(null);

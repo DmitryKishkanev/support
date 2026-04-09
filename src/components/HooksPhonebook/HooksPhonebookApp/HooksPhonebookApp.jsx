@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import ContactForm from 'components/HooksPhonebook/ContactForm';
-import Filter from 'components/HooksPhonebook/Filter';
-import ContactList from 'components/HooksPhonebook/ContactList';
+import ContactForm from '@/components/HooksPhonebook/ContactForm';
+import Filter from '@/components/HooksPhonebook/Filter';
+import ContactList from '@/components/HooksPhonebook/ContactList';
 import initialContacts from '@/contacts.json';
-import { Container } from 'components/HooksPhonebook/HooksPhonebookApp/HooksPhonebookApp.styled';
+import { Container } from './HooksPhonebookApp.styled';
 
 export default function HooksPhonebookApp() {
   const [contacts, setContacts] = useState(initialContacts);

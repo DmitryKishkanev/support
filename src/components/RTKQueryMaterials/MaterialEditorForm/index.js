@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryMaterials/MaterialEditorForm/MaterialEditorForm';
+export { default } from '@/components/RTKQueryMaterials/MaterialEditorForm/MaterialEditorForm.jsx';

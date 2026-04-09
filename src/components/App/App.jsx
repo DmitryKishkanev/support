@@ -2,7 +2,7 @@ import { lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes, Navigate } from 'react-router-dom';
 import Layout from '@/routes/Component/Layout';
-import style from 'components/App/App.module.css';
+import style from '@/components/App/App.module.css';
 // import PrivateRoute from '@/routes/Component/PrivateRoute';
 // import PublicRoute from '@/routes/Component/PublicRoute';
 import { refreshCurrentUser } from '@/redux/auth';

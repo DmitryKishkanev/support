@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryPhonebook/ContactForm/ContactForm';
+export { default } from '@/components/RTKQueryPhonebook/ContactForm/ContactForm.jsx';

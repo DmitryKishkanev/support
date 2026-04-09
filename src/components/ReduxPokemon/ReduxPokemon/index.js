@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxPokemon/ReduxPokemon/ReduxPokemon';
+export { default } from '@/components/ReduxPokemon/ReduxPokemon/ReduxPokemon.jsx';

@@ -1,8 +1,5 @@
 import PropTypes from 'prop-types';
-import {
-  PublicationTitle,
-  PublicationText,
-} from 'components/Reader/Publication/Publication.styled';
+import { PublicationTitle, PublicationText } from './Publication.styled';
 
 const Publication = ({ item }) => {
   return (

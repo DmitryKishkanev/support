@@ -1,1 +1,1 @@
-export { default } from 'components/Todo/TodoFilter/TodoFilter';
+export { default } from '@/components/Todo/TodoFilter/TodoFilter.jsx';

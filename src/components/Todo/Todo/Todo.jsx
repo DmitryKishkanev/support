@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
-import IconButton from 'components/Todo/IconButton';
+import IconButton from '@/components/Todo/IconButton';
 import DeleteIcon from '@/icons/delete.svg?react';
-import { TodoCheckbox, TodoText } from 'components/Todo/Todo/Todo.styled';
+import { TodoCheckbox, TodoText } from './Todo.styled';
 
 const Todo = ({ text, completed, onToggleCompleted, onDelete }) => (
   <>

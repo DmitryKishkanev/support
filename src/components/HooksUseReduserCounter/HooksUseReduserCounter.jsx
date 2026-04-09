@@ -1,5 +1,5 @@
 import { useReducer } from 'react';
-import { CounterBox } from 'components/HooksUseReduserCounter/HooksUseReduserCounter.styled';
+import { CounterBox } from './HooksUseReduserCounter.styled';
 
 function counterReducer(state, action) {
   switch (action.type) {

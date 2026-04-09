@@ -1,1 +1,1 @@
-export { default } from 'components/Reader/Progress/Progress';
+export { default } from '@/components/Reader/Progress/Progress.jsx';

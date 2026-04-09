@@ -5,12 +5,12 @@ import {
   toggleModal,
   toggleCompleted,
 } from '@/redux/reduxTodo/slice';
-import TodoList from 'components/ReduxTodo/TodoList';
-import IconButton from 'components/ReduxTodo/IconButton';
+import TodoList from '@/components/ReduxTodo/TodoList';
+import IconButton from '@/components/ReduxTodo/IconButton';
 import AddIcon from '@/icons/add.svg?react';
-import TodoFilter from 'components/ReduxTodo/TodoFilter';
-import TodoEditor from 'components/ReduxTodo/TodoEditor';
-import Modal from 'components/Modal/Modal';
+import TodoFilter from '@/components/ReduxTodo/TodoFilter';
+import TodoEditor from '@/components/ReduxTodo/TodoEditor';
+import Modal from '@/components/Modal/Modal';
 
 const ReduxTodoComponent = () => {
   const { todos, filter, showModal } = useSelector(state => state.reduxTodo);

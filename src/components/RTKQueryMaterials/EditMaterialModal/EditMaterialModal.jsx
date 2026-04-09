@@ -5,7 +5,7 @@ import {
   MaterialModalFieldsContainer,
   MaterialModalFieldsName,
   MaterialModalButtonsBox,
-} from 'components/RTKQueryMaterials/EditMaterialModal/EditMaterialModal.styled';
+} from './EditMaterialModal.styled';
 import { useFetchMaterialByIdQuery } from '@/redux/rtkQueryMaterials';
 
 const EditMaterialModal = ({ materialId, onClose, onEdit }) => {

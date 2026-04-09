@@ -1,6 +1,6 @@
 import { Formik, Field } from 'formik';
 import PropTypes from 'prop-types';
-import { MaterialForm } from 'components/Materials/MaterialEditorForm/MaterialEditorForm.styled';
+import { MaterialForm } from './MaterialEditorForm.styled';
 
 const MaterialEditorForm = ({ onSubmit }) => {
   const handleSubmit = async (values, actions) => {

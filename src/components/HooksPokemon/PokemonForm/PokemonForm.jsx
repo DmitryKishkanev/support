@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
-import { PokemonFormBox } from 'components/HooksPokemon/PokemonForm/PokemonForm.styled';
+import { PokemonFormBox } from './PokemonForm.styled';
 
 export default function PokemonForm({ onSubmit }) {
   const [pokemonName, setPokemonName] = useState('');

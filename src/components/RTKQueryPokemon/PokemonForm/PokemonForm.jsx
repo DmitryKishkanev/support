@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
-import PokemonInfo from 'components/RTKQueryPokemon/PokemonInfo';
-import { PokemonFormBox } from 'components/RTKQueryPokemon/PokemonForm/PokemonForm.styled';
+import PokemonInfo from '@/components/RTKQueryPokemon/PokemonInfo';
+import { PokemonFormBox } from './PokemonForm.styled';
 
 export default function PokemonForm() {
   const [pokemonName, setPokemonName] = useState('');

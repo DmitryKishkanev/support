@@ -1,1 +1,1 @@
-export { default } from 'components/Pokemon/PokemonForm/PokemonForm';
+export { default } from '@/components/Pokemon/PokemonForm/PokemonForm.jsx';

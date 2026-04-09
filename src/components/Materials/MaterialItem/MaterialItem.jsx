@@ -1,8 +1,8 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import Madal from 'components/Modal/Modal';
-import EditMaterialModal from 'components/Materials/EditMaterialModal';
-import { MaterialItemContainer } from 'components/Materials/MaterialItem/MaterialItem.styled';
+import Madal from '@/components/Modal/Modal';
+import EditMaterialModal from '@/components/Materials/EditMaterialModal/EditMaterialModal.jsx';
+import { MaterialItemContainer } from './MaterialItem.styled';
 
 class MaterialItem extends Component {
   state = {

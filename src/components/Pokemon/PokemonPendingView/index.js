@@ -1,1 +1,1 @@
-export { default } from 'components/Pokemon/PokemonPendingView/PokemonPendingView';
+export { default } from '@/components/Pokemon/PokemonPendingView/PokemonPendingView.jsx';

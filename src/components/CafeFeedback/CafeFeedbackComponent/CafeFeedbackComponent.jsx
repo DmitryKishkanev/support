@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import CafeFeedbackOptions from 'components/CafeFeedback/CafeFeedbackOptions';
-import CafeFeedbackStatistics from 'components/CafeFeedback/CafeFeedbackStatistics';
-import CafeFeedbackTitle from 'components/CafeFeedback/CafeFeedbackTitle';
-import CafeFeedbackNotification from 'components/CafeFeedback/CafeFeedbackNotification';
-import { Container } from 'components/CafeFeedback/CafeFeedbackComponent/CafeFeedbackComponent.styled';
+import CafeFeedbackOptions from '@/components/CafeFeedback/CafeFeedbackOptions';
+import CafeFeedbackStatistics from '@/components/CafeFeedback/CafeFeedbackStatistics';
+import CafeFeedbackTitle from '@/components/CafeFeedback/CafeFeedbackTitle';
+import CafeFeedbackNotification from '@/components/CafeFeedback/CafeFeedbackNotification';
+import { Container } from '@/components/CafeFeedback/CafeFeedbackComponent/CafeFeedbackComponent.styled.js';
 
 class CafeFeedbackComponent extends Component {
   state = { Good: 0, Neutral: 0, Bad: 0 };

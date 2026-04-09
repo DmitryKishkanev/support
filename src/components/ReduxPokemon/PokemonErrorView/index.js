@@ -1,1 +1,1 @@
-export { default } from 'components/ReduxPokemon/PokemonErrorView/PokemonErrorView';
+export { default } from '@/components/ReduxPokemon/PokemonErrorView/PokemonErrorView.jsx';

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { ContactEl } from 'components/AsyncReduxPhonebook/ContactItem/ContactItem.styled';
+import { ContactEl } from './ContactItem.styled';
 import {
   selectFilteredContacts,
   deleteContact,

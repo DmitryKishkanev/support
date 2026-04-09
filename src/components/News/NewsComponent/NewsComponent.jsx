@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
-import APIfetchArticles from 'components/News/APIfetchArticles';
-import NewsSearchForm from 'components/News/NewsSearchForm';
-import { NewsContainer } from 'components/News/NewsComponent/NewsComponent.styled';
+import APIfetchArticles from '@/components/News/APIfetchArticles';
+import NewsSearchForm from '@/components/News/NewsSearchForm';
+import { NewsContainer } from './NewsComponent.styled';
 
 export default function NewsComponent() {
   const [articles, setArticles] = useState([]);

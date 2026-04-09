@@ -1,1 +1,1 @@
-export { default } from 'components/Materials/EditMaterialModal/EditMaterialModal';
+export { default } from '@/components/Materials/EditMaterialModal/EditMaterialModal.jsx';

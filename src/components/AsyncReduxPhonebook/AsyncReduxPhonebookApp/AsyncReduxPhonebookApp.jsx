@@ -1,9 +1,9 @@
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import ContactForm from 'components/AsyncReduxPhonebook/ContactForm';
-import Filter from 'components/AsyncReduxPhonebook/Filter';
-import ContactList from 'components/AsyncReduxPhonebook/ContactList';
-import { Container } from 'components/AsyncReduxPhonebook/AsyncReduxPhonebookApp/AsyncReduxPhonebookApp.styled';
+import ContactForm from '@/components/AsyncReduxPhonebook/ContactForm';
+import Filter from '@/components/AsyncReduxPhonebook/Filter';
+import ContactList from '@/components/AsyncReduxPhonebook/ContactList';
+import { Container } from '@/components/AsyncReduxPhonebook/AsyncReduxPhonebookApp/AsyncReduxPhonebookApp.styled.js';
 import { fetchContacts } from '@/redux/asyncReduxPhonebook';
 
 export default function AsyncReduxPhonebookApp() {

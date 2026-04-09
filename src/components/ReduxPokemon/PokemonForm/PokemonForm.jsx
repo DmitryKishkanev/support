@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { resetReduxPokemon } from '@/redux/reduxPokemon/slice';
 import { ImSearch } from 'react-icons/im';
 import { toast } from 'react-toastify';
-import { PokemonFormBox } from 'components/ReduxPokemon/PokemonForm/PokemonForm.styled';
+import { PokemonFormBox } from './PokemonForm.styled';
 import { fetchPokemonRedux } from '@/redux/reduxPokemon/pokemonOperations';
 
 export default function PokemonForm({ onSearch }) {

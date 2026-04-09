@@ -1,1 +1,1 @@
-export { default } from 'components/LoginForm/LoginForm';
+export { default } from '@/components/LoginForm/LoginForm.jsx';

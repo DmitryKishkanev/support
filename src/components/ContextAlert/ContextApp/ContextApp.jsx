@@ -1,7 +1,7 @@
-import Alert from 'components/ContextAlert/Alert';
-import Main from 'components/ContextAlert/Main';
-import { Context } from 'components/ContextAlert/Context/Context';
-import { ContextAppContainer } from 'components/ContextAlert/ContextApp/ContextApp.styled';
+import Alert from '@/components/ContextAlert/Alert';
+import Main from '@/components/ContextAlert/Main';
+import { Context } from '@/components/ContextAlert/Context/Context.jsx';
+import { ContextAppContainer } from './ContextApp.styled';
 
 export default function ContextApp() {
   return (

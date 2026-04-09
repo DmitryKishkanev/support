@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
-import Controls from 'components/Reader/Controls';
-import Progress from 'components/Reader/Progress';
-import Publication from 'components/Reader/Publication';
-import { ReaderComponentContainer } from 'components/Reader/ReaderComponent/ReaderComponent.styled';
+import Controls from '@/components/Reader/Controls';
+import Progress from '@/components/Reader/Progress';
+import Publication from '@/components/Reader/Publication';
+import { ReaderComponentContainer } from './ReaderComponent.styled';
 
 const LS_KEY = 'reader_item_index';
 

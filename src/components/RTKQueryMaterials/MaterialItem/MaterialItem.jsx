@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import Modal from 'components/Modal/Modal';
-import EditMaterialModal from 'components/RTKQueryMaterials/EditMaterialModal';
-import { MaterialItemContainer } from 'components/RTKQueryMaterials/MaterialItem/MaterialItem.styled';
+import Modal from '@/components/Modal/Modal';
+import EditMaterialModal from '@/components/RTKQueryMaterials/EditMaterialModal';
+import { MaterialItemContainer } from './MaterialItem.styled';
 import {
   useUpdateMaterialMutation,
   useDeleteMaterialMutation,

@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryPokemon/PokemonPendingView/PokemonPendingView';
+export { default } from '@/components/RTKQueryPokemon/PokemonPendingView/PokemonPendingView.jsx';

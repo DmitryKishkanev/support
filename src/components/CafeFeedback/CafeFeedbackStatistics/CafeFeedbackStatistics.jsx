@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { StatisticsList } from 'components/CafeFeedback/CafeFeedbackStatistics/CafeFeedbackStatistics.styles';
+import { StatisticsList } from '@/components/CafeFeedback/CafeFeedbackStatistics/CafeFeedbackStatistics.styles.js';
 
 const CafeFeedbackStatistics = ({
   good,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import ContactForm from 'components/RTKQueryPhonebook/ContactForm';
-import Filter from 'components/RTKQueryPhonebook/Filter';
-import ContactList from 'components/RTKQueryPhonebook/ContactList';
+import ContactForm from '@/components/RTKQueryPhonebook/ContactForm';
+import Filter from '@/components/RTKQueryPhonebook/Filter';
+import ContactList from '@/components/RTKQueryPhonebook/ContactList';
 import { Container } from '@/components/RTKQueryPhonebook/RTKQueryPhonebookApp/RTKQueryPhonebookApp.styled';
 
 export default function RTKQueryPhonebookApp() {

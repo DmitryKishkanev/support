@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import PropTypes from 'prop-types';
 
-import { TodoEditorForm } from 'components/Todo/TodoEditor/TodoEditor.styled';
+import { TodoEditorForm } from './TodoEditor.styled';
 
 class TodoEditor extends Component {
   state = { message: '' };

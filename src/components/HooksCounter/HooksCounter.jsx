@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { CounterBox } from 'components/HooksCounter/HooksCounter.styled';
+import { CounterBox } from './HooksCounter.styled';
 
 export default function HooksCounter() {
   const [counterA, setCounterA] = useState(0);

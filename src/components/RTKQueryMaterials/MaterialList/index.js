@@ -1,1 +1,1 @@
-export { default } from 'components/RTKQueryMaterials/MaterialList/MaterialList';
+export { default } from '@/components/RTKQueryMaterials/MaterialList/MaterialList.jsx';

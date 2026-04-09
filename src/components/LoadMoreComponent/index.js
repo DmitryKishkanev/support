@@ -1,1 +1,1 @@
-export { default } from 'components/LoadMoreComponent/LoadMoreComponent';
+export { default } from '@/components/LoadMoreComponent/LoadMoreComponent.jsx';

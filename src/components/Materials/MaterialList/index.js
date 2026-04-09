@@ -1,1 +1,1 @@
-export { default } from 'components/Materials/MaterialList/MaterialList';
+export { default } from '@/components/Materials/MaterialList/MaterialList.jsx';

@@ -1,1 +1,1 @@
-export { default } from 'components/AsyncReduxPhonebookAuthBackend/EditContactModal/EditContactModal';
+export { default } from '@/components/AsyncReduxPhonebookAuthBackend/EditContactModal/EditContactModal.jsx';

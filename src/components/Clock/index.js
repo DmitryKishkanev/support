@@ -1,1 +1,1 @@
-export { default } from 'components/Clock/Clock';
+export { default } from '@/components/Clock/Clock.jsx';

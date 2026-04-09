@@ -1,1 +1,1 @@
-export { default } from 'components/Materials/MaterialEditorForm/MaterialEditorForm';
+export { default } from '@/components/Materials/MaterialEditorForm/MaterialEditorForm.jsx';

@@ -1,4 +1,4 @@
-import useCustomContext from 'components/ContextAlert/Context/useCustomContext';
+import useCustomContext from '@/components/ContextAlert/Context/useCustomContext.js';
 
 const Main = () => {
   const contextValue = useCustomContext();

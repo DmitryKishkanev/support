@@ -6,7 +6,7 @@ import {
   updateContact,
   selectContacts,
 } from '@/redux/authBackendAsyncReduxPhonebook';
-import { FormContainer } from 'components/AsyncReduxPhonebookAuthBackend/EditContactModal/EditContactModal.styled';
+import { FormContainer } from '@/components/AsyncReduxPhonebookAuthBackend/EditContactModal/EditContactModal.styled.js';
 
 const schema = object({
   name: string().required(),

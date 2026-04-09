@@ -1,1 +1,1 @@
-export { default } from 'components/HooksClock/HooksClock';
+export { default } from '@/components/HooksClock/HooksClock.jsx';

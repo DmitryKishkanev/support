@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Notification } from 'components/CafeFeedback/CafeFeedbackNotification/CafeFeedbackNotification.styled';
+import { Notification } from './CafeFeedbackNotification.styled';
 
 const CafeFeedbackNotification = ({ message }) => {
   return <Notification>{message}</Notification>;

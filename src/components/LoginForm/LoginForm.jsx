@@ -1,8 +1,5 @@
 import { Formik, Field, ErrorMessage } from 'formik';
-import {
-  FormContainer,
-  ErrorText,
-} from 'components/LoginForm/LoginForm.styled';
+import { FormContainer, ErrorText } from './LoginForm.styled';
 import { object, string } from 'yup';
 
 const schema = object({

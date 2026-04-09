@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import { FilterLabel } from 'components/Todo/TodoFilter/TodoFilter.styled';
+import { FilterLabel } from './TodoFilter.styled';
 
 const TodoFilter = ({ value, onChangeFilter }) => {
   return (

@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import PokemonErrorView from 'components/HooksPokemon/PokemonErrorView';
-import PokemonDataView from 'components/HooksPokemon/PokemonDataView';
-import PokemonPendingView from 'components/HooksPokemon/PokemonPendingView';
-import pokemonAPI from 'components/HooksPokemon/Services/pokemon-api';
+import PokemonErrorView from '@/components/HooksPokemon/PokemonErrorView';
+import PokemonDataView from '@/components/HooksPokemon/PokemonDataView';
+import PokemonPendingView from '@/components/HooksPokemon/PokemonPendingView';
+import pokemonAPI from '@/components/HooksPokemon/Services/pokemon-api.js';
 
 const Status = {
   IDLE: 'idle',

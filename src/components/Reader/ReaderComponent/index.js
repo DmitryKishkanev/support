@@ -1,1 +1,1 @@
-export { default } from 'components/Reader/ReaderComponent/ReaderComponent';
+export { default } from '@/components/Reader/ReaderComponent/ReaderComponent.jsx';

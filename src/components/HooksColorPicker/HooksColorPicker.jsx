@@ -1,7 +1,7 @@
 import { useState, memo } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { Container } from 'components/HooksColorPicker/HooksColorPicker.styled';
+import { Container } from './HooksColorPicker.styled';
 
 function HooksColorPicker({ options }) {
   const [activeOptionIdx, setActiveOptionIdx] = useState(0);

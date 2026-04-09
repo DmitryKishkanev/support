@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 import PropTypes from 'prop-types';
-import { TabsBox, ItamsBox, ContentBox } from 'components/Tabs/Tabs.styled';
+import { TabsBox, ItamsBox, ContentBox } from './Tabs.styled';
 
 class Tabs extends PureComponent {
   state = { activeTabIdx: 0 };

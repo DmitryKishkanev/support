@@ -1,1 +1,1 @@
-export { default } from 'components/Phonebook/PhonebookEditor/PhonebookEditor';
+export { default } from '@/components/Phonebook/PhonebookEditor/PhonebookEditor.jsx';

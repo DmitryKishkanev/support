@@ -1,4 +1,4 @@
-import { UserMenuContainer } from 'components/AppBarComponent/UserMenu/UserMenu.styled';
+import { UserMenuContainer } from '@/components/AppBarComponent/UserMenu/UserMenu.styled.js';
 
 export default function UserMenu({ onLogOut, user }) {
   return (

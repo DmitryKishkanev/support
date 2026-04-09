@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import MaterialItem from 'components/Materials/MaterialItem';
-import { StyledMaterialList } from 'components/Materials/MaterialList/MaterialList.styled';
+import MaterialItem from '@/components/Materials/MaterialItem';
+import { StyledMaterialList } from './MaterialList.styled';
 
 const MaterialList = ({ items, ...otherProps }) => {
   return (

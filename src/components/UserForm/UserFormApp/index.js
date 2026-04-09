@@ -1,1 +1,1 @@
-export { default } from 'components/UserForm/UserFormApp/UserFormApp';
+export { default } from '@/components/UserForm/UserFormApp/UserFormApp.jsx';

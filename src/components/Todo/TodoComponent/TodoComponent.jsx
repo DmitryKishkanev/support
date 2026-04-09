@@ -1,12 +1,12 @@
 import { Component } from 'react';
 import shortid from 'shortid';
 import initialTodos from '@/todos.json';
-import TodoList from 'components/Todo/TodoList';
-import IconButton from 'components/Todo/IconButton';
+import TodoList from '@/components/Todo/TodoList';
+import IconButton from '@/components/Todo/IconButton';
 import AddIcon from '@/icons/add.svg?react';
-import TodoFilter from 'components/Todo/TodoFilter';
-import TodoEditor from 'components/Todo/TodoEditor';
-import Modal from 'components/Modal/Modal';
+import TodoFilter from '@/components/Todo/TodoFilter';
+import TodoEditor from '@/components/Todo/TodoEditor';
+import Modal from '@/components/Modal/Modal';
 
 export default class TodoComponent extends Component {
   state = {
