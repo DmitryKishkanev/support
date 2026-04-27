@@ -38,9 +38,8 @@ const ContactForm = () => {
     );
 
     if (isNamePresent) {
+      console.log(`"${newContact.name}" is already in contacts`);
       resetForm();
-      alert(`"${newContact.name}" is already in contacts `);
-
       return;
     }
 
