@@ -34,6 +34,7 @@ const ContactForm = () => {
 
     if (isNamePresent) {
       alert(`"${newContact.name}" is already in contacts `);
+      resetForm();
       return;
     }
 
